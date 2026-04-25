@@ -1,0 +1,29 @@
+# Overrides Nx Cloud pre-built `linux-medium-js` so Playwright WebKit/Firefox get OS libs.
+# Pre-built agents only run `npx playwright install` (see nx-cloud-workflows install-browsers).
+# https://nx.dev/docs/reference/nx-cloud/launch-templates
+launch-templates:
+  linux-medium-js:
+    resource-class: 'docker_linux_amd64/medium'
+    image: 'ubuntu22.04-node20.19-v3'
+    init-steps:
+      - name: Checkout
+        uses: 'nrwl/nx-cloud-workflows/v5/workflow-steps/checkout/main.yaml'
+      - name: Restore Node Modules Cache
+        uses: 'nrwl/nx-cloud-workflows/v5/workflow-steps/cache/main.yaml'
+        inputs:
+          key: 'package-lock.json|yarn.lock|pnpm-lock.yaml|patches/**|.yarn/patches/**'
+          paths: 'node_modules'
+          base-branch: 'main'
+      - name: Restore Browser Binary Cache
+        uses: 'nrwl/nx-cloud-workflows/v5/workflow-steps/cache/main.yaml'
+        inputs:
+          key: 'package-lock.json|yarn.lock|pnpm-lock.yaml|"browsers"'
+          paths: |
+            '../.cache/Cypress'
+          base-branch: 'main'
+      - name: Install Node
+        uses: 'nrwl/nx-cloud-workflows/v5/workflow-steps/install-node/main.yaml'
+      - name: Install Node Modules
+        uses: 'nrwl/nx-cloud-workflows/v5/workflow-steps/install-node-modules/main.yaml'
+      - name: Install Playwright (browsers + OS deps for WebKit)
+        script: npx playwright install --with-deps
