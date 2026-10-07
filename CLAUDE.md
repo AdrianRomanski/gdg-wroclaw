@@ -1,3 +1,10 @@
+# Project Workflow Rules
+
+- **ADR for every major change**: Any architectural or significant change (new library or app, new tooling, workspace structure, design-system decisions, new dependencies) MUST come with an ADR in `docs/adr/` using the template in `docs/adr/README.md`. Add it to the Decision Log table in the same change.
+- **Branch per feature**: Never commit directly to `main`. Start every feature/change on a new branch created from an up-to-date `main` (e.g. `feat/<name>`, `fix/<name>`, `chore/<name>`, `docs/<name>`).
+- **Pull request for every change**: Push the branch and merge it into `main` only through a pull request. The PR description must link the related ADR(s).
+- **Workspace layout**: Applications live in `apps/`, libraries in `libs/<scope>/<type>-<name>` (see ADR-0002).
+
 <!-- nx configuration start-->
 <!-- Leave the start & end comments to automatically receive updates. -->
 
