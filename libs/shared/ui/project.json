@@ -1,0 +1,34 @@
+{
+  "name": "shared-ui",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/ui/src",
+  "prefix": "gdg",
+  "projectType": "library",
+  "tags": ["scope:shared", "type:ui"],
+  "targets": {
+    "storybook": {
+      "executor": "@analogjs/storybook-angular:start-storybook",
+      "continuous": true,
+      "options": {
+        "configDir": "libs/shared/ui/.storybook",
+        "tsConfig": "libs/shared/ui/tsconfig.storybook.json",
+        "compodoc": false,
+        "experimentalZoneless": true,
+        "port": 4400
+      }
+    },
+    "build-storybook": {
+      "executor": "@analogjs/storybook-angular:build-storybook",
+      "cache": true,
+      "outputs": ["{options.outputDir}"],
+      "inputs": ["default", "^production"],
+      "options": {
+        "configDir": "libs/shared/ui/.storybook",
+        "tsConfig": "libs/shared/ui/tsconfig.storybook.json",
+        "compodoc": false,
+        "experimentalZoneless": true,
+        "outputDir": "dist/storybook/shared-ui"
+      }
+    }
+  }
+}

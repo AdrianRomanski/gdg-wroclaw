@@ -8,6 +8,9 @@
     },
     {
       "path": "./libs/shared/ui-tokens"
+    },
+    {
+      "path": "./libs/shared/ui"
     }
   ],
   "compilerOptions": {}
