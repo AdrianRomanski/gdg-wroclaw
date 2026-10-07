@@ -1,5 +1,5 @@
 {
-  "//": "Compilation config for the Storybook Angular (Analog/Vite) plugin only. Not part of typecheck (see ../tsconfig.storybook.json). Non-composite so that workspace libraries consumed from source (e.g. @org/shared-ui-tokens) are emitted instead of skipped as project references.",
+  "//": "Compilation config for the Storybook Angular (Analog/Vite) plugin only. Not part of typecheck (see ../tsconfig.storybook.json). Non-composite so that workspace libraries consumed from source (e.g. @gdg-wroclaw/shared-ui-tokens) are emitted instead of skipped as project references.",
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "composite": false,

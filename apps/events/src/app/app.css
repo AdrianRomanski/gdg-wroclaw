@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: var(--gdg-color-black-02);
+  color: var(--gdg-color-off-white);
+}
+
+main {
+  padding: 2rem;
+}
+
+h1 {
+  margin: 0;
+  font: var(--gdg-font-heading-1);
+}

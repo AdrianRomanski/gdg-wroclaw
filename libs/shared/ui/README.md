@@ -2,7 +2,7 @@
 
 GDG Wrocław design-system components (Angular) and the design-system Storybook. See [ADR-0004](../../../docs/adr/0004-storybook-for-design-system.md).
 
-Tokens (colors, …) live in [`@org/shared-ui-tokens`](../ui-tokens/README.md).
+Tokens (colors, …) live in [`@gdg-wroclaw/shared-ui-tokens`](../ui-tokens/README.md).
 
 ## Storybook
 

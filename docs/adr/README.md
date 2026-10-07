@@ -18,6 +18,7 @@ For more information on ADRs, see [Architecture Decision Records](https://adr.gi
 | [ADR-0004](0004-storybook-for-design-system.md)                   | Use a Single Vite-based Storybook for the Design System     | **Accepted** | 2026-10-07 |
 | [ADR-0005](0005-design-system-typography-tokens.md)               | Typography Tokens with Self-hosted Google Sans              | **Accepted** | 2026-10-07 |
 | [ADR-0006](0006-ci-without-nx-cloud-and-storybook-smoke-tests.md) | CI without Nx Cloud, and Storybook Smoke Tests              | **Accepted** | 2026-10-07 |
+| [ADR-0007](0007-gdg-wroclaw-package-scope-and-selector-prefix.md) | `@gdg-wroclaw` Package Scope and `gdg` Selector Prefix      | **Accepted** | 2026-10-07 |
 
 ---
 

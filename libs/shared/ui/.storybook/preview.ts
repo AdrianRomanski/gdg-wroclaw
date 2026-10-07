@@ -1,5 +1,5 @@
 import type { Preview } from '@analogjs/storybook-angular';
-import '@org/shared-ui-tokens/tokens.css';
+import '@gdg-wroclaw/shared-ui-tokens/tokens.css';
 
 const preview: Preview = {
   tags: ['autodocs'],
