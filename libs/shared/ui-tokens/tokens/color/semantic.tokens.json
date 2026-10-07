@@ -1,0 +1,142 @@
+{
+  "color": {
+    "$type": "color",
+    "background": {
+      "$description": "Surfaces. The product is dark by default (Figma landing page and components).",
+      "default": {
+        "$value": "{color.black-02}",
+        "$description": "Default page and component surface.",
+        "$extensions": {
+          "gdg.figma": {
+            "name": "Grayscale/Black 02"
+          }
+        }
+      },
+      "disabled": {
+        "$value": "{color.off-white-alpha-20}",
+        "$description": "Background of disabled controls.",
+        "$extensions": {
+          "gdg.figma": {
+            "name": "Background/Background-Disabled"
+          }
+        }
+      }
+    },
+    "content": {
+      "$description": "Text and icons.",
+      "default": {
+        "$value": "{color.off-white}",
+        "$description": "Default text and icon color on dark surfaces.",
+        "$extensions": {
+          "gdg.figma": {
+            "name": "Content/Content"
+          }
+        }
+      },
+      "disabled": {
+        "$value": "{color.off-white-alpha-40}",
+        "$description": "Text and icons of disabled controls.",
+        "$extensions": {
+          "gdg.figma": {
+            "name": "Content/Content-Disabled"
+          }
+        }
+      }
+    },
+    "border": {
+      "$description": "Strokes and dividers.",
+      "disabled": {
+        "$value": "{color.off-white-alpha-40}",
+        "$description": "Border of disabled controls.",
+        "$extensions": {
+          "gdg.figma": {
+            "name": "Border/Border-Disabled"
+          }
+        }
+      }
+    },
+    "brand": {
+      "$description": "Google brand colors. Primary is the resting state, secondary (halftone) the hover state.",
+      "blue": {
+        "primary": {
+          "$value": "{color.blue-500}",
+          "$description": "Blue brand color, resting state.",
+          "$extensions": {
+            "gdg.figma": {
+              "name": "Colors/Brand-Blue-Primary"
+            }
+          }
+        },
+        "secondary": {
+          "$value": "{color.halftone-blue}",
+          "$description": "Blue brand color, hover state.",
+          "$extensions": {
+            "gdg.figma": {
+              "name": "Colors/Brand-Blue-Secondary"
+            }
+          }
+        }
+      },
+      "green": {
+        "primary": {
+          "$value": "{color.green-500}",
+          "$description": "Green brand color, resting state.",
+          "$extensions": {
+            "gdg.figma": {
+              "name": "Colors/Brand-Green-Primary"
+            }
+          }
+        },
+        "secondary": {
+          "$value": "{color.halftone-green}",
+          "$description": "Green brand color, hover state.",
+          "$extensions": {
+            "gdg.figma": {
+              "name": "Colors/Brand-Green-Secondary"
+            }
+          }
+        }
+      },
+      "yellow": {
+        "primary": {
+          "$value": "{color.yellow-600}",
+          "$description": "Yellow brand color, resting state.",
+          "$extensions": {
+            "gdg.figma": {
+              "name": "Colors/Brand-Yellow-Primary"
+            }
+          }
+        },
+        "secondary": {
+          "$value": "{color.halftone-yellow}",
+          "$description": "Yellow brand color, hover state.",
+          "$extensions": {
+            "gdg.figma": {
+              "name": "Colors/Brand-Yellow-Secondary"
+            }
+          }
+        }
+      },
+      "red": {
+        "primary": {
+          "$value": "{color.red-500}",
+          "$description": "Red brand color, resting state.",
+          "$extensions": {
+            "gdg.figma": {
+              "name": "Colors/Brand-Red-Primary"
+            }
+          }
+        },
+        "secondary": {
+          "$value": "{color.halftone-red}",
+          "$description": "Red brand color, hover state.",
+          "$extensions": {
+            "gdg.figma": {
+              "name": "Colors/Brand-Red-Secondary"
+            }
+          }
+        }
+      }
+    }
+  }
+}

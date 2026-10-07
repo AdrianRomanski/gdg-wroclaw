@@ -1,2 +1,2 @@
-export * from './lib/colors.js';
-export * from './lib/typography.js';
+export * from './generated/tokens.js';
+export * from './lib/css-var.js';

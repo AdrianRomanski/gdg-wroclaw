@@ -1,0 +1,212 @@
+{
+  "color": {
+    "$type": "color",
+    "$description": "Palette from the Figma Colors page (node 0:1).",
+    "blue-500": {
+      "$value": "#4285f4",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Blue 500",
+          "group": "Core colors",
+          "node": "1:37"
+        }
+      }
+    },
+    "green-500": {
+      "$value": "#34a853",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Green 500",
+          "group": "Core colors",
+          "node": "1:42"
+        }
+      }
+    },
+    "yellow-600": {
+      "$value": "#f9ab00",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Yellow 600",
+          "group": "Core colors",
+          "node": "1:47"
+        }
+      }
+    },
+    "red-500": {
+      "$value": "#ea4335",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Red 500",
+          "group": "Core colors",
+          "node": "1:52"
+        }
+      }
+    },
+    "halftone-blue": {
+      "$value": "#57caff",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Halftone Blue",
+          "group": "Halftones",
+          "node": "1:57"
+        }
+      }
+    },
+    "halftone-green": {
+      "$value": "#5cdb6d",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Halftone Green",
+          "group": "Halftones",
+          "node": "1:62"
+        }
+      }
+    },
+    "halftone-yellow": {
+      "$value": "#ffd427",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Halftone Yellow",
+          "group": "Halftones",
+          "node": "1:67"
+        }
+      }
+    },
+    "halftone-red": {
+      "$value": "#ff7daf",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Halftone Red",
+          "group": "Halftones",
+          "node": "1:72"
+        }
+      }
+    },
+    "pastel-blue": {
+      "$value": "#c3ecf6",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Pastel Blue",
+          "group": "Pastels",
+          "node": "1:77"
+        }
+      }
+    },
+    "pastel-green": {
+      "$value": "#ccf6c5",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Pastel Green",
+          "group": "Pastels",
+          "node": "1:82"
+        }
+      }
+    },
+    "pastel-yellow": {
+      "$value": "#ffe7a5",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Pastel Yellow",
+          "group": "Pastels",
+          "node": "1:87"
+        }
+      }
+    },
+    "pastel-red": {
+      "$value": "#f8d8d8",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Pastel Red",
+          "group": "Pastels",
+          "node": "1:92"
+        }
+      }
+    },
+    "off-white": {
+      "$value": "#f0f0f0",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "OFF White",
+          "group": "Grayscale",
+          "node": "1:97"
+        }
+      }
+    },
+    "black-02": {
+      "$value": "#1e1e1e",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Black 02",
+          "group": "Grayscale",
+          "node": "1:102"
+        }
+      }
+    },
+    "off-white-alpha-40": {
+      "$value": "#f0f0f066",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Alpha OFF White 40",
+          "group": "Alpha",
+          "node": "142:2020"
+        }
+      },
+      "$description": "OFF White at 40% opacity."
+    },
+    "off-white-alpha-20": {
+      "$value": "#f0f0f033",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Alpha OFF White 20",
+          "group": "Alpha",
+          "node": "142:2045"
+        }
+      },
+      "$description": "OFF White at 20% opacity."
+    },
+    "off-white-alpha-10": {
+      "$value": "#f0f0f01a",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Alpha OFF White 10",
+          "group": "Alpha",
+          "node": "142:2040"
+        }
+      },
+      "$description": "OFF White at 10% opacity."
+    },
+    "black-02-alpha-40": {
+      "$value": "#1e1e1e66",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Alpha Black 02 40",
+          "group": "Alpha",
+          "node": "142:2066"
+        }
+      },
+      "$description": "Black 02 at 40% opacity."
+    },
+    "black-02-alpha-20": {
+      "$value": "#1e1e1e33",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Alpha Black 02 20",
+          "group": "Alpha",
+          "node": "142:2071"
+        }
+      },
+      "$description": "Black 02 at 20% opacity."
+    },
+    "black-02-alpha-10": {
+      "$value": "#1e1e1e1a",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Alpha Black 02 10",
+          "group": "Alpha",
+          "node": "142:2076"
+        }
+      },
+      "$description": "Black 02 at 10% opacity."
+    }
+  }
+}

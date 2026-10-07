@@ -1,0 +1,107 @@
+/**
+ * Do not edit directly: generated from libs/shared/ui-tokens/tokens/*.tokens.json
+ * by tools/build-tokens.ts (npx nx run shared-ui-tokens:generate-tokens).
+ */
+
+:root {
+  --gdg-color-blue-500: #4285f4;
+  --gdg-color-green-500: #34a853;
+  --gdg-color-yellow-600: #f9ab00;
+  --gdg-color-red-500: #ea4335;
+  --gdg-color-halftone-blue: #57caff;
+  --gdg-color-halftone-green: #5cdb6d;
+  --gdg-color-halftone-yellow: #ffd427;
+  --gdg-color-halftone-red: #ff7daf;
+  --gdg-color-pastel-blue: #c3ecf6;
+  --gdg-color-pastel-green: #ccf6c5;
+  --gdg-color-pastel-yellow: #ffe7a5;
+  --gdg-color-pastel-red: #f8d8d8;
+  --gdg-color-off-white: #f0f0f0;
+  --gdg-color-black-02: #1e1e1e;
+  --gdg-color-off-white-alpha-40: #f0f0f066; /** OFF White at 40% opacity. */
+  --gdg-color-off-white-alpha-20: #f0f0f033; /** OFF White at 20% opacity. */
+  --gdg-color-off-white-alpha-10: #f0f0f01a; /** OFF White at 10% opacity. */
+  --gdg-color-black-02-alpha-40: #1e1e1e66; /** Black 02 at 40% opacity. */
+  --gdg-color-black-02-alpha-20: #1e1e1e33; /** Black 02 at 20% opacity. */
+  --gdg-color-black-02-alpha-10: #1e1e1e1a; /** Black 02 at 10% opacity. */
+  --gdg-font-family-sans: 'Google Sans Variable', 'Google Sans', system-ui, sans-serif; /** Google Sans (self-hosted variable font). */
+  --gdg-font-family-mono: 'Google Sans Code Variable', 'Google Sans Mono', ui-monospace, monospace; /** Google Sans Code, the public counterpart of Figma's Google Sans Mono. */
+  --gdg-font-weight-regular: 400;
+  --gdg-font-weight-bold: 700;
+  --gdg-font-size-1: 2.25rem;
+  --gdg-font-size-2: 2rem;
+  --gdg-font-size-3: 1.75rem;
+  --gdg-font-size-4: 1.5rem;
+  --gdg-font-size-5: 1.25rem;
+  --gdg-font-size-6: 1.125rem;
+  --gdg-font-size-7: 1rem;
+  --gdg-font-size-8: 0.875rem;
+  --gdg-font-size-9: 0.75rem;
+  --gdg-line-height-1: 2.875rem;
+  --gdg-line-height-2: 2.625rem;
+  --gdg-line-height-3: 2.375rem;
+  --gdg-line-height-4: 2.125rem;
+  --gdg-line-height-5: 1.875rem;
+  --gdg-line-height-6: 1.75rem;
+  --gdg-line-height-7: 1.625rem;
+  --gdg-line-height-8: 1.5rem;
+  --gdg-line-height-9: 1rem;
+  --gdg-color-background-default: var(--gdg-color-black-02); /** Default page and component surface. */
+  --gdg-color-background-disabled: var(--gdg-color-off-white-alpha-20); /** Background of disabled controls. */
+  --gdg-color-content-default: var(--gdg-color-off-white); /** Default text and icon color on dark surfaces. */
+  --gdg-color-content-disabled: var(--gdg-color-off-white-alpha-40); /** Text and icons of disabled controls. */
+  --gdg-color-border-disabled: var(--gdg-color-off-white-alpha-40); /** Border of disabled controls. */
+  --gdg-color-brand-blue-primary: var(--gdg-color-blue-500); /** Blue brand color, resting state. */
+  --gdg-color-brand-blue-secondary: var(--gdg-color-halftone-blue); /** Blue brand color, hover state. */
+  --gdg-color-brand-green-primary: var(--gdg-color-green-500); /** Green brand color, resting state. */
+  --gdg-color-brand-green-secondary: var(--gdg-color-halftone-green); /** Green brand color, hover state. */
+  --gdg-color-brand-yellow-primary: var(--gdg-color-yellow-600); /** Yellow brand color, resting state. */
+  --gdg-color-brand-yellow-secondary: var(--gdg-color-halftone-yellow); /** Yellow brand color, hover state. */
+  --gdg-color-brand-red-primary: var(--gdg-color-red-500); /** Red brand color, resting state. */
+  --gdg-color-brand-red-secondary: var(--gdg-color-halftone-red); /** Red brand color, hover state. */
+  --gdg-font-heading-1: 700 2.25rem/2.875rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-heading-2: 700 2rem/2.625rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-heading-3: 700 1.75rem/2.375rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-heading-4: 700 1.5rem/2.125rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-heading-5: 700 1.25rem/1.875rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-heading-6: 700 1.125rem/1.75rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-heading-7: 700 1rem/1.625rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-heading-8: 700 0.875rem/1.5rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-heading-9: 700 0.75rem/1rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-heading-1-regular: 400 2.25rem/2.875rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-heading-2-regular: 400 2rem/2.625rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-heading-3-regular: 400 1.75rem/2.375rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-heading-4-regular: 400 1.5rem/2.125rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-heading-5-regular: 400 1.25rem/1.875rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-heading-6-regular: 400 1.125rem/1.75rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-heading-7-regular: 400 1rem/1.625rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-heading-8-regular: 400 0.875rem/1.5rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-heading-9-regular: 400 0.75rem/1rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-paragraph-1: 400 2.25rem/2.875rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-paragraph-2: 400 2rem/2.625rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-paragraph-3: 400 1.75rem/2.375rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-paragraph-4: 400 1.5rem/2.125rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-paragraph-5: 400 1.25rem/1.875rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-paragraph-6: 400 1.125rem/1.75rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-paragraph-7: 400 1rem/1.625rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-paragraph-8: 400 0.875rem/1.5rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-paragraph-9: 400 0.75rem/1rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
+  --gdg-font-mono-1: 400 2.25rem/2.875rem 'Google Sans Code Variable', 'Google Sans Mono', ui-monospace, monospace;
+  --gdg-font-mono-2: 400 2rem/2.625rem 'Google Sans Code Variable', 'Google Sans Mono', ui-monospace, monospace;
+  --gdg-font-mono-3: 400 1.75rem/2.375rem 'Google Sans Code Variable', 'Google Sans Mono', ui-monospace, monospace;
+  --gdg-font-mono-4: 400 1.5rem/2.125rem 'Google Sans Code Variable', 'Google Sans Mono', ui-monospace, monospace;
+  --gdg-font-mono-5: 400 1.25rem/1.875rem 'Google Sans Code Variable', 'Google Sans Mono', ui-monospace, monospace;
+  --gdg-font-mono-6: 400 1.125rem/1.75rem 'Google Sans Code Variable', 'Google Sans Mono', ui-monospace, monospace;
+  --gdg-font-mono-7: 400 1rem/1.625rem 'Google Sans Code Variable', 'Google Sans Mono', ui-monospace, monospace;
+  --gdg-font-mono-8: 400 0.875rem/1.5rem 'Google Sans Code Variable', 'Google Sans Mono', ui-monospace, monospace;
+  --gdg-font-mono-9: 400 0.75rem/1rem 'Google Sans Code Variable', 'Google Sans Mono', ui-monospace, monospace;
+  --gdg-font-mono-1-bold: 700 2.25rem/2.875rem 'Google Sans Code Variable', 'Google Sans Mono', ui-monospace, monospace;
+  --gdg-font-mono-2-bold: 700 2rem/2.625rem 'Google Sans Code Variable', 'Google Sans Mono', ui-monospace, monospace;
+  --gdg-font-mono-3-bold: 700 1.75rem/2.375rem 'Google Sans Code Variable', 'Google Sans Mono', ui-monospace, monospace;
+  --gdg-font-mono-4-bold: 700 1.5rem/2.125rem 'Google Sans Code Variable', 'Google Sans Mono', ui-monospace, monospace;
+  --gdg-font-mono-5-bold: 700 1.25rem/1.875rem 'Google Sans Code Variable', 'Google Sans Mono', ui-monospace, monospace;
+  --gdg-font-mono-6-bold: 700 1.125rem/1.75rem 'Google Sans Code Variable', 'Google Sans Mono', ui-monospace, monospace;
+  --gdg-font-mono-7-bold: 700 1rem/1.625rem 'Google Sans Code Variable', 'Google Sans Mono', ui-monospace, monospace;
+  --gdg-font-mono-8-bold: 700 0.875rem/1.5rem 'Google Sans Code Variable', 'Google Sans Mono', ui-monospace, monospace;
+  --gdg-font-mono-9-bold: 700 0.75rem/1rem 'Google Sans Code Variable', 'Google Sans Mono', ui-monospace, monospace;
+}

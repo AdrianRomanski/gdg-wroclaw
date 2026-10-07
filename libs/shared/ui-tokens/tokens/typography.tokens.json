@@ -1,0 +1,771 @@
+{
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "sans": {
+        "$value": [
+          "Google Sans Variable",
+          "Google Sans",
+          "system-ui",
+          "sans-serif"
+        ],
+        "$description": "Google Sans (self-hosted variable font)."
+      },
+      "mono": {
+        "$value": [
+          "Google Sans Code Variable",
+          "Google Sans Mono",
+          "ui-monospace",
+          "monospace"
+        ],
+        "$description": "Google Sans Code, the public counterpart of Figma's Google Sans Mono."
+      }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "regular": {
+        "$value": 400
+      },
+      "bold": {
+        "$value": 700
+      }
+    },
+    "size": {
+      "$type": "dimension",
+      "$description": "Type scale font sizes (1 = largest).",
+      "1": {
+        "$value": "36px"
+      },
+      "2": {
+        "$value": "32px"
+      },
+      "3": {
+        "$value": "28px"
+      },
+      "4": {
+        "$value": "24px"
+      },
+      "5": {
+        "$value": "20px"
+      },
+      "6": {
+        "$value": "18px"
+      },
+      "7": {
+        "$value": "16px"
+      },
+      "8": {
+        "$value": "14px"
+      },
+      "9": {
+        "$value": "12px"
+      }
+    },
+    "heading-1": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.bold}",
+        "fontSize": "{font.size.1}",
+        "lineHeight": "{line-height.1}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Heading 1",
+          "group": "Heading Styles - Bold"
+        }
+      }
+    },
+    "heading-2": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.bold}",
+        "fontSize": "{font.size.2}",
+        "lineHeight": "{line-height.2}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Heading 2",
+          "group": "Heading Styles - Bold"
+        }
+      }
+    },
+    "heading-3": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.bold}",
+        "fontSize": "{font.size.3}",
+        "lineHeight": "{line-height.3}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Heading 3",
+          "group": "Heading Styles - Bold"
+        }
+      }
+    },
+    "heading-4": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.bold}",
+        "fontSize": "{font.size.4}",
+        "lineHeight": "{line-height.4}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Heading 4",
+          "group": "Heading Styles - Bold"
+        }
+      }
+    },
+    "heading-5": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.bold}",
+        "fontSize": "{font.size.5}",
+        "lineHeight": "{line-height.5}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Heading 5",
+          "group": "Heading Styles - Bold"
+        }
+      }
+    },
+    "heading-6": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.bold}",
+        "fontSize": "{font.size.6}",
+        "lineHeight": "{line-height.6}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Heading 6",
+          "group": "Heading Styles - Bold"
+        }
+      }
+    },
+    "heading-7": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.bold}",
+        "fontSize": "{font.size.7}",
+        "lineHeight": "{line-height.7}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Heading 7",
+          "group": "Heading Styles - Bold"
+        }
+      }
+    },
+    "heading-8": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.bold}",
+        "fontSize": "{font.size.8}",
+        "lineHeight": "{line-height.8}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Heading 8",
+          "group": "Heading Styles - Bold"
+        }
+      }
+    },
+    "heading-9": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.bold}",
+        "fontSize": "{font.size.9}",
+        "lineHeight": "{line-height.9}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Heading 9",
+          "group": "Heading Styles - Bold"
+        }
+      }
+    },
+    "heading-1-regular": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.1}",
+        "lineHeight": "{line-height.1}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Heading 1",
+          "group": "Heading Styles - Regular"
+        }
+      }
+    },
+    "heading-2-regular": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.2}",
+        "lineHeight": "{line-height.2}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Heading 2",
+          "group": "Heading Styles - Regular"
+        }
+      }
+    },
+    "heading-3-regular": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.3}",
+        "lineHeight": "{line-height.3}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Heading 3",
+          "group": "Heading Styles - Regular"
+        }
+      }
+    },
+    "heading-4-regular": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.4}",
+        "lineHeight": "{line-height.4}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Heading 4",
+          "group": "Heading Styles - Regular"
+        }
+      }
+    },
+    "heading-5-regular": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.5}",
+        "lineHeight": "{line-height.5}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Heading 5",
+          "group": "Heading Styles - Regular"
+        }
+      }
+    },
+    "heading-6-regular": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.6}",
+        "lineHeight": "{line-height.6}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Heading 6",
+          "group": "Heading Styles - Regular"
+        }
+      }
+    },
+    "heading-7-regular": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.7}",
+        "lineHeight": "{line-height.7}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Heading 7",
+          "group": "Heading Styles - Regular"
+        }
+      }
+    },
+    "heading-8-regular": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.8}",
+        "lineHeight": "{line-height.8}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Heading 8",
+          "group": "Heading Styles - Regular"
+        }
+      }
+    },
+    "heading-9-regular": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.9}",
+        "lineHeight": "{line-height.9}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Heading 9",
+          "group": "Heading Styles - Regular"
+        }
+      }
+    },
+    "paragraph-1": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.1}",
+        "lineHeight": "{line-height.1}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Paragraph 1",
+          "group": "Paragraph Styles - Regular"
+        }
+      }
+    },
+    "paragraph-2": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.2}",
+        "lineHeight": "{line-height.2}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Paragraph 2",
+          "group": "Paragraph Styles - Regular"
+        }
+      }
+    },
+    "paragraph-3": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.3}",
+        "lineHeight": "{line-height.3}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Paragraph 3",
+          "group": "Paragraph Styles - Regular"
+        }
+      }
+    },
+    "paragraph-4": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.4}",
+        "lineHeight": "{line-height.4}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Paragraph 4",
+          "group": "Paragraph Styles - Regular"
+        }
+      }
+    },
+    "paragraph-5": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.5}",
+        "lineHeight": "{line-height.5}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Paragraph 5",
+          "group": "Paragraph Styles - Regular"
+        }
+      }
+    },
+    "paragraph-6": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.6}",
+        "lineHeight": "{line-height.6}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Paragraph 6",
+          "group": "Paragraph Styles - Regular"
+        }
+      }
+    },
+    "paragraph-7": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.7}",
+        "lineHeight": "{line-height.7}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Paragraph 7",
+          "group": "Paragraph Styles - Regular"
+        }
+      }
+    },
+    "paragraph-8": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.8}",
+        "lineHeight": "{line-height.8}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Paragraph 8",
+          "group": "Paragraph Styles - Regular"
+        }
+      }
+    },
+    "paragraph-9": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.9}",
+        "lineHeight": "{line-height.9}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Paragraph 9",
+          "group": "Paragraph Styles - Regular"
+        }
+      }
+    },
+    "mono-1": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.1}",
+        "lineHeight": "{line-height.1}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Mono 1",
+          "group": "Mono text - Regular"
+        }
+      }
+    },
+    "mono-2": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.2}",
+        "lineHeight": "{line-height.2}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Mono 2",
+          "group": "Mono text - Regular"
+        }
+      }
+    },
+    "mono-3": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.3}",
+        "lineHeight": "{line-height.3}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Mono 3",
+          "group": "Mono text - Regular"
+        }
+      }
+    },
+    "mono-4": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.4}",
+        "lineHeight": "{line-height.4}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Mono 4",
+          "group": "Mono text - Regular"
+        }
+      }
+    },
+    "mono-5": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.5}",
+        "lineHeight": "{line-height.5}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Mono 5",
+          "group": "Mono text - Regular"
+        }
+      }
+    },
+    "mono-6": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.6}",
+        "lineHeight": "{line-height.6}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Mono 6",
+          "group": "Mono text - Regular"
+        }
+      }
+    },
+    "mono-7": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.7}",
+        "lineHeight": "{line-height.7}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Mono 7",
+          "group": "Mono text - Regular"
+        }
+      }
+    },
+    "mono-8": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.8}",
+        "lineHeight": "{line-height.8}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Mono 8",
+          "group": "Mono text - Regular"
+        }
+      }
+    },
+    "mono-9": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontWeight": "{font.weight.regular}",
+        "fontSize": "{font.size.9}",
+        "lineHeight": "{line-height.9}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Mono 9",
+          "group": "Mono text - Regular"
+        }
+      }
+    },
+    "mono-1-bold": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontWeight": "{font.weight.bold}",
+        "fontSize": "{font.size.1}",
+        "lineHeight": "{line-height.1}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Mono 1",
+          "group": "Mono text - Bold"
+        }
+      }
+    },
+    "mono-2-bold": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontWeight": "{font.weight.bold}",
+        "fontSize": "{font.size.2}",
+        "lineHeight": "{line-height.2}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Mono 2",
+          "group": "Mono text - Bold"
+        }
+      }
+    },
+    "mono-3-bold": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontWeight": "{font.weight.bold}",
+        "fontSize": "{font.size.3}",
+        "lineHeight": "{line-height.3}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Mono 3",
+          "group": "Mono text - Bold"
+        }
+      }
+    },
+    "mono-4-bold": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontWeight": "{font.weight.bold}",
+        "fontSize": "{font.size.4}",
+        "lineHeight": "{line-height.4}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Mono 4",
+          "group": "Mono text - Bold"
+        }
+      }
+    },
+    "mono-5-bold": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontWeight": "{font.weight.bold}",
+        "fontSize": "{font.size.5}",
+        "lineHeight": "{line-height.5}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Mono 5",
+          "group": "Mono text - Bold"
+        }
+      }
+    },
+    "mono-6-bold": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontWeight": "{font.weight.bold}",
+        "fontSize": "{font.size.6}",
+        "lineHeight": "{line-height.6}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Mono 6",
+          "group": "Mono text - Bold"
+        }
+      }
+    },
+    "mono-7-bold": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontWeight": "{font.weight.bold}",
+        "fontSize": "{font.size.7}",
+        "lineHeight": "{line-height.7}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Mono 7",
+          "group": "Mono text - Bold"
+        }
+      }
+    },
+    "mono-8-bold": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontWeight": "{font.weight.bold}",
+        "fontSize": "{font.size.8}",
+        "lineHeight": "{line-height.8}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Mono 8",
+          "group": "Mono text - Bold"
+        }
+      }
+    },
+    "mono-9-bold": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontWeight": "{font.weight.bold}",
+        "fontSize": "{font.size.9}",
+        "lineHeight": "{line-height.9}"
+      },
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Mono 9",
+          "group": "Mono text - Bold"
+        }
+      }
+    }
+  },
+  "line-height": {
+    "$type": "dimension",
+    "$description": "Type scale line heights.",
+    "1": {
+      "$value": "46px"
+    },
+    "2": {
+      "$value": "42px"
+    },
+    "3": {
+      "$value": "38px"
+    },
+    "4": {
+      "$value": "34px"
+    },
+    "5": {
+      "$value": "30px"
+    },
+    "6": {
+      "$value": "28px"
+    },
+    "7": {
+      "$value": "26px"
+    },
+    "8": {
+      "$value": "24px"
+    },
+    "9": {
+      "$value": "16px"
+    }
+  }
+}
