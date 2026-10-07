@@ -5,6 +5,9 @@
   "references": [
     {
       "path": "./apps/events"
+    },
+    {
+      "path": "./libs/shared/ui-tokens"
     }
   ],
   "compilerOptions": {}
