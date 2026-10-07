@@ -10,13 +10,14 @@ For more information on ADRs, see [Architecture Decision Records](https://adr.gi
 
 ## Decision Log
 
-| ID                                                        | Title                                                       | Status       | Date       |
-| :-------------------------------------------------------- | :---------------------------------------------------------- | :----------- | :--------- |
-| [ADR-0001](0001-use-angular-for-frontend-development.md)  | Use Angular for Frontend Development                        | **Accepted** | 2026-08-26 |
-| [ADR-0002](0002-organize-workspace-into-apps-and-libs.md) | Organize the Nx Workspace into `apps/` and `libs/`          | **Accepted** | 2026-10-07 |
-| [ADR-0003](0003-design-system-color-tokens.md)            | Build a Design System Starting with Color Tokens from Figma | **Accepted** | 2026-10-07 |
-| [ADR-0004](0004-storybook-for-design-system.md)           | Use a Single Vite-based Storybook for the Design System     | **Accepted** | 2026-10-07 |
-| [ADR-0005](0005-design-system-typography-tokens.md)       | Typography Tokens with Self-hosted Google Sans              | **Accepted** | 2026-10-07 |
+| ID                                                                | Title                                                       | Status       | Date       |
+| :---------------------------------------------------------------- | :---------------------------------------------------------- | :----------- | :--------- |
+| [ADR-0001](0001-use-angular-for-frontend-development.md)          | Use Angular for Frontend Development                        | **Accepted** | 2026-08-26 |
+| [ADR-0002](0002-organize-workspace-into-apps-and-libs.md)         | Organize the Nx Workspace into `apps/` and `libs/`          | **Accepted** | 2026-10-07 |
+| [ADR-0003](0003-design-system-color-tokens.md)                    | Build a Design System Starting with Color Tokens from Figma | **Accepted** | 2026-10-07 |
+| [ADR-0004](0004-storybook-for-design-system.md)                   | Use a Single Vite-based Storybook for the Design System     | **Accepted** | 2026-10-07 |
+| [ADR-0005](0005-design-system-typography-tokens.md)               | Typography Tokens with Self-hosted Google Sans              | **Accepted** | 2026-10-07 |
+| [ADR-0006](0006-ci-without-nx-cloud-and-storybook-smoke-tests.md) | CI without Nx Cloud, and Storybook Smoke Tests              | **Accepted** | 2026-10-07 |
 
 ---
 

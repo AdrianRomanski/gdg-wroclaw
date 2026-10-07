@@ -11,7 +11,6 @@
       "continuous": true,
       "options": {
         "configDir": "libs/shared/ui/.storybook",
-        "tsConfig": "libs/shared/ui/tsconfig.storybook.json",
         "compodoc": false,
         "experimentalZoneless": true,
         "port": 4400
@@ -24,10 +23,23 @@
       "inputs": ["default", "^production"],
       "options": {
         "configDir": "libs/shared/ui/.storybook",
-        "tsConfig": "libs/shared/ui/tsconfig.storybook.json",
         "compodoc": false,
         "experimentalZoneless": true,
         "outputDir": "dist/storybook/shared-ui"
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build-storybook"],
+      "inputs": [
+        "default",
+        "^production",
+        {
+          "externalDependencies": ["@playwright/test"]
+        }
+      ],
+      "options": {
+        "command": "playwright test --config libs/shared/ui/playwright.config.ts"
       }
     }
   }

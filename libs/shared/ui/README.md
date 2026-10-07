@@ -9,6 +9,7 @@ Tokens (colors, …) live in [`@org/shared-ui-tokens`](../ui-tokens/README.md).
 ```sh
 npx nx storybook shared-ui        # dev server on http://localhost:4400
 npx nx build-storybook shared-ui  # static build in dist/storybook/shared-ui
+npx nx test-storybook shared-ui   # smoke-test every story/docs page (dev + static, needs Google Chrome)
 ```
 
 Stories and docs pages are discovered from `src/**/*.mdx` and `src/**/*.stories.ts`. Titles follow:
