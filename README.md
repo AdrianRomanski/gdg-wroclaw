@@ -13,7 +13,7 @@ Applications live in `apps/`, libraries in `libs/` (see [ADR-0002](docs/adr/0002
 ## Generate a library
 
 ```sh
-npx nx g @nx/angular:library libs/<scope>/<type>-<name>
+npx nx g @nx/angular:library libs/<scope>/<type>-<name> --importPath=@gdg-wroclaw/<scope>-<type>-<name> --prefix=gdg
 ```
 
 ## Run tasks

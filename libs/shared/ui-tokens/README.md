@@ -7,7 +7,7 @@ GDG Wrocław design tokens, sourced from the Figma design file. See [ADR-0003](.
 Import the tokens once in an application's global stylesheet:
 
 ```css
-@import '@org/shared-ui-tokens/tokens.css';
+@import '@gdg-wroclaw/shared-ui-tokens/tokens.css';
 ```
 
 Then use the CSS custom properties anywhere:
@@ -23,7 +23,7 @@ Then use the CSS custom properties anywhere:
 In TypeScript (e.g. Storybook, charts):
 
 ```ts
-import { colors, colorVar } from '@org/shared-ui-tokens';
+import { colors, colorVar } from '@gdg-wroclaw/shared-ui-tokens';
 
 colors['blue-500']; // '#4285f4'
 colorVar('blue-500'); // 'var(--gdg-color-blue-500)'
