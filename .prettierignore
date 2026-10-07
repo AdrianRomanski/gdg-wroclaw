@@ -5,3 +5,6 @@
 /.nx/workspace-data
 .nx/self-healing
 .angular
+
+# Generated design tokens (ADR-0008)
+libs/shared/ui-tokens/src/generated

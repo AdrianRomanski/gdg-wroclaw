@@ -1,10 +1,5 @@
 import { Meta } from '@storybook/addon-docs/blocks';
-import {
-  fontFamilies,
-  fontVar,
-  textStyles,
-  typeScale,
-} from '@gdg-wroclaw/shared-ui-tokens';
+import { cssVar, remToPx, tokens } from '@gdg-wroclaw/shared-ui-tokens';
 
 <Meta title="Design System/Foundations/Typography" />
 
@@ -19,6 +14,8 @@ export const groups = [
 export const label = (prefix, step) =>
   `${prefix.charAt(0).toUpperCase()}${prefix.slice(1)} ${step}`;
 
+export const steps = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 export const TypeSpecimen = ({ prefix, suffix }) => (
   <table style={{ width: '100%' }}>
     <thead>
@@ -29,23 +26,24 @@ export const TypeSpecimen = ({ prefix, suffix }) => (
       </tr>
     </thead>
     <tbody>
-      {Object.entries(typeScale).map(([step, { fontSize, lineHeight }]) => {
+      {steps.map((step) => {
         const name = `${prefix}-${step}${suffix}`;
+        const { fontSize, lineHeight } = tokens[`font.${name}`].parts;
         return (
           <tr key={name}>
             <td
               style={{
-                font: fontVar(name),
+                font: cssVar(`font.${name}`),
                 color: 'var(--gdg-color-black-02)',
               }}
             >
               {label(prefix, step)}
             </td>
             <td style={{ whiteSpace: 'nowrap' }}>
-              {fontSize} / {lineHeight}
+              {remToPx(fontSize)} / {remToPx(lineHeight)}
             </td>
             <td>
-              <code>font: {fontVar(name)}</code>
+              <code>font: {cssVar(`font.${name}`)}</code>
             </td>
           </tr>
         );
@@ -58,12 +56,12 @@ export const TypeSpecimen = ({ prefix, suffix }) => (
 
 Sourced from the Figma **Typography** page (Google Sans frames) and defined in
 [`@gdg-wroclaw/shared-ui-tokens`](https://github.com/AdrianRomanski/gdg-wroclaw/tree/main/libs/shared/ui-tokens)
-(see ADR-0005). Fonts are self-hosted, so no requests go to Google servers.
+(see ADR-0005 and ADR-0008). Fonts are self-hosted, so no requests go to Google servers.
 
-| Family | Font                                                              | Token                    |
-| :----- | :---------------------------------------------------------------- | :----------------------- |
-| Sans   | <span style={{ font: fontVar('paragraph-6') }}>Google Sans</span> | `--gdg-font-family-sans` |
-| Mono   | <span style={{ font: fontVar('mono-6') }}>Google Sans Code</span> | `--gdg-font-family-mono` |
+| Family | Font                                                                  | Token                    |
+| :----- | :-------------------------------------------------------------------- | :----------------------- |
+| Sans   | <span style={{ font: cssVar('font.paragraph-6') }}>Google Sans</span> | `--gdg-font-family-sans` |
+| Mono   | <span style={{ font: cssVar('font.mono-6') }}>Google Sans Code</span> | `--gdg-font-family-mono` |
 
 Every text style is a `font` shorthand token combining weight, size, line height and family:
 
