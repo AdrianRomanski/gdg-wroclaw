@@ -25,6 +25,7 @@
     "@nx/vitest": "23.1.1",
     "@nx/web": "23.1.1",
     "@oxc-project/runtime": "^0.115.0",
+    "@playwright/test": "^1.63.0",
     "@schematics/angular": "~22.0.4",
     "@storybook/addon-a11y": "~10.6.1",
     "@storybook/addon-docs": "~10.6.1",
