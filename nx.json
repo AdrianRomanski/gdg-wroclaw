@@ -55,5 +55,9 @@
       "style": "css",
       "unitTestRunner": "vitest-angular"
     }
+  },
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "libs"
   }
 }

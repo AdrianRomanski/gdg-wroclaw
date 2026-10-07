@@ -6,10 +6,15 @@
 
 [Learn more about this workspace setup and its capabilities](https://nx.dev/docs/technologies/typescript/introduction?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
 🚀 If you haven't connected to Nx Cloud yet, [complete your setup here](https://cloud.nx.app/get-started). Get faster builds with remote caching, distributed task execution, and self-healing CI. [See how your workspace can benefit](#nx-cloud).
+
+## Workspace structure
+
+Applications live in `apps/`, libraries in `libs/` (see [ADR-0002](docs/adr/0002-organize-workspace-into-apps-and-libs.md)).
+
 ## Generate a library
 
 ```sh
-npx nx g @nx/js:lib packages/pkg1 --publishable --importPath=@my-org/pkg1
+npx nx g @nx/angular:library libs/<scope>/<type>-<name>
 ```
 
 ## Run tasks

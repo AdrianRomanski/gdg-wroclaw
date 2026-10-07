@@ -10,9 +10,10 @@ For more information on ADRs, see [Architecture Decision Records](https://adr.gi
 
 ## Decision Log
 
-| ID                                                       | Title                                | Status       | Date       |
-| :------------------------------------------------------- | :----------------------------------- | :----------- | :--------- |
-| [ADR-0001](0001-use-angular-for-frontend-development.md) | Use Angular for Frontend Development | **Accepted** | 2026-08-26 |
+| ID                                                        | Title                                              | Status       | Date       |
+| :-------------------------------------------------------- | :------------------------------------------------- | :----------- | :--------- |
+| [ADR-0001](0001-use-angular-for-frontend-development.md)  | Use Angular for Frontend Development               | **Accepted** | 2026-08-26 |
+| [ADR-0002](0002-organize-workspace-into-apps-and-libs.md) | Organize the Nx Workspace into `apps/` and `libs/` | **Accepted** | 2026-10-07 |
 
 ---
 

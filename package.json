@@ -35,7 +35,8 @@
     "vitest": "^4.0.8"
   },
   "workspaces": [
-    "packages/*"
+    "apps/*",
+    "libs/*"
   ],
   "dependencies": {
     "@angular/common": "~22.0.4",

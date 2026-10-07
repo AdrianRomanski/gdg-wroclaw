@@ -1,9 +1,9 @@
 {
-  "name": "web",
+  "name": "events",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "packages/web/src",
+  "sourceRoot": "apps/events/src",
   "tags": [],
   "targets": {
     "build": {
@@ -11,16 +11,16 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/packages/web",
-        "browser": "packages/web/src/main.ts",
-        "tsConfig": "packages/web/tsconfig.app.json",
+        "outputPath": "dist/apps/events",
+        "browser": "apps/events/src/main.ts",
+        "tsConfig": "apps/events/tsconfig.app.json",
         "assets": [
           {
             "glob": "**/*",
-            "input": "packages/web/public"
+            "input": "apps/events/public"
           }
         ],
-        "styles": ["packages/web/src/styles.css"]
+        "styles": ["apps/events/src/styles.css"]
       },
       "configurations": {
         "production": {
@@ -51,10 +51,10 @@
       "defaultConfiguration": "development",
       "configurations": {
         "production": {
-          "buildTarget": "web:build:production"
+          "buildTarget": "events:build:production"
         },
         "development": {
-          "buildTarget": "web:build:development"
+          "buildTarget": "events:build:development"
         }
       }
     },
@@ -71,8 +71,8 @@
       "continuous": true,
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "web:build",
-        "staticFilePath": "dist/packages/web/browser",
+        "buildTarget": "events:build",
+        "staticFilePath": "dist/apps/events/browser",
         "spa": true
       }
     }
