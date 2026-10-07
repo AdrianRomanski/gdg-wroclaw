@@ -1,0 +1,64 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
+import { colors } from '@org/shared-ui-tokens';
+
+<Meta title="Design System/Foundations/Colors" />
+
+export const pick = (...names) =>
+  Object.fromEntries(
+    names.map((name) => [`--gdg-color-${name}`, colors[name]]),
+  );
+
+# Colors
+
+The GDG Wrocław palette, sourced from the Figma **Colors** page and defined in
+[`@org/shared-ui-tokens`](https://github.com/AdrianRomanski/gdg-wroclaw/tree/main/libs/shared/ui-tokens)
+(see ADR-0003). Use the CSS custom properties, never raw hex values:
+
+```css
+.card {
+  background: var(--gdg-color-pastel-blue);
+  color: var(--gdg-color-black-02);
+}
+```
+
+<ColorPalette>
+  <ColorItem
+    title="Core"
+    subtitle="Brand colors"
+    colors={pick('blue-500', 'green-500', 'yellow-600', 'red-500')}
+  />
+  <ColorItem
+    title="Halftones"
+    subtitle="Bright accents"
+    colors={pick(
+      'halftone-blue',
+      'halftone-green',
+      'halftone-yellow',
+      'halftone-red',
+    )}
+  />
+  <ColorItem
+    title="Pastels"
+    subtitle="Soft backgrounds"
+    colors={pick('pastel-blue', 'pastel-green', 'pastel-yellow', 'pastel-red')}
+  />
+  <ColorItem
+    title="Grayscale"
+    subtitle="Text and surfaces"
+    colors={pick('off-white', 'black-02')}
+  />
+  <ColorItem
+    title="Alpha Off White"
+    subtitle="40% / 20% / 10%"
+    colors={pick(
+      'off-white-alpha-40',
+      'off-white-alpha-20',
+      'off-white-alpha-10',
+    )}
+  />
+  <ColorItem
+    title="Alpha Black 02"
+    subtitle="40% / 20% / 10%"
+    colors={pick('black-02-alpha-40', 'black-02-alpha-20', 'black-02-alpha-10')}
+  />
+</ColorPalette>
