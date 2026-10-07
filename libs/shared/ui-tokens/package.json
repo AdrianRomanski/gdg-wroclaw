@@ -14,5 +14,8 @@
     "./tokens.css": "./src/tokens.css",
     "./package.json": "./package.json"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@fontsource-variable/google-sans": "~5.3.1",
+    "@fontsource-variable/google-sans-code": "~5.3.1"
+  }
 }
