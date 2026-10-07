@@ -5,6 +5,7 @@
   "prefix": "app",
   "sourceRoot": "apps/events/src",
   "tags": [],
+  "implicitDependencies": ["shared-ui-tokens"],
   "targets": {
     "build": {
       "executor": "@angular/build:application",
