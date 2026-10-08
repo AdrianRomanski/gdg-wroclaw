@@ -199,6 +199,19 @@ export const tokens = {
       "node": "1:102"
     }
   },
+  "color.neutral-darkest": {
+    "id": "color.neutral-darkest",
+    "cssVariable": "--gdg-color-neutral-darkest",
+    "type": "color",
+    "value": "#000000",
+    "aliasOf": null,
+    "parts": null,
+    "description": "Pure black. Text on brand fills, where Black 02 is not dark enough for WCAG AA.",
+    "figma": {
+      "name": "Neutral Darkest",
+      "group": "Grayscale"
+    }
+  },
   "color.off-white-alpha-40": {
     "id": "color.off-white-alpha-40",
     "cssVariable": "--gdg-color-off-white-alpha-40",
@@ -359,13 +372,11 @@ export const tokens = {
     "id": "color.content.on-brand",
     "cssVariable": "--gdg-color-content-on-brand",
     "type": "color",
-    "value": "#f0f0f0",
-    "aliasOf": "color.off-white",
+    "value": "#000000",
+    "aliasOf": "color.neutral-darkest",
     "parts": null,
-    "description": "Text and icons on brand fills (Primary buttons). Matches Figma, but fails WCAG AA contrast (issue #13, ADR-0011).",
-    "figma": {
-      "name": "Content/Content"
-    }
+    "description": "Text and icons on brand fills (Primary buttons): at least 4.5:1 (WCAG AA) on every brand primary and secondary fill. Deviates from Figma's Content/Content (ADR-0012).",
+    "figma": null
   },
   "color.border.disabled": {
     "id": "color.border.disabled",

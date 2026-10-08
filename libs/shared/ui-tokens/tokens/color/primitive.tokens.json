@@ -142,6 +142,16 @@
         }
       }
     },
+    "neutral-darkest": {
+      "$value": "#000000",
+      "$description": "Pure black. Text on brand fills, where Black 02 is not dark enough for WCAG AA.",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Neutral Darkest",
+          "group": "Grayscale"
+        }
+      }
+    },
     "off-white-alpha-40": {
       "$value": "#f0f0f066",
       "$extensions": {
