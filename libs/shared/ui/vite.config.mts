@@ -5,7 +5,7 @@ import angular from '@analogjs/vite-plugin-angular';
 export default defineConfig(() => ({
   root: __dirname,
   cacheDir: '../../../node_modules/.vite/libs/shared/ui',
-  plugins: [angular()],
+  plugins: [angular({ tsconfig: 'tsconfig.vitest.json' })],
   // Uncomment this if you are using workers.
   // worker: {
   //  plugins: [],

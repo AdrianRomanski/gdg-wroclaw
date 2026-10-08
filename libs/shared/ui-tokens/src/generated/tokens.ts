@@ -307,6 +307,30 @@ export const tokens = {
       "name": "Background/Background-Disabled"
     }
   },
+  "color.background.nav-button-hover": {
+    "id": "color.background.nav-button-hover",
+    "cssVariable": "--gdg-color-background-nav-button-hover",
+    "type": "color",
+    "value": "#f0f0f01a",
+    "aliasOf": "color.off-white-alpha-10",
+    "parts": null,
+    "description": "Nav Button background on hover.",
+    "figma": {
+      "name": "Background/NavButton-BG-Hover"
+    }
+  },
+  "color.background.nav-button-active": {
+    "id": "color.background.nav-button-active",
+    "cssVariable": "--gdg-color-background-nav-button-active",
+    "type": "color",
+    "value": "#f0f0f033",
+    "aliasOf": "color.off-white-alpha-20",
+    "parts": null,
+    "description": "Nav Button background when it links to the current page.",
+    "figma": {
+      "name": "Background/NavButton-BG-Active"
+    }
+  },
   "color.content.default": {
     "id": "color.content.default",
     "cssVariable": "--gdg-color-content-default",

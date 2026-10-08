@@ -19,7 +19,9 @@ export default [
       '@angular-eslint/component-selector': [
         'error',
         {
-          type: 'element',
+          // Attribute selectors let components enhance native elements,
+          // e.g. a[gdg-nav-button] (see ADR-0009).
+          type: ['element', 'attribute'],
           prefix: 'gdg',
           style: 'kebab-case',
         },
