@@ -48,6 +48,8 @@
   --gdg-line-height-9: 1rem;
   --gdg-color-background-default: var(--gdg-color-black-02); /** Default page and component surface. */
   --gdg-color-background-disabled: var(--gdg-color-off-white-alpha-20); /** Background of disabled controls. */
+  --gdg-color-background-nav-button-hover: var(--gdg-color-off-white-alpha-10); /** Nav Button background on hover. */
+  --gdg-color-background-nav-button-active: var(--gdg-color-off-white-alpha-20); /** Nav Button background when it links to the current page. */
   --gdg-color-content-default: var(--gdg-color-off-white); /** Default text and icon color on dark surfaces. */
   --gdg-color-content-disabled: var(--gdg-color-off-white-alpha-40); /** Text and icons of disabled controls. */
   --gdg-color-border-disabled: var(--gdg-color-off-white-alpha-40); /** Border of disabled controls. */

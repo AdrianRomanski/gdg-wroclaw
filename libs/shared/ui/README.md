@@ -4,6 +4,12 @@ GDG Wrocław design-system components (Angular) and the design-system Storybook.
 
 Tokens (colors, …) live in [`@gdg-wroclaw/shared-ui-tokens`](../ui-tokens/README.md).
 
+## Components
+
+| Component   | Usage                                                                                       | Figma                            | ADR                                                        |
+| :---------- | :------------------------------------------------------------------------------------------ | :------------------------------- | :--------------------------------------------------------- |
+| `NavButton` | `<a gdg-nav-button routerLink="/faq" routerLinkActive ariaCurrentWhenActive="page">FAQ</a>` | Button / Nav Button (`143:2869`) | [ADR-0009](../../../docs/adr/0009-nav-button-component.md) |
+
 ## Storybook
 
 ```sh

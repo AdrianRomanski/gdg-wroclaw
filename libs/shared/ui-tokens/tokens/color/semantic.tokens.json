@@ -20,6 +20,24 @@
             "name": "Background/Background-Disabled"
           }
         }
+      },
+      "nav-button-hover": {
+        "$value": "{color.off-white-alpha-10}",
+        "$description": "Nav Button background on hover.",
+        "$extensions": {
+          "gdg.figma": {
+            "name": "Background/NavButton-BG-Hover"
+          }
+        }
+      },
+      "nav-button-active": {
+        "$value": "{color.off-white-alpha-20}",
+        "$description": "Nav Button background when it links to the current page.",
+        "$extensions": {
+          "gdg.figma": {
+            "name": "Background/NavButton-BG-Active"
+          }
+        }
       }
     },
     "content": {
