@@ -1,0 +1,19 @@
+{
+  "//": "Typechecks the co-located stories (rendered by apps/storybook, ADR-0013).",
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "out-tsc/storybook",
+    "tsBuildInfoFile": "out-tsc/storybook/tsconfig.storybook.tsbuildinfo",
+    "types": ["node"]
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/**/*.spec.ts", "src/**/*.test.ts", "src/test-setup.ts"],
+  "references": [
+    {
+      "path": "../design-system/components/tsconfig.lib.json"
+    },
+    {
+      "path": "../design-system/tokens/tsconfig.lib.json"
+    }
+  ]
+}

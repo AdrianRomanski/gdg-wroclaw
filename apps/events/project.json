@@ -4,8 +4,8 @@
   "projectType": "application",
   "prefix": "gdg",
   "sourceRoot": "apps/events/src",
-  "tags": [],
-  "implicitDependencies": ["shared-ui-tokens"],
+  "tags": ["type:app"],
+  "implicitDependencies": ["design-system-tokens"],
   "targets": {
     "build": {
       "executor": "@angular/build:application",

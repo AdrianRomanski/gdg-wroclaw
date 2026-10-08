@@ -7,10 +7,16 @@
       "path": "./apps/events"
     },
     {
-      "path": "./libs/shared/ui-tokens"
+      "path": "./apps/storybook"
     },
     {
-      "path": "./libs/shared/ui"
+      "path": "./libs/design-system/tokens"
+    },
+    {
+      "path": "./libs/design-system/components"
+    },
+    {
+      "path": "./libs/ui"
     }
   ],
   "compilerOptions": {}

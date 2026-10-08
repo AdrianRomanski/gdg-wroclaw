@@ -1,0 +1,24 @@
+{
+  "name": "design-system-components",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/design-system/components/src",
+  "prefix": "gdg",
+  "projectType": "library",
+  "tags": ["scope:design-system", "type:components"],
+  "targets": {
+    "generate-icons": {
+      "executor": "nx:run-commands",
+      "inputs": [
+        "{projectRoot}/src/lib/icon/icons.json",
+        "{projectRoot}/tools/**/*",
+        {
+          "externalDependencies": ["@phosphor-icons/core"]
+        }
+      ],
+      "outputs": ["{projectRoot}/src/lib/icon/generated"],
+      "options": {
+        "command": "node libs/design-system/components/tools/generate-icons.ts"
+      }
+    }
+  }
+}

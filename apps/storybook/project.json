@@ -1,0 +1,45 @@
+{
+  "name": "storybook",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/storybook",
+  "tags": ["type:storybook"],
+  "targets": {
+    "storybook": {
+      "executor": "@analogjs/storybook-angular:start-storybook",
+      "continuous": true,
+      "options": {
+        "configDir": "apps/storybook/.storybook",
+        "compodoc": false,
+        "experimentalZoneless": true,
+        "port": 4400
+      }
+    },
+    "build-storybook": {
+      "executor": "@analogjs/storybook-angular:build-storybook",
+      "cache": true,
+      "outputs": ["{options.outputDir}"],
+      "inputs": ["default", "^production"],
+      "options": {
+        "configDir": "apps/storybook/.storybook",
+        "compodoc": false,
+        "experimentalZoneless": true,
+        "outputDir": "dist/storybook"
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build-storybook"],
+      "inputs": [
+        "default",
+        "^production",
+        {
+          "externalDependencies": ["@playwright/test"]
+        }
+      ],
+      "options": {
+        "command": "playwright test --config apps/storybook/playwright.config.ts"
+      }
+    }
+  }
+}

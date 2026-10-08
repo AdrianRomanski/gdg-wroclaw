@@ -1,0 +1,22 @@
+{
+  "//": "Compilation config for the Storybook Angular (Analog/Vite) plugin only. Not part of typecheck (see ../tsconfig.storybook.json). Non-composite so that the workspace libraries whose stories are rendered here (consumed from source) are emitted instead of skipped as project references.",
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "composite": false,
+    "declaration": false,
+    "declarationMap": false,
+    "emitDeclarationOnly": false,
+    "types": ["node"]
+  },
+  "include": [
+    "./*.ts",
+    "../../../libs/design-system/tokens/src/**/*.ts",
+    "../../../libs/design-system/components/src/**/*.ts",
+    "../../../libs/ui/src/**/*.ts"
+  ],
+  "exclude": [
+    "../../../libs/**/*.spec.ts",
+    "../../../libs/**/*.test.ts",
+    "../../../libs/**/test-setup.ts"
+  ]
+}

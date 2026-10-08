@@ -7,7 +7,7 @@
 .angular
 
 # Generated design tokens (ADR-0008)
-libs/shared/ui-tokens/src/generated
+libs/design-system/tokens/src/generated
 
 # Generated icon registry (ADR-0011)
-libs/shared/ui/src/lib/icon/generated
+libs/design-system/components/src/lib/icon/generated

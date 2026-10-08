@@ -1,0 +1,12 @@
+{
+  "//": "Compilation config for the Angular Vite plugin when running unit tests only. Not part of typecheck (see tsconfig.spec.json). Non-composite so that component sources and workspace libraries consumed from source are compiled instead of skipped as project references (same reason as .storybook/tsconfig.json).",
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": false,
+    "declaration": false,
+    "declarationMap": false,
+    "emitDeclarationOnly": false,
+    "types": ["vitest/globals", "node"]
+  },
+  "include": ["src/**/*.ts", "../tokens/src/**/*.ts"]
+}

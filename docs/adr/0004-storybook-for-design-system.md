@@ -1,6 +1,6 @@
 # ADR-0004: Use a Single Vite-based Storybook for the Design System
 
-- **Status**: Accepted
+- **Status**: Accepted (amended by [ADR-0013](0013-design-system-and-ui-library-architecture.md))
 - **Date**: 2026-10-07
 - **Deciders**: GDG Wrocław Core Team
 - **Consulted**: Frontend Working Group, Designers
