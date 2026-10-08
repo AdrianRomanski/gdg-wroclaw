@@ -42,13 +42,10 @@ const meta: Meta<ButtonArgs> = {
     ),
   ],
   parameters: {
-    // Primary buttons match Figma but fail WCAG AA text contrast (issue #13, ADR-0011). Report the
-    // violations without failing until the design is updated; Secondary stories use 'error'.
-    a11y: { test: 'todo' },
     docs: {
       description: {
         component:
-          'Button from the Figma **Button / Nav Button** page. Apply `gdg-button` to a native `<button>` (action) or `<a>` (navigation). Project a `<gdg-icon>` to show a trailing icon; for icon-only buttons set `iconOnly` and an `aria-label`.',
+          "Button from the Figma **Button / Nav Button** page. Apply `gdg-button` to a native `<button>` (action) or `<a>` (navigation). Project a `<gdg-icon>` to show a trailing icon; for icon-only buttons set `iconOnly` and an `aria-label`. Primary text is black (`content.on-brand`) instead of Figma's OFF White, to meet WCAG AA on the Google brand fills (ADR-0012).",
       },
     },
   },
@@ -113,7 +110,6 @@ export const Primary: Story = {
 };
 
 export const Secondary: Story = {
-  parameters: { a11y: { test: 'error' } },
   render: () => ({
     template: stack(
       colors
@@ -152,7 +148,6 @@ export const IconOnly: Story = {
 };
 
 export const Disabled: Story = {
-  parameters: { a11y: { test: 'error' } },
   render: () => ({
     template: stack(`
       <button gdg-button type="button" disabled>Primary</button>
