@@ -1,0 +1,31 @@
+{
+  "radius": {
+    "$type": "dimension",
+    "$description": "Corner radii from the Figma radius-* variables.",
+    "12": {
+      "$value": "12px",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "radius-12"
+        }
+      }
+    },
+    "40": {
+      "$value": "40px",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "radius-40"
+        }
+      }
+    },
+    "full": {
+      "$value": "9999px",
+      "$description": "Fully rounded: pills and circles.",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "radius-full"
+        }
+      }
+    }
+  }
+}

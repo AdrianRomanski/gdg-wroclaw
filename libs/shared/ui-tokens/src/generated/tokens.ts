@@ -355,6 +355,18 @@ export const tokens = {
       "name": "Content/Content-Disabled"
     }
   },
+  "color.content.on-brand": {
+    "id": "color.content.on-brand",
+    "cssVariable": "--gdg-color-content-on-brand",
+    "type": "color",
+    "value": "#f0f0f0",
+    "aliasOf": "color.off-white",
+    "parts": null,
+    "description": "Text and icons on brand fills (Primary buttons). Matches Figma, but fails WCAG AA contrast (issue #13, ADR-0011).",
+    "figma": {
+      "name": "Content/Content"
+    }
+  },
   "color.border.disabled": {
     "id": "color.border.disabled",
     "cssVariable": "--gdg-color-border-disabled",
@@ -463,6 +475,150 @@ export const tokens = {
       "name": "Colors/Brand-Red-Secondary"
     }
   },
+  "radius.12": {
+    "id": "radius.12",
+    "cssVariable": "--gdg-radius-12",
+    "type": "dimension",
+    "value": "0.75rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "name": "radius-12"
+    }
+  },
+  "radius.40": {
+    "id": "radius.40",
+    "cssVariable": "--gdg-radius-40",
+    "type": "dimension",
+    "value": "2.5rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "name": "radius-40"
+    }
+  },
+  "radius.full": {
+    "id": "radius.full",
+    "cssVariable": "--gdg-radius-full",
+    "type": "dimension",
+    "value": "624.9375rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": "Fully rounded: pills and circles.",
+    "figma": {
+      "name": "radius-full"
+    }
+  },
+  "spacing.0": {
+    "id": "spacing.0",
+    "cssVariable": "--gdg-spacing-0",
+    "type": "dimension",
+    "value": "0rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "name": "spacing-0"
+    }
+  },
+  "spacing.4": {
+    "id": "spacing.4",
+    "cssVariable": "--gdg-spacing-4",
+    "type": "dimension",
+    "value": "0.25rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "name": "spacing-4"
+    }
+  },
+  "spacing.8": {
+    "id": "spacing.8",
+    "cssVariable": "--gdg-spacing-8",
+    "type": "dimension",
+    "value": "0.5rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "name": "spacing-8"
+    }
+  },
+  "spacing.12": {
+    "id": "spacing.12",
+    "cssVariable": "--gdg-spacing-12",
+    "type": "dimension",
+    "value": "0.75rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "name": "spacing-12"
+    }
+  },
+  "spacing.16": {
+    "id": "spacing.16",
+    "cssVariable": "--gdg-spacing-16",
+    "type": "dimension",
+    "value": "1rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "name": "spacing-16"
+    }
+  },
+  "spacing.20": {
+    "id": "spacing.20",
+    "cssVariable": "--gdg-spacing-20",
+    "type": "dimension",
+    "value": "1.25rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "name": "spacing-20"
+    }
+  },
+  "spacing.24": {
+    "id": "spacing.24",
+    "cssVariable": "--gdg-spacing-24",
+    "type": "dimension",
+    "value": "1.5rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "name": "spacing-24"
+    }
+  },
+  "spacing.40": {
+    "id": "spacing.40",
+    "cssVariable": "--gdg-spacing-40",
+    "type": "dimension",
+    "value": "2.5rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "name": "spacing-40"
+    }
+  },
+  "spacing.64": {
+    "id": "spacing.64",
+    "cssVariable": "--gdg-spacing-64",
+    "type": "dimension",
+    "value": "4rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "name": "spacing-64"
+    }
+  },
   "font.family.sans": {
     "id": "font.family.sans",
     "cssVariable": "--gdg-font-family-sans",
@@ -491,6 +647,16 @@ export const tokens = {
     "aliasOf": null,
     "parts": null,
     "description": null,
+    "figma": null
+  },
+  "font.weight.medium": {
+    "id": "font.weight.medium",
+    "cssVariable": "--gdg-font-weight-medium",
+    "type": "fontWeight",
+    "value": 500,
+    "aliasOf": null,
+    "parts": null,
+    "description": "Google Sans Medium, used by buttons.",
     "figma": null
   },
   "font.weight.bold": {

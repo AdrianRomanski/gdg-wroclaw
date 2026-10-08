@@ -6,6 +6,20 @@
   "projectType": "library",
   "tags": ["scope:shared", "type:ui"],
   "targets": {
+    "generate-icons": {
+      "executor": "nx:run-commands",
+      "inputs": [
+        "{projectRoot}/src/lib/icon/icons.json",
+        "{projectRoot}/tools/**/*",
+        {
+          "externalDependencies": ["@phosphor-icons/core"]
+        }
+      ],
+      "outputs": ["{projectRoot}/src/lib/icon/generated"],
+      "options": {
+        "command": "node libs/shared/ui/tools/generate-icons.ts"
+      }
+    },
     "storybook": {
       "executor": "@analogjs/storybook-angular:start-storybook",
       "continuous": true,

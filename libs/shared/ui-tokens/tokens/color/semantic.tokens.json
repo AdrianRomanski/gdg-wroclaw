@@ -59,6 +59,15 @@
             "name": "Content/Content-Disabled"
           }
         }
+      },
+      "on-brand": {
+        "$value": "{color.off-white}",
+        "$description": "Text and icons on brand fills (Primary buttons). Matches Figma, but fails WCAG AA contrast (issue #13, ADR-0011).",
+        "$extensions": {
+          "gdg.figma": {
+            "name": "Content/Content"
+          }
+        }
       }
     },
     "border": {

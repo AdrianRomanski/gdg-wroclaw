@@ -1,0 +1,78 @@
+{
+  "spacing": {
+    "$type": "dimension",
+    "$description": "Spacing scale from the Figma spacing-* variables (paddings, gaps, margins).",
+    "0": {
+      "$value": "0px",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "spacing-0"
+        }
+      }
+    },
+    "4": {
+      "$value": "4px",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "spacing-4"
+        }
+      }
+    },
+    "8": {
+      "$value": "8px",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "spacing-8"
+        }
+      }
+    },
+    "12": {
+      "$value": "12px",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "spacing-12"
+        }
+      }
+    },
+    "16": {
+      "$value": "16px",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "spacing-16"
+        }
+      }
+    },
+    "20": {
+      "$value": "20px",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "spacing-20"
+        }
+      }
+    },
+    "24": {
+      "$value": "24px",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "spacing-24"
+        }
+      }
+    },
+    "40": {
+      "$value": "40px",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "spacing-40"
+        }
+      }
+    },
+    "64": {
+      "$value": "64px",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "spacing-64"
+        }
+      }
+    }
+  }
+}
