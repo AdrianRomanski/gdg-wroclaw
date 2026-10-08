@@ -18,6 +18,7 @@
   --gdg-color-pastel-red: #f8d8d8;
   --gdg-color-off-white: #f0f0f0;
   --gdg-color-black-02: #1e1e1e;
+  --gdg-color-neutral-darkest: #000000; /** Pure black. Text on brand fills, where Black 02 is not dark enough for WCAG AA. */
   --gdg-color-off-white-alpha-40: #f0f0f066; /** OFF White at 40% opacity. */
   --gdg-color-off-white-alpha-20: #f0f0f033; /** OFF White at 20% opacity. */
   --gdg-color-off-white-alpha-10: #f0f0f01a; /** OFF White at 10% opacity. */
@@ -65,7 +66,7 @@
   --gdg-color-background-nav-button-active: var(--gdg-color-off-white-alpha-20); /** Nav Button background when it links to the current page. */
   --gdg-color-content-default: var(--gdg-color-off-white); /** Default text and icon color on dark surfaces. */
   --gdg-color-content-disabled: var(--gdg-color-off-white-alpha-40); /** Text and icons of disabled controls. */
-  --gdg-color-content-on-brand: var(--gdg-color-off-white); /** Text and icons on brand fills (Primary buttons). Matches Figma, but fails WCAG AA contrast (issue #13, ADR-0011). */
+  --gdg-color-content-on-brand: var(--gdg-color-neutral-darkest); /** Text and icons on brand fills (Primary buttons): at least 4.5:1 (WCAG AA) on every brand primary and secondary fill. Deviates from Figma's Content/Content (ADR-0012). */
   --gdg-color-border-disabled: var(--gdg-color-off-white-alpha-40); /** Border of disabled controls. */
   --gdg-color-brand-blue-primary: var(--gdg-color-blue-500); /** Blue brand color, resting state. */
   --gdg-color-brand-blue-secondary: var(--gdg-color-halftone-blue); /** Blue brand color, hover state. */

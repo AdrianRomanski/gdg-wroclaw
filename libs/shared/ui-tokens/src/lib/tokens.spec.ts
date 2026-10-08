@@ -53,7 +53,45 @@ describe('generated tokens', () => {
 
   it('adds the medium weight and on-brand content color for buttons', () => {
     expect(tokens['font.weight.medium'].value).toBe(500);
-    expect(tokens['color.content.on-brand'].aliasOf).toBe('color.off-white');
+    expect(tokens['color.content.on-brand'].aliasOf).toBe(
+      'color.neutral-darkest',
+    );
+  });
+
+  describe('WCAG AA text contrast (4.5:1, ADR-0012)', () => {
+    /** WCAG 2.1 relative luminance of an opaque `#rrggbb` color. */
+    const luminance = (hex: string) => {
+      const [r, g, b] = [1, 3, 5].map((i) => {
+        const c = parseInt(hex.slice(i, i + 2), 16) / 255;
+        return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+      });
+      return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    };
+    const contrast = (a: string, b: string) => {
+      const [light, dark] = [luminance(a), luminance(b)].sort((x, y) => y - x);
+      return (light + 0.05) / (dark + 0.05);
+    };
+
+    it.each(
+      (['blue', 'green', 'yellow', 'red'] as const).flatMap((color) =>
+        (['primary', 'secondary'] as const).map(
+          (state) => `color.brand.${color}.${state}` as const,
+        ),
+      ),
+    )('content.on-brand on %s', (fill) => {
+      expect(
+        contrast(tokens['color.content.on-brand'].value, tokens[fill].value),
+      ).toBeGreaterThanOrEqual(4.5);
+    });
+
+    it('content.default on background.default', () => {
+      expect(
+        contrast(
+          tokens['color.content.default'].value,
+          tokens['color.background.default'].value,
+        ),
+      ).toBeGreaterThanOrEqual(4.5);
+    });
   });
 
   it('builds var() references', () => {

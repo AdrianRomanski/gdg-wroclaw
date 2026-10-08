@@ -1,6 +1,6 @@
 # ADR-0011: Button Component and Phosphor Icons
 
-- **Status**: Accepted
+- **Status**: Accepted (the Contrast section is superseded by [ADR-0012](0012-primary-button-text-color-for-wcag-aa.md))
 - **Date**: 2026-10-08
 - **Deciders**: GDG Wrocław Core Team
 - **Consulted**: Frontend Working Group, Designers
@@ -110,6 +110,8 @@ Three questions need answers:
   - **Sanitizer:** the markup goes through `bypassSecurityTrustHtml`. This is safe because the registry is generated at build time and is never user input.
 
 ### Contrast (issue #13)
+
+> **Superseded by [ADR-0012](0012-primary-button-text-color-for-wcag-aa.md):** Primary text is now black (`#000000`) and meets WCAG AA. The section below records the original decision.
 
 OFF White text on the brand fills is between 1.25:1 (halftone yellow, Hover) and 3.44:1 (red), below AA's 4.5:1. Black 02 text would pass on every fill except red-500 (4.25:1).
 

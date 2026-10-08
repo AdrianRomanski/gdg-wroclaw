@@ -61,13 +61,8 @@
         }
       },
       "on-brand": {
-        "$value": "{color.off-white}",
-        "$description": "Text and icons on brand fills (Primary buttons). Matches Figma, but fails WCAG AA contrast (issue #13, ADR-0011).",
-        "$extensions": {
-          "gdg.figma": {
-            "name": "Content/Content"
-          }
-        }
+        "$value": "{color.neutral-darkest}",
+        "$description": "Text and icons on brand fills (Primary buttons): at least 4.5:1 (WCAG AA) on every brand primary and secondary fill. Deviates from Figma's Content/Content (ADR-0012)."
       }
     },
     "border": {
