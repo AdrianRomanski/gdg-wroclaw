@@ -8,3 +8,6 @@
 
 # Generated design tokens (ADR-0008)
 libs/shared/ui-tokens/src/generated
+
+# Generated icon registry (ADR-0011)
+libs/shared/ui/src/lib/icon/generated

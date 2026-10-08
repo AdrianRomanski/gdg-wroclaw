@@ -1,0 +1,113 @@
+/*
+ * Figma: Button / Nav Button (143:2772). Figma draws the 2px stroke inside the box, so every
+ * variant has a 2px border (transparent on Primary) and 2px less padding: L is 48px tall,
+ * M is 40px, for every variant.
+ */
+:host {
+  --_border: 2px;
+  --_fill: var(--gdg-color-brand-blue-primary);
+  --_fill-hover: var(--gdg-color-brand-blue-secondary);
+  --_padding-block: var(--gdg-spacing-12);
+  --_padding-inline: var(--gdg-spacing-24);
+
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gdg-spacing-16);
+  margin: 0;
+  padding: calc(var(--_padding-block) - var(--_border))
+    calc(var(--_padding-inline) - var(--_border));
+  border: var(--_border) solid transparent;
+  border-radius: var(--gdg-radius-full);
+  background: transparent;
+  color: var(--gdg-color-content-default);
+  font: var(--gdg-font-weight-medium) var(--gdg-font-size-7) / 1.5
+    var(--gdg-font-family-sans);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 150ms ease-out,
+    border-color 150ms ease-out;
+}
+
+/* Colors */
+:host(.gdg-button--green) {
+  --_fill: var(--gdg-color-brand-green-primary);
+  --_fill-hover: var(--gdg-color-brand-green-secondary);
+}
+
+:host(.gdg-button--yellow) {
+  --_fill: var(--gdg-color-brand-yellow-primary);
+  --_fill-hover: var(--gdg-color-brand-yellow-secondary);
+}
+
+:host(.gdg-button--red) {
+  --_fill: var(--gdg-color-brand-red-primary);
+  --_fill-hover: var(--gdg-color-brand-red-secondary);
+}
+
+/* Sizes and content (Figma Property: txt, txt+ikon, ikon) */
+:host(.gdg-button--m) {
+  --_padding-block: var(--gdg-spacing-8);
+}
+
+:host(.gdg-button--l.gdg-button--with-icon) {
+  --_padding-inline: var(--gdg-spacing-20);
+}
+
+:host(.gdg-button--m.gdg-button--with-icon) {
+  --_padding-inline: var(--gdg-spacing-16);
+}
+
+:host(.gdg-button--icon-only) {
+  --_padding-inline: var(--_padding-block);
+}
+
+/* Variants */
+:host(.gdg-button--primary) {
+  background: var(--_fill);
+  color: var(--gdg-color-content-on-brand);
+}
+
+:host(.gdg-button--secondary) {
+  border-color: var(--_fill);
+}
+
+:host(.gdg-button--primary:hover:not([disabled], [aria-disabled='true'])) {
+  background: var(--_fill-hover);
+}
+
+:host(.gdg-button--secondary:hover:not([disabled], [aria-disabled='true'])) {
+  border-color: var(--_fill-hover);
+}
+
+/* States */
+:host(:focus-visible) {
+  outline: 2px solid var(--gdg-color-content-default);
+  outline-offset: 2px;
+}
+
+:host([disabled]),
+:host([aria-disabled='true']) {
+  color: var(--gdg-color-content-disabled);
+  cursor: default;
+  pointer-events: none;
+}
+
+:host(.gdg-button--primary[disabled]),
+:host(.gdg-button--primary[aria-disabled='true']) {
+  background: var(--gdg-color-background-disabled);
+}
+
+:host(.gdg-button--secondary[disabled]),
+:host(.gdg-button--secondary[aria-disabled='true']) {
+  border-color: var(--gdg-color-border-disabled);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :host {
+    transition: none;
+  }
+}

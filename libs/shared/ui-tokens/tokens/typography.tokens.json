@@ -26,6 +26,10 @@
       "regular": {
         "$value": 400
       },
+      "medium": {
+        "$value": 500,
+        "$description": "Google Sans Medium, used by buttons."
+      },
       "bold": {
         "$value": 700
       }

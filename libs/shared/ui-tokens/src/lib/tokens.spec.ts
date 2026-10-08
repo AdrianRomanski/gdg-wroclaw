@@ -43,6 +43,19 @@ describe('generated tokens', () => {
     expect(remToPx(tokens['font.mono-9'].parts.fontSize)).toBe(12);
   });
 
+  it('defines the Figma spacing and radius scales in rem', () => {
+    expect(remToPx(tokens['spacing.12'].value)).toBe(12);
+    expect(remToPx(tokens['spacing.64'].value)).toBe(64);
+    expect(tokens['spacing.24'].figma).toMatchObject({ name: 'spacing-24' });
+    expect(remToPx(tokens['radius.12'].value)).toBe(12);
+    expect(remToPx(tokens['radius.full'].value)).toBe(9999);
+  });
+
+  it('adds the medium weight and on-brand content color for buttons', () => {
+    expect(tokens['font.weight.medium'].value).toBe(500);
+    expect(tokens['color.content.on-brand'].aliasOf).toBe('color.off-white');
+  });
+
   it('builds var() references', () => {
     expect(cssVar('color.content.default')).toBe(
       'var(--gdg-color-content-default)',

@@ -43,7 +43,10 @@ for (const entry of Object.values(index.entries)) {
     const root = page.locator(
       viewMode === 'docs' ? '#storybook-docs' : '#storybook-root',
     );
-    await expect(root).not.toBeEmpty();
+    // Something rendered: text, or graphics only (icons, icon-only buttons).
+    await expect(
+      root.getByText(/\S/).or(root.locator('svg, img')).first(),
+    ).toBeVisible();
     await expect(page.locator('.sb-show-errordisplay')).toHaveCount(0);
 
     const blue500 = await page.evaluate(() =>
