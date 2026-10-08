@@ -1,6 +1,6 @@
 # ADR-0002: Organize the Nx Workspace into `apps/` and `libs/`
 
-- **Status**: Accepted
+- **Status**: Accepted (amended by [ADR-0013](0013-design-system-and-ui-library-architecture.md))
 - **Date**: 2026-10-07
 - **Deciders**: GDG Wrocław Core Team
 - **Consulted**: Frontend Working Group, Maintainers

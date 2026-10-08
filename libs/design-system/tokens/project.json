@@ -1,0 +1,17 @@
+{
+  "name": "design-system-tokens",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/design-system/tokens/src",
+  "projectType": "library",
+  "tags": ["scope:design-system", "type:tokens"],
+  "targets": {
+    "generate-tokens": {
+      "executor": "nx:run-commands",
+      "inputs": ["{projectRoot}/tokens/**/*", "{projectRoot}/tools/**/*"],
+      "outputs": ["{projectRoot}/src/generated"],
+      "options": {
+        "command": "node libs/design-system/tokens/tools/generate-tokens.ts"
+      }
+    }
+  }
+}

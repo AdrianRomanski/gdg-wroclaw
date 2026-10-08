@@ -4,7 +4,7 @@
 - **Branch per feature**: Never commit directly to `main`. Start every feature/change on a new branch created from an up-to-date `main` (e.g. `feat/<name>`, `fix/<name>`, `chore/<name>`, `docs/<name>`).
 - **Pull request for every change**: Push the branch and merge it into `main` only through a pull request. The PR description must link the related ADR(s).
 - **Commit authorship**: Commits and PRs are authored solely by the repository owner. Do NOT add `Co-Authored-By` trailers or "Generated with Claude Code" (or any other AI attribution) lines to commit messages or PR descriptions.
-- **Workspace layout**: Applications live in `apps/`, libraries in `libs/<scope>/<type>-<name>` (see ADR-0002).
+- **Workspace layout**: Applications live in `apps/`, libraries in `libs/<scope>/<type>-<name>` (see ADR-0002). The UI stack is layered (ADR-0013): `libs/design-system/tokens` ← `libs/design-system/components` (Figma primitives) ← `libs/ui` (composed GDG product UI, presentational only) ← apps; the single Storybook lives in `apps/storybook`. Dependencies may only point down this stack (enforced by `@nx/enforce-module-boundaries`).
 
 <!-- nx configuration start-->
 <!-- Leave the start & end comments to automatically receive updates. -->

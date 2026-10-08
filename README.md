@@ -9,12 +9,31 @@
 ## Workspace structure
 
 Applications live in `apps/`, libraries in `libs/` (see [ADR-0002](docs/adr/0002-organize-workspace-into-apps-and-libs.md)).
+The UI stack is layered (see [ADR-0013](docs/adr/0013-design-system-and-ui-library-architecture.md)):
+
+```
+apps/
+  events/                    the GDG Wrocław web app                       type:app
+  storybook/                 the single Storybook + smoke tests            type:storybook
+libs/
+  design-system/
+    tokens/                  @gdg-wroclaw/design-system-tokens             type:tokens
+    components/              @gdg-wroclaw/design-system-components         type:components
+  ui/                        @gdg-wroclaw/ui (composed GDG product UI)     type:ui
+```
+
+Dependencies only point down the stack (`apps → ui → design-system components → tokens`); `@nx/enforce-module-boundaries`
+fails lint otherwise. Run `npx nx graph` to explore it.
 
 ## Generate a library
 
 ```sh
-npx nx g @nx/angular:library libs/<scope>/<type>-<name> --importPath=@gdg-wroclaw/<scope>-<type>-<name> --prefix=gdg
+NX_IGNORE_UNSUPPORTED_TS_SETUP=true npx nx g @nx/angular:library libs/<scope>/<type>-<name> \
+  --importPath=@gdg-wroclaw/<scope>-<type>-<name> --prefix=gdg --tags=scope:<scope>,type:<type>
 ```
+
+Then align it with the existing libraries: a `package.json` instead of `paths` in `tsconfig.base.json`, and the
+test/Storybook tsconfig setup of `libs/ui` (see ADR-0004 and ADR-0013).
 
 ## Run tasks
 

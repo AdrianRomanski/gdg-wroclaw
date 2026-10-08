@@ -1,0 +1,11 @@
+{
+  "name": "@gdg-wroclaw/storybook",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@gdg-wroclaw/design-system-components": "*",
+    "@gdg-wroclaw/design-system-tokens": "*",
+    "@gdg-wroclaw/ui": "*"
+  }
+}

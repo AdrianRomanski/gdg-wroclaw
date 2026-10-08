@@ -15,10 +15,39 @@ export default [
         {
           enforceBuildableLibDependency: true,
           allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?[jt]s$'],
+          // Layering (ADR-0013): tokens <- design-system components <- ui <- apps.
           depConstraints: [
             {
-              sourceTag: '*',
-              onlyDependOnLibsWithTags: ['*'],
+              sourceTag: 'type:tokens',
+              onlyDependOnLibsWithTags: ['type:tokens'],
+            },
+            {
+              sourceTag: 'type:components',
+              onlyDependOnLibsWithTags: ['type:tokens'],
+            },
+            {
+              sourceTag: 'type:ui',
+              onlyDependOnLibsWithTags: ['type:components', 'type:tokens'],
+            },
+            {
+              sourceTag: 'type:app',
+              onlyDependOnLibsWithTags: [
+                'type:ui',
+                'type:components',
+                'type:tokens',
+              ],
+            },
+            {
+              sourceTag: 'type:storybook',
+              onlyDependOnLibsWithTags: [
+                'type:ui',
+                'type:components',
+                'type:tokens',
+              ],
+            },
+            {
+              sourceTag: 'scope:design-system',
+              onlyDependOnLibsWithTags: ['scope:design-system'],
             },
           ],
         },

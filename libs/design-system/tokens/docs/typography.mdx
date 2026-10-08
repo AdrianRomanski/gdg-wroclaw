@@ -1,0 +1,83 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { cssVar, remToPx, tokens } from '@gdg-wroclaw/design-system-tokens';
+
+<Meta title="Design System/Foundations/Typography" />
+
+export const groups = [
+  { title: 'Headings — Bold', prefix: 'heading', suffix: '' },
+  { title: 'Headings — Regular', prefix: 'heading', suffix: '-regular' },
+  { title: 'Paragraphs — Regular', prefix: 'paragraph', suffix: '' },
+  { title: 'Mono — Regular', prefix: 'mono', suffix: '' },
+  { title: 'Mono — Bold', prefix: 'mono', suffix: '-bold' },
+];
+
+export const label = (prefix, step) =>
+  `${prefix.charAt(0).toUpperCase()}${prefix.slice(1)} ${step}`;
+
+export const steps = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+export const TypeSpecimen = ({ prefix, suffix }) => (
+  <table style={{ width: '100%' }}>
+    <thead>
+      <tr>
+        <th style={{ textAlign: 'left' }}>Sample</th>
+        <th style={{ textAlign: 'left', whiteSpace: 'nowrap' }}>Size / LH</th>
+        <th style={{ textAlign: 'left' }}>Token</th>
+      </tr>
+    </thead>
+    <tbody>
+      {steps.map((step) => {
+        const name = `${prefix}-${step}${suffix}`;
+        const { fontSize, lineHeight } = tokens[`font.${name}`].parts;
+        return (
+          <tr key={name}>
+            <td
+              style={{
+                font: cssVar(`font.${name}`),
+                color: 'var(--gdg-color-black-02)',
+              }}
+            >
+              {label(prefix, step)}
+            </td>
+            <td style={{ whiteSpace: 'nowrap' }}>
+              {remToPx(fontSize)} / {remToPx(lineHeight)}
+            </td>
+            <td>
+              <code>font: {cssVar(`font.${name}`)}</code>
+            </td>
+          </tr>
+        );
+      })}
+    </tbody>
+  </table>
+);
+
+# Typography
+
+Sourced from the Figma **Typography** page (Google Sans frames) and defined in
+[`@gdg-wroclaw/design-system-tokens`](https://github.com/AdrianRomanski/gdg-wroclaw/tree/main/libs/design-system/tokens)
+(see ADR-0005 and ADR-0008). Fonts are self-hosted, so no requests go to Google servers.
+
+| Family | Font                                                                  | Token                    |
+| :----- | :-------------------------------------------------------------------- | :----------------------- |
+| Sans   | <span style={{ font: cssVar('font.paragraph-6') }}>Google Sans</span> | `--gdg-font-family-sans` |
+| Mono   | <span style={{ font: cssVar('font.mono-6') }}>Google Sans Code</span> | `--gdg-font-family-mono` |
+
+Every text style is a `font` shorthand token combining weight, size, line height and family:
+
+```css
+.event-title {
+  font: var(--gdg-font-heading-3);
+}
+```
+
+The underlying primitives (`--gdg-font-size-1…9`, `--gdg-line-height-1…9`, `--gdg-font-weight-regular|medium|bold`,
+`--gdg-font-family-sans|mono`) are available for one-off combinations.
+
+{groups.map(({ title, prefix, suffix }) => (
+
+  <section key={title}>
+    <h2>{title}</h2>
+    <TypeSpecimen prefix={prefix} suffix={suffix} />
+  </section>
+))}

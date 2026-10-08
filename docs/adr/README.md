@@ -24,6 +24,7 @@ For more information on ADRs, see [Architecture Decision Records](https://adr.gi
 | [ADR-0010](0010-spacing-radius-and-medium-weight-tokens.md)       | Spacing, Radius and Medium Weight Tokens                                  | **Accepted** | 2026-10-08 |
 | [ADR-0011](0011-button-component-and-phosphor-icons.md)           | Button Component and Phosphor Icons                                       | **Accepted** | 2026-10-08 |
 | [ADR-0012](0012-primary-button-text-color-for-wcag-aa.md)         | Black Text on Primary Buttons for WCAG AA (Deviation from Figma)          | **Accepted** | 2026-10-08 |
+| [ADR-0013](0013-design-system-and-ui-library-architecture.md)     | Design System and UI Library Architecture                                 | **Accepted** | 2026-10-08 |
 
 ---
 
