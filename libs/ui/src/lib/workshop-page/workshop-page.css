@@ -1,0 +1,36 @@
+/*
+ * Figma: Event Header / 1 / (143:5973). Full-width banner, then the 1280px container 80px below,
+ * inside the page padding, with the large section padding at the bottom (ADR-0017).
+ */
+:host {
+  display: block;
+  padding-block-end: var(--gdg-layout-padding-section-large);
+  background: var(--gdg-color-background-default);
+  color: var(--gdg-color-content-default);
+}
+
+.details {
+  box-sizing: content-box;
+  max-inline-size: var(--gdg-layout-container-large);
+  margin: var(--gdg-spacing-80) auto 0;
+  padding-inline: var(--gdg-layout-padding-global);
+}
+
+.details--no-banner {
+  margin-block-start: var(--gdg-layout-padding-section-large);
+}
+
+@media (width < 48rem) {
+  :host {
+    padding-block-end: var(--gdg-spacing-64);
+  }
+
+  .details {
+    margin-block-start: var(--gdg-spacing-40);
+    padding-inline: var(--gdg-spacing-20);
+  }
+
+  .details--no-banner {
+    margin-block-start: var(--gdg-spacing-64);
+  }
+}

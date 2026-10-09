@@ -1,0 +1,13 @@
+@let w = workshop();
+<article>
+  @if (w.banner; as banner) {
+  <gdg-event-banner [src]="banner.src" [alt]="banner.alt ?? ''" />
+  }
+  <gdg-workshop-details
+    class="details"
+    [class.details--no-banner]="!w.banner"
+    [topic]="w.topic"
+    [description]="w.description ?? ''"
+    [trainers]="w.trainers ?? []"
+  />
+</article>

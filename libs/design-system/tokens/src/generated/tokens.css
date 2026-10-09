@@ -45,6 +45,7 @@
   --gdg-spacing-40: 2.5rem;
   --gdg-spacing-48: 3rem; /** Gap between a section title and its content (Figma Contact / 3 / container). Not yet a Figma variable. */
   --gdg-spacing-64: 4rem;
+  --gdg-spacing-80: 5rem; /** Gap between a page banner and its content, and between page sections (Figma Event Header / 1 /). Not yet a Figma variable. */
   --gdg-font-family-sans: 'Google Sans Variable', 'Google Sans', system-ui, sans-serif; /** Google Sans (self-hosted variable font). */
   --gdg-font-family-mono: 'Google Sans Code Variable', 'Google Sans Mono', ui-monospace, monospace; /** Google Sans Code, the public counterpart of Figma's Google Sans Mono. */
   --gdg-font-weight-regular: 400;

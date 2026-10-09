@@ -21,18 +21,22 @@ Rules:
 
 ## Components
 
-| Component     | Usage                                                                                     | Figma                               | ADR                                                                               |
-| :------------ | :---------------------------------------------------------------------------------------- | :---------------------------------- | :-------------------------------------------------------------------------------- |
-| `ContactForm` | `<gdg-contact-form termsUrl="/terms" [pending]="sending()" (submitted)="send($event)" />` | Contact / 3 / (`181:9133`)          | [ADR-0014](../../docs/adr/0014-contact-form-and-form-control-primitives.md)       |
-| `FaqItem`     | `<gdg-faq-item question="Is it free?" variant="plain" color="blue">Yes.</gdg-faq-item>`   | FAQ item (`181:6547`)               | [ADR-0015](../../docs/adr/0015-faq-item-variants-and-generated-puzzle-outline.md) |
-| `FaqSection`  | `<gdg-faq-section [entries]="faqs" variant="puzzle" askHref="/contact" />`                | FAQ / 11 / (`181:6549`, `181:6770`) | [ADR-0015](../../docs/adr/0015-faq-item-variants-and-generated-puzzle-outline.md) |
-| `PersonRow`   | `<gdg-person-row [person]="trainer" />`                                                   | Workshop trainer Card (`143:6008`)  | [ADR-0016](../../docs/adr/0016-person-row-role-badge-and-display-type.md)         |
-| `RoleBadge`   | `<gdg-role-badge role="speaker" [ring]="false" />`                                        | Badge (`180:2682`)                  | [ADR-0016](../../docs/adr/0016-person-row-role-badge-and-display-type.md)         |
-| `SocialLinks` | `<gdg-social-links [links]="person.socials" [owner]="person.name" />`                     | Social Icons (`143:6016`)           | [ADR-0016](../../docs/adr/0016-person-row-role-badge-and-display-type.md)         |
+| Component         | Usage                                                                                              | Figma                               | ADR                                                                               |
+| :---------------- | :------------------------------------------------------------------------------------------------- | :---------------------------------- | :-------------------------------------------------------------------------------- |
+| `ContactForm`     | `<gdg-contact-form termsUrl="/terms" [pending]="sending()" (submitted)="send($event)" />`          | Contact / 3 / (`181:9133`)          | [ADR-0014](../../docs/adr/0014-contact-form-and-form-control-primitives.md)       |
+| `FaqItem`         | `<gdg-faq-item question="Is it free?" variant="plain" color="blue">Yes.</gdg-faq-item>`            | FAQ item (`181:6547`)               | [ADR-0015](../../docs/adr/0015-faq-item-variants-and-generated-puzzle-outline.md) |
+| `FaqSection`      | `<gdg-faq-section [entries]="faqs" variant="puzzle" askHref="/contact" />`                         | FAQ / 11 / (`181:6549`, `181:6770`) | [ADR-0015](../../docs/adr/0015-faq-item-variants-and-generated-puzzle-outline.md) |
+| `PersonRow`       | `<gdg-person-row [person]="trainer" />`                                                            | Workshop trainer Card (`143:6008`)  | [ADR-0016](../../docs/adr/0016-person-row-role-badge-and-display-type.md)         |
+| `RoleBadge`       | `<gdg-role-badge role="speaker" [ring]="false" />`                                                 | Badge (`180:2682`)                  | [ADR-0016](../../docs/adr/0016-person-row-role-badge-and-display-type.md)         |
+| `SocialLinks`     | `<gdg-social-links [links]="person.socials" [owner]="person.name" />`                              | Social Icons (`143:6016`)           | [ADR-0016](../../docs/adr/0016-person-row-role-badge-and-display-type.md)         |
+| `EventBanner`     | `<gdg-event-banner [src]="event.bannerUrl" />`                                                     | Banner (`143:5974`)                 | [ADR-0017](../../docs/adr/0017-workshop-page-template.md)                         |
+| `WorkshopDetails` | `<gdg-workshop-details [topic]="w.topic" [description]="w.description" [trainers]="w.trainers" />` | Container (`143:5975`)              | [ADR-0017](../../docs/adr/0017-workshop-page-template.md)                         |
+| `WorkshopPage`    | `<gdg-workshop-page [workshop]="workshop" />` (page template, Storybook `Pages/Workshop`)          | Event Header / 1 / (`143:5973`)     | [ADR-0017](../../docs/adr/0017-workshop-page-template.md)                         |
 
 ## Storybook
 
-Co-locate stories (`src/lib/<component>/<component>.stories.ts`) titled `UI/<Component>`. They are rendered by the
+Co-locate stories (`src/lib/<component>/<component>.stories.ts`) titled `UI/<Component>`, or `Pages/<Page>` for page
+templates. Shared story fixtures go in `*.stories-data.ts`, which the library build excludes (ADR-0017). They are rendered by the
 workspace Storybook in [`apps/storybook`](../../apps/storybook/README.md) (`npx nx storybook storybook`).
 
 ## Running unit tests

@@ -766,6 +766,16 @@ export const tokens = {
       "name": "spacing-64"
     }
   },
+  "spacing.80": {
+    "id": "spacing.80",
+    "cssVariable": "--gdg-spacing-80",
+    "type": "dimension",
+    "value": "5rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": "Gap between a page banner and its content, and between page sections (Figma Event Header / 1 /). Not yet a Figma variable.",
+    "figma": null
+  },
   "font.family.sans": {
     "id": "font.family.sans",
     "cssVariable": "--gdg-font-family-sans",
