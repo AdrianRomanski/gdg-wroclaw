@@ -19,6 +19,12 @@ Rules:
 - May import only `@gdg-wroclaw/design-system-components` and `@gdg-wroclaw/design-system-tokens` (enforced by
   `@nx/enforce-module-boundaries`); the design system must never import from here.
 
+## Components
+
+| Component     | Usage                                                                                     | Figma                      | ADR                                                                         |
+| :------------ | :---------------------------------------------------------------------------------------- | :------------------------- | :-------------------------------------------------------------------------- |
+| `ContactForm` | `<gdg-contact-form termsUrl="/terms" [pending]="sending()" (submitted)="send($event)" />` | Contact / 3 / (`181:9133`) | [ADR-0014](../../docs/adr/0014-contact-form-and-form-control-primitives.md) |
+
 ## Storybook
 
 Co-locate stories (`src/lib/<component>/<component>.stories.ts`) titled `UI/<Component>`. They are rendered by the

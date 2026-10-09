@@ -25,6 +25,7 @@ For more information on ADRs, see [Architecture Decision Records](https://adr.gi
 | [ADR-0011](0011-button-component-and-phosphor-icons.md)           | Button Component and Phosphor Icons                                       | **Accepted** | 2026-10-08 |
 | [ADR-0012](0012-primary-button-text-color-for-wcag-aa.md)         | Black Text on Primary Buttons for WCAG AA (Deviation from Figma)          | **Accepted** | 2026-10-08 |
 | [ADR-0013](0013-design-system-and-ui-library-architecture.md)     | Design System and UI Library Architecture                                 | **Accepted** | 2026-10-08 |
+| [ADR-0014](0014-contact-form-and-form-control-primitives.md)      | Contact Form, Form Control Primitives, and Layout and Form Tokens         | **Accepted** | 2026-10-09 |
 
 ---
 

@@ -378,6 +378,16 @@ export const tokens = {
     "description": "Text and icons on brand fills (Primary buttons): at least 4.5:1 (WCAG AA) on every brand primary and secondary fill. Deviates from Figma's Content/Content (ADR-0012).",
     "figma": null
   },
+  "color.content.error": {
+    "id": "color.content.error",
+    "cssVariable": "--gdg-color-content-error",
+    "type": "color",
+    "value": "#ff7daf",
+    "aliasOf": "color.halftone-red",
+    "parts": null,
+    "description": "Validation messages. Not in Figma; halftone red keeps at least 4.5:1 (WCAG AA) on the default background.",
+    "figma": null
+  },
   "color.border.disabled": {
     "id": "color.border.disabled",
     "cssVariable": "--gdg-color-border-disabled",
@@ -389,6 +399,28 @@ export const tokens = {
     "figma": {
       "name": "Border/Border-Disabled"
     }
+  },
+  "color.border.input": {
+    "id": "color.border.input",
+    "cssVariable": "--gdg-color-border-input",
+    "type": "color",
+    "value": "#4285f4",
+    "aliasOf": "color.blue-500",
+    "parts": null,
+    "description": "Stroke of text inputs, text areas and checkboxes.",
+    "figma": {
+      "name": "Colors/Brand-Blue-Primary"
+    }
+  },
+  "color.border.error": {
+    "id": "color.border.error",
+    "cssVariable": "--gdg-color-border-error",
+    "type": "color",
+    "value": "#ff7daf",
+    "aliasOf": "color.halftone-red",
+    "parts": null,
+    "description": "Stroke of invalid form controls. Not in Figma.",
+    "figma": null
   },
   "color.brand.blue.primary": {
     "id": "color.brand.blue.primary",
@@ -484,6 +516,66 @@ export const tokens = {
     "description": "Red brand color, hover state.",
     "figma": {
       "name": "Colors/Brand-Red-Secondary"
+    }
+  },
+  "layout.padding-global": {
+    "id": "layout.padding-global",
+    "cssVariable": "--gdg-layout-padding-global",
+    "type": "dimension",
+    "value": "4rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": "Horizontal page padding.",
+    "figma": {
+      "name": "Page Padding/padding-global"
+    }
+  },
+  "layout.padding-section-large": {
+    "id": "layout.padding-section-large",
+    "cssVariable": "--gdg-layout-padding-section-large",
+    "type": "dimension",
+    "value": "7rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": "Vertical padding of a large page section.",
+    "figma": {
+      "name": "Section Padding/padding-section-large"
+    }
+  },
+  "layout.container-large": {
+    "id": "layout.container-large",
+    "cssVariable": "--gdg-layout-container-large",
+    "type": "dimension",
+    "value": "80rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": "Maximum width of a section container.",
+    "figma": {
+      "name": "Container/container-large"
+    }
+  },
+  "layout.max-width-large": {
+    "id": "layout.max-width-large",
+    "cssVariable": "--gdg-layout-max-width-large",
+    "type": "dimension",
+    "value": "48rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": "Maximum width of a section title block.",
+    "figma": {
+      "name": "Max Width/max-width-large"
+    }
+  },
+  "layout.max-width-medium": {
+    "id": "layout.max-width-medium",
+    "cssVariable": "--gdg-layout-max-width-medium",
+    "type": "dimension",
+    "value": "35rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": "Maximum width of a form.",
+    "figma": {
+      "name": "Max Width/max-width-medium"
     }
   },
   "radius.12": {
@@ -617,6 +709,16 @@ export const tokens = {
     "figma": {
       "name": "spacing-40"
     }
+  },
+  "spacing.48": {
+    "id": "spacing.48",
+    "cssVariable": "--gdg-spacing-48",
+    "type": "dimension",
+    "value": "3rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": "Gap between a section title and its content (Figma Contact / 3 / container). Not yet a Figma variable.",
+    "figma": null
   },
   "spacing.64": {
     "id": "spacing.64",

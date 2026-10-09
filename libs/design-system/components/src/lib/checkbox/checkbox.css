@@ -1,0 +1,72 @@
+/*
+ * Figma: Checkbox (181:9151) is an 18px box. Its white fill and black stroke come from an
+ * unstyled template, so it uses the text input stroke instead and the brand blue when
+ * checked (ADR-0014).
+ */
+:host {
+  box-sizing: border-box;
+  display: inline-grid;
+  place-content: center;
+  flex: none;
+  inline-size: 1.125rem;
+  block-size: 1.125rem;
+  margin: 0;
+  border: 1px solid var(--gdg-color-border-input);
+  border-radius: var(--gdg-spacing-4);
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+  transition:
+    background-color 150ms ease-out,
+    border-color 150ms ease-out;
+}
+
+/* Check mark, drawn in the on-brand color so it keeps contrast on the blue fill. */
+:host::before {
+  content: '';
+  inline-size: 0.75rem;
+  block-size: 0.75rem;
+  background: var(--gdg-color-content-on-brand);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.5 5 9.5 10 3' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  transform: scale(0);
+  transition: transform 100ms ease-out;
+}
+
+:host(:checked) {
+  border-color: var(--gdg-color-brand-blue-primary);
+  background: var(--gdg-color-brand-blue-primary);
+}
+
+:host(:checked)::before {
+  transform: scale(1);
+}
+
+:host(:hover:not(:disabled)) {
+  border-color: var(--gdg-color-brand-blue-secondary);
+}
+
+:host(:focus-visible) {
+  outline: 2px solid var(--gdg-color-content-default);
+  outline-offset: 2px;
+}
+
+:host([aria-invalid='true']) {
+  border-color: var(--gdg-color-border-error);
+}
+
+:host(:disabled) {
+  border-color: var(--gdg-color-border-disabled);
+  cursor: default;
+}
+
+:host(:checked:disabled) {
+  background: var(--gdg-color-background-disabled);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :host,
+  :host::before {
+    transition: none;
+  }
+}

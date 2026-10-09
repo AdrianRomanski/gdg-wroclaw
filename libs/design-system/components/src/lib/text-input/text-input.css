@@ -1,0 +1,55 @@
+/*
+ * Figma: Text input (181:9163) and Text Area (181:9174) on the Contact Form page. A 1px
+ * Brand-Blue-Primary stroke, 12px padding and radius; the input is 48px tall, the text area
+ * 180px. Paragraph/P7 text, Content-Disabled placeholder.
+ */
+:host {
+  box-sizing: border-box;
+  display: block;
+  inline-size: 100%;
+  block-size: 3rem;
+  margin: 0;
+  padding: var(--gdg-spacing-12);
+  border: 1px solid var(--gdg-color-border-input);
+  border-radius: var(--gdg-radius-12);
+  background: transparent;
+  color: var(--gdg-color-content-default);
+  font: var(--gdg-font-weight-regular) var(--gdg-font-size-7) / 1.5
+    var(--gdg-font-family-sans);
+  transition: border-color 150ms ease-out;
+}
+
+:host(textarea) {
+  block-size: auto;
+  min-block-size: 11.25rem;
+  resize: vertical;
+}
+
+:host::placeholder {
+  color: var(--gdg-color-content-disabled);
+  opacity: 1;
+}
+
+:host(:hover:not(:disabled)) {
+  border-color: var(--gdg-color-brand-blue-secondary);
+}
+
+:host(:focus-visible) {
+  outline: 2px solid var(--gdg-color-content-default);
+  outline-offset: 2px;
+}
+
+:host([aria-invalid='true']) {
+  border-color: var(--gdg-color-border-error);
+}
+
+:host(:disabled) {
+  border-color: var(--gdg-color-border-disabled);
+  color: var(--gdg-color-content-disabled);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :host {
+    transition: none;
+  }
+}

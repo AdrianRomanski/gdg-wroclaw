@@ -63,6 +63,29 @@ export const RadiusScale = () => (
   </div>
 );
 
+export const LayoutScale = () => (
+  <table style={{ width: '100%' }}>
+    <thead>
+      <tr>
+        <th style={{ textAlign: 'left' }}>Figma</th>
+        <th style={{ textAlign: 'left' }}>px</th>
+        <th style={{ textAlign: 'left' }}>Token</th>
+      </tr>
+    </thead>
+    <tbody>
+      {scale('layout.').map((token) => (
+        <tr key={token.id}>
+          <td>{token.figma?.name}</td>
+          <td>{remToPx(token.value)}</td>
+          <td>
+            <code>{cssVar(token.id)}</code>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+);
+
 # Spacing & Radius
 
 Generated from the W3C design tokens in
@@ -87,3 +110,10 @@ authored in px and emitted in rem.
 `radius-full` makes pills and circles (buttons, avatars).
 
 <RadiusScale />
+
+## Layout
+
+Page and section sizes from the Figma Page Padding, Section Padding, Container and Max Width variables
+(ADR-0014). Use them for section paddings and content widths, not for gaps inside components.
+
+<LayoutScale />

@@ -25,6 +25,11 @@
   --gdg-color-black-02-alpha-40: #1e1e1e66; /** Black 02 at 40% opacity. */
   --gdg-color-black-02-alpha-20: #1e1e1e33; /** Black 02 at 20% opacity. */
   --gdg-color-black-02-alpha-10: #1e1e1e1a; /** Black 02 at 10% opacity. */
+  --gdg-layout-padding-global: 4rem; /** Horizontal page padding. */
+  --gdg-layout-padding-section-large: 7rem; /** Vertical padding of a large page section. */
+  --gdg-layout-container-large: 80rem; /** Maximum width of a section container. */
+  --gdg-layout-max-width-large: 48rem; /** Maximum width of a section title block. */
+  --gdg-layout-max-width-medium: 35rem; /** Maximum width of a form. */
   --gdg-radius-12: 0.75rem;
   --gdg-radius-40: 2.5rem;
   --gdg-radius-full: 624.9375rem; /** Fully rounded: pills and circles. */
@@ -36,6 +41,7 @@
   --gdg-spacing-20: 1.25rem;
   --gdg-spacing-24: 1.5rem;
   --gdg-spacing-40: 2.5rem;
+  --gdg-spacing-48: 3rem; /** Gap between a section title and its content (Figma Contact / 3 / container). Not yet a Figma variable. */
   --gdg-spacing-64: 4rem;
   --gdg-font-family-sans: 'Google Sans Variable', 'Google Sans', system-ui, sans-serif; /** Google Sans (self-hosted variable font). */
   --gdg-font-family-mono: 'Google Sans Code Variable', 'Google Sans Mono', ui-monospace, monospace; /** Google Sans Code, the public counterpart of Figma's Google Sans Mono. */
@@ -67,7 +73,10 @@
   --gdg-color-content-default: var(--gdg-color-off-white); /** Default text and icon color on dark surfaces. */
   --gdg-color-content-disabled: var(--gdg-color-off-white-alpha-40); /** Text and icons of disabled controls. */
   --gdg-color-content-on-brand: var(--gdg-color-neutral-darkest); /** Text and icons on brand fills (Primary buttons): at least 4.5:1 (WCAG AA) on every brand primary and secondary fill. Deviates from Figma's Content/Content (ADR-0012). */
+  --gdg-color-content-error: var(--gdg-color-halftone-red); /** Validation messages. Not in Figma; halftone red keeps at least 4.5:1 (WCAG AA) on the default background. */
   --gdg-color-border-disabled: var(--gdg-color-off-white-alpha-40); /** Border of disabled controls. */
+  --gdg-color-border-input: var(--gdg-color-blue-500); /** Stroke of text inputs, text areas and checkboxes. */
+  --gdg-color-border-error: var(--gdg-color-halftone-red); /** Stroke of invalid form controls. Not in Figma. */
   --gdg-color-brand-blue-primary: var(--gdg-color-blue-500); /** Blue brand color, resting state. */
   --gdg-color-brand-blue-secondary: var(--gdg-color-halftone-blue); /** Blue brand color, hover state. */
   --gdg-color-brand-green-primary: var(--gdg-color-green-500); /** Green brand color, resting state. */
