@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="title">
+    <div class="content">
+      <h2 class="heading">{{ heading() }}</h2>
+      @if (description()) {
+      <p class="description">{{ description() }}</p>
+      }
+    </div>
+    @if (askHref(); as href) {
+    <a gdg-button [color]="color()" [href]="href">{{ askLabel() }}</a>
+    }
+  </div>
+
+  <div class="entries">
+    @for (entry of entries(); track entry.question) {
+    <gdg-faq-item
+      [question]="entry.question"
+      [variant]="variant()"
+      [color]="color()"
+      [open]="entry.open ?? false"
+      >{{ entry.answer }}</gdg-faq-item
+    >
+    }
+  </div>
+</div>

@@ -1,0 +1,99 @@
+/*
+ * Figma: FAQ item (181:6547). Question in H6, answer in P7, 24px inline and 20px block padding.
+ * Plain: a 2px stroke with the 16px radius. Puzzle: a 2px outline drawn from puzzle-outline.ts
+ * behind the content, with extra block padding for the top slot and the bottom tab (ADR-0015).
+ */
+:host {
+  --_stroke: var(--gdg-color-brand-green-secondary);
+
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  color: var(--gdg-color-content-default);
+}
+
+:host(.gdg-faq-item--blue) {
+  --_stroke: var(--gdg-color-brand-blue-secondary);
+}
+
+:host(.gdg-faq-item--yellow) {
+  --_stroke: var(--gdg-color-brand-yellow-secondary);
+}
+
+:host(.gdg-faq-item--red) {
+  --_stroke: var(--gdg-color-brand-red-secondary);
+}
+
+:host(.gdg-faq-item--plain) {
+  border: 2px solid var(--_stroke);
+  border-radius: var(--gdg-radius-16);
+}
+
+/* Slot (28px) above the question, tab (28px) below the answer. */
+:host(.gdg-faq-item--puzzle) {
+  padding: var(--gdg-spacing-20) var(--gdg-spacing-12)
+    calc(var(--gdg-spacing-20) + 1.75rem);
+}
+
+.outline {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  overflow: visible;
+  pointer-events: none;
+  fill: none;
+  stroke: var(--_stroke);
+  stroke-width: 2;
+}
+
+.details {
+  position: relative;
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  gap: var(--gdg-spacing-24);
+  padding: var(--gdg-spacing-20) var(--gdg-spacing-24);
+  border-radius: var(--gdg-radius-12);
+  font: var(--gdg-font-heading-6);
+  list-style: none;
+  cursor: pointer;
+}
+
+.question::-webkit-details-marker {
+  display: none;
+}
+
+.question:focus-visible {
+  outline: 2px solid var(--gdg-color-content-default);
+  outline-offset: -2px;
+}
+
+.question-text {
+  flex: 1;
+  min-inline-size: 0;
+}
+
+/* Plus while closed, Figma's close icon (the same glyph, unrotated) when open. */
+.toggle {
+  flex: none;
+  transform: rotate(45deg);
+  transition: transform 150ms ease-out;
+}
+
+.details[open] .toggle {
+  transform: none;
+}
+
+.answer {
+  padding: 0 var(--gdg-spacing-24) var(--gdg-spacing-24);
+  font: var(--gdg-font-paragraph-7);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toggle {
+    transition: none;
+  }
+}

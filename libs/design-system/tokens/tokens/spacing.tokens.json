@@ -58,6 +58,10 @@
         }
       }
     },
+    "32": {
+      "$value": "32px",
+      "$description": "Gap between a section title block and its call to action (Figma FAQ / 11 /). Not yet a Figma variable."
+    },
     "40": {
       "$value": "40px",
       "$extensions": {

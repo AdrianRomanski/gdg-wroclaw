@@ -590,6 +590,18 @@ export const tokens = {
       "name": "radius-12"
     }
   },
+  "radius.16": {
+    "id": "radius.16",
+    "cssVariable": "--gdg-radius-16",
+    "type": "dimension",
+    "value": "1rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "name": "radius-16"
+    }
+  },
   "radius.40": {
     "id": "radius.40",
     "cssVariable": "--gdg-radius-40",
@@ -697,6 +709,16 @@ export const tokens = {
     "figma": {
       "name": "spacing-24"
     }
+  },
+  "spacing.32": {
+    "id": "spacing.32",
+    "cssVariable": "--gdg-spacing-32",
+    "type": "dimension",
+    "value": "2rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": "Gap between a section title block and its call to action (Figma FAQ / 11 /). Not yet a Figma variable.",
+    "figma": null
   },
   "spacing.40": {
     "id": "spacing.40",

@@ -1,0 +1,72 @@
+/*
+ * Figma: FAQ / 11 / (181:6549 puzzle, 181:6770 plain). Section paddings, a title column
+ * (500px in Figma) and a questions column (763px) about 60px apart, kept as a 2 : 3 split of the
+ * container. Puzzle items overlap by 8px so each tab nests into the next slot; plain items are 12px
+ * apart. Stacks into one column below 64rem (ADR-0015).
+ */
+:host {
+  display: block;
+  padding: var(--gdg-layout-padding-section-large)
+    var(--gdg-layout-padding-global);
+  background: var(--gdg-color-background-default);
+  color: var(--gdg-color-content-default);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  align-items: start;
+  gap: var(--gdg-spacing-64);
+  max-inline-size: var(--gdg-layout-container-large);
+  margin-inline: auto;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gdg-spacing-32);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-24);
+}
+
+.heading {
+  margin: 0;
+  font: var(--gdg-font-heading-1);
+}
+
+.description {
+  margin: 0;
+  font: var(--gdg-font-paragraph-6);
+}
+
+.entries {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-12);
+}
+
+:host(.gdg-faq-section--puzzle) .entries {
+  gap: 0;
+}
+
+:host(.gdg-faq-section--puzzle) gdg-faq-item + gdg-faq-item {
+  margin-block-start: calc(-1 * var(--gdg-spacing-8));
+}
+
+@media (width < 64rem) {
+  .container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--gdg-spacing-48);
+  }
+}
+
+@media (width < 48rem) {
+  :host {
+    padding: var(--gdg-spacing-64) var(--gdg-spacing-20);
+  }
+}

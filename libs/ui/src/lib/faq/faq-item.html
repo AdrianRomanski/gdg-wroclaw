@@ -1,0 +1,14 @@
+@if (variant() === 'puzzle') {
+<svg class="outline" aria-hidden="true" focusable="false">
+  <path [attr.d]="outline()" />
+</svg>
+}
+<details class="details" [open]="open()">
+  <summary class="question">
+    <span class="question-text">{{ question() }}</span>
+    <gdg-icon class="toggle" name="x" />
+  </summary>
+  <div class="answer">
+    <ng-content />
+  </div>
+</details>
