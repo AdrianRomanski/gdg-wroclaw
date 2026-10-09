@@ -1,0 +1,107 @@
+<div class="container">
+  <header class="title">
+    <h2 class="heading" [id]="id + '-heading'">{{ heading() }}</h2>
+    @if (description()) {
+    <p class="description">{{ description() }}</p>
+    }
+  </header>
+
+  <form
+    class="form"
+    novalidate
+    [formGroup]="form"
+    [attr.aria-labelledby]="id + '-heading'"
+    (ngSubmit)="submit()"
+  >
+    <div class="field">
+      <label class="label" [for]="id + '-name'">Name</label>
+      <input
+        gdg-text-input
+        type="text"
+        autocomplete="name"
+        formControlName="name"
+        [id]="id + '-name'"
+        [attr.aria-invalid]="showError(form.controls.name) || null"
+        [attr.aria-describedby]="
+          showError(form.controls.name) ? id + '-name-error' : null
+        "
+      />
+      @if (showError(form.controls.name)) {
+      <p class="error" [id]="id + '-name-error'">Enter your name.</p>
+      }
+    </div>
+
+    <div class="field">
+      <label class="label" [for]="id + '-email'">Email</label>
+      <input
+        gdg-text-input
+        type="email"
+        autocomplete="email"
+        formControlName="email"
+        [id]="id + '-email'"
+        [attr.aria-invalid]="showError(form.controls.email) || null"
+        [attr.aria-describedby]="
+          showError(form.controls.email) ? id + '-email-error' : null
+        "
+      />
+      @if (showError(form.controls.email)) {
+      <p class="error" [id]="id + '-email-error'">
+        @if (form.controls.email.hasError('required')) { Enter your email. }
+        @else { Enter a valid email, e.g. name&#64;example.com. }
+      </p>
+      }
+    </div>
+
+    <div class="field">
+      <label class="label" [for]="id + '-message'">Message</label>
+      <textarea
+        gdg-text-input
+        placeholder="Type your message..."
+        formControlName="message"
+        [id]="id + '-message'"
+        [attr.aria-invalid]="showError(form.controls.message) || null"
+        [attr.aria-describedby]="
+          showError(form.controls.message) ? id + '-message-error' : null
+        "
+      ></textarea>
+      @if (showError(form.controls.message)) {
+      <p class="error" [id]="id + '-message-error'">Enter a message.</p>
+      }
+    </div>
+
+    <div class="field terms">
+      <div class="terms-row">
+        <input
+          type="checkbox"
+          gdg-checkbox
+          formControlName="terms"
+          [id]="id + '-terms'"
+          [attr.aria-invalid]="showError(form.controls.terms) || null"
+          [attr.aria-describedby]="
+            showError(form.controls.terms) ? id + '-terms-error' : null
+          "
+        />
+        <label class="terms-label" [for]="id + '-terms'">
+          I accept the
+          <a class="link" target="_blank" rel="noopener" [href]="termsUrl()"
+            >Terms</a
+          >
+        </label>
+      </div>
+      @if (showError(form.controls.terms)) {
+      <p class="error" [id]="id + '-terms-error'">
+        Accept the terms to send your message.
+      </p>
+      }
+    </div>
+
+    <button
+      gdg-button
+      type="submit"
+      [disabled]="pending()"
+      [attr.aria-busy]="pending() || null"
+    >
+      {{ submitLabel() }}
+    </button>
+  </form>
+</div>

@@ -63,6 +63,10 @@
       "on-brand": {
         "$value": "{color.neutral-darkest}",
         "$description": "Text and icons on brand fills (Primary buttons): at least 4.5:1 (WCAG AA) on every brand primary and secondary fill. Deviates from Figma's Content/Content (ADR-0012)."
+      },
+      "error": {
+        "$value": "{color.halftone-red}",
+        "$description": "Validation messages. Not in Figma; halftone red keeps at least 4.5:1 (WCAG AA) on the default background."
       }
     },
     "border": {
@@ -75,6 +79,19 @@
             "name": "Border/Border-Disabled"
           }
         }
+      },
+      "input": {
+        "$value": "{color.blue-500}",
+        "$description": "Stroke of text inputs, text areas and checkboxes.",
+        "$extensions": {
+          "gdg.figma": {
+            "name": "Colors/Brand-Blue-Primary"
+          }
+        }
+      },
+      "error": {
+        "$value": "{color.halftone-red}",
+        "$description": "Stroke of invalid form controls. Not in Figma."
       }
     },
     "brand": {

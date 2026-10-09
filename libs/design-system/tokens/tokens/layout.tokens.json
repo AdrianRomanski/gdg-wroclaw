@@ -1,0 +1,51 @@
+{
+  "layout": {
+    "$type": "dimension",
+    "$description": "Page layout from the Figma Page Padding, Section Padding, Container and Max Width variables.",
+    "padding-global": {
+      "$value": "64px",
+      "$description": "Horizontal page padding.",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Page Padding/padding-global"
+        }
+      }
+    },
+    "padding-section-large": {
+      "$value": "112px",
+      "$description": "Vertical padding of a large page section.",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Section Padding/padding-section-large"
+        }
+      }
+    },
+    "container-large": {
+      "$value": "1280px",
+      "$description": "Maximum width of a section container.",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Container/container-large"
+        }
+      }
+    },
+    "max-width-large": {
+      "$value": "768px",
+      "$description": "Maximum width of a section title block.",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Max Width/max-width-large"
+        }
+      }
+    },
+    "max-width-medium": {
+      "$value": "560px",
+      "$description": "Maximum width of a form.",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Max Width/max-width-medium"
+        }
+      }
+    }
+  }
+}

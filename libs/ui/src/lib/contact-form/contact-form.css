@@ -1,0 +1,93 @@
+/*
+ * Figma: Contact / 3 / (181:9133). A 1280px container inside the section paddings; a 768px
+ * title block, then a 560px form, 48px apart. The 48px Figma heading uses H1 (36px), the
+ * largest step of the type scale (ADR-0014).
+ */
+:host {
+  display: block;
+  padding: var(--gdg-layout-padding-section-large)
+    var(--gdg-layout-padding-global);
+  background: var(--gdg-color-background-default);
+  color: var(--gdg-color-content-default);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-48);
+  max-inline-size: var(--gdg-layout-container-large);
+  margin-inline: auto;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-24);
+  max-inline-size: var(--gdg-layout-max-width-large);
+}
+
+.heading {
+  margin: 0;
+  font: var(--gdg-font-heading-1);
+}
+
+.description {
+  margin: 0;
+  font: var(--gdg-font-paragraph-6);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gdg-spacing-24);
+  max-inline-size: var(--gdg-layout-max-width-medium);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-8);
+  align-self: stretch;
+}
+
+.label {
+  font: var(--gdg-font-paragraph-7);
+}
+
+.terms {
+  padding-block-end: var(--gdg-spacing-16);
+}
+
+.terms-row {
+  display: flex;
+  align-items: center;
+  gap: var(--gdg-spacing-8);
+}
+
+.terms-label {
+  font: var(--gdg-font-paragraph-8);
+  cursor: pointer;
+}
+
+.link {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--gdg-color-content-default);
+  outline-offset: 2px;
+}
+
+.error {
+  margin: 0;
+  color: var(--gdg-color-content-error);
+  font: var(--gdg-font-paragraph-8);
+}
+
+@media (width < 48rem) {
+  :host {
+    padding: var(--gdg-spacing-64) var(--gdg-spacing-20);
+  }
+}

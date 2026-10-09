@@ -84,14 +84,28 @@ describe('generated tokens', () => {
       ).toBeGreaterThanOrEqual(4.5);
     });
 
-    it('content.default on background.default', () => {
-      expect(
-        contrast(
-          tokens['color.content.default'].value,
-          tokens['color.background.default'].value,
-        ),
-      ).toBeGreaterThanOrEqual(4.5);
+    it.each(['color.content.default', 'color.content.error'] as const)(
+      '%s on background.default',
+      (content) => {
+        expect(
+          contrast(
+            tokens[content].value,
+            tokens['color.background.default'].value,
+          ),
+        ).toBeGreaterThanOrEqual(4.5);
+      },
+    );
+  });
+
+  it('defines the form and layout tokens for the Contact form (ADR-0014)', () => {
+    expect(remToPx(tokens['spacing.48'].value)).toBe(48);
+    expect(remToPx(tokens['layout.padding-section-large'].value)).toBe(112);
+    expect(remToPx(tokens['layout.max-width-medium'].value)).toBe(560);
+    expect(tokens['layout.container-large'].figma).toMatchObject({
+      name: 'Container/container-large',
     });
+    expect(tokens['color.border.input'].aliasOf).toBe('color.blue-500');
+    expect(tokens['color.border.error'].aliasOf).toBe('color.halftone-red');
   });
 
   it('builds var() references', () => {

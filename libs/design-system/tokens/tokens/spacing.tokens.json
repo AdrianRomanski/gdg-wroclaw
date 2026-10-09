@@ -66,6 +66,10 @@
         }
       }
     },
+    "48": {
+      "$value": "48px",
+      "$description": "Gap between a section title and its content (Figma Contact / 3 / container). Not yet a Figma variable."
+    },
     "64": {
       "$value": "64px",
       "$extensions": {
