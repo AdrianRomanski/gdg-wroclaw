@@ -108,6 +108,12 @@ describe('generated tokens', () => {
     expect(tokens['color.border.error'].aliasOf).toBe('color.halftone-red');
   });
 
+  it('adds the FAQ radius and spacing (ADR-0015)', () => {
+    expect(remToPx(tokens['radius.16'].value)).toBe(16);
+    expect(tokens['radius.16'].figma).toMatchObject({ name: 'radius-16' });
+    expect(remToPx(tokens['spacing.32'].value)).toBe(32);
+  });
+
   it('builds var() references', () => {
     expect(cssVar('color.content.default')).toBe(
       'var(--gdg-color-content-default)',

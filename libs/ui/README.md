@@ -21,9 +21,11 @@ Rules:
 
 ## Components
 
-| Component     | Usage                                                                                     | Figma                      | ADR                                                                         |
-| :------------ | :---------------------------------------------------------------------------------------- | :------------------------- | :-------------------------------------------------------------------------- |
-| `ContactForm` | `<gdg-contact-form termsUrl="/terms" [pending]="sending()" (submitted)="send($event)" />` | Contact / 3 / (`181:9133`) | [ADR-0014](../../docs/adr/0014-contact-form-and-form-control-primitives.md) |
+| Component     | Usage                                                                                     | Figma                               | ADR                                                                               |
+| :------------ | :---------------------------------------------------------------------------------------- | :---------------------------------- | :-------------------------------------------------------------------------------- |
+| `ContactForm` | `<gdg-contact-form termsUrl="/terms" [pending]="sending()" (submitted)="send($event)" />` | Contact / 3 / (`181:9133`)          | [ADR-0014](../../docs/adr/0014-contact-form-and-form-control-primitives.md)       |
+| `FaqItem`     | `<gdg-faq-item question="Is it free?" variant="plain" color="blue">Yes.</gdg-faq-item>`   | FAQ item (`181:6547`)               | [ADR-0015](../../docs/adr/0015-faq-item-variants-and-generated-puzzle-outline.md) |
+| `FaqSection`  | `<gdg-faq-section [entries]="faqs" variant="puzzle" askHref="/contact" />`                | FAQ / 11 / (`181:6549`, `181:6770`) | [ADR-0015](../../docs/adr/0015-faq-item-variants-and-generated-puzzle-outline.md) |
 
 ## Storybook
 

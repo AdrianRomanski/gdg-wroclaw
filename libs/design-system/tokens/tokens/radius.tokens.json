@@ -10,6 +10,14 @@
         }
       }
     },
+    "16": {
+      "$value": "16px",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "radius-16"
+        }
+      }
+    },
     "40": {
       "$value": "40px",
       "$extensions": {
