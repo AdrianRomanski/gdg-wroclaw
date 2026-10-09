@@ -114,6 +114,15 @@ describe('generated tokens', () => {
     expect(remToPx(tokens['spacing.32'].value)).toBe(32);
   });
 
+  it('adds the 48px display size from Figma Text Sizes/Heading 2 (ADR-0016)', () => {
+    const display = tokens['font.display-1'].parts;
+    expect(remToPx(display.fontSize)).toBe(48);
+    expect(remToPx(display.lineHeight)).toBeCloseTo(57.6);
+    expect(tokens['font.display-1'].figma).toMatchObject({
+      name: 'Text Sizes/Heading 2',
+    });
+  });
+
   it('builds var() references', () => {
     expect(cssVar('color.content.default')).toBe(
       'var(--gdg-color-content-default)',

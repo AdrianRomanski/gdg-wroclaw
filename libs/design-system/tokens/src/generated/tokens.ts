@@ -388,6 +388,18 @@ export const tokens = {
     "description": "Validation messages. Not in Figma; halftone red keeps at least 4.5:1 (WCAG AA) on the default background.",
     "figma": null
   },
+  "color.border.default": {
+    "id": "color.border.default",
+    "cssVariable": "--gdg-color-border-default",
+    "type": "color",
+    "value": "#f0f0f0",
+    "aliasOf": "color.off-white",
+    "parts": null,
+    "description": "Dividers between list rows (1px).",
+    "figma": {
+      "name": "Border/Border"
+    }
+  },
   "color.border.disabled": {
     "id": "color.border.disabled",
     "cssVariable": "--gdg-color-border-disabled",
@@ -893,6 +905,35 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": null
+  },
+  "font.size.display-1": {
+    "id": "font.size.display-1",
+    "cssVariable": "--gdg-font-size-display-1",
+    "type": "dimension",
+    "value": "3rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": "Display size for page and section titles (Figma Text Sizes/Heading 2).",
+    "figma": {
+      "name": "Text Sizes/Heading 2"
+    }
+  },
+  "font.display-1": {
+    "id": "font.display-1",
+    "cssVariable": "--gdg-font-display-1",
+    "type": "typography",
+    "value": "700 3rem/3.6rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif",
+    "aliasOf": null,
+    "parts": {
+      "fontFamily": "'Google Sans Variable', 'Google Sans', system-ui, sans-serif",
+      "fontWeight": 700,
+      "fontSize": "3rem",
+      "lineHeight": "3.6rem"
+    },
+    "description": "Page and section titles: Workshop topic, Contact us (ADR-0016).",
+    "figma": {
+      "name": "Text Sizes/Heading 2"
+    }
   },
   "font.heading-1": {
     "id": "font.heading-1",
@@ -1792,6 +1833,16 @@ export const tokens = {
     "aliasOf": null,
     "parts": null,
     "description": null,
+    "figma": null
+  },
+  "line-height.display-1": {
+    "id": "line-height.display-1",
+    "cssVariable": "--gdg-line-height-display-1",
+    "type": "dimension",
+    "value": "3.6rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": "1.2 × display-1, as in Figma.",
     "figma": null
   }
 } as const;

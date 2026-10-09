@@ -1,6 +1,6 @@
 # ADR-0014: Contact Form, Form Control Primitives, and Layout and Form Tokens
 
-- **Status**: Accepted
+- **Status**: Accepted (heading size amended by [ADR-0016](0016-person-row-role-badge-and-display-type.md))
 - **Date**: 2026-10-09
 - **Deciders**: GDG Wrocław Core Team
 - **Consulted**: Frontend Working Group, Designers

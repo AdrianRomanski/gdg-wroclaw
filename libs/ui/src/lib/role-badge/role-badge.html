@@ -1,0 +1,16 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  [attr.viewBox]="viewBox"
+  focusable="false"
+  aria-hidden="true"
+>
+  <circle class="disc" cx="241.5" cy="241.5" r="241.5" />
+  @if (ring()) {
+  <path
+    class="ring"
+    fill-rule="evenodd"
+    d="M241.5 0a241.5 241.5 0 1 0 0 483a241.5 241.5 0 1 0 0-483Zm0 15a226.5 226.5 0 1 1 0 453a226.5 226.5 0 1 1 0-453Z"
+  />
+  }
+  <g [innerHTML]="artwork()"></g>
+</svg>

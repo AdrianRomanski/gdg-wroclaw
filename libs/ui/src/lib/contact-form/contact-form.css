@@ -1,7 +1,7 @@
 /*
  * Figma: Contact / 3 / (181:9133). A 1280px container inside the section paddings; a 768px
- * title block, then a 560px form, 48px apart. The 48px Figma heading uses H1 (36px), the
- * largest step of the type scale (ADR-0014).
+ * title block, then a 560px form, 48px apart. The heading uses the 48px display size
+ * (ADR-0014, ADR-0016).
  */
 :host {
   display: block;
@@ -28,7 +28,7 @@
 
 .heading {
   margin: 0;
-  font: var(--gdg-font-heading-1);
+  font: var(--gdg-font-display-1);
 }
 
 .description {

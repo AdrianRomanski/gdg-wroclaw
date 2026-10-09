@@ -7,6 +7,8 @@ const config: StorybookConfig = {
     '../../../libs/design-system/components/src/**/*.@(mdx|stories.ts)',
     '../../../libs/ui/src/**/*.@(mdx|stories.ts)',
   ],
+  // Story-only assets, e.g. sample people photos (ADR-0016). Not shipped with any library.
+  staticDirs: ['../public'],
   addons: ['@storybook/addon-docs', '@storybook/addon-a11y'],
   framework: {
     name: '@analogjs/storybook-angular',

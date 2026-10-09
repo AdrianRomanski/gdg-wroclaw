@@ -59,6 +59,7 @@
   --gdg-font-size-7: 1rem;
   --gdg-font-size-8: 0.875rem;
   --gdg-font-size-9: 0.75rem;
+  --gdg-font-size-display-1: 3rem; /** Display size for page and section titles (Figma Text Sizes/Heading 2). */
   --gdg-line-height-1: 2.875rem;
   --gdg-line-height-2: 2.625rem;
   --gdg-line-height-3: 2.375rem;
@@ -68,6 +69,7 @@
   --gdg-line-height-7: 1.625rem;
   --gdg-line-height-8: 1.5rem;
   --gdg-line-height-9: 1rem;
+  --gdg-line-height-display-1: 3.6rem; /** 1.2 × display-1, as in Figma. */
   --gdg-color-background-default: var(--gdg-color-black-02); /** Default page and component surface. */
   --gdg-color-background-disabled: var(--gdg-color-off-white-alpha-20); /** Background of disabled controls. */
   --gdg-color-background-nav-button-hover: var(--gdg-color-off-white-alpha-10); /** Nav Button background on hover. */
@@ -76,6 +78,7 @@
   --gdg-color-content-disabled: var(--gdg-color-off-white-alpha-40); /** Text and icons of disabled controls. */
   --gdg-color-content-on-brand: var(--gdg-color-neutral-darkest); /** Text and icons on brand fills (Primary buttons): at least 4.5:1 (WCAG AA) on every brand primary and secondary fill. Deviates from Figma's Content/Content (ADR-0012). */
   --gdg-color-content-error: var(--gdg-color-halftone-red); /** Validation messages. Not in Figma; halftone red keeps at least 4.5:1 (WCAG AA) on the default background. */
+  --gdg-color-border-default: var(--gdg-color-off-white); /** Dividers between list rows (1px). */
   --gdg-color-border-disabled: var(--gdg-color-off-white-alpha-40); /** Border of disabled controls. */
   --gdg-color-border-input: var(--gdg-color-blue-500); /** Stroke of text inputs, text areas and checkboxes. */
   --gdg-color-border-error: var(--gdg-color-halftone-red); /** Stroke of invalid form controls. Not in Figma. */
@@ -87,6 +90,7 @@
   --gdg-color-brand-yellow-secondary: var(--gdg-color-halftone-yellow); /** Yellow brand color, hover state. */
   --gdg-color-brand-red-primary: var(--gdg-color-red-500); /** Red brand color, resting state. */
   --gdg-color-brand-red-secondary: var(--gdg-color-halftone-red); /** Red brand color, hover state. */
+  --gdg-font-display-1: 700 3rem/3.6rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif; /** Page and section titles: Workshop topic, Contact us (ADR-0016). */
   --gdg-font-heading-1: 700 2.25rem/2.875rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
   --gdg-font-heading-2: 700 2rem/2.625rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
   --gdg-font-heading-3: 700 1.75rem/2.375rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif;
