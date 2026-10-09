@@ -81,6 +81,10 @@
           "name": "spacing-64"
         }
       }
+    },
+    "80": {
+      "$value": "80px",
+      "$description": "Gap between a page banner and its content, and between page sections (Figma Event Header / 1 /). Not yet a Figma variable."
     }
   }
 }

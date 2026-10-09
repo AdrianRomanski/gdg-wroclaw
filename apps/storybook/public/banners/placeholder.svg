@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="449" viewBox="0 0 1440 449">
+  <title>Event banner placeholder</title>
+  <rect width="1440" height="449" fill="#1e1e1e"/>
+  <g fill="none" stroke="#34a853" stroke-width="6">
+    <circle cx="120" cy="110" r="56"/>
+    <circle cx="256" cy="110" r="56"/>
+    <circle cx="392" cy="110" r="56"/>
+    <path d="M1060 400 1160 50h120L1180 400Z"/>
+    <path d="M1220 400 1320 50h80L1300 400Z"/>
+  </g>
+  <text x="64" y="330" fill="#f0f0f0" font-family="system-ui, sans-serif" font-size="56">Event banner</text>
+  <text x="64" y="386" fill="#5cdb6d" font-family="system-ui, sans-serif" font-size="28">1440 × 449 · pass the event's image</text>
+</svg>

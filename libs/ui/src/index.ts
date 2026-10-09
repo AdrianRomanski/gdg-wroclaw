@@ -6,3 +6,7 @@ export * from './lib/person/person';
 export * from './lib/person-row/person-row';
 export * from './lib/role-badge/role-badge';
 export * from './lib/social-links/social-links';
+export * from './lib/event-banner/event-banner';
+export * from './lib/workshop-details/workshop-details';
+export * from './lib/workshop-page/workshop';
+export * from './lib/workshop-page/workshop-page';

@@ -1,0 +1,19 @@
+<header class="intro">
+  <h1 class="topic">{{ topic() }}</h1>
+  @if (description()) {
+  <p class="description">{{ description() }}</p>
+  }
+</header>
+
+@if (trainers().length) {
+<section class="trainers" [attr.aria-labelledby]="trainersHeadingId">
+  <h2 class="trainers-heading" [id]="trainersHeadingId">
+    {{ trainersHeading() }}
+  </h2>
+  <div>
+    @for (trainer of trainers(); track $index) {
+    <gdg-person-row [person]="trainer" />
+    }
+  </div>
+</section>
+}

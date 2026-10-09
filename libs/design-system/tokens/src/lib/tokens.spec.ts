@@ -123,6 +123,10 @@ describe('generated tokens', () => {
     });
   });
 
+  it('adds the 80px page spacing (ADR-0017)', () => {
+    expect(remToPx(tokens['spacing.80'].value)).toBe(80);
+  });
+
   it('builds var() references', () => {
     expect(cssVar('color.content.default')).toBe(
       'var(--gdg-color-content-default)',

@@ -1,0 +1,12 @@
+/* Figma: banner image (143:5974), full width at a 1440 : 449 ratio, cropped to cover. */
+:host {
+  display: block;
+}
+
+.image {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 1440 / 449;
+  object-fit: cover;
+}

@@ -1,0 +1,53 @@
+/*
+ * Figma: Container (143:5975). Topic in Display 1 (48px) above a 24px description, 24px apart;
+ * the trainers 80px below, their H4 heading 48px above the rows. Smaller type below 48rem
+ * (ADR-0017).
+ */
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-80);
+  color: var(--gdg-color-content-default);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-24);
+}
+
+.topic {
+  margin: 0;
+  font: var(--gdg-font-display-1);
+}
+
+.description {
+  margin: 0;
+  font: var(--gdg-font-heading-4-regular);
+  white-space: pre-line;
+}
+
+.trainers {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-48);
+}
+
+.trainers-heading {
+  margin: 0;
+  font: var(--gdg-font-heading-4);
+}
+
+@media (width < 48rem) {
+  :host {
+    gap: var(--gdg-spacing-64);
+  }
+
+  .topic {
+    font: var(--gdg-font-heading-1);
+  }
+
+  .description {
+    font: var(--gdg-font-paragraph-6);
+  }
+}
