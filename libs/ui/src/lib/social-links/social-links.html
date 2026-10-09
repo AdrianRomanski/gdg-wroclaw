@@ -1,0 +1,17 @@
+@if (links().length) {
+<ul class="list">
+  @for (link of links(); track link.url) {
+  <li>
+    <a
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      [href]="link.url"
+      [attr.aria-label]="linkLabel(link.network)"
+    >
+      <gdg-icon [name]="networks[link.network].icon" />
+    </a>
+  </li>
+  }
+</ul>
+}

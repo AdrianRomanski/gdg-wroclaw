@@ -1,0 +1,33 @@
+@let p = person(); @if (p.photo; as photo) {
+<img
+  class="photo"
+  width="160"
+  height="160"
+  loading="lazy"
+  [src]="photo.src"
+  [alt]="photo.alt ?? ''"
+/>
+} @else {
+<div class="photo placeholder" aria-hidden="true">{{ initials(p.name) }}</div>
+}
+
+<div class="content">
+  <div class="identity">
+    @if (p.role; as role) {
+    <gdg-role-badge [role]="role" />
+    }
+    <div>
+      <h3 class="name">{{ p.name }}</h3>
+      @if (p.jobTitle) {
+      <p class="job-title">{{ p.jobTitle }}</p>
+      }
+    </div>
+  </div>
+  @if (p.bio) {
+  <p class="bio">{{ p.bio }}</p>
+  }
+</div>
+
+@if (p.socials?.length) {
+<gdg-social-links class="socials" [links]="p.socials ?? []" [owner]="p.name" />
+}

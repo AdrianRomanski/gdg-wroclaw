@@ -58,6 +58,31 @@ Sourced from the Figma **Typography** page (Google Sans frames) and defined in
 [`@gdg-wroclaw/design-system-tokens`](https://github.com/AdrianRomanski/gdg-wroclaw/tree/main/libs/design-system/tokens)
 (see ADR-0005 and ADR-0008). Fonts are self-hosted, so no requests go to Google servers.
 
+## Display
+
+For page and section titles, from the Figma `Text Sizes/Heading 2` variable (ADR-0016). It sits above the
+9-step scale below.
+
+export const DisplaySpecimen = () => {
+  const { fontSize, lineHeight } = tokens['font.display-1'].parts;
+  return (
+    <div>
+      <div
+        style={{
+          font: cssVar('font.display-1'),
+          color: 'var(--gdg-color-black-02)',
+        }}
+      >
+        Display 1
+      </div>
+      <code>font: {cssVar('font.display-1')}</code> ({remToPx(fontSize)} /{' '}
+      {remToPx(lineHeight)} px)
+    </div>
+  );
+};
+
+<DisplaySpecimen />
+
 | Family | Font                                                                  | Token                    |
 | :----- | :-------------------------------------------------------------------- | :----------------------- |
 | Sans   | <span style={{ font: cssVar('font.paragraph-6') }}>Google Sans</span> | `--gdg-font-family-sans` |

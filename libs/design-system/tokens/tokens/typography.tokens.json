@@ -35,6 +35,15 @@
       }
     },
     "size": {
+      "display-1": {
+        "$value": "48px",
+        "$description": "Display size for page and section titles (Figma Text Sizes/Heading 2).",
+        "$extensions": {
+          "gdg.figma": {
+            "name": "Text Sizes/Heading 2"
+          }
+        }
+      },
       "$type": "dimension",
       "$description": "Type scale font sizes (1 = largest).",
       "1": {
@@ -63,6 +72,21 @@
       },
       "9": {
         "$value": "12px"
+      }
+    },
+    "display-1": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": "{font.weight.bold}",
+        "fontSize": "{font.size.display-1}",
+        "lineHeight": "{line-height.display-1}"
+      },
+      "$description": "Page and section titles: Workshop topic, Contact us (ADR-0016).",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Text Sizes/Heading 2"
+        }
       }
     },
     "heading-1": {
@@ -742,6 +766,10 @@
     }
   },
   "line-height": {
+    "display-1": {
+      "$value": "57.6px",
+      "$description": "1.2 × display-1, as in Figma."
+    },
     "$type": "dimension",
     "$description": "Type scale line heights.",
     "1": {

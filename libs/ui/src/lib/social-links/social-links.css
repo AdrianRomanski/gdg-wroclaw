@@ -1,0 +1,35 @@
+/* Figma: Social Icons (143:6016), 24px icons 14px apart; 16px here, on the spacing scale. */
+:host {
+  display: block;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gdg-spacing-16);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  display: flex;
+  border-radius: var(--gdg-spacing-4);
+  color: var(--gdg-color-content-default);
+  transition: color 150ms ease-out;
+}
+
+.link:hover {
+  color: var(--gdg-color-brand-blue-secondary);
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--gdg-color-content-default);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link {
+    transition: none;
+  }
+}

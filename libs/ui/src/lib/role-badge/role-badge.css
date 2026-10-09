@@ -1,0 +1,21 @@
+/* Figma: Badge (180:2682). Disc in the page background color, ring in Content (ADR-0016). */
+:host {
+  display: inline-flex;
+  flex-shrink: 0;
+  inline-size: var(--gdg-role-badge-size);
+  block-size: var(--gdg-role-badge-size);
+}
+
+svg {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.disc {
+  fill: var(--gdg-color-background-default);
+}
+
+.ring {
+  fill: var(--gdg-color-content-default);
+}

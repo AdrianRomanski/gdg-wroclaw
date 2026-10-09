@@ -71,6 +71,15 @@
     },
     "border": {
       "$description": "Strokes and dividers.",
+      "default": {
+        "$value": "{color.off-white}",
+        "$description": "Dividers between list rows (1px).",
+        "$extensions": {
+          "gdg.figma": {
+            "name": "Border/Border"
+          }
+        }
+      },
       "disabled": {
         "$value": "{color.off-white-alpha-40}",
         "$description": "Border of disabled controls.",

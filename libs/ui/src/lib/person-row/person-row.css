@@ -1,0 +1,74 @@
+/*
+ * Figma: trainer Card (143:6008). A 1px divider above, 32px block padding; a 160px photo with the
+ * 12px radius, 32px from the content; social links aligned to the bottom end. Name H4 (24px),
+ * job title P8 (14px), bio P7 (16px). Stacks below 40rem (ADR-0016).
+ */
+:host {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--gdg-spacing-32);
+  padding-block: var(--gdg-spacing-32);
+  border-block-start: 1px solid var(--gdg-color-border-default);
+  color: var(--gdg-color-content-default);
+}
+
+.photo {
+  flex: none;
+  inline-size: 10rem;
+  block-size: 10rem;
+  border-radius: var(--gdg-radius-12);
+  object-fit: cover;
+}
+
+.placeholder {
+  display: grid;
+  place-content: center;
+  background: var(--gdg-color-off-white-alpha-10);
+  font: var(--gdg-font-heading-1);
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gdg-spacing-16);
+  min-inline-size: 0;
+}
+
+.identity {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gdg-spacing-16);
+}
+
+.name {
+  margin: 0;
+  font: var(--gdg-font-heading-4);
+}
+
+.job-title {
+  margin: 0;
+  font: var(--gdg-font-paragraph-8);
+}
+
+.bio {
+  margin: 0;
+  font: var(--gdg-font-paragraph-7);
+}
+
+.socials {
+  flex: none;
+}
+
+@media (width < 40rem) {
+  :host {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gdg-spacing-20);
+  }
+
+  .photo {
+    inline-size: 7.5rem;
+    block-size: 7.5rem;
+  }
+}
