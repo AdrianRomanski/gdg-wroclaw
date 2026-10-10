@@ -28,12 +28,23 @@ const organizer = (
 
 /** The chapter organizers, as listed on gdg.community.dev/gdg-wroclaw (October 2026). */
 const ORGANIZERS: readonly Person[] = [
-  organizer('Karol Wrótniak', 'karol-wrotniak', 'GDG Organizer'),
-  organizer('Artur Skrzypczyk', 'artur-skrzypczyk'),
+  organizer(
+    'Karol Wrótniak',
+    'karol-wrotniak',
+    'GDG Organizer',
+    'https://www.linkedin.com/in/karol-wrotniak/',
+  ),
+  organizer(
+    'Artur Skrzypczyk',
+    'artur-skrzypczyk',
+    undefined,
+    'https://www.linkedin.com/in/artur-skrzypczyk/',
+  ),
   organizer(
     'Adrian Romański',
     'adrian-romanski',
     'Software Engineer, Push-Based',
+    'https://www.linkedin.com/in/adrianromanski/',
   ),
   organizer(
     'Dawid Perdek',
@@ -52,11 +63,14 @@ const ORGANIZERS: readonly Person[] = [
 ];
 
 /**
- * Landing page content (ADR-0023). The team is real; events, partners and FAQ are still the
- * Figma sample content. No hero image yet, so the hero is left out and partners show initials.
+ * Landing page content (ADR-0023). The hero banner and the team are real; events, partners and FAQ
+ * are still the Figma sample content. Partners show initials until their logos are ready.
  */
 export const LANDING_CONTENT: LandingPageContent = {
   heading: 'Google Developer Groups Wrocław: join our community',
+  // Figma: GDG-Pro-Digital-LandingPageHeader-1440x500-Blue (143:2917). Its text repeats the
+  // heading above, so the image stays decorative (empty alt).
+  hero: { src: '/banners/landing-header.jpg' },
   events: {
     heading: 'Event',
     description: lorem,
