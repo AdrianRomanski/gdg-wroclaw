@@ -7,6 +7,17 @@ export const appRoutes: Route[] = [
     loadComponent: () => import('./pages/home-page').then((m) => m.HomePage),
   },
   {
+    path: 'events/:slug',
+    title: 'Event · GDG Wrocław',
+    loadComponent: () =>
+      import('./pages/event-route').then((m) => m.EventRoute),
+  },
+  // The meetup was published at this URL before the Event page existed (ADR-0025).
+  {
+    path: 'workshops/ai-cloud-stream-meetup',
+    redirectTo: 'events/ai-cloud-stream-meetup',
+  },
+  {
     path: 'workshops/:slug',
     title: 'Workshop · GDG Wrocław',
     loadComponent: () =>
