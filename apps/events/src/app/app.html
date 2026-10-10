@@ -1,4 +1,6 @@
-<main>
-  <h1>GDG Wrocław</h1>
+<a class="skip-link" href="#main">Skip to content</a>
+<gdg-navbar class="navbar" [links]="links" [actions]="actions" />
+<main id="main" tabindex="-1">
   <router-outlet />
 </main>
+<gdg-footer [links]="links" [socials]="socials" [legalLinks]="legalLinks" />
