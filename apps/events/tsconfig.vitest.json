@@ -1,0 +1,33 @@
+{
+  "//": "Compilation config for unit tests only (the test target's tsConfig). The unit-test builder loads packages from node_modules uncompiled, so the workspace libraries (ui, design system) are mapped to their sources with paths and compiled ahead of time like app code. Non-composite, as in libs/ui/tsconfig.vitest.json. Type checking of specs stays in tsconfig.spec.json.",
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": false,
+    "declaration": false,
+    "declarationMap": false,
+    "emitDeclarationOnly": false,
+    "outDir": "../../dist/out-tsc/events-vitest",
+    "types": ["vitest/globals"],
+    "paths": {
+      "@gdg-wroclaw/ui": ["../../libs/ui/src/index.ts"],
+      "@gdg-wroclaw/design-system-components": [
+        "../../libs/design-system/components/src/index.ts"
+      ],
+      "@gdg-wroclaw/design-system-tokens": [
+        "../../libs/design-system/tokens/src/index.ts"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "../../libs/ui/src/**/*.ts",
+    "../../libs/design-system/components/src/**/*.ts",
+    "../../libs/design-system/tokens/src/**/*.ts"
+  ],
+  "exclude": [
+    "../../libs/**/*.spec.ts",
+    "../../libs/**/*.stories.ts",
+    "../../libs/**/*.stories-data.ts",
+    "../../libs/**/test-setup.ts"
+  ]
+}
