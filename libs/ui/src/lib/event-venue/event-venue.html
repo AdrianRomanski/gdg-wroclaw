@@ -1,0 +1,37 @@
+@let v = venue();
+<section class="container" [attr.aria-labelledby]="headingId">
+  @if (v.photo; as photo) {
+  <img
+    class="photo"
+    width="600"
+    height="360"
+    loading="lazy"
+    [src]="photo.src"
+    [alt]="photo.alt ?? ''"
+  />
+  }
+  <div class="details">
+    <gdg-section-intro
+      [eyebrow]="v.eyebrow ?? ''"
+      [heading]="v.heading"
+      [description]="v.description ?? ''"
+      [headingId]="headingId"
+    />
+    @if (v.arrival) {
+    <p class="arrival">{{ v.arrival }}</p>
+    } @if (v.features?.length) {
+    <ul class="features">
+      @for (feature of v.features; track $index) {
+      <li class="feature">
+        <gdg-icon class="feature-icon" [name]="feature.icon" />{{ feature.text
+        }}
+      </li>
+      }
+    </ul>
+    } @if (v.action; as action) {
+    <a gdg-button variant="secondary" [href]="action.href"
+      >{{ action.label }}</a
+    >
+    }
+  </div>
+</section>

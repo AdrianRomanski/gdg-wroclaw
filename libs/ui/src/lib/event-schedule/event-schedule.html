@@ -1,0 +1,42 @@
+@let i = intro();
+<section class="container" [attr.aria-labelledby]="headingId">
+  <div class="intro">
+    <gdg-section-intro
+      [eyebrow]="i.eyebrow ?? ''"
+      [heading]="i.heading"
+      [description]="i.description ?? ''"
+      [headingId]="headingId"
+    />
+    @if (timezoneNote()) {
+    <p class="timezone">{{ timezoneNote() }}</p>
+    } @if (note()) {
+    <p class="note">{{ note() }}</p>
+    }
+  </div>
+
+  <ol class="agenda">
+    @for (session of sessions(); track $index) {
+    <li class="session">
+      <div class="time">
+        <time class="start" [attr.datetime]="session.dateTime ?? null"
+          >{{ session.start }}</time
+        >
+        @if (session.duration) {
+        <span class="duration">{{ session.duration }}</span>
+        }
+      </div>
+      <div class="content">
+        <h3 class="title">{{ session.title }}</h3>
+        @if (session.detail) {
+        <p class="detail">{{ session.detail }}</p>
+        }
+      </div>
+      @if (session.type) {
+      <span class="type" [class.type--highlight]="session.highlight"
+        >{{ session.type }}</span
+      >
+      }
+    </li>
+    }
+  </ol>
+</section>

@@ -1,0 +1,67 @@
+@let e = event(); @if (e.back; as back) {
+<nav class="breadcrumb" [attr.aria-label]="breadcrumbLabel()">
+  <ol>
+    <li>
+      <a class="back" [href]="back.href">
+        <gdg-icon name="arrow-left" [size]="18" />{{ back.label }}</a
+      >
+    </li>
+    <li class="separator" aria-hidden="true">/</li>
+    <li class="current" aria-current="page">{{ e.title }}</li>
+  </ol>
+</nav>
+}
+
+<div class="hero">
+  <div class="intro">
+    @if (e.label || e.labelNote) {
+    <div class="labels">
+      @if (e.label) {
+      <span class="label">{{ e.label }}</span>
+      } @if (e.labelNote) {
+      <span class="note">{{ e.labelNote }}</span>
+      }
+    </div>
+    }
+    <h1 class="title">
+      {{ e.title }} @if (e.tagline) {
+      <span class="tagline">{{ e.tagline }}</span>
+      }
+    </h1>
+    @if (e.summary) {
+    <p class="summary">{{ e.summary }}</p>
+    } @if (e.primaryAction || e.secondaryAction || e.actionNote) {
+    <div class="actions">
+      @if (e.primaryAction; as action) {
+      <a gdg-button [href]="action.href">{{ action.label }}</a>
+      } @if (e.secondaryAction; as action) {
+      <a gdg-button variant="secondary" [href]="action.href"
+        >{{ action.label }}</a
+      >
+      } @if (e.actionNote) {
+      <span class="note">{{ e.actionNote }}</span>
+      }
+    </div>
+    }
+  </div>
+  <gdg-event-graphic
+    class="graphic"
+    [motto]="e.motto ?? 'Build. Share. Connect.'"
+  />
+</div>
+
+@if (e.facts?.length) {
+<dl class="facts">
+  @for (fact of e.facts; track $index) {
+  <div class="fact">
+    <dt class="fact-label">
+      <gdg-icon class="fact-icon" [name]="fact.icon" />{{ fact.label }}
+    </dt>
+    <dd class="fact-value">{{ fact.value }}</dd>
+    @if (fact.detail) {
+    <dd class="fact-detail">{{ fact.detail }}</dd>
+    }
+  </div>
+  }
+</dl>
+}

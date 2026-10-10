@@ -36,6 +36,7 @@ For more information on ADRs, see [Architecture Decision Records](https://adr.gi
 | [ADR-0022](0022-landing-page-template.md)                          | Landing Page Template                                                     | **Accepted** | 2026-10-10 |
 | [ADR-0023](0023-events-app-shell-routes-and-content.md)            | Events App Shell, Routes and Sample Content                               | **Accepted** | 2026-10-10 |
 | [ADR-0024](0024-firebase-hosting-deployment.md)                    | Deploy the Events App to Firebase Hosting                                 | **Accepted** | 2026-10-10 |
+| [ADR-0025](0025-event-page-template.md)                            | Event Page Template, Section Components and Event Surface Tokens          | **Accepted** | 2026-10-10 |
 
 ---
 

@@ -1,0 +1,87 @@
+/*
+ * Figma: Event location (8927:6314). A raised band with 80px padding; the 600 × 360 photo (16px
+ * radius, cover) 64px from the details. Details 24px apart: the introduction, muted arrival
+ * instructions (12px, 1.5 line height), access and travel notes (24px icons, 12px apart) and a
+ * Secondary button. Figma uses Inter; we use Google Sans (ADR-0025).
+ */
+:host {
+  display: block;
+  padding: var(--gdg-layout-padding-section-medium);
+  background: var(--gdg-color-background-raised);
+  color: var(--gdg-color-content-default);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: var(--gdg-spacing-64);
+  max-inline-size: var(--gdg-layout-container-large);
+  margin-inline: auto;
+}
+
+.photo {
+  flex: 0 1 37.5rem;
+  min-inline-size: 0;
+  block-size: auto;
+  aspect-ratio: 600 / 360;
+  border-radius: var(--gdg-radius-16);
+  object-fit: cover;
+}
+
+.details {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gdg-spacing-24);
+  min-inline-size: 0;
+}
+
+.arrival,
+.features {
+  margin: 0;
+  font: var(--gdg-font-paragraph-9);
+}
+
+.arrival {
+  color: var(--gdg-color-content-muted);
+  line-height: 1.5;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-12);
+  padding: 0;
+  list-style: none;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: var(--gdg-spacing-12);
+}
+
+.feature-icon {
+  flex: none;
+  color: var(--gdg-color-brand-blue-secondary);
+}
+
+@media (width < 64rem) {
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--gdg-spacing-40);
+  }
+
+  .photo {
+    flex: none;
+    inline-size: 100%;
+  }
+}
+
+@media (width < 48rem) {
+  :host {
+    padding: var(--gdg-spacing-64) var(--gdg-spacing-20);
+  }
+}

@@ -1,0 +1,29 @@
+@let o = organizers();
+<section class="container" [attr.aria-labelledby]="headingId">
+  <gdg-section-intro
+    [eyebrow]="o.eyebrow ?? ''"
+    [heading]="o.heading"
+    [description]="o.description ?? ''"
+    [headingId]="headingId"
+  />
+
+  <div class="team">
+    <ul class="people">
+      @for (person of o.people; track $index) {
+      <li class="person"><gdg-person-card [person]="person" /></li>
+      }
+    </ul>
+    @if (o.contact; as contact) {
+    <div class="contact">
+      <h3 class="contact-heading">{{ contact.heading }}</h3>
+      @if (contact.text) {
+      <p class="contact-text">{{ contact.text }}</p>
+      } @if (contact.action; as action) {
+      <a gdg-button variant="secondary" [href]="action.href"
+        >{{ action.label }}</a
+      >
+      }
+    </div>
+    }
+  </div>
+</section>

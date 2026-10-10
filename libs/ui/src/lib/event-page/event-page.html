@@ -1,0 +1,43 @@
+@let e = event();
+<article>
+  <gdg-event-overview [event]="e" />
+
+  @if (e.speakers; as speakers) {
+  <gdg-event-speakers
+    class="section"
+    [id]="ids.speakers"
+    [intro]="speakers"
+    [talks]="speakers.talks"
+  />
+  } @if (e.schedule; as schedule) {
+  <gdg-event-schedule
+    class="section"
+    [id]="ids.schedule"
+    [intro]="schedule"
+    [sessions]="schedule.sessions"
+    [timezoneNote]="schedule.timezoneNote ?? ''"
+    [note]="schedule.note ?? ''"
+  />
+  } @if (e.venue; as venue) {
+  <gdg-event-venue class="section" [id]="ids.venue" [venue]="venue" />
+  } @if (e.organizers; as organizers) {
+  <gdg-event-organizers
+    class="section"
+    [id]="ids.organizers"
+    [organizers]="organizers"
+  />
+  } @if (e.supporters; as supporters) {
+  <gdg-event-supporters
+    class="section"
+    [id]="ids.supporters"
+    [intro]="supporters"
+    [groups]="supporters.groups"
+  />
+  } @if (e.registration; as registration) {
+  <gdg-event-registration
+    class="section"
+    [id]="ids.registration"
+    [registration]="registration"
+  />
+  }
+</article>
