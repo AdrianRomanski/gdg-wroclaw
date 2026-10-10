@@ -554,6 +554,18 @@ export const tokens = {
       "name": "Section Padding/padding-section-large"
     }
   },
+  "layout.padding-section-medium": {
+    "id": "layout.padding-section-medium",
+    "cssVariable": "--gdg-layout-padding-section-medium",
+    "type": "dimension",
+    "value": "5rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": "Vertical padding of a medium page section, e.g. the Footer (ADR-0020).",
+    "figma": {
+      "name": "Section Padding/padding-section-medium"
+    }
+  },
   "layout.container-large": {
     "id": "layout.container-large",
     "cssVariable": "--gdg-layout-container-large",

@@ -1,7 +1,14 @@
 import type { PersonRole } from '../role-badge/role-badge';
 
 export type SocialNetwork =
-  'linkedin' | 'x' | 'github' | 'dribbble' | 'website';
+  | 'linkedin'
+  | 'x'
+  | 'github'
+  | 'dribbble'
+  | 'facebook'
+  | 'instagram'
+  | 'youtube'
+  | 'website';
 
 export interface SocialLink {
   network: SocialNetwork;

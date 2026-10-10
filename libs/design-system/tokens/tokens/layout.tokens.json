@@ -20,6 +20,15 @@
         }
       }
     },
+    "padding-section-medium": {
+      "$value": "80px",
+      "$description": "Vertical padding of a medium page section, e.g. the Footer (ADR-0020).",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "Section Padding/padding-section-medium"
+        }
+      }
+    },
     "container-large": {
       "$value": "1280px",
       "$description": "Maximum width of a section container.",

@@ -1,0 +1,125 @@
+/*
+ * Figma: Landing Page Navbar (143:2899). The global page padding at the sides and 8px block
+ * padding. Logo and a 36px regular wordmark 24px apart; Nav Buttons, then 24px, then two 40px
+ * buttons 8px apart. Below 64rem a menu button toggles a stacked menu (ADR-0020).
+ */
+:host {
+  position: relative;
+  display: block;
+  padding: var(--gdg-spacing-8) var(--gdg-layout-padding-global);
+  background: var(--gdg-color-background-default);
+  color: var(--gdg-color-content-default);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gdg-spacing-24);
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  gap: var(--gdg-spacing-24);
+  min-inline-size: 0;
+  border-radius: var(--gdg-radius-12);
+  color: inherit;
+  text-decoration: none;
+}
+
+.home:focus-visible {
+  outline: 2px solid var(--gdg-color-content-default);
+  outline-offset: 4px;
+}
+
+.brand {
+  overflow: hidden;
+  font: var(--gdg-font-heading-1-regular);
+  line-height: 1.5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: var(--gdg-spacing-24);
+}
+
+.links ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.actions {
+  display: flex;
+  gap: var(--gdg-spacing-8);
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (width < 80rem) {
+  .brand {
+    font: var(--gdg-font-heading-4-regular);
+  }
+}
+
+@media (width < 64rem) {
+  :host {
+    padding-inline: var(--gdg-spacing-20);
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    flex: none;
+  }
+
+  .menu {
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline: 0;
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--gdg-spacing-16);
+    padding: var(--gdg-spacing-16) var(--gdg-spacing-20) var(--gdg-spacing-24);
+    border-block-end: 1px solid var(--gdg-color-border-default);
+    background: var(--gdg-color-background-default);
+  }
+
+  :host(.gdg-navbar--open) .menu {
+    display: flex;
+  }
+
+  .links ul {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .links [gdg-nav-button] {
+    justify-content: flex-start;
+    inline-size: 100%;
+    box-sizing: border-box;
+  }
+
+  .actions {
+    flex-wrap: wrap;
+  }
+}
+
+@media (width < 40rem) {
+  .home {
+    gap: var(--gdg-spacing-12);
+  }
+
+  .brand {
+    font: var(--gdg-font-paragraph-7);
+  }
+}

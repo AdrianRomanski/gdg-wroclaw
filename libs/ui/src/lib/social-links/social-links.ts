@@ -7,6 +7,9 @@ const NETWORKS: Record<SocialNetwork, { icon: IconName; label: string }> = {
   x: { icon: 'x-logo', label: 'X' },
   github: { icon: 'github-logo', label: 'GitHub' },
   dribbble: { icon: 'dribbble-logo', label: 'Dribbble' },
+  facebook: { icon: 'facebook-logo', label: 'Facebook' },
+  instagram: { icon: 'instagram-logo', label: 'Instagram' },
+  youtube: { icon: 'youtube-logo', label: 'YouTube' },
   website: { icon: 'globe', label: 'website' },
 };
 

@@ -1,0 +1,11 @@
+:host {
+  display: inline-flex;
+  flex-shrink: 0;
+  block-size: var(--gdg-logo-height);
+}
+
+svg {
+  display: block;
+  inline-size: auto;
+  block-size: 100%;
+}
