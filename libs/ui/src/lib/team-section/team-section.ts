@@ -4,7 +4,10 @@ import {
   Component,
   input,
 } from '@angular/core';
-import { Button } from '@gdg-wroclaw/design-system-components';
+import {
+  Button,
+  type ButtonColor,
+} from '@gdg-wroclaw/design-system-components';
 import { PersonCard, type PersonCardFrame } from '../person-card/person-card';
 import type { Person } from '../person/person';
 
@@ -44,4 +47,7 @@ export class TeamSection {
   readonly ctaHref = input<string>();
 
   readonly ctaLabel = input('Contact us');
+
+  /** Brand color of the call to action button (the Landing page uses yellow for Team). */
+  readonly ctaColor = input<ButtonColor>('blue');
 }

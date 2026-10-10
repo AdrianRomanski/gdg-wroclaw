@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="500" viewBox="0 0 1440 500">
+  <title>Landing hero placeholder</title>
+  <rect width="1440" height="500" fill="#1e1e1e"/>
+  <g fill="none" stroke="#4285f4" stroke-width="6">
+    <rect x="620" y="60" width="380" height="220" rx="24"/>
+    <circle cx="300" cy="400" r="40"/>
+    <circle cx="400" cy="400" r="40"/>
+    <circle cx="500" cy="400" r="40"/>
+  </g>
+  <circle cx="1220" cy="190" r="120" fill="none" stroke="#57caff" stroke-width="6"/>
+  <text x="60" y="170" fill="#f0f0f0" font-family="system-ui, sans-serif" font-size="96">Hero image</text>
+  <text x="60" y="250" fill="#57caff" font-family="system-ui, sans-serif" font-size="32">1440 × 500 · pass the chapter's brand-kit header</text>
+  <path d="M60 400h140m-40-40 40 40-40 40" fill="none" stroke="#c3ecf6" stroke-width="6"/>
+</svg>

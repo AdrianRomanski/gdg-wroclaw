@@ -10,7 +10,11 @@ import {
   signal,
   viewChild,
 } from '@angular/core';
-import { Button, Icon } from '@gdg-wroclaw/design-system-components';
+import {
+  Button,
+  type ButtonColor,
+  Icon,
+} from '@gdg-wroclaw/design-system-components';
 import { PartnerCard } from '../partner-card/partner-card';
 import type { Partner } from '../partner-card/partner';
 
@@ -56,6 +60,9 @@ export class PartnersSection {
   readonly ctaHref = input<string>();
 
   readonly ctaLabel = input('Contact');
+
+  /** Brand color of the call to action button (the Landing page uses yellow for Team). */
+  readonly ctaColor = input<ButtonColor>('blue');
 
   /** Accessible names of the carousel buttons. */
   readonly previousLabel = input('Previous partners');
