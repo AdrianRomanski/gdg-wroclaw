@@ -31,6 +31,7 @@ For more information on ADRs, see [Architecture Decision Records](https://adr.gi
 | [ADR-0017](0017-workshop-page-template.md)                         | Workshop Page Template, Event Banner and Workshop Details                 | **Accepted** | 2026-10-09 |
 | [ADR-0018](0018-person-card-and-team-section.md)                   | Person Card with Circle and Puzzle Frames, and the Team Section           | **Accepted** | 2026-10-10 |
 | [ADR-0019](0019-partner-card-and-partners-section.md)              | Partner Card and the Partners Section (Grid and Carousel)                 | **Accepted** | 2026-10-10 |
+| [ADR-0020](0020-navbar-footer-and-gdg-logo.md)                     | Navbar, Footer and the GDG Logo                                           | **Accepted** | 2026-10-10 |
 
 ---
 

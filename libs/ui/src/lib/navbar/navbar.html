@@ -1,0 +1,56 @@
+<div class="container">
+  <a class="home" [href]="homeHref()">
+    <gdg-logo />
+    <span class="brand">{{ brand() }}</span>
+  </a>
+
+  @if (links().length || actions().length) {
+  <button
+    gdg-button
+    type="button"
+    class="menu-toggle"
+    variant="secondary"
+    size="m"
+    iconOnly
+    [attr.aria-label]="menuLabel()"
+    [attr.aria-expanded]="menuOpen()"
+    [attr.aria-controls]="menuId"
+    (click)="toggleMenu()"
+  >
+    <gdg-icon [name]="menuOpen() ? 'x' : 'list'" />
+  </button>
+
+  <div class="menu" [id]="menuId">
+    @if (links().length) {
+    <nav class="links" [attr.aria-label]="navLabel()">
+      <ul>
+        @for (link of links(); track link.href) {
+        <li>
+          <a
+            gdg-nav-button
+            [href]="link.href"
+            [active]="link.current ?? false"
+            (click)="closeMenu()"
+            >{{ link.label }}</a
+          >
+        </li>
+        }
+      </ul>
+    </nav>
+    } @if (actions().length) {
+    <div class="actions">
+      @for (action of actions(); track action.href) {
+      <a
+        gdg-button
+        size="m"
+        [variant]="action.variant ?? 'primary'"
+        [href]="action.href"
+        (click)="closeMenu()"
+        >{{ action.label }}</a
+      >
+      }
+    </div>
+    }
+  </div>
+  }
+</div>

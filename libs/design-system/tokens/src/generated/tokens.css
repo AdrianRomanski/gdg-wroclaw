@@ -27,6 +27,7 @@
   --gdg-color-black-02-alpha-10: #1e1e1e1a; /** Black 02 at 10% opacity. */
   --gdg-layout-padding-global: 4rem; /** Horizontal page padding. */
   --gdg-layout-padding-section-large: 7rem; /** Vertical padding of a large page section. */
+  --gdg-layout-padding-section-medium: 5rem; /** Vertical padding of a medium page section, e.g. the Footer (ADR-0020). */
   --gdg-layout-container-large: 80rem; /** Maximum width of a section container. */
   --gdg-layout-max-width-large: 48rem; /** Maximum width of a section title block. */
   --gdg-layout-max-width-medium: 35rem; /** Maximum width of a form. */

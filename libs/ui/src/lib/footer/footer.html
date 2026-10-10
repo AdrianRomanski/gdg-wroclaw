@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="main">
+    <div class="logo">
+      <a class="home" [href]="homeHref()" [attr.aria-label]="homeLabel()">
+        <gdg-logo />
+      </a>
+    </div>
+
+    @if (links().length) {
+    <nav class="links" [attr.aria-label]="navLabel()">
+      <ul>
+        @for (link of links(); track link.href) {
+        <li>
+          <a gdg-nav-button [href]="link.href" [active]="link.current ?? false"
+            >{{ link.label }}</a
+          >
+        </li>
+        }
+      </ul>
+    </nav>
+    }
+
+    <div class="socials">
+      @if (socials().length) {
+      <gdg-social-links [links]="socials()" [owner]="owner()" />
+      }
+    </div>
+  </div>
+
+  @if (legalLinks().length) {
+  <div class="credits">
+    <nav [attr.aria-label]="legalLabel()">
+      <ul class="legal">
+        @for (link of legalLinks(); track link.href) {
+        <li>
+          <a
+            class="legal-link"
+            [href]="link.href"
+            [attr.aria-current]="link.current ? 'page' : null"
+            >{{ link.label }}</a
+          >
+        </li>
+        }
+      </ul>
+    </nav>
+  </div>
+  }
+</div>

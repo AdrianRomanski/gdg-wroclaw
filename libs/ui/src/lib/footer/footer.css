@@ -1,0 +1,112 @@
+/*
+ * Figma: Footer / 4 / (143:3117). Medium section padding (80px) and the global page padding; the
+ * 1280px container with 80px between the main row and the credits. Main row: logo and social
+ * links in equal outer columns around the centered Nav Buttons, 32px apart. Credits: a 1px
+ * divider, then 14px underlined legal links 24px apart, 32px below it. Stacks below 64rem
+ * (ADR-0020).
+ */
+:host {
+  display: block;
+  padding: var(--gdg-layout-padding-section-medium)
+    var(--gdg-layout-padding-global);
+  background: var(--gdg-color-background-default);
+  color: var(--gdg-color-content-default);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-80);
+  max-inline-size: var(--gdg-layout-container-large);
+  margin-inline: auto;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  gap: var(--gdg-spacing-32);
+}
+
+.logo,
+.socials {
+  display: flex;
+  flex: 1 1 0;
+  min-inline-size: 0;
+}
+
+.socials {
+  justify-content: flex-end;
+}
+
+.home {
+  display: inline-flex;
+  border-radius: var(--gdg-radius-12);
+}
+
+.home:focus-visible {
+  outline: 2px solid var(--gdg-color-content-default);
+  outline-offset: 4px;
+}
+
+.links ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.credits {
+  display: flex;
+  justify-content: center;
+  padding-block-start: var(--gdg-spacing-32);
+  border-block-start: 1px solid var(--gdg-color-border-default);
+}
+
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gdg-spacing-8) var(--gdg-spacing-24);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.legal-link {
+  border-radius: var(--gdg-spacing-4);
+  color: inherit;
+  font: var(--gdg-font-paragraph-8);
+}
+
+.legal-link:hover {
+  color: var(--gdg-color-brand-blue-secondary);
+}
+
+.legal-link:focus-visible {
+  outline: 2px solid var(--gdg-color-content-default);
+  outline-offset: 2px;
+}
+
+@media (width < 64rem) {
+  .main {
+    flex-direction: column;
+    gap: var(--gdg-spacing-24);
+  }
+
+  .logo,
+  .socials {
+    justify-content: center;
+  }
+
+  .container {
+    gap: var(--gdg-spacing-48);
+  }
+}
+
+@media (width < 48rem) {
+  :host {
+    padding: var(--gdg-spacing-48) var(--gdg-spacing-20);
+  }
+}
