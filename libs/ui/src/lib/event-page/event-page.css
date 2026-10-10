@@ -1,0 +1,12 @@
+/* Figma: DevFest • Event detail (8927:6018). The sections stack on the default background (ADR-0025). */
+:host {
+  display: block;
+  background: var(--gdg-color-background-default);
+  color: var(--gdg-color-content-default);
+}
+
+/* Anchor targets land below a sticky Navbar, if the app shell makes it sticky. */
+.section {
+  display: block;
+  scroll-margin-block-start: var(--gdg-spacing-80);
+}

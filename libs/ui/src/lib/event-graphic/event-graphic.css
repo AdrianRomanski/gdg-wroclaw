@@ -1,0 +1,67 @@
+/*
+ * Figma: Community graphic (8927:6067), 536 × 400. Positions are percentages of that frame and
+ * text sizes follow the width (container units), so the graphic scales as one piece. Code tile:
+ * 240 × 206 at (8, 85), 3px Blue 500 border, 32px radius, a 105px Halftone Blue "{ }". Motto at
+ * (120, 310): 16px/24px padding, a 10px Halftone Green dot and 26px text (ADR-0025).
+ */
+:host {
+  position: relative;
+  display: block;
+  aspect-ratio: 536 / 400;
+  container-type: inline-size;
+  color: var(--gdg-color-content-default);
+}
+
+.layer {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.primary {
+  stroke: var(--gdg-color-brand-blue-primary);
+}
+
+.secondary {
+  stroke: var(--gdg-color-brand-blue-secondary);
+}
+
+.motto {
+  position: absolute;
+  inset-block-start: calc(310 / 400 * 100%);
+  inset-inline-start: calc(120 / 536 * 100%);
+  display: flex;
+  align-items: center;
+  gap: calc(16 / 536 * 100cqi);
+  padding: calc(16 / 536 * 100cqi) calc(24 / 536 * 100cqi);
+  background: var(--gdg-color-background-default);
+  font-family: var(--gdg-font-family-sans);
+  font-size: calc(26 / 536 * 100cqi);
+  white-space: nowrap;
+}
+
+.dot {
+  inline-size: calc(10 / 536 * 100cqi);
+  aspect-ratio: 1;
+  border-radius: var(--gdg-radius-full);
+  background: var(--gdg-color-brand-green-secondary);
+}
+
+.tile {
+  position: absolute;
+  inset-block-start: calc(85 / 400 * 100%);
+  inset-inline-start: calc(8 / 536 * 100%);
+  display: grid;
+  place-content: center;
+  box-sizing: border-box;
+  inline-size: calc(240 / 536 * 100%);
+  block-size: calc(206 / 400 * 100%);
+  border: calc(3 / 536 * 100cqi) solid var(--gdg-color-brand-blue-primary);
+  border-radius: calc(32 / 536 * 100cqi);
+  background: var(--gdg-color-background-default);
+  color: var(--gdg-color-brand-blue-secondary);
+  font-family: var(--gdg-font-family-sans);
+  font-size: calc(105 / 536 * 100cqi);
+  line-height: 1;
+}

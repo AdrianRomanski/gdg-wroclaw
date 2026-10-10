@@ -1,0 +1,97 @@
+/*
+ * Figma: Speakers and talks (8927:6097). 96px/80px padding; the introduction 56px above the
+ * lineup. Two columns 64px apart; in each, the 296px Person card 32px above the talk card. Talk
+ * card: raised surface, 12px radius, 24px padding, 16px gaps; topic in Halftone Blue, time and
+ * description muted, all 12px. Figma uses Inter; we use Google Sans (ADR-0025).
+ */
+:host {
+  display: block;
+  padding: 6rem var(--gdg-layout-padding-section-medium);
+  color: var(--gdg-color-content-default);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  max-inline-size: var(--gdg-layout-container-large);
+  margin-inline: auto;
+}
+
+.lineup {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gdg-spacing-64);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.speaker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gdg-spacing-32);
+}
+
+.profile {
+  inline-size: min(100%, 18.5rem);
+}
+
+.talk {
+  /* Talk cards line up even when one speaker has more profile lines (e.g. social links). */
+  margin-block-start: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-16);
+  box-sizing: border-box;
+  inline-size: 100%;
+  padding: var(--gdg-spacing-24);
+  border-radius: var(--gdg-radius-12);
+  background: var(--gdg-color-background-raised);
+  font: var(--gdg-font-paragraph-9);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--gdg-spacing-8);
+}
+
+.topic {
+  color: var(--gdg-color-brand-blue-secondary);
+  text-transform: uppercase;
+}
+
+.time,
+.talk-description {
+  color: var(--gdg-color-content-muted);
+}
+
+.talk-title,
+.talk-description {
+  margin: 0;
+  font: inherit;
+}
+
+.talk-description {
+  line-height: 1.5;
+}
+
+@media (width < 56rem) {
+  .lineup {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--gdg-spacing-48);
+  }
+}
+
+@media (width < 48rem) {
+  :host {
+    padding: var(--gdg-spacing-64) var(--gdg-spacing-20);
+  }
+
+  .container {
+    gap: var(--gdg-spacing-40);
+  }
+}

@@ -1,0 +1,146 @@
+/*
+ * Figma: Event schedule (8927:6232). 96px/80px padding; a 350px introduction 80px from the
+ * agenda. Introduction parts 32px apart: the timezone pill (raised, 10px/16px padding) and a
+ * muted note. Agenda rows between subtle dividers, 24px padding, columns 32px apart: the 125px
+ * time (start in Halftone Blue, length muted), the session (title, muted details) and a 125px
+ * type pill (raised and muted, or blue for talks and workshops). All text 12px; Figma uses Inter,
+ * we use Google Sans (ADR-0025).
+ */
+:host {
+  display: block;
+  padding: 6rem var(--gdg-layout-padding-section-medium);
+  color: var(--gdg-color-content-default);
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gdg-spacing-80);
+  max-inline-size: var(--gdg-layout-container-large);
+  margin-inline: auto;
+}
+
+.intro {
+  display: flex;
+  flex: 0 0 21.875rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gdg-spacing-32);
+}
+
+.timezone,
+.note,
+.agenda {
+  margin: 0;
+  font: var(--gdg-font-paragraph-9);
+}
+
+.timezone {
+  padding: 0.625rem var(--gdg-spacing-16);
+  border-radius: var(--gdg-radius-full);
+  background: var(--gdg-color-background-raised);
+}
+
+.note {
+  color: var(--gdg-color-content-muted);
+  line-height: 1.5;
+}
+
+.agenda {
+  flex: 1;
+  min-inline-size: 0;
+  padding: 0;
+  border-block-end: 1px solid var(--gdg-color-border-subtle);
+  list-style: none;
+}
+
+.session {
+  display: flex;
+  align-items: center;
+  gap: var(--gdg-spacing-32);
+  padding-block: var(--gdg-spacing-24);
+  border-block-start: 1px solid var(--gdg-color-border-subtle);
+}
+
+.time {
+  display: flex;
+  flex: 0 0 7.8125rem;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.start {
+  color: var(--gdg-color-brand-blue-secondary);
+}
+
+.duration,
+.detail {
+  color: var(--gdg-color-content-muted);
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gdg-spacing-8);
+  min-inline-size: 0;
+}
+
+.title,
+.detail {
+  margin: 0;
+  font: inherit;
+}
+
+.type {
+  flex: 0 0 7.8125rem;
+  box-sizing: border-box;
+  padding: 0.375rem var(--gdg-spacing-12);
+  border-radius: var(--gdg-radius-full);
+  background: var(--gdg-color-background-raised);
+  color: var(--gdg-color-content-muted);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.type--highlight {
+  background: var(--gdg-color-background-brand-subtle);
+  color: var(--gdg-color-brand-blue-secondary);
+}
+
+@media (width < 64rem) {
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--gdg-spacing-48);
+  }
+
+  .intro {
+    flex: none;
+    max-inline-size: 35rem;
+  }
+}
+
+@media (width < 48rem) {
+  :host {
+    padding: var(--gdg-spacing-64) var(--gdg-spacing-20);
+  }
+
+  .session {
+    flex-wrap: wrap;
+    gap: var(--gdg-spacing-12) var(--gdg-spacing-16);
+  }
+
+  .time {
+    flex-basis: 3.5rem;
+  }
+
+  .content {
+    flex-basis: calc(100% - 3.5rem - var(--gdg-spacing-16));
+  }
+
+  .type {
+    flex-basis: auto;
+    margin-inline-start: calc(3.5rem + var(--gdg-spacing-16));
+  }
+}

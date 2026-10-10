@@ -1,0 +1,20 @@
+@let r = registration();
+<section class="container" [attr.aria-labelledby]="headingId">
+  <div class="invitation">
+    <h2 class="heading" [id]="headingId">{{ r.heading }}</h2>
+    @if (r.reminder) {
+    <p class="reminder">{{ r.reminder }}</p>
+    } @if (r.detail) {
+    <p class="detail">{{ r.detail }}</p>
+    }
+  </div>
+  @if (r.action || r.note) {
+  <div class="register">
+    @if (r.action; as action) {
+    <a gdg-button [href]="action.href">{{ action.label }}</a>
+    } @if (r.note) {
+    <p class="note">{{ r.note }}</p>
+    }
+  </div>
+  }
+</section>

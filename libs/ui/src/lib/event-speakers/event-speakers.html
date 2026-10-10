@@ -1,0 +1,32 @@
+@let i = intro();
+<section class="container" [attr.aria-labelledby]="headingId">
+  <gdg-section-intro
+    [eyebrow]="i.eyebrow ?? ''"
+    [heading]="i.heading"
+    [description]="i.description ?? ''"
+    [headingId]="headingId"
+  />
+
+  <ul class="lineup">
+    @for (talk of talks(); track $index) {
+    <li class="speaker">
+      <gdg-person-card class="profile" [person]="talk.speaker" />
+      <article class="talk">
+        @if (talk.topic || talk.time) {
+        <div class="meta">
+          @if (talk.topic) {
+          <span class="topic">{{ talk.topic }}</span>
+          } @if (talk.time) {
+          <span class="time">{{ talk.time }}</span>
+          }
+        </div>
+        }
+        <h4 class="talk-title">{{ talk.title }}</h4>
+        @if (talk.description) {
+        <p class="talk-description">{{ talk.description }}</p>
+        }
+      </article>
+    </li>
+    }
+  </ul>
+</section>

@@ -1,0 +1,186 @@
+/*
+ * Figma: Event overview (8927:6046). 40px top, 64px bottom and 80px side padding; breadcrumb, hero
+ * and essentials 48px apart. Hero: the 680px introduction 64px from the 536 × 400 graphic. Title
+ * 72px bold at 1.08 line height (no text style that large; built from the type tokens), summary
+ * and notes 12px muted. Essentials: three equal columns, 40px apart, between subtle dividers with
+ * 32px padding. Figma uses Inter; we use Google Sans (ADR-0025).
+ */
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-48);
+  max-inline-size: var(--gdg-layout-container-large);
+  margin-inline: auto;
+  padding: var(--gdg-spacing-40) var(--gdg-layout-padding-section-medium)
+    var(--gdg-spacing-64);
+  color: var(--gdg-color-content-default);
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--gdg-spacing-12);
+  margin: 0;
+  padding: 0;
+  font: var(--gdg-font-paragraph-9);
+  list-style: none;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gdg-spacing-12);
+  color: var(--gdg-color-content-default);
+  text-decoration: none;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+.back:focus-visible {
+  outline: 2px solid var(--gdg-color-brand-blue-secondary);
+  outline-offset: 2px;
+}
+
+.separator,
+.current,
+.note,
+.summary,
+.fact-label,
+.fact-detail {
+  color: var(--gdg-color-content-muted);
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: var(--gdg-spacing-64);
+}
+
+.intro {
+  display: flex;
+  flex: 0 1 42.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gdg-spacing-24);
+  min-inline-size: 0;
+}
+
+.graphic {
+  flex: 0 1 33.5rem;
+  min-inline-size: 0;
+}
+
+.labels,
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--gdg-spacing-12);
+}
+
+.actions {
+  gap: var(--gdg-spacing-16);
+}
+
+.label {
+  padding: 0.375rem 0.875rem;
+  border-radius: var(--gdg-radius-full);
+  background: var(--gdg-color-background-brand-subtle);
+  color: var(--gdg-color-brand-blue-secondary);
+  text-transform: uppercase;
+}
+
+.label,
+.note,
+.fact-label,
+.fact-value,
+.fact-detail {
+  font: var(--gdg-font-paragraph-9);
+}
+
+.title {
+  margin: 0;
+  font: var(--gdg-font-weight-bold) 4.5rem / 1.08 var(--gdg-font-family-sans);
+}
+
+.tagline {
+  display: block;
+}
+
+.summary {
+  max-inline-size: 38.75rem;
+  margin: 0;
+  font: var(--gdg-font-paragraph-9);
+  line-height: 1.5;
+}
+
+.facts {
+  display: flex;
+  gap: var(--gdg-spacing-40);
+  margin: 0;
+  padding-block: var(--gdg-spacing-32);
+  border-block: 1px solid var(--gdg-color-border-subtle);
+}
+
+.fact {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: var(--gdg-spacing-12);
+  min-inline-size: 0;
+}
+
+.fact-label {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.fact-icon {
+  color: var(--gdg-color-brand-blue-secondary);
+}
+
+.fact-value,
+.fact-detail {
+  margin: 0;
+}
+
+@media (width < 64rem) {
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .intro,
+  .graphic {
+    flex: none;
+  }
+
+  .graphic {
+    inline-size: min(100%, 33.5rem);
+    margin-inline: auto;
+  }
+}
+
+@media (width < 48rem) {
+  :host {
+    padding: var(--gdg-spacing-24) var(--gdg-spacing-20) var(--gdg-spacing-48);
+  }
+
+  .title {
+    font: var(--gdg-font-display-1);
+  }
+
+  .facts {
+    flex-direction: column;
+    gap: var(--gdg-spacing-24);
+  }
+}

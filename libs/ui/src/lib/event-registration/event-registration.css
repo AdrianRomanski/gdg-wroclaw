@@ -1,0 +1,72 @@
+/*
+ * Figma: Registration callout (8927:6451). A blue-tinted band, 64px/80px padding, the invitation
+ * (max 780px, parts 16px apart: 48px bold heading, 12px date and place, muted 12px details) and
+ * the Primary button with a muted 12px note 12px below, centered. Figma uses Inter; we use Google
+ * Sans (ADR-0025).
+ */
+:host {
+  display: block;
+  padding: var(--gdg-spacing-64) var(--gdg-layout-padding-section-medium);
+  background: var(--gdg-color-background-brand-subtle);
+  color: var(--gdg-color-content-default);
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gdg-spacing-40);
+  max-inline-size: var(--gdg-layout-container-large);
+  margin-inline: auto;
+}
+
+.invitation {
+  display: flex;
+  flex: 0 1 48.75rem;
+  flex-direction: column;
+  gap: var(--gdg-spacing-16);
+}
+
+.heading,
+.reminder,
+.detail,
+.note {
+  margin: 0;
+}
+
+.heading {
+  font: var(--gdg-font-display-1);
+}
+
+.reminder,
+.detail,
+.note {
+  font: var(--gdg-font-paragraph-9);
+}
+
+.detail,
+.note {
+  color: var(--gdg-color-content-muted);
+}
+
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gdg-spacing-12);
+}
+
+@media (width < 48rem) {
+  :host {
+    padding: var(--gdg-spacing-48) var(--gdg-spacing-20);
+  }
+
+  .heading {
+    font: var(--gdg-font-heading-1);
+  }
+
+  .register {
+    align-items: flex-start;
+  }
+}

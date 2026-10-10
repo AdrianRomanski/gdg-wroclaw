@@ -1,0 +1,35 @@
+/*
+ * Figma: Section introduction (Event detail, e.g. 8927:6098). 16px apart: the eyebrow (14px,
+ * Halftone Blue, upper case), the heading (48px bold, Display 1) and the description (18px,
+ * muted, P6). Figma uses Inter; we use the Google Sans text styles (ADR-0025).
+ */
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-16);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--gdg-color-brand-blue-secondary);
+  font: var(--gdg-font-paragraph-8);
+  text-transform: uppercase;
+}
+
+.heading {
+  margin: 0;
+  color: var(--gdg-color-content-default);
+  font: var(--gdg-font-display-1);
+}
+
+.description {
+  margin: 0;
+  color: var(--gdg-color-content-muted);
+  font: var(--gdg-font-paragraph-6);
+}
+
+@media (width < 48rem) {
+  .heading {
+    font: var(--gdg-font-heading-1);
+  }
+}

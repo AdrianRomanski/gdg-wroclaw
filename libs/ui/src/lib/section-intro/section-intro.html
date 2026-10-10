@@ -1,0 +1,7 @@
+@if (eyebrow()) {
+<p class="eyebrow">{{ eyebrow() }}</p>
+}
+<h2 class="heading" [attr.id]="headingId() ?? null">{{ heading() }}</h2>
+@if (description()) {
+<p class="description">{{ description() }}</p>
+}

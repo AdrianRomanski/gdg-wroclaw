@@ -1,0 +1,72 @@
+/*
+ * Figma: Event partners and sponsors (8927:6405). A subtle top divider, 96px/80px padding; the
+ * introduction 48px above the groups. Groups 64px apart, each a 12px title 24px above its cards.
+ * Cards (Partner card, card variant) up to 292px wide, 24px apart, with the muted 12px
+ * contribution 12px below. Our partner tiles stay light so real logos read well (ADR-0019); the
+ * Figma sample tiles are dark. Figma uses Inter; we use Google Sans (ADR-0025).
+ */
+:host {
+  display: block;
+  padding: 6rem var(--gdg-layout-padding-section-medium);
+  border-block-start: 1px solid var(--gdg-color-border-subtle);
+  color: var(--gdg-color-content-default);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-48);
+  max-inline-size: var(--gdg-layout-container-large);
+  margin-inline: auto;
+}
+
+.groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gdg-spacing-48) var(--gdg-spacing-64);
+}
+
+.group {
+  display: flex;
+  flex: 1 1 18.25rem;
+  flex-direction: column;
+  gap: var(--gdg-spacing-24);
+  min-inline-size: 0;
+}
+
+.group-title,
+.contribution {
+  margin: 0;
+  font: var(--gdg-font-paragraph-9);
+}
+
+.supporters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gdg-spacing-24);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.supporter {
+  display: flex;
+  flex: 0 1 18.25rem;
+  flex-direction: column;
+  gap: var(--gdg-spacing-12);
+  min-inline-size: 0;
+}
+
+.contribution {
+  color: var(--gdg-color-content-muted);
+}
+
+@media (width < 48rem) {
+  :host {
+    padding: var(--gdg-spacing-64) var(--gdg-spacing-20);
+  }
+
+  .supporter {
+    flex-basis: calc(50% - var(--gdg-spacing-24) / 2);
+  }
+}

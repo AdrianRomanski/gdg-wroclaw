@@ -1,0 +1,78 @@
+/*
+ * Figma: Event organizers (8927:6332). 96px/80px padding; the introduction 56px above the team.
+ * 296px Person cards 80px apart, then the contact block (32px start padding, parts 24px apart): a
+ * 12px heading, muted 12px text and a Secondary button. More cards than fit wrap, and the contact
+ * block moves below them. Figma uses Inter; we use Google Sans (ADR-0025).
+ */
+:host {
+  display: block;
+  padding: 6rem var(--gdg-layout-padding-section-medium);
+  color: var(--gdg-color-content-default);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  max-inline-size: var(--gdg-layout-container-large);
+  margin-inline: auto;
+}
+
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--gdg-spacing-64) var(--gdg-spacing-80);
+}
+
+.people {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gdg-spacing-64) var(--gdg-spacing-80);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.person {
+  inline-size: 18.5rem;
+  max-inline-size: 100%;
+}
+
+.contact {
+  display: flex;
+  flex: 1 1 20rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gdg-spacing-24);
+  padding-inline-start: var(--gdg-spacing-32);
+}
+
+.contact-heading,
+.contact-text {
+  margin: 0;
+  font: var(--gdg-font-paragraph-9);
+}
+
+.contact-text {
+  color: var(--gdg-color-content-muted);
+  line-height: 1.5;
+}
+
+@media (width < 48rem) {
+  :host {
+    padding: var(--gdg-spacing-64) var(--gdg-spacing-20);
+  }
+
+  .container {
+    gap: var(--gdg-spacing-40);
+  }
+
+  .people {
+    justify-content: center;
+  }
+
+  .contact {
+    padding-inline-start: 0;
+  }
+}

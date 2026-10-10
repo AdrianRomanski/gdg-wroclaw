@@ -1,0 +1,27 @@
+@let i = intro();
+<section class="container" [attr.aria-labelledby]="headingId">
+  <gdg-section-intro
+    [eyebrow]="i.eyebrow ?? ''"
+    [heading]="i.heading"
+    [description]="i.description ?? ''"
+    [headingId]="headingId"
+  />
+
+  <div class="groups">
+    @for (group of groups(); track $index) {
+    <div class="group">
+      <h3 class="group-title">{{ group.title }}</h3>
+      <ul class="supporters">
+        @for (supporter of group.supporters; track $index) {
+        <li class="supporter">
+          <gdg-partner-card [partner]="supporter.partner" variant="card" />
+          @if (supporter.contribution) {
+          <p class="contribution">{{ supporter.contribution }}</p>
+          }
+        </li>
+        }
+      </ul>
+    </div>
+    }
+  </div>
+</section>
