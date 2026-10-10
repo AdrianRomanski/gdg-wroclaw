@@ -1,5 +1,8 @@
 // Public API of @gdg-wroclaw/ui: composed GDG product UI built from the design system (ADR-0013).
 export * from './lib/contact-form/contact-form';
+export * from './lib/event-card/event-card';
+export * from './lib/event-card/gdg-event';
+export * from './lib/events-section/events-section';
 export * from './lib/faq/faq-item';
 export * from './lib/faq/faq-section';
 export * from './lib/footer/footer';

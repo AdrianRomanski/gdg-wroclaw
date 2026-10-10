@@ -1,0 +1,37 @@
+@let e = event();
+<div class="content">
+  <div>
+    <div class="heading">
+      <h3 class="title" [id]="titleId">{{ e.title }}</h3>
+      @if (e.tag) {
+      <span class="tag">{{ e.tag }}</span>
+      }
+    </div>
+    @if (e.time || e.location) {
+    <p class="meta">
+      @if (e.time) {
+      <time [attr.datetime]="e.dateTime ?? null">{{ e.time }}</time>
+      } @if (e.time && e.location) {
+      <span class="separator" aria-hidden="true">•</span>
+      } @if (e.location) {
+      <span>{{ e.location }}</span>
+      }
+    </p>
+    }
+  </div>
+  @if (e.description) {
+  <p class="description">{{ e.description }}</p>
+  }
+</div>
+
+@if (e.href) {
+<a
+  gdg-button
+  class="read-more"
+  variant="secondary"
+  size="m"
+  [href]="e.href"
+  [attr.aria-describedby]="titleId"
+  >{{ readMoreLabel() }}</a
+>
+}

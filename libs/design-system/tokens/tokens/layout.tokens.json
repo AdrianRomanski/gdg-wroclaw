@@ -38,6 +38,10 @@
         }
       }
     },
+    "max-width-xlarge": {
+      "$value": "950px",
+      "$description": "Maximum width of the event list. Not yet a Figma variable (ADR-0021)."
+    },
     "max-width-large": {
       "$value": "768px",
       "$description": "Maximum width of a section title block.",
