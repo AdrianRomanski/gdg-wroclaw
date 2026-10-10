@@ -1,7 +1,7 @@
 import type { EventDay, LandingPageContent, Partner } from '@gdg-wroclaw/ui';
 import { ORGANIZERS } from './organizers';
 
-/** Upcoming events; "Read more" opens the event page (`/workshops/:slug`). */
+/** Upcoming events; "Read more" opens the event page (`/events/:slug`). */
 const EVENTS: readonly EventDay[] = [
   {
     label: '29.10',
@@ -14,7 +14,7 @@ const EVENTS: readonly EventDay[] = [
         location: 'Capgemini, Legnicka 48H, Wrocław',
         description:
           'An evening of AI and cloud talks: building, deploying and evaluating agents on Google Cloud, and a personal mind trainer that pairs a local Gemma model with Gemini. Pizza and networking included.',
-        href: '/workshops/ai-cloud-stream-meetup',
+        href: '/events/ai-cloud-stream-meetup',
       },
     ],
   },
