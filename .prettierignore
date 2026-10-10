@@ -11,3 +11,6 @@ libs/design-system/tokens/src/generated
 
 # Generated icon registry (ADR-0011)
 libs/design-system/components/src/lib/icon/generated
+
+# Vendored agent skills, managed by the skills installer (skills-lock.json)
+.agents/skills
