@@ -7,4 +7,6 @@ export interface Workshop {
   /** Header image, e.g. the event's GDG brand-kit banner. */
   banner?: { src: string; alt?: string };
   trainers?: readonly Person[];
+  /** Heading above `trainers`, e.g. "Speakers & organizers" for a meetup. Defaults to "Trainers". */
+  trainersHeading?: string;
 }

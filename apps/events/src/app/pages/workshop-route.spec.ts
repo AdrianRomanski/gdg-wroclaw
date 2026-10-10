@@ -17,8 +17,13 @@ describe('WorkshopRoute', () => {
   }
 
   it('renders a known workshop', async () => {
-    const element = await render('sample-workshop');
-    expect(element.querySelector('h1')?.textContent).toBe('Workshop topic');
+    const element = await render('ai-cloud-stream-meetup');
+    expect(element.querySelector('h1')?.textContent).toBe(
+      'AI & Cloud Stream Meetup',
+    );
+    expect(element.querySelector('h2')?.textContent?.trim()).toBe(
+      'Speakers & organizers',
+    );
   });
 
   it('shows Not found for an unknown or inherited slug', async () => {
