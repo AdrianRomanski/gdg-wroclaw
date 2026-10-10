@@ -120,7 +120,7 @@ All text pairs pass WCAG AA. The primitives record their source as the Event pag
 
 ### App (`apps/events`)
 
-- `content/events.ts` holds the AI & Cloud Stream Meetup as an `EventDetail`, from its gdg.community.dev page: date, time, agenda, speakers and talks, the venue with a Google Maps link, the four organizers, Capgemini as Gold sponsor and venue host (its logo from the event page, self-hosted in `public/partners`), and RSVP buttons.
+- `content/events.ts` holds the AI & Cloud Stream Meetup as an `EventDetail`, from its gdg.community.dev page: date, time, agenda, speakers and talks, the venue with a Google Maps link, the four organizers, Capgemini as Main sponsor and venue host (its logo from capgemini.com, self-hosted in `public/partners`), and RSVP buttons.
 - `/events/:slug` renders `EventPage`, or Not found. `/workshops/ai-cloud-stream-meetup` redirects there, because that URL was already live; the landing event card links to the new URL.
 - The Workshop route and template stay for workshops; `WORKSHOPS` is empty for now.
 
