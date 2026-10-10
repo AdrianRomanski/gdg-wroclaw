@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="title">
+    <h2 class="heading">{{ heading() }}</h2>
+    @if (description()) {
+    <p class="description">{{ description() }}</p>
+    }
+  </div>
+
+  @if (days().length) {
+  <div class="content">
+    <div class="filters" role="tablist" [attr.aria-label]="filtersLabel()">
+      @for (day of days(); track $index) {
+      <button
+        type="button"
+        role="tab"
+        class="filter"
+        [id]="idPrefix + '-tab-' + $index"
+        [attr.aria-label]="day.ariaLabel ?? null"
+        [attr.aria-selected]="$index === selected()"
+        [attr.aria-controls]="idPrefix + '-panel'"
+        [tabIndex]="$index === selected() ? 0 : -1"
+        (click)="select($index)"
+        (keydown)="onKeydown($event)"
+      >
+        {{ day.label }}
+      </button>
+      }
+    </div>
+
+    <div
+      class="panel"
+      role="tabpanel"
+      [id]="idPrefix + '-panel'"
+      [attr.aria-labelledby]="idPrefix + '-tab-' + selected()"
+    >
+      @if (selectedDay()?.events?.length) {
+      <ul class="events">
+        @for (event of selectedDay()?.events; track $index) {
+        <li>
+          <gdg-event-card [event]="event" [readMoreLabel]="readMoreLabel()" />
+        </li>
+        }
+      </ul>
+      } @else {
+      <p class="empty">{{ emptyText() }}</p>
+      }
+    </div>
+  </div>
+  }
+</div>

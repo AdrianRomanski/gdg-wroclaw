@@ -1,0 +1,126 @@
+/*
+ * Figma: Landing Page events Container (143:2918). Section paddings, a centered title (768px) in
+ * Display 1 and P6, 80px above the content (950px). Filters: 40px pills 4px apart in the Nav
+ * Button style, 48px above the list. Cards are separated by dividers, with one closing the list
+ * (ADR-0021).
+ */
+:host {
+  display: block;
+  padding: var(--gdg-layout-padding-section-large)
+    var(--gdg-layout-padding-global);
+  background: var(--gdg-color-background-default);
+  color: var(--gdg-color-content-default);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gdg-spacing-80);
+  max-inline-size: var(--gdg-layout-container-large);
+  margin-inline: auto;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-24);
+  max-inline-size: var(--gdg-layout-max-width-large);
+  text-align: center;
+}
+
+.heading {
+  margin: 0;
+  font: var(--gdg-font-display-1);
+}
+
+.description {
+  margin: 0;
+  font: var(--gdg-font-paragraph-6);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gdg-spacing-48);
+  inline-size: 100%;
+  max-inline-size: var(--gdg-layout-max-width-xlarge);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gdg-spacing-4);
+}
+
+/* The Nav Button look (ADR-0009) on a tab; the selected day uses the active background. */
+.filter {
+  min-block-size: 2.5rem;
+  padding: var(--gdg-spacing-8) var(--gdg-spacing-16);
+  border: 0;
+  border-radius: var(--gdg-radius-full);
+  background: transparent;
+  color: inherit;
+  font: var(--gdg-font-paragraph-7);
+  line-height: 1.5;
+  cursor: pointer;
+  transition: background-color 150ms ease-out;
+}
+
+.filter:hover {
+  background: var(--gdg-color-background-nav-button-hover);
+}
+
+.filter[aria-selected='true'] {
+  background: var(--gdg-color-background-nav-button-active);
+}
+
+.filter:focus-visible {
+  outline: 2px solid var(--gdg-color-content-default);
+  outline-offset: 2px;
+}
+
+.panel {
+  inline-size: 100%;
+}
+
+.events {
+  margin: 0;
+  padding: 0;
+  border-block-end: 1px solid var(--gdg-color-border-default);
+  list-style: none;
+}
+
+.empty {
+  margin: 0;
+  padding-block: var(--gdg-spacing-32);
+  border-block: 1px solid var(--gdg-color-border-default);
+  font: var(--gdg-font-paragraph-7);
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .filter {
+    transition: none;
+  }
+}
+
+@media (width < 48rem) {
+  :host {
+    padding: var(--gdg-spacing-64) var(--gdg-spacing-20);
+  }
+
+  .container {
+    gap: var(--gdg-spacing-48);
+  }
+
+  .content {
+    gap: var(--gdg-spacing-32);
+  }
+
+  .heading {
+    font: var(--gdg-font-heading-1);
+  }
+}

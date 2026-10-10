@@ -578,6 +578,16 @@ export const tokens = {
       "name": "Container/container-large"
     }
   },
+  "layout.max-width-xlarge": {
+    "id": "layout.max-width-xlarge",
+    "cssVariable": "--gdg-layout-max-width-xlarge",
+    "type": "dimension",
+    "value": "59.375rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": "Maximum width of the event list. Not yet a Figma variable (ADR-0021).",
+    "figma": null
+  },
   "layout.max-width-large": {
     "id": "layout.max-width-large",
     "cssVariable": "--gdg-layout-max-width-large",

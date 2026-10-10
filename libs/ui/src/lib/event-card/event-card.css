@@ -1,0 +1,76 @@
+/*
+ * Figma: event Card (143:2932). A 1px divider above, 32px block padding, the content and the
+ * 40px "Read more" button 32px apart. Title H4 (24px), tag 14px bold on 50% brand blue, meta P7
+ * in brand blue with a bullet 8px apart, description P7 16px below. Stacks below 40rem
+ * (ADR-0021).
+ */
+:host {
+  display: flex;
+  align-items: center;
+  gap: var(--gdg-spacing-32);
+  padding-block: var(--gdg-spacing-32);
+  border-block-start: 1px solid var(--gdg-color-border-default);
+  color: var(--gdg-color-content-default);
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gdg-spacing-16);
+  min-inline-size: 0;
+}
+
+.heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--gdg-spacing-4) var(--gdg-spacing-16);
+}
+
+.title {
+  margin: 0;
+  font: var(--gdg-font-heading-4);
+}
+
+.tag {
+  padding: var(--gdg-spacing-4) var(--gdg-spacing-8);
+  background: color-mix(
+    in srgb,
+    var(--gdg-color-brand-blue-primary) 50%,
+    transparent
+  );
+  font: var(--gdg-font-heading-8);
+  white-space: nowrap;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--gdg-spacing-8);
+  margin: 0;
+  color: var(--gdg-color-brand-blue-primary);
+  font: var(--gdg-font-paragraph-7);
+}
+
+.separator {
+  font: var(--gdg-font-paragraph-8);
+}
+
+.description {
+  margin: 0;
+  font: var(--gdg-font-paragraph-7);
+}
+
+.read-more {
+  flex: none;
+}
+
+@media (width < 40rem) {
+  :host {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gdg-spacing-20);
+  }
+}
