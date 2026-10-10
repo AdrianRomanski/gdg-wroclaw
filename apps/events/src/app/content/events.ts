@@ -149,18 +149,19 @@ export const EVENTS: Readonly<Record<string, EventDetail>> = {
     supporters: {
       eyebrow: 'Made possible together',
       heading: 'Sponsors',
-      description: 'Thanks to our host for the space and the support.',
+      description:
+        'Thanks to our main sponsor and host for the space and the support.',
       groups: [
         {
-          title: 'Sponsors',
+          title: 'Main sponsor',
           supporters: [
             {
               partner: {
                 name: 'Capgemini',
-                logo: { src: '/partners/capgemini.png' },
+                logo: { src: '/partners/capgemini.svg' },
                 url: 'https://www.capgemini.com/',
               },
-              contribution: 'Gold sponsor · Venue host',
+              contribution: 'Main sponsor · Venue host',
             },
           ],
         },
