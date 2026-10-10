@@ -1,0 +1,126 @@
+/*
+ * Figma: Team / 2 / (181:5312 circle, 181:4620 puzzle). Section paddings and the 1280px container,
+ * blocks 80px apart. A centered title (768px) in Display 1 and P6. Cards four per row, 40px apart
+ * and rows 64px apart; an incomplete last row is centered. The call to action has an H2 heading,
+ * P6 text and a button. Fewer columns on narrower screens (ADR-0018).
+ */
+:host {
+  --_columns: 4;
+  --_column-gap: var(--gdg-spacing-40);
+
+  display: block;
+  padding: var(--gdg-layout-padding-section-large)
+    var(--gdg-layout-padding-global);
+  background: var(--gdg-color-background-default);
+  color: var(--gdg-color-content-default);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gdg-spacing-80);
+  max-inline-size: var(--gdg-layout-container-large);
+  margin-inline: auto;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-24);
+  max-inline-size: var(--gdg-layout-max-width-large);
+  text-align: center;
+}
+
+.heading {
+  margin: 0;
+  font: var(--gdg-font-display-1);
+}
+
+.description {
+  margin: 0;
+  font: var(--gdg-font-paragraph-6);
+}
+
+.members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gdg-spacing-64) var(--_column-gap);
+  inline-size: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.member {
+  display: flex;
+  flex: 0 0
+    calc((100% - (var(--_columns) - 1) * var(--_column-gap)) / var(--_columns));
+  min-inline-size: 0;
+}
+
+.member gdg-person-card {
+  flex: 1;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gdg-spacing-24);
+  text-align: center;
+}
+
+.cta-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-16);
+}
+
+.cta-heading {
+  margin: 0;
+  font: var(--gdg-font-heading-2);
+}
+
+.cta-text {
+  margin: 0;
+  font: var(--gdg-font-paragraph-6);
+}
+
+@media (width < 75rem) {
+  :host {
+    --_columns: 3;
+  }
+}
+
+@media (width < 56rem) {
+  :host {
+    --_columns: 2;
+    --_column-gap: var(--gdg-spacing-24);
+  }
+}
+
+@media (width < 48rem) {
+  :host {
+    padding: var(--gdg-spacing-64) var(--gdg-spacing-20);
+  }
+
+  .container {
+    gap: var(--gdg-spacing-64);
+  }
+
+  .heading {
+    font: var(--gdg-font-heading-1);
+  }
+}
+
+@media (width < 36rem) {
+  :host {
+    --_columns: 1;
+  }
+
+  .member {
+    max-inline-size: 20rem;
+  }
+}

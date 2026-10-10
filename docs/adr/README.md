@@ -29,6 +29,7 @@ For more information on ADRs, see [Architecture Decision Records](https://adr.gi
 | [ADR-0015](0015-faq-item-variants-and-generated-puzzle-outline.md) | FAQ Item Variants and a Generated Puzzle Outline                          | **Accepted** | 2026-10-09 |
 | [ADR-0016](0016-person-row-role-badge-and-display-type.md)         | Person Row, Role Badge, Social Links and a Display Type Size              | **Accepted** | 2026-10-09 |
 | [ADR-0017](0017-workshop-page-template.md)                         | Workshop Page Template, Event Banner and Workshop Details                 | **Accepted** | 2026-10-09 |
+| [ADR-0018](0018-person-card-and-team-section.md)                   | Person Card with Circle and Puzzle Frames, and the Team Section           | **Accepted** | 2026-10-10 |
 
 ---
 

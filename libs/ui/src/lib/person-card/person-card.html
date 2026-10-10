@@ -1,0 +1,63 @@
+@let p = person(); @if (frame() === 'puzzle') {
+<svg
+  class="photo puzzle"
+  xmlns="http://www.w3.org/2000/svg"
+  [attr.viewBox]="'0 0 ' + frameSize + ' ' + frameSize"
+  focusable="false"
+  [attr.role]="p.photo?.alt ? 'img' : null"
+  [attr.aria-label]="p.photo?.alt || null"
+  [attr.aria-hidden]="p.photo?.alt ? null : 'true'"
+>
+  <defs>
+    <clipPath [attr.id]="clipId"><path [attr.d]="framePath" /></clipPath>
+  </defs>
+  <path class="puzzle-stroke" [attr.d]="framePath" />
+  @if (p.photo; as photo) {
+  <image
+    [attr.href]="photo.src"
+    [attr.width]="frameSize"
+    [attr.height]="frameSize"
+    preserveAspectRatio="xMidYMid slice"
+    [attr.clip-path]="'url(#' + clipId + ')'"
+  />
+  } @else {
+  <path class="puzzle-backdrop" [attr.d]="framePath" />
+  <path class="puzzle-fill" [attr.d]="framePath" />
+  <text class="puzzle-initials" x="50%" y="50%">{{ initials(p.name) }}</text>
+  }
+</svg>
+} @else if (p.photo; as photo) {
+<img
+  class="photo circle"
+  width="296"
+  height="296"
+  loading="lazy"
+  [src]="photo.src"
+  [alt]="photo.alt ?? ''"
+/>
+} @else {
+<div class="photo circle placeholder" aria-hidden="true">
+  {{ initials(p.name) }}
+</div>
+}
+
+<div class="content">
+  <div class="identity" [class.identity--badge]="showBadge()">
+    @if (showBadge() && p.role) {
+    <gdg-role-badge [role]="p.role" [ring]="false" [size]="60" />
+    }
+    <div class="title">
+      <h3 class="name">{{ p.name }}</h3>
+      @if (subtitle(); as subtitle) {
+      <p class="subtitle">{{ subtitle }}</p>
+      }
+    </div>
+  </div>
+  @if (p.bio) {
+  <p class="bio">{{ p.bio }}</p>
+  }
+</div>
+
+@if (p.socials?.length) {
+<gdg-social-links class="socials" [links]="p.socials ?? []" [owner]="p.name" />
+}
