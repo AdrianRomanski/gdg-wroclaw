@@ -1,0 +1,120 @@
+/*
+ * Figma: Person (180:3087). A square photo, 24px above the content and the social links. Name
+ * 20px Medium, subtitle P6 (18px), bio P7 (16px), centered. The badge (60px, no ring) sits 4px
+ * from a left-aligned title. The puzzle frame has a 3px stroke outside the shape in the role's
+ * primary color (ADR-0018).
+ */
+:host {
+  --_frame-stroke: var(--gdg-color-border-default);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gdg-spacing-24);
+  color: var(--gdg-color-content-default);
+}
+
+:host(.gdg-person-card--organizer) {
+  --_frame-stroke: var(--gdg-color-brand-green-primary);
+}
+
+:host(.gdg-person-card--speaker) {
+  --_frame-stroke: var(--gdg-color-brand-yellow-primary);
+}
+
+:host(.gdg-person-card--member) {
+  --_frame-stroke: var(--gdg-color-brand-blue-primary);
+}
+
+.photo {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 1;
+}
+
+.circle {
+  border-radius: var(--gdg-radius-full);
+  object-fit: cover;
+}
+
+.placeholder {
+  display: grid;
+  place-content: center;
+  background: var(--gdg-color-off-white-alpha-10);
+  font: var(--gdg-font-display-1);
+}
+
+.puzzle {
+  overflow: visible;
+}
+
+/* Centered on the edge and twice as wide, so the clipped photo covers the inner half. */
+.puzzle-stroke {
+  fill: none;
+  stroke: var(--_frame-stroke);
+  stroke-width: 6px;
+  vector-effect: non-scaling-stroke;
+}
+
+/* Opaque, so the translucent placeholder fill does not reveal the inner half of the stroke. */
+.puzzle-backdrop {
+  fill: var(--gdg-color-background-default);
+}
+
+.puzzle-fill {
+  fill: var(--gdg-color-off-white-alpha-10);
+}
+
+.puzzle-initials {
+  fill: currentColor;
+  font: var(--gdg-font-display-1);
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gdg-spacing-16);
+  inline-size: 100%;
+  text-align: center;
+}
+
+.identity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gdg-spacing-4);
+  max-inline-size: 100%;
+}
+
+.identity--badge .title {
+  text-align: start;
+}
+
+.title {
+  min-inline-size: 0;
+}
+
+.name {
+  margin: 0;
+  font: var(--gdg-font-weight-medium) var(--gdg-font-size-5) / 1.5
+    var(--gdg-font-family-sans);
+}
+
+.subtitle {
+  margin: 0;
+  font: var(--gdg-font-paragraph-6);
+}
+
+.bio {
+  margin: 0;
+  font: var(--gdg-font-paragraph-7);
+}
+
+/* Pinned to the bottom, so the links line up across a row whatever the bio length. */
+.socials {
+  margin-block-start: auto;
+}

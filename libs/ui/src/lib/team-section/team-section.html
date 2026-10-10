@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="title">
+    <h2 class="heading">{{ heading() }}</h2>
+    @if (description()) {
+    <p class="description">{{ description() }}</p>
+    }
+  </div>
+
+  <ul class="members">
+    @for (member of members(); track $index) {
+    <li class="member">
+      <gdg-person-card [person]="member" [frame]="frame()" [badge]="badges()" />
+    </li>
+    }
+  </ul>
+
+  @if (ctaHeading() || ctaHref()) {
+  <div class="cta">
+    <div class="cta-content">
+      @if (ctaHeading()) {
+      <h3 class="cta-heading">{{ ctaHeading() }}</h3>
+      } @if (ctaText()) {
+      <p class="cta-text">{{ ctaText() }}</p>
+      }
+    </div>
+    @if (ctaHref(); as href) {
+    <a gdg-button [href]="href">{{ ctaLabel() }}</a>
+    }
+  </div>
+  }
+</div>

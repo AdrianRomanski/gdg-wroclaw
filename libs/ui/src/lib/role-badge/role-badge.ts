@@ -11,7 +11,8 @@ import { ROLE_BADGE_ARTWORK, ROLE_BADGE_VIEW_BOX } from './role-badge-artwork';
 
 export type PersonRole = 'member' | 'organizer' | 'speaker';
 
-const DEFAULT_LABELS: Record<PersonRole, string> = {
+/** English role names: the badge's default accessible name and the Team card subtitle. */
+export const PERSON_ROLE_LABELS: Record<PersonRole, string> = {
   member: 'Member',
   organizer: 'Organizer',
   speaker: 'Speaker',
@@ -51,7 +52,9 @@ export class RoleBadge {
 
   protected readonly viewBox = ROLE_BADGE_VIEW_BOX;
 
-  protected readonly defaultLabel = computed(() => DEFAULT_LABELS[this.role()]);
+  protected readonly defaultLabel = computed(
+    () => PERSON_ROLE_LABELS[this.role()],
+  );
 
   private readonly clipId = `gdg-role-badge-clip-${nextId++}`;
 

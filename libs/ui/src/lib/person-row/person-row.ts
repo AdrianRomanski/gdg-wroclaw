@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { initials } from '../person/initials';
 import type { Person } from '../person/person';
 import { RoleBadge } from '../role-badge/role-badge';
 import { SocialLinks } from '../social-links/social-links';
@@ -18,12 +19,5 @@ import { SocialLinks } from '../social-links/social-links';
 export class PersonRow {
   readonly person = input.required<Person>();
 
-  protected initials(name: string): string {
-    return name
-      .split(/\s+/)
-      .filter(Boolean)
-      .slice(0, 2)
-      .map((part) => part[0].toUpperCase())
-      .join('');
-  }
+  protected readonly initials = initials;
 }
