@@ -590,6 +590,18 @@ export const tokens = {
       "name": "Max Width/max-width-medium"
     }
   },
+  "radius.8": {
+    "id": "radius.8",
+    "cssVariable": "--gdg-radius-8",
+    "type": "dimension",
+    "value": "0.5rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": "Partner logo tiles (ADR-0019).",
+    "figma": {
+      "name": "radius-8"
+    }
+  },
   "radius.12": {
     "id": "radius.12",
     "cssVariable": "--gdg-radius-12",

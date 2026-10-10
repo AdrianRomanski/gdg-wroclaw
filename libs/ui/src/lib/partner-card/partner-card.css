@@ -1,0 +1,68 @@
+/*
+ * Figma: Partners (181:8588). A square logo 24px above the name (20px). Tile: 8px radius and a
+ * centered Medium name. Card: square corners and a start-aligned bold name (Figma's Roboto
+ * SemiBold mapped to Google Sans H5). Logos are shown whole on a light tile (ADR-0019).
+ */
+:host {
+  display: block;
+  color: var(--gdg-color-content-default);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gdg-spacing-24);
+  color: inherit;
+  text-decoration: none;
+}
+
+:host(.gdg-partner-card--card) .body {
+  align-items: stretch;
+}
+
+.logo {
+  display: block;
+  box-sizing: border-box;
+  inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 1;
+  padding: var(--gdg-spacing-24);
+  background: var(--gdg-color-off-white);
+  object-fit: contain;
+}
+
+:host(.gdg-partner-card--tile) .logo {
+  border-radius: var(--gdg-radius-8);
+}
+
+.placeholder {
+  display: grid;
+  place-content: center;
+  color: var(--gdg-color-black-02);
+  font: var(--gdg-font-display-1);
+}
+
+.name {
+  font: var(--gdg-font-weight-medium) var(--gdg-font-size-5) / 1.5
+    var(--gdg-font-family-sans);
+  text-align: center;
+}
+
+:host(.gdg-partner-card--card) .name {
+  font: var(--gdg-font-heading-5);
+  text-align: start;
+}
+
+.link {
+  border-radius: var(--gdg-radius-8);
+}
+
+.link:hover .name {
+  text-decoration: underline;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--gdg-color-content-default);
+  outline-offset: 4px;
+}

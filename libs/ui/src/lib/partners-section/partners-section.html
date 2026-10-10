@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="title">
+    <h2 class="heading">{{ heading() }}</h2>
+    @if (description()) {
+    <p class="description">{{ description() }}</p>
+    }
+  </div>
+
+  @if (layout() === 'carousel') {
+  <div class="carousel">
+    <div class="controls">
+      <ol class="dots" aria-hidden="true">
+        @for (index of positions(); track index) {
+        <li class="dot" [class.dot--active]="index === position()"></li>
+        }
+      </ol>
+      <div class="buttons">
+        <button
+          gdg-button
+          type="button"
+          variant="secondary"
+          iconOnly
+          [attr.aria-label]="previousLabel()"
+          [attr.aria-controls]="trackId"
+          [disabled]="atStart()"
+          (click)="scroll(-1)"
+        >
+          <gdg-icon name="caret-left" />
+        </button>
+        <button
+          gdg-button
+          type="button"
+          variant="secondary"
+          iconOnly
+          [attr.aria-label]="nextLabel()"
+          [attr.aria-controls]="trackId"
+          [disabled]="atEnd()"
+          (click)="scroll(1)"
+        >
+          <gdg-icon name="caret-right" />
+        </button>
+      </div>
+    </div>
+    <div
+      #viewport
+      class="viewport"
+      role="region"
+      tabindex="0"
+      [attr.aria-label]="heading()"
+      [id]="trackId"
+    >
+      <ul class="partners">
+        @for (partner of partners(); track $index) {
+        <li class="partner">
+          <gdg-partner-card [partner]="partner" variant="card" />
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+  } @else {
+  <ul class="partners">
+    @for (partner of partners(); track $index) {
+    <li class="partner">
+      <gdg-partner-card [partner]="partner" variant="tile" />
+    </li>
+    }
+  </ul>
+  } @if (ctaHeading() || ctaHref()) {
+  <div class="cta">
+    <div class="cta-content">
+      @if (ctaHeading()) {
+      <h3 class="cta-heading">{{ ctaHeading() }}</h3>
+      } @if (ctaText()) {
+      <p class="cta-text">{{ ctaText() }}</p>
+      }
+    </div>
+    @if (ctaHref(); as href) {
+    <a gdg-button [href]="href">{{ ctaLabel() }}</a>
+    }
+  </div>
+  }
+</div>
