@@ -13,16 +13,47 @@ const event = (tag?: string): GdgEvent => ({
   href: '/workshops/sample-workshop',
 });
 
-const person = (role: Person['role']): Person => ({
-  name: 'Full name',
-  bio: lorem,
-  role,
+const organizer = (
+  name: string,
+  photo: string,
+  jobTitle?: string,
+  linkedin?: string,
+): Person => ({
+  name,
+  jobTitle,
+  photo: { src: `/team/${photo}.jpg` },
+  role: 'organizer',
+  socials: linkedin ? [{ network: 'linkedin', url: linkedin }] : undefined,
 });
 
+/** The chapter organizers, as listed on gdg.community.dev/gdg-wroclaw (October 2026). */
+const ORGANIZERS: readonly Person[] = [
+  organizer('Luka Malakhau', 'luka-malakhau', 'Software Developer'),
+  organizer('Karol Wrótniak', 'karol-wrotniak', 'GDG Organizer'),
+  organizer('Artur Skrzypczyk', 'artur-skrzypczyk'),
+  organizer('Jan Łuczka', 'jan-luczka', 'Android Developer'),
+  organizer(
+    'Szymon Mazanik',
+    'szymon-mazanik',
+    'Flutter Lead',
+    'https://www.linkedin.com/in/szymonmazanik/',
+  ),
+  organizer(
+    'Adrian Romański',
+    'adrian-romanski',
+    'Software Engineer, Push-Based',
+  ),
+  organizer(
+    'Dawid Perdek',
+    'dawid-perdek',
+    'Staff Software Engineer, Altium',
+    'https://www.linkedin.com/in/perdekdawid',
+  ),
+];
+
 /**
- * Landing page content: the Figma sample content until the real events, team, partners and
- * FAQ are ready (ADR-0023). No images yet, so the hero is left out and people and partners show
- * initials.
+ * Landing page content (ADR-0023). The team is real; events, partners and FAQ are still the
+ * Figma sample content. No hero image yet, so the hero is left out and partners show initials.
  */
 export const LANDING_CONTENT: LandingPageContent = {
   heading: 'Google Developer Groups Wrocław: join our community',
@@ -40,19 +71,9 @@ export const LANDING_CONTENT: LandingPageContent = {
     ),
   },
   team: {
-    description: lorem,
-    members: (
-      [
-        'organizer',
-        'speaker',
-        'member',
-        'organizer',
-        'speaker',
-        'member',
-        'organizer',
-        'speaker',
-      ] as const
-    ).map(person),
+    description:
+      'The volunteers behind GDG Wrocław’s meetups, workshops and DevFest.',
+    members: ORGANIZERS,
     ctaHeading: 'We’re hiring!',
     ctaText: short,
     ctaHref: '/contact',
