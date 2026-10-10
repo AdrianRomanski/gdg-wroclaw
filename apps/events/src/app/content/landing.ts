@@ -29,7 +29,7 @@ const PARTNERS: readonly Partner[] = [
   },
   {
     name: 'Sekurak',
-    logo: { src: '/partners/sekurak.png' },
+    logo: { src: '/partners/sekurak.jpg' },
     url: 'https://sekurak.pl/',
   },
 ];
