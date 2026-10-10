@@ -7,6 +7,8 @@ export * from './lib/faq/faq-item';
 export * from './lib/faq/faq-section';
 export * from './lib/footer/footer';
 export * from './lib/gdg-logo/gdg-logo';
+export * from './lib/landing-page/landing-page';
+export * from './lib/landing-page/landing-page-content';
 export * from './lib/navbar/nav-link';
 export * from './lib/navbar/navbar';
 export * from './lib/partner-card/partner';

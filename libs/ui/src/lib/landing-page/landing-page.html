@@ -1,0 +1,64 @@
+@let c = content();
+<h1 class="visually-hidden">{{ c.heading }}</h1>
+
+@if (c.hero; as hero) {
+<div class="hero">
+  <img
+    class="hero-image"
+    width="1440"
+    height="500"
+    fetchpriority="high"
+    [src]="hero.src"
+    [alt]="hero.alt ?? ''"
+  />
+</div>
+} @if (c.events; as events) {
+<gdg-events-section
+  class="section events"
+  [class.events--after-hero]="!!c.hero"
+  [id]="ids.events"
+  [heading]="events.heading ?? 'Events'"
+  [description]="events.description ?? ''"
+  [days]="events.days"
+/>
+} @if (c.team; as team) {
+<gdg-team-section
+  class="section"
+  [id]="ids.team"
+  [heading]="team.heading ?? 'Our team'"
+  [description]="team.description ?? ''"
+  [members]="team.members"
+  frame="circle"
+  [ctaHeading]="team.ctaHeading ?? ''"
+  [ctaText]="team.ctaText ?? ''"
+  [ctaHref]="team.ctaHref"
+  [ctaLabel]="team.ctaLabel ?? 'Contact us'"
+  [ctaColor]="team.ctaColor ?? 'yellow'"
+/>
+} @if (c.partners; as partners) {
+<gdg-partners-section
+  class="section"
+  [id]="ids.partners"
+  layout="carousel"
+  [heading]="partners.heading ?? 'Partners'"
+  [description]="partners.description ?? ''"
+  [partners]="partners.partners"
+  [ctaHeading]="partners.ctaHeading ?? ''"
+  [ctaText]="partners.ctaText ?? ''"
+  [ctaHref]="partners.ctaHref"
+  [ctaLabel]="partners.ctaLabel ?? 'Contact'"
+  [ctaColor]="partners.ctaColor ?? 'blue'"
+/>
+} @if (c.faq; as faq) {
+<gdg-faq-section
+  class="section"
+  [id]="ids.faq"
+  variant="puzzle"
+  color="green"
+  [heading]="faq.heading ?? 'FAQs'"
+  [description]="faq.description ?? ''"
+  [entries]="faq.entries"
+  [askHref]="faq.askHref"
+  [askLabel]="faq.askLabel ?? 'Ask a question'"
+/>
+}

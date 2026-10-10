@@ -33,6 +33,7 @@ For more information on ADRs, see [Architecture Decision Records](https://adr.gi
 | [ADR-0019](0019-partner-card-and-partners-section.md)              | Partner Card and the Partners Section (Grid and Carousel)                 | **Accepted** | 2026-10-10 |
 | [ADR-0020](0020-navbar-footer-and-gdg-logo.md)                     | Navbar, Footer and the GDG Logo                                           | **Accepted** | 2026-10-10 |
 | [ADR-0021](0021-event-card-and-events-section.md)                  | Event Card and the Events Section with Day Tabs                           | **Accepted** | 2026-10-10 |
+| [ADR-0022](0022-landing-page-template.md)                          | Landing Page Template                                                     | **Accepted** | 2026-10-10 |
 
 ---
 
