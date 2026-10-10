@@ -28,16 +28,8 @@ const organizer = (
 
 /** The chapter organizers, as listed on gdg.community.dev/gdg-wroclaw (October 2026). */
 const ORGANIZERS: readonly Person[] = [
-  organizer('Luka Malakhau', 'luka-malakhau', 'Software Developer'),
   organizer('Karol Wrótniak', 'karol-wrotniak', 'GDG Organizer'),
   organizer('Artur Skrzypczyk', 'artur-skrzypczyk'),
-  organizer('Jan Łuczka', 'jan-luczka', 'Android Developer'),
-  organizer(
-    'Szymon Mazanik',
-    'szymon-mazanik',
-    'Flutter Lead',
-    'https://www.linkedin.com/in/szymonmazanik/',
-  ),
   organizer(
     'Adrian Romański',
     'adrian-romanski',
@@ -48,6 +40,14 @@ const ORGANIZERS: readonly Person[] = [
     'dawid-perdek',
     'Staff Software Engineer, Altium',
     'https://www.linkedin.com/in/perdekdawid',
+  ),
+  organizer('Luka Malakhau', 'luka-malakhau', 'Software Developer'),
+  organizer('Jan Łuczka', 'jan-luczka', 'Android Developer'),
+  organizer(
+    'Szymon Mazanik',
+    'szymon-mazanik',
+    'Flutter Lead',
+    'https://www.linkedin.com/in/szymonmazanik/',
   ),
 ];
 
