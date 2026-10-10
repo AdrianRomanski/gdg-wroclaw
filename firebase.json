@@ -2,7 +2,11 @@
   "hosting": {
     "site": "gdg-wroclaw",
     "public": "dist/apps/events/browser",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
     "cleanUrls": true,
     "trailingSlash": false,
     "rewrites": [
