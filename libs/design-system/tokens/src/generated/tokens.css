@@ -25,6 +25,10 @@
   --gdg-color-black-02-alpha-40: #1e1e1e66; /** Black 02 at 40% opacity. */
   --gdg-color-black-02-alpha-20: #1e1e1e33; /** Black 02 at 20% opacity. */
   --gdg-color-black-02-alpha-10: #1e1e1e1a; /** Black 02 at 10% opacity. */
+  --gdg-color-gray-300: #b6bcc5; /** Muted text on the Figma Event detail page (8925:1588); not in the Colors page palette (ADR-0025). */
+  --gdg-color-gray-600: #56585c; /** Subtle dividers on the Figma Event detail page; not in the Colors page palette (ADR-0025). */
+  --gdg-color-gray-850: #25272a; /** Raised surfaces (cards, pills, venue band) on the Figma Event detail page; not in the Colors page palette (ADR-0025). */
+  --gdg-color-navy-800: #243653; /** Blue-tinted surfaces (labels, registration band) on the Figma Event detail page; not in the Colors page palette (ADR-0025). */
   --gdg-layout-padding-global: 4rem; /** Horizontal page padding. */
   --gdg-layout-padding-section-large: 7rem; /** Vertical padding of a large page section. */
   --gdg-layout-padding-section-medium: 5rem; /** Vertical padding of a medium page section, e.g. the Footer (ADR-0020). */
@@ -78,14 +82,18 @@
   --gdg-color-background-disabled: var(--gdg-color-off-white-alpha-20); /** Background of disabled controls. */
   --gdg-color-background-nav-button-hover: var(--gdg-color-off-white-alpha-10); /** Nav Button background on hover. */
   --gdg-color-background-nav-button-active: var(--gdg-color-off-white-alpha-20); /** Nav Button background when it links to the current page. */
+  --gdg-color-background-raised: var(--gdg-color-gray-850); /** Cards, pills and bands that sit on the default background (Event detail page). Default content: 13.1:1; muted content: 7.8:1. */
+  --gdg-color-background-brand-subtle: var(--gdg-color-navy-800); /** Blue-tinted labels and callouts (Event detail page). Default content: 10.7:1; brand blue secondary: 6.5:1; muted content: 6.4:1. */
   --gdg-color-content-default: var(--gdg-color-off-white); /** Default text and icon color on dark surfaces. */
   --gdg-color-content-disabled: var(--gdg-color-off-white-alpha-40); /** Text and icons of disabled controls. */
   --gdg-color-content-on-brand: var(--gdg-color-neutral-darkest); /** Text and icons on brand fills (Primary buttons): at least 4.5:1 (WCAG AA) on every brand primary and secondary fill. Deviates from Figma's Content/Content (ADR-0012). */
   --gdg-color-content-error: var(--gdg-color-halftone-red); /** Validation messages. Not in Figma; halftone red keeps at least 4.5:1 (WCAG AA) on the default background. */
+  --gdg-color-content-muted: var(--gdg-color-gray-300); /** Secondary text: descriptions, details, notes (Event detail page). 8.7:1 on the default background (WCAG AA). */
   --gdg-color-border-default: var(--gdg-color-off-white); /** Dividers between list rows (1px). */
   --gdg-color-border-disabled: var(--gdg-color-off-white-alpha-40); /** Border of disabled controls. */
   --gdg-color-border-input: var(--gdg-color-blue-500); /** Stroke of text inputs, text areas and checkboxes. */
   --gdg-color-border-error: var(--gdg-color-halftone-red); /** Stroke of invalid form controls. Not in Figma. */
+  --gdg-color-border-subtle: var(--gdg-color-gray-600); /** Low-emphasis dividers between rows and sections (Event detail page). Decorative, not a control boundary. */
   --gdg-color-brand-blue-primary: var(--gdg-color-blue-500); /** Blue brand color, resting state. */
   --gdg-color-brand-blue-secondary: var(--gdg-color-halftone-blue); /** Blue brand color, hover state. */
   --gdg-color-brand-green-primary: var(--gdg-color-green-500); /** Green brand color, resting state. */

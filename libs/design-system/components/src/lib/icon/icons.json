@@ -1,6 +1,9 @@
 [
+  "arrow-left",
+  "calendar-dots",
   "caret-left",
   "caret-right",
+  "clock",
   "dribbble-logo",
   "facebook-logo",
   "github-logo",
@@ -8,6 +11,9 @@
   "instagram-logo",
   "linkedin-logo",
   "list",
+  "map-pin",
+  "train",
+  "wheelchair",
   "x",
   "x-logo",
   "youtube-logo"
