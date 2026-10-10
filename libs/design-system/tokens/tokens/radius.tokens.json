@@ -2,6 +2,15 @@
   "radius": {
     "$type": "dimension",
     "$description": "Corner radii from the Figma radius-* variables.",
+    "8": {
+      "$value": "8px",
+      "$description": "Partner logo tiles (ADR-0019).",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "radius-8"
+        }
+      }
+    },
     "12": {
       "$value": "12px",
       "$extensions": {

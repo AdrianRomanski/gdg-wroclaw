@@ -1,0 +1,26 @@
+@let p = partner();
+<ng-template #content>
+  @if (p.logo; as logo) {
+  <img
+    class="logo"
+    width="296"
+    height="296"
+    loading="lazy"
+    [src]="logo.src"
+    [alt]="logo.alt ?? ''"
+  />
+  } @else {
+  <span class="logo placeholder" aria-hidden="true">{{ placeholder() }}</span>
+  }
+  <span class="name">{{ p.name }}</span>
+</ng-template>
+
+@if (p.url) {
+<a class="body link" [href]="p.url" target="_blank" rel="noopener noreferrer">
+  <ng-container [ngTemplateOutlet]="content" />
+</a>
+} @else {
+<div class="body">
+  <ng-container [ngTemplateOutlet]="content" />
+</div>
+}

@@ -30,6 +30,7 @@
   --gdg-layout-container-large: 80rem; /** Maximum width of a section container. */
   --gdg-layout-max-width-large: 48rem; /** Maximum width of a section title block. */
   --gdg-layout-max-width-medium: 35rem; /** Maximum width of a form. */
+  --gdg-radius-8: 0.5rem; /** Partner logo tiles (ADR-0019). */
   --gdg-radius-12: 0.75rem;
   --gdg-radius-16: 1rem;
   --gdg-radius-40: 2.5rem;

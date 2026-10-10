@@ -1,0 +1,204 @@
+/*
+ * Figma: Partners (181:5975, grid) and Team / 10 / (181:7330, carousel). Section paddings and the
+ * 1280px container, blocks 80px apart. Title (max 768px) in Display 1 and P6; the call to action
+ * in H2, P6 and a button.
+ * Grid: centered, logo tiles four per row, 40px apart and rows 64px apart.
+ * Carousel: start-aligned; 8px dots 8px apart and 48px buttons 16px apart, 48px above the cards;
+ * three cards visible, 48px apart, snapping while scrolling (ADR-0019).
+ */
+:host {
+  --_columns: 4;
+  --_column-gap: var(--gdg-spacing-40);
+
+  display: block;
+  padding: var(--gdg-layout-padding-section-large)
+    var(--gdg-layout-padding-global);
+  background: var(--gdg-color-background-default);
+  color: var(--gdg-color-content-default);
+}
+
+:host(.gdg-partners-section--carousel) {
+  --_columns: 3;
+  --_column-gap: var(--gdg-spacing-48);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gdg-spacing-80);
+  max-inline-size: var(--gdg-layout-container-large);
+  margin-inline: auto;
+}
+
+:host(.gdg-partners-section--carousel) .container {
+  align-items: stretch;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-24);
+  max-inline-size: var(--gdg-layout-max-width-large);
+  text-align: center;
+}
+
+:host(.gdg-partners-section--carousel) :is(.title, .cta) {
+  align-items: flex-start;
+  text-align: start;
+}
+
+.heading {
+  margin: 0;
+  font: var(--gdg-font-display-1);
+}
+
+.description {
+  margin: 0;
+  font: var(--gdg-font-paragraph-6);
+}
+
+.partners {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gdg-spacing-64) var(--_column-gap);
+  inline-size: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.partner {
+  flex: 0 0
+    calc((100% - (var(--_columns) - 1) * var(--_column-gap)) / var(--_columns));
+  min-inline-size: 0;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-48);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gdg-spacing-16);
+}
+
+.dots {
+  display: flex;
+  gap: var(--gdg-spacing-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dot {
+  inline-size: var(--gdg-spacing-8);
+  block-size: var(--gdg-spacing-8);
+  border-radius: var(--gdg-radius-full);
+  background: var(--gdg-color-off-white-alpha-20);
+}
+
+.dot--active {
+  background: var(--gdg-color-content-default);
+}
+
+.buttons {
+  display: flex;
+  gap: var(--gdg-spacing-16);
+}
+
+.viewport {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.viewport:focus-visible {
+  outline: 2px solid var(--gdg-color-content-default);
+  outline-offset: 4px;
+}
+
+.viewport .partners {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.viewport .partner {
+  scroll-snap-align: start;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gdg-spacing-24);
+  max-inline-size: var(--gdg-layout-max-width-large);
+  text-align: center;
+}
+
+.cta-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-16);
+}
+
+.cta-heading {
+  margin: 0;
+  font: var(--gdg-font-heading-2);
+}
+
+.cta-text {
+  margin: 0;
+  font: var(--gdg-font-paragraph-6);
+}
+
+@media (width < 75rem) {
+  :host {
+    --_columns: 3;
+  }
+}
+
+@media (width < 64rem) {
+  :host(.gdg-partners-section--carousel) {
+    --_columns: 2;
+    --_column-gap: var(--gdg-spacing-24);
+  }
+}
+
+@media (width < 48rem) {
+  :host {
+    --_columns: 2;
+    --_column-gap: var(--gdg-spacing-24);
+
+    padding: var(--gdg-spacing-64) var(--gdg-spacing-20);
+  }
+
+  .container {
+    gap: var(--gdg-spacing-64);
+  }
+
+  .partners {
+    row-gap: var(--gdg-spacing-40);
+  }
+
+  .heading {
+    font: var(--gdg-font-heading-1);
+  }
+}
+
+/* One card and a peek at the next. */
+@media (width < 40rem) {
+  :host(.gdg-partners-section--carousel) {
+    --_columns: 1.25;
+    --_column-gap: var(--gdg-spacing-16);
+  }
+}
