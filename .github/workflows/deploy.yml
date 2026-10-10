@@ -1,0 +1,47 @@
+name: Deploy
+
+# Firebase Hosting (ADR-0024): a preview channel for every pull request from this repository,
+# the live site for every push to main.
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  hosting:
+    # Forks get no secrets, so they can't deploy previews.
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      # Lets the action comment the preview URL on the pull request.
+      pull-requests: write
+      checks: write
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: 'npm'
+
+      - run: npm ci
+
+      - run: npx nx build events
+
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_GDG_WROCLAW }}
+          projectId: gdg-wroclaw
+          # Empty on pull requests: a preview channel named after the PR, kept for 7 days.
+          channelId: ${{ github.event_name == 'push' && 'live' || '' }}
+          expires: 7d

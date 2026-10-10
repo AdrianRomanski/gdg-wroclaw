@@ -56,3 +56,8 @@ vitest.config.*.timestamp*
 *storybook.log
 storybook-static
 test-output
+
+# Firebase CLI
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
