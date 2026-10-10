@@ -296,6 +296,62 @@ export const tokens = {
       "node": "142:2076"
     }
   },
+  "color.gray-300": {
+    "id": "color.gray-300",
+    "cssVariable": "--gdg-color-gray-300",
+    "type": "color",
+    "value": "#b6bcc5",
+    "aliasOf": null,
+    "parts": null,
+    "description": "Muted text on the Figma Event detail page (8925:1588); not in the Colors page palette (ADR-0025).",
+    "figma": {
+      "name": "(hex on Event page)",
+      "group": "Event detail page",
+      "node": "8927:6018"
+    }
+  },
+  "color.gray-600": {
+    "id": "color.gray-600",
+    "cssVariable": "--gdg-color-gray-600",
+    "type": "color",
+    "value": "#56585c",
+    "aliasOf": null,
+    "parts": null,
+    "description": "Subtle dividers on the Figma Event detail page; not in the Colors page palette (ADR-0025).",
+    "figma": {
+      "name": "(hex on Event page)",
+      "group": "Event detail page",
+      "node": "8927:6018"
+    }
+  },
+  "color.gray-850": {
+    "id": "color.gray-850",
+    "cssVariable": "--gdg-color-gray-850",
+    "type": "color",
+    "value": "#25272a",
+    "aliasOf": null,
+    "parts": null,
+    "description": "Raised surfaces (cards, pills, venue band) on the Figma Event detail page; not in the Colors page palette (ADR-0025).",
+    "figma": {
+      "name": "(hex on Event page)",
+      "group": "Event detail page",
+      "node": "8927:6018"
+    }
+  },
+  "color.navy-800": {
+    "id": "color.navy-800",
+    "cssVariable": "--gdg-color-navy-800",
+    "type": "color",
+    "value": "#243653",
+    "aliasOf": null,
+    "parts": null,
+    "description": "Blue-tinted surfaces (labels, registration band) on the Figma Event detail page; not in the Colors page palette (ADR-0025).",
+    "figma": {
+      "name": "(hex on Event page)",
+      "group": "Event detail page",
+      "node": "8927:6018"
+    }
+  },
   "color.background.default": {
     "id": "color.background.default",
     "cssVariable": "--gdg-color-background-default",
@@ -344,6 +400,26 @@ export const tokens = {
       "name": "Background/NavButton-BG-Active"
     }
   },
+  "color.background.raised": {
+    "id": "color.background.raised",
+    "cssVariable": "--gdg-color-background-raised",
+    "type": "color",
+    "value": "#25272a",
+    "aliasOf": "color.gray-850",
+    "parts": null,
+    "description": "Cards, pills and bands that sit on the default background (Event detail page). Default content: 13.1:1; muted content: 7.8:1.",
+    "figma": null
+  },
+  "color.background.brand-subtle": {
+    "id": "color.background.brand-subtle",
+    "cssVariable": "--gdg-color-background-brand-subtle",
+    "type": "color",
+    "value": "#243653",
+    "aliasOf": "color.navy-800",
+    "parts": null,
+    "description": "Blue-tinted labels and callouts (Event detail page). Default content: 10.7:1; brand blue secondary: 6.5:1; muted content: 6.4:1.",
+    "figma": null
+  },
   "color.content.default": {
     "id": "color.content.default",
     "cssVariable": "--gdg-color-content-default",
@@ -386,6 +462,16 @@ export const tokens = {
     "aliasOf": "color.halftone-red",
     "parts": null,
     "description": "Validation messages. Not in Figma; halftone red keeps at least 4.5:1 (WCAG AA) on the default background.",
+    "figma": null
+  },
+  "color.content.muted": {
+    "id": "color.content.muted",
+    "cssVariable": "--gdg-color-content-muted",
+    "type": "color",
+    "value": "#b6bcc5",
+    "aliasOf": "color.gray-300",
+    "parts": null,
+    "description": "Secondary text: descriptions, details, notes (Event detail page). 8.7:1 on the default background (WCAG AA).",
     "figma": null
   },
   "color.border.default": {
@@ -432,6 +518,16 @@ export const tokens = {
     "aliasOf": "color.halftone-red",
     "parts": null,
     "description": "Stroke of invalid form controls. Not in Figma.",
+    "figma": null
+  },
+  "color.border.subtle": {
+    "id": "color.border.subtle",
+    "cssVariable": "--gdg-color-border-subtle",
+    "type": "color",
+    "value": "#56585c",
+    "aliasOf": "color.gray-600",
+    "parts": null,
+    "description": "Low-emphasis dividers between rows and sections (Event detail page). Decorative, not a control boundary.",
     "figma": null
   },
   "color.brand.blue.primary": {

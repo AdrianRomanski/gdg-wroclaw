@@ -38,6 +38,14 @@
             "name": "Background/NavButton-BG-Active"
           }
         }
+      },
+      "raised": {
+        "$value": "{color.gray-850}",
+        "$description": "Cards, pills and bands that sit on the default background (Event detail page). Default content: 13.1:1; muted content: 7.8:1."
+      },
+      "brand-subtle": {
+        "$value": "{color.navy-800}",
+        "$description": "Blue-tinted labels and callouts (Event detail page). Default content: 10.7:1; brand blue secondary: 6.5:1; muted content: 6.4:1."
       }
     },
     "content": {
@@ -67,6 +75,10 @@
       "error": {
         "$value": "{color.halftone-red}",
         "$description": "Validation messages. Not in Figma; halftone red keeps at least 4.5:1 (WCAG AA) on the default background."
+      },
+      "muted": {
+        "$value": "{color.gray-300}",
+        "$description": "Secondary text: descriptions, details, notes (Event detail page). 8.7:1 on the default background (WCAG AA)."
       }
     },
     "border": {
@@ -101,6 +113,10 @@
       "error": {
         "$value": "{color.halftone-red}",
         "$description": "Stroke of invalid form controls. Not in Figma."
+      },
+      "subtle": {
+        "$value": "{color.gray-600}",
+        "$description": "Low-emphasis dividers between rows and sections (Event detail page). Decorative, not a control boundary."
       }
     },
     "brand": {

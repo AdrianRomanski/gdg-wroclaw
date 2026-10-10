@@ -217,6 +217,50 @@
         }
       },
       "$description": "Black 02 at 10% opacity."
+    },
+    "gray-300": {
+      "$value": "#b6bcc5",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "(hex on Event page)",
+          "group": "Event detail page",
+          "node": "8927:6018"
+        }
+      },
+      "$description": "Muted text on the Figma Event detail page (8925:1588); not in the Colors page palette (ADR-0025)."
+    },
+    "gray-600": {
+      "$value": "#56585c",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "(hex on Event page)",
+          "group": "Event detail page",
+          "node": "8927:6018"
+        }
+      },
+      "$description": "Subtle dividers on the Figma Event detail page; not in the Colors page palette (ADR-0025)."
+    },
+    "gray-850": {
+      "$value": "#25272a",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "(hex on Event page)",
+          "group": "Event detail page",
+          "node": "8927:6018"
+        }
+      },
+      "$description": "Raised surfaces (cards, pills, venue band) on the Figma Event detail page; not in the Colors page palette (ADR-0025)."
+    },
+    "navy-800": {
+      "$value": "#243653",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "(hex on Event page)",
+          "group": "Event detail page",
+          "node": "8927:6018"
+        }
+      },
+      "$description": "Blue-tinted surfaces (labels, registration band) on the Figma Event detail page; not in the Colors page palette (ADR-0025)."
     }
   }
 }
