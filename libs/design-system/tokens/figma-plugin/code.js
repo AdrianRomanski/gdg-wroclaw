@@ -131,8 +131,12 @@ async function resolveCollections(variables, known) {
 
 function textSegments(node) {
   try {
-    return node.getStyledTextSegments(['textStyleId', 'fills', 'boundVariables']);
-  } catch (error) {
+    return node.getStyledTextSegments([
+      'textStyleId',
+      'fills',
+      'boundVariables',
+    ]);
+  } catch {
     return node.getStyledTextSegments(['textStyleId', 'fills']);
   }
 }
@@ -222,7 +226,7 @@ async function createSnapshot() {
   let fileKey = null;
   try {
     fileKey = figma.fileKey || null;
-  } catch (error) {
+  } catch {
     // figma.fileKey is only available to private and development plugins.
   }
   return {
@@ -251,8 +255,7 @@ figma.showUI(__html__, { width: 360, height: 252, themeColors: true });
 
 createSnapshot().then(
   (snapshot) => figma.ui.postMessage({ type: 'snapshot', snapshot }),
-  (error) =>
-    figma.ui.postMessage({ type: 'error', message: String(error) }),
+  (error) => figma.ui.postMessage({ type: 'error', message: String(error) }),
 );
 
 figma.ui.onmessage = (message) => {

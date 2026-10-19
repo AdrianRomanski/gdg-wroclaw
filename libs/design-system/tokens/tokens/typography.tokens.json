@@ -40,7 +40,9 @@
         "$description": "Display size for page and section titles (Figma Text Sizes/Heading 2).",
         "$extensions": {
           "gdg.figma": {
-            "name": "Text Sizes/Heading 2"
+            "variable": "VariableID:9b1d0df11d8ab8a69404d7229f0c7bdcc97f6458/6745:292",
+            "name": "Text Sizes/Heading 2",
+            "library": true
           }
         }
       },
@@ -82,12 +84,7 @@
         "fontSize": "{font.size.display-1}",
         "lineHeight": "{line-height.display-1}"
       },
-      "$description": "Page and section titles: Workshop topic, Contact us (ADR-0016).",
-      "$extensions": {
-        "gdg.figma": {
-          "name": "Text Sizes/Heading 2"
-        }
-      }
+      "$description": "Page and section titles: Workshop topic, Contact us (ADR-0016)."
     },
     "heading-1": {
       "$type": "typography",
@@ -99,8 +96,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Heading 1",
-          "group": "Heading Styles - Bold"
+          "style": "S:4c3c80403baf4aa5a5f2adb5f6e4eca1a37c3fa6,",
+          "name": "Headings Bold/H1"
         }
       }
     },
@@ -114,8 +111,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Heading 2",
-          "group": "Heading Styles - Bold"
+          "style": "S:9f2a8ecd334c2017efcea4e99ad0d691227cdd70,",
+          "name": "Headings Bold/H2"
         }
       }
     },
@@ -129,8 +126,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Heading 3",
-          "group": "Heading Styles - Bold"
+          "style": "S:0725d5723ac4f85fbb71ea9e3a3a206567a9794f,",
+          "name": "Headings Bold/H3"
         }
       }
     },
@@ -144,8 +141,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Heading 4",
-          "group": "Heading Styles - Bold"
+          "style": "S:179644bcea864dfa4c22a6a5503f44b1757c6910,",
+          "name": "Headings Bold/H4"
         }
       }
     },
@@ -159,8 +156,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Heading 5",
-          "group": "Heading Styles - Bold"
+          "style": "S:3cc7915d4e95b48207de362bbee21eca5c7d60d8,",
+          "name": "Headings Bold/H5"
         }
       }
     },
@@ -174,8 +171,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Heading 6",
-          "group": "Heading Styles - Bold"
+          "style": "S:8961077b893793c4dc773980c8b7933838d24cc6,",
+          "name": "Headings Bold/H6"
         }
       }
     },
@@ -189,8 +186,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Heading 7",
-          "group": "Heading Styles - Bold"
+          "style": "S:4854a54a250ecd2573d1efb8c38915446205e712,",
+          "name": "Headings Bold/H7"
         }
       }
     },
@@ -204,8 +201,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Heading 8",
-          "group": "Heading Styles - Bold"
+          "style": "S:c42ce0ba1b0d92dacd6b5ed1d4dc78424b3af008,",
+          "name": "Headings Bold/H8"
         }
       }
     },
@@ -219,8 +216,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Heading 9",
-          "group": "Heading Styles - Bold"
+          "style": "S:4e5f2f629efd6fc0ee0330a4ab97b3ab165953c1,",
+          "name": "Headings Bold/H9"
         }
       }
     },
@@ -234,8 +231,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Heading 1",
-          "group": "Heading Styles - Regular"
+          "style": "S:ab388ea760582cdb05361d05dfa95db20f3a847d,",
+          "name": "Headings Regular/H1"
         }
       }
     },
@@ -249,8 +246,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Heading 2",
-          "group": "Heading Styles - Regular"
+          "style": "S:ada51ea2912dcb42a9820f8cca62c9f05c4b5bf1,",
+          "name": "Headings Regular/H2"
         }
       }
     },
@@ -264,8 +261,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Heading 3",
-          "group": "Heading Styles - Regular"
+          "style": "S:607eb8de2a1ca24783302f02f458d641f31ac985,",
+          "name": "Headings Regular/H3"
         }
       }
     },
@@ -279,8 +276,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Heading 4",
-          "group": "Heading Styles - Regular"
+          "style": "S:b4ddef2cadcc6cd884ef104452684ca08a604625,",
+          "name": "Headings Regular/H4"
         }
       }
     },
@@ -294,8 +291,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Heading 5",
-          "group": "Heading Styles - Regular"
+          "style": "S:c263d744a8d3c381cadbb64a1e2eac103d59b221,",
+          "name": "Headings Regular/H5"
         }
       }
     },
@@ -309,8 +306,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Heading 6",
-          "group": "Heading Styles - Regular"
+          "style": "S:c5778971eb86a42139670f5f5b53cc24a4f7b6ed,",
+          "name": "Headings Regular/H6"
         }
       }
     },
@@ -324,8 +321,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Heading 7",
-          "group": "Heading Styles - Regular"
+          "style": "S:63ee02c0bd7e2fccbcb260190365d2843895c8e7,",
+          "name": "Headings Regular/H7"
         }
       }
     },
@@ -339,8 +336,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Heading 8",
-          "group": "Heading Styles - Regular"
+          "style": "S:890d477303f70062519e3e8bd0d3003c78bec1e8,",
+          "name": "Headings Regular/H8"
         }
       }
     },
@@ -354,8 +351,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Heading 9",
-          "group": "Heading Styles - Regular"
+          "style": "S:76e2a8a7cd6a0e64fdedee413fb9f1d5fc4efbf3,",
+          "name": "Headings Regular/H9"
         }
       }
     },
@@ -369,8 +366,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Paragraph 1",
-          "group": "Paragraph Styles - Regular"
+          "style": "S:6d8ecc183d067128c965f7b354e01e95101966c9,",
+          "name": "Paragraph/P1"
         }
       }
     },
@@ -384,8 +381,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Paragraph 2",
-          "group": "Paragraph Styles - Regular"
+          "style": "S:72a4515aa84ffaddc89fa4b40c5c3e9f6d990bbf,",
+          "name": "Paragraph/P2"
         }
       }
     },
@@ -399,8 +396,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Paragraph 3",
-          "group": "Paragraph Styles - Regular"
+          "style": "S:d5a04d1001417af20bec1a8451d2cff1a7cd529a,",
+          "name": "Paragraph/P3"
         }
       }
     },
@@ -414,8 +411,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Paragraph 4",
-          "group": "Paragraph Styles - Regular"
+          "style": "S:4a8d4781e12bbc55437fca420bd2da4d4e7e2b4a,",
+          "name": "Paragraph/P4"
         }
       }
     },
@@ -429,8 +426,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Paragraph 5",
-          "group": "Paragraph Styles - Regular"
+          "style": "S:28c6576dcfdc81a948acc34d35558a5fa67cdb26,",
+          "name": "Paragraph/P5"
         }
       }
     },
@@ -444,8 +441,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Paragraph 6",
-          "group": "Paragraph Styles - Regular"
+          "style": "S:38c033e1e45343eaa4e8b7688c41bd4ceba129ea,",
+          "name": "Paragraph/P6"
         }
       }
     },
@@ -459,8 +456,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Paragraph 7",
-          "group": "Paragraph Styles - Regular"
+          "style": "S:b0cce126d2733e1a857a991a53b3cb69374a4134,",
+          "name": "Paragraph/P7"
         }
       }
     },
@@ -474,8 +471,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Paragraph 8",
-          "group": "Paragraph Styles - Regular"
+          "style": "S:fb30872db9239d17132ba4d57e1345a0f7e211c7,",
+          "name": "Paragraph/P8"
         }
       }
     },
@@ -489,8 +486,8 @@
       },
       "$extensions": {
         "gdg.figma": {
-          "name": "Paragraph 9",
-          "group": "Paragraph Styles - Regular"
+          "style": "S:70543473e4f4830d905eaf7e9908f8b30a876cd7,",
+          "name": "Paragraph/P9"
         }
       }
     },

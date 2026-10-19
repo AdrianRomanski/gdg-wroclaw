@@ -9,6 +9,9 @@
 # Generated design tokens (ADR-0008)
 libs/design-system/tokens/src/generated
 
+# Figma snapshot written by the token sync (ADR-0026)
+libs/design-system/tokens/figma/gdg-ds.figma.json
+
 # Generated icon registry (ADR-0011)
 libs/design-system/components/src/lib/icon/generated
 

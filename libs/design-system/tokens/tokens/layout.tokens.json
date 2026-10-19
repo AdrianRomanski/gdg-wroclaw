@@ -7,7 +7,9 @@
       "$description": "Horizontal page padding.",
       "$extensions": {
         "gdg.figma": {
-          "name": "Page Padding/padding-global"
+          "variable": "VariableID:278281784a8a7d28c4318564ccc5aac2f146452a/6745:390",
+          "name": "Page Padding/padding-global",
+          "library": true
         }
       }
     },
@@ -16,7 +18,9 @@
       "$description": "Vertical padding of a large page section.",
       "$extensions": {
         "gdg.figma": {
-          "name": "Section Padding/padding-section-large"
+          "variable": "VariableID:75c3f9d1ae4d8b6757462f6f55d543e59e1b0dc0/6745:388",
+          "name": "Section Padding/padding-section-large",
+          "library": true
         }
       }
     },
@@ -25,7 +29,9 @@
       "$description": "Vertical padding of a medium page section, e.g. the Footer (ADR-0020).",
       "$extensions": {
         "gdg.figma": {
-          "name": "Section Padding/padding-section-medium"
+          "variable": "VariableID:e1a4a6e149d3713a5d269b54937e4688508cd1de/6745:387",
+          "name": "Section Padding/padding-section-medium",
+          "library": true
         }
       }
     },
@@ -34,7 +40,9 @@
       "$description": "Maximum width of a section container.",
       "$extensions": {
         "gdg.figma": {
-          "name": "Container/container-large"
+          "variable": "VariableID:a274deeffdb8f0b5f9632b68cbf6879f871d9c6a/6745:344",
+          "name": "Container/container-large",
+          "library": true
         }
       }
     },
@@ -47,7 +55,9 @@
       "$description": "Maximum width of a section title block.",
       "$extensions": {
         "gdg.figma": {
-          "name": "Max Width/max-width-large"
+          "variable": "VariableID:c22b49c39cbdfbb1a23c6458675b9abf391a77d4/6745:363",
+          "name": "Max Width/max-width-large",
+          "library": true
         }
       }
     },
@@ -56,7 +66,9 @@
       "$description": "Maximum width of a form.",
       "$extensions": {
         "gdg.figma": {
-          "name": "Max Width/max-width-medium"
+          "variable": "VariableID:abe0a0edfbd3a9e8ae3f80ed935a2c10b752b18e/6745:365",
+          "name": "Max Width/max-width-medium",
+          "library": true
         }
       }
     }

@@ -1,0 +1,16 @@
+/**
+ * Do not edit directly: generated from libs/design-system/tokens/{tokens,themes}/
+ * by tools/build-tokens.ts (npx nx run design-system-tokens:generate-tokens).
+ */
+
+:root[data-theme='light'],
+[data-theme='light'] {
+  --gdg-color-background-default: var(--gdg-color-off-white);
+  --gdg-color-background-disabled: var(--gdg-color-black-02-alpha-20);
+  --gdg-color-background-nav-button-hover: var(--gdg-color-black-02-alpha-10);
+  --gdg-color-background-nav-button-active: var(--gdg-color-black-02-alpha-20);
+  --gdg-color-content-default: var(--gdg-color-black-02);
+  --gdg-color-content-disabled: var(--gdg-color-black-02-alpha-40);
+  --gdg-color-border-default: var(--gdg-color-black-02);
+  --gdg-color-border-disabled: var(--gdg-color-black-02-alpha-40);
+}

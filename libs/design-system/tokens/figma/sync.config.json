@@ -1,0 +1,30 @@
+{
+  "$comment": "Settings for tools/sync-figma.ts (ADR-0026). See the Figma sync section of libs/design-system/tokens/README.md.",
+  "fileKey": "9cmkl061f5ZtujJzYR0ODh",
+  "snapshot": "figma/gdg-ds.figma.json",
+  "modes": {
+    "tokens": "Dark mode",
+    "Spacing & Sizing": "Desktop",
+    "Typography": "Desktop"
+  },
+  "themes": {
+    "light": {
+      "tokens": "Light mode"
+    }
+  },
+  "import": [
+    {
+      "collection": "spacing",
+      "name": "^spacing-(.+)$",
+      "file": "tokens/spacing.tokens.json",
+      "group": ["spacing"]
+    },
+    {
+      "collection": "radius",
+      "name": "^radius-(.+)$",
+      "file": "tokens/radius.tokens.json",
+      "group": ["radius"]
+    }
+  ],
+  "ignore": []
+}
