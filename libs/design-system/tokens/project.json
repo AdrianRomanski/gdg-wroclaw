@@ -7,10 +7,20 @@
   "targets": {
     "generate-tokens": {
       "executor": "nx:run-commands",
-      "inputs": ["{projectRoot}/tokens/**/*", "{projectRoot}/tools/**/*"],
+      "inputs": [
+        "{projectRoot}/tokens/**/*",
+        "{projectRoot}/themes/**/*",
+        "{projectRoot}/tools/**/*"
+      ],
       "outputs": ["{projectRoot}/src/generated"],
       "options": {
         "command": "node libs/design-system/tokens/tools/generate-tokens.ts"
+      }
+    },
+    "sync-figma": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node libs/design-system/tokens/tools/sync-figma.ts"
       }
     }
   }

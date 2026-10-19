@@ -11,7 +11,7 @@ export const byFigmaGroup = (group) =>
   Object.fromEntries(
     colorTokens
       .filter((token) => token.figma?.group === group)
-      .map((token) => [token.figma.name, token.value]),
+      .map((token) => [token.figma.name.split('/').pop(), token.value]),
   );
 
 export const semantic = (prefix) =>
@@ -54,6 +54,8 @@ use palette tokens only when no semantic token fits.
 
 The product is dark by default: `background-default` is Black 02 and `content-default` is OFF White.
 Brand **primary** colors are the resting state and **secondary** (halftone) colors the hover state.
+Switch the **Theme** toolbar to preview the light theme from the Figma `tokens` collection
+(ADR-0027). It is partial: code-only roles keep their dark values until Figma defines them.
 
 <ColorPalette>
   <ColorItem

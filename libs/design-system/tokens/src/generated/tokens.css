@@ -1,5 +1,5 @@
 /**
- * Do not edit directly: generated from libs/design-system/tokens/tokens/*.tokens.json
+ * Do not edit directly: generated from libs/design-system/tokens/{tokens,themes}/
  * by tools/build-tokens.ts (npx nx run design-system-tokens:generate-tokens).
  */
 
@@ -36,21 +36,33 @@
   --gdg-layout-max-width-xlarge: 59.375rem; /** Maximum width of the event list. Not yet a Figma variable (ADR-0021). */
   --gdg-layout-max-width-large: 48rem; /** Maximum width of a section title block. */
   --gdg-layout-max-width-medium: 35rem; /** Maximum width of a form. */
+  --gdg-radius-4: 0.25rem;
+  --gdg-radius-6: 0.375rem;
   --gdg-radius-8: 0.5rem; /** Partner logo tiles (ADR-0019). */
   --gdg-radius-12: 0.75rem;
   --gdg-radius-16: 1rem;
+  --gdg-radius-20: 1.25rem;
+  --gdg-radius-24: 1.5rem;
+  --gdg-radius-32: 2rem;
   --gdg-radius-40: 2.5rem;
+  --gdg-radius-48: 3rem;
+  --gdg-radius-none: 0rem;
   --gdg-radius-full: 624.9375rem; /** Fully rounded: pills and circles. */
   --gdg-spacing-0: 0rem;
+  --gdg-spacing-2: 0.125rem;
+  --gdg-spacing-3: 0.1875rem;
   --gdg-spacing-4: 0.25rem;
+  --gdg-spacing-6: 0.375rem;
   --gdg-spacing-8: 0.5rem;
+  --gdg-spacing-10: 0.625rem;
   --gdg-spacing-12: 0.75rem;
   --gdg-spacing-16: 1rem;
   --gdg-spacing-20: 1.25rem;
   --gdg-spacing-24: 1.5rem;
-  --gdg-spacing-32: 2rem; /** Gap between a section title block and its call to action (Figma FAQ / 11 /). Not yet a Figma variable. */
+  --gdg-spacing-32: 2rem; /** Gap between a section title block and its call to action (Figma FAQ / 11 /). */
+  --gdg-spacing-36: 2.25rem;
   --gdg-spacing-40: 2.5rem;
-  --gdg-spacing-48: 3rem; /** Gap between a section title and its content (Figma Contact / 3 / container). Not yet a Figma variable. */
+  --gdg-spacing-48: 3rem; /** Gap between a section title and its content (Figma Contact / 3 / container). */
   --gdg-spacing-64: 4rem;
   --gdg-spacing-80: 5rem; /** Gap between a page banner and its content, and between page sections (Figma Event Header / 1 /). Not yet a Figma variable. */
   --gdg-font-family-sans: 'Google Sans Variable', 'Google Sans', system-ui, sans-serif; /** Google Sans (self-hosted variable font). */

@@ -2,11 +2,39 @@
   "radius": {
     "$type": "dimension",
     "$description": "Corner radii from the Figma radius-* variables.",
+    "none": {
+      "$value": "0px",
+      "$extensions": {
+        "gdg.figma": {
+          "variable": "VariableID:180:2264",
+          "name": "radius-none"
+        }
+      }
+    },
+    "4": {
+      "$value": "4px",
+      "$extensions": {
+        "gdg.figma": {
+          "variable": "VariableID:180:2266",
+          "name": "radius-4"
+        }
+      }
+    },
+    "6": {
+      "$value": "6px",
+      "$extensions": {
+        "gdg.figma": {
+          "variable": "VariableID:180:2267",
+          "name": "radius-6"
+        }
+      }
+    },
     "8": {
       "$value": "8px",
       "$description": "Partner logo tiles (ADR-0019).",
       "$extensions": {
         "gdg.figma": {
+          "variable": "VariableID:180:2265",
           "name": "radius-8"
         }
       }
@@ -15,6 +43,7 @@
       "$value": "12px",
       "$extensions": {
         "gdg.figma": {
+          "variable": "VariableID:180:2268",
           "name": "radius-12"
         }
       }
@@ -23,7 +52,35 @@
       "$value": "16px",
       "$extensions": {
         "gdg.figma": {
+          "variable": "VariableID:180:2270",
           "name": "radius-16"
+        }
+      }
+    },
+    "20": {
+      "$value": "20px",
+      "$extensions": {
+        "gdg.figma": {
+          "variable": "VariableID:180:2263",
+          "name": "radius-20"
+        }
+      }
+    },
+    "24": {
+      "$value": "24px",
+      "$extensions": {
+        "gdg.figma": {
+          "variable": "VariableID:180:2261",
+          "name": "radius-24"
+        }
+      }
+    },
+    "32": {
+      "$value": "32px",
+      "$extensions": {
+        "gdg.figma": {
+          "variable": "VariableID:180:2262",
+          "name": "radius-32"
         }
       }
     },
@@ -31,7 +88,17 @@
       "$value": "40px",
       "$extensions": {
         "gdg.figma": {
+          "variable": "VariableID:180:2260",
           "name": "radius-40"
+        }
+      }
+    },
+    "48": {
+      "$value": "48px",
+      "$extensions": {
+        "gdg.figma": {
+          "variable": "VariableID:180:2271",
+          "name": "radius-48"
         }
       }
     },
@@ -40,6 +107,7 @@
       "$description": "Fully rounded: pills and circles.",
       "$extensions": {
         "gdg.figma": {
+          "variable": "VariableID:180:2269",
           "name": "radius-full"
         }
       }

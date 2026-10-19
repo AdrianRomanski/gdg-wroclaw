@@ -6,7 +6,8 @@
       "$value": "#4285f4",
       "$extensions": {
         "gdg.figma": {
-          "name": "Blue 500",
+          "variable": "VariableID:1:131",
+          "name": "Core Colors/Blue 500",
           "group": "Core colors",
           "node": "1:37"
         }
@@ -16,7 +17,8 @@
       "$value": "#34a853",
       "$extensions": {
         "gdg.figma": {
-          "name": "Green 500",
+          "variable": "VariableID:1:132",
+          "name": "Core Colors/Green 500",
           "group": "Core colors",
           "node": "1:42"
         }
@@ -26,7 +28,8 @@
       "$value": "#f9ab00",
       "$extensions": {
         "gdg.figma": {
-          "name": "Yellow 600",
+          "variable": "VariableID:1:133",
+          "name": "Core Colors/Yellow 600",
           "group": "Core colors",
           "node": "1:47"
         }
@@ -36,7 +39,8 @@
       "$value": "#ea4335",
       "$extensions": {
         "gdg.figma": {
-          "name": "Red 500",
+          "variable": "VariableID:1:134",
+          "name": "Core Colors/red 500",
           "group": "Core colors",
           "node": "1:52"
         }
@@ -46,7 +50,8 @@
       "$value": "#57caff",
       "$extensions": {
         "gdg.figma": {
-          "name": "Halftone Blue",
+          "variable": "VariableID:1:136",
+          "name": "Halftones/Halftone Blue",
           "group": "Halftones",
           "node": "1:57"
         }
@@ -56,7 +61,8 @@
       "$value": "#5cdb6d",
       "$extensions": {
         "gdg.figma": {
-          "name": "Halftone Green",
+          "variable": "VariableID:1:137",
+          "name": "Halftones/Halftone Green",
           "group": "Halftones",
           "node": "1:62"
         }
@@ -66,7 +72,8 @@
       "$value": "#ffd427",
       "$extensions": {
         "gdg.figma": {
-          "name": "Halftone Yellow",
+          "variable": "VariableID:1:138",
+          "name": "Halftones/Halftone Yellow",
           "group": "Halftones",
           "node": "1:67"
         }
@@ -76,7 +83,8 @@
       "$value": "#ff7daf",
       "$extensions": {
         "gdg.figma": {
-          "name": "Halftone Red",
+          "variable": "VariableID:1:139",
+          "name": "Halftones/Halftone Red",
           "group": "Halftones",
           "node": "1:72"
         }
@@ -86,7 +94,8 @@
       "$value": "#c3ecf6",
       "$extensions": {
         "gdg.figma": {
-          "name": "Pastel Blue",
+          "variable": "VariableID:1:140",
+          "name": "Pastels/Pastel Blue",
           "group": "Pastels",
           "node": "1:77"
         }
@@ -96,7 +105,8 @@
       "$value": "#ccf6c5",
       "$extensions": {
         "gdg.figma": {
-          "name": "Pastel Green",
+          "variable": "VariableID:1:141",
+          "name": "Pastels/Pastel Green",
           "group": "Pastels",
           "node": "1:82"
         }
@@ -106,7 +116,8 @@
       "$value": "#ffe7a5",
       "$extensions": {
         "gdg.figma": {
-          "name": "Pastel Yellow",
+          "variable": "VariableID:1:142",
+          "name": "Pastels/Pastel Yellow",
           "group": "Pastels",
           "node": "1:87"
         }
@@ -116,7 +127,8 @@
       "$value": "#f8d8d8",
       "$extensions": {
         "gdg.figma": {
-          "name": "Pastel Red",
+          "variable": "VariableID:1:143",
+          "name": "Pastels/Pastel Red",
           "group": "Pastels",
           "node": "1:92"
         }
@@ -126,7 +138,8 @@
       "$value": "#f0f0f0",
       "$extensions": {
         "gdg.figma": {
-          "name": "OFF White",
+          "variable": "VariableID:1:144",
+          "name": "Grayscale/OFF White",
           "group": "Grayscale",
           "node": "1:97"
         }
@@ -136,7 +149,8 @@
       "$value": "#1e1e1e",
       "$extensions": {
         "gdg.figma": {
-          "name": "Black 02",
+          "variable": "VariableID:1:145",
+          "name": "Grayscale/Black 02",
           "group": "Grayscale",
           "node": "1:102"
         }
@@ -147,8 +161,10 @@
       "$description": "Pure black. Text on brand fills, where Black 02 is not dark enough for WCAG AA.",
       "$extensions": {
         "gdg.figma": {
-          "name": "Neutral Darkest",
-          "group": "Grayscale"
+          "variable": "VariableID:49250288114ea827b6bf93522123086755028162/6495:536",
+          "name": "Color/Neutral Darkest",
+          "group": "Grayscale",
+          "library": true
         }
       }
     },
@@ -156,7 +172,8 @@
       "$value": "#f0f0f066",
       "$extensions": {
         "gdg.figma": {
-          "name": "Alpha OFF White 40",
+          "variable": "VariableID:142:2081",
+          "name": "Grayscale/Alpha OFF White 40",
           "group": "Alpha",
           "node": "142:2020"
         }
@@ -167,7 +184,8 @@
       "$value": "#f0f0f033",
       "$extensions": {
         "gdg.figma": {
-          "name": "Alpha OFF White 20",
+          "variable": "VariableID:142:2082",
+          "name": "Grayscale/Alpha OFF White 20",
           "group": "Alpha",
           "node": "142:2045"
         }
@@ -178,7 +196,8 @@
       "$value": "#f0f0f01a",
       "$extensions": {
         "gdg.figma": {
-          "name": "Alpha OFF White 10",
+          "variable": "VariableID:142:2083",
+          "name": "Grayscale/Alpha OFF White 10",
           "group": "Alpha",
           "node": "142:2040"
         }
@@ -189,7 +208,8 @@
       "$value": "#1e1e1e66",
       "$extensions": {
         "gdg.figma": {
-          "name": "Alpha Black 02 40",
+          "variable": "VariableID:142:2084",
+          "name": "Grayscale/Alpha Black 02 40",
           "group": "Alpha",
           "node": "142:2066"
         }
@@ -200,7 +220,8 @@
       "$value": "#1e1e1e33",
       "$extensions": {
         "gdg.figma": {
-          "name": "Alpha Black 02 20",
+          "variable": "VariableID:142:2085",
+          "name": "Grayscale/Alpha Black 02 20",
           "group": "Alpha",
           "node": "142:2071"
         }
@@ -211,7 +232,8 @@
       "$value": "#1e1e1e1a",
       "$extensions": {
         "gdg.figma": {
-          "name": "Alpha Black 02 10",
+          "variable": "VariableID:142:2086",
+          "name": "Grayscale/Alpha Black 02 10",
           "group": "Alpha",
           "node": "142:2076"
         }

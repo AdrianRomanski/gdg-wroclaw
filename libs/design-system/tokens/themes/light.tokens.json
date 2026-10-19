@@ -1,0 +1,34 @@
+{
+  "color": {
+    "background": {
+      "default": {
+        "$value": "{color.off-white}"
+      },
+      "disabled": {
+        "$value": "{color.black-02-alpha-20}"
+      },
+      "nav-button-hover": {
+        "$value": "{color.black-02-alpha-10}"
+      },
+      "nav-button-active": {
+        "$value": "{color.black-02-alpha-20}"
+      }
+    },
+    "content": {
+      "default": {
+        "$value": "{color.black-02}"
+      },
+      "disabled": {
+        "$value": "{color.black-02-alpha-40}"
+      }
+    },
+    "border": {
+      "default": {
+        "$value": "{color.black-02}"
+      },
+      "disabled": {
+        "$value": "{color.black-02-alpha-40}"
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 /**
- * Do not edit directly: generated from libs/design-system/tokens/tokens/*.tokens.json
+ * Do not edit directly: generated from libs/design-system/tokens/{tokens,themes}/
  * by tools/build-tokens.ts (npx nx run design-system-tokens:generate-tokens).
  */
 export const tokens = {
@@ -12,7 +12,8 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
-      "name": "Blue 500",
+      "variable": "VariableID:1:131",
+      "name": "Core Colors/Blue 500",
       "group": "Core colors",
       "node": "1:37"
     }
@@ -26,7 +27,8 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
-      "name": "Green 500",
+      "variable": "VariableID:1:132",
+      "name": "Core Colors/Green 500",
       "group": "Core colors",
       "node": "1:42"
     }
@@ -40,7 +42,8 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
-      "name": "Yellow 600",
+      "variable": "VariableID:1:133",
+      "name": "Core Colors/Yellow 600",
       "group": "Core colors",
       "node": "1:47"
     }
@@ -54,7 +57,8 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
-      "name": "Red 500",
+      "variable": "VariableID:1:134",
+      "name": "Core Colors/red 500",
       "group": "Core colors",
       "node": "1:52"
     }
@@ -68,7 +72,8 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
-      "name": "Halftone Blue",
+      "variable": "VariableID:1:136",
+      "name": "Halftones/Halftone Blue",
       "group": "Halftones",
       "node": "1:57"
     }
@@ -82,7 +87,8 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
-      "name": "Halftone Green",
+      "variable": "VariableID:1:137",
+      "name": "Halftones/Halftone Green",
       "group": "Halftones",
       "node": "1:62"
     }
@@ -96,7 +102,8 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
-      "name": "Halftone Yellow",
+      "variable": "VariableID:1:138",
+      "name": "Halftones/Halftone Yellow",
       "group": "Halftones",
       "node": "1:67"
     }
@@ -110,7 +117,8 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
-      "name": "Halftone Red",
+      "variable": "VariableID:1:139",
+      "name": "Halftones/Halftone Red",
       "group": "Halftones",
       "node": "1:72"
     }
@@ -124,7 +132,8 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
-      "name": "Pastel Blue",
+      "variable": "VariableID:1:140",
+      "name": "Pastels/Pastel Blue",
       "group": "Pastels",
       "node": "1:77"
     }
@@ -138,7 +147,8 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
-      "name": "Pastel Green",
+      "variable": "VariableID:1:141",
+      "name": "Pastels/Pastel Green",
       "group": "Pastels",
       "node": "1:82"
     }
@@ -152,7 +162,8 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
-      "name": "Pastel Yellow",
+      "variable": "VariableID:1:142",
+      "name": "Pastels/Pastel Yellow",
       "group": "Pastels",
       "node": "1:87"
     }
@@ -166,7 +177,8 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
-      "name": "Pastel Red",
+      "variable": "VariableID:1:143",
+      "name": "Pastels/Pastel Red",
       "group": "Pastels",
       "node": "1:92"
     }
@@ -180,7 +192,8 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
-      "name": "OFF White",
+      "variable": "VariableID:1:144",
+      "name": "Grayscale/OFF White",
       "group": "Grayscale",
       "node": "1:97"
     }
@@ -194,7 +207,8 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
-      "name": "Black 02",
+      "variable": "VariableID:1:145",
+      "name": "Grayscale/Black 02",
       "group": "Grayscale",
       "node": "1:102"
     }
@@ -208,8 +222,10 @@ export const tokens = {
     "parts": null,
     "description": "Pure black. Text on brand fills, where Black 02 is not dark enough for WCAG AA.",
     "figma": {
-      "name": "Neutral Darkest",
-      "group": "Grayscale"
+      "variable": "VariableID:49250288114ea827b6bf93522123086755028162/6495:536",
+      "name": "Color/Neutral Darkest",
+      "group": "Grayscale",
+      "library": true
     }
   },
   "color.off-white-alpha-40": {
@@ -221,7 +237,8 @@ export const tokens = {
     "parts": null,
     "description": "OFF White at 40% opacity.",
     "figma": {
-      "name": "Alpha OFF White 40",
+      "variable": "VariableID:142:2081",
+      "name": "Grayscale/Alpha OFF White 40",
       "group": "Alpha",
       "node": "142:2020"
     }
@@ -235,7 +252,8 @@ export const tokens = {
     "parts": null,
     "description": "OFF White at 20% opacity.",
     "figma": {
-      "name": "Alpha OFF White 20",
+      "variable": "VariableID:142:2082",
+      "name": "Grayscale/Alpha OFF White 20",
       "group": "Alpha",
       "node": "142:2045"
     }
@@ -249,7 +267,8 @@ export const tokens = {
     "parts": null,
     "description": "OFF White at 10% opacity.",
     "figma": {
-      "name": "Alpha OFF White 10",
+      "variable": "VariableID:142:2083",
+      "name": "Grayscale/Alpha OFF White 10",
       "group": "Alpha",
       "node": "142:2040"
     }
@@ -263,7 +282,8 @@ export const tokens = {
     "parts": null,
     "description": "Black 02 at 40% opacity.",
     "figma": {
-      "name": "Alpha Black 02 40",
+      "variable": "VariableID:142:2084",
+      "name": "Grayscale/Alpha Black 02 40",
       "group": "Alpha",
       "node": "142:2066"
     }
@@ -277,7 +297,8 @@ export const tokens = {
     "parts": null,
     "description": "Black 02 at 20% opacity.",
     "figma": {
-      "name": "Alpha Black 02 20",
+      "variable": "VariableID:142:2085",
+      "name": "Grayscale/Alpha Black 02 20",
       "group": "Alpha",
       "node": "142:2071"
     }
@@ -291,7 +312,8 @@ export const tokens = {
     "parts": null,
     "description": "Black 02 at 10% opacity.",
     "figma": {
-      "name": "Alpha Black 02 10",
+      "variable": "VariableID:142:2086",
+      "name": "Grayscale/Alpha Black 02 10",
       "group": "Alpha",
       "node": "142:2076"
     }
@@ -361,7 +383,8 @@ export const tokens = {
     "parts": null,
     "description": "Default page and component surface.",
     "figma": {
-      "name": "Grayscale/Black 02"
+      "variable": "VariableID:142:1985",
+      "name": "Background/Background"
     }
   },
   "color.background.disabled": {
@@ -373,6 +396,7 @@ export const tokens = {
     "parts": null,
     "description": "Background of disabled controls.",
     "figma": {
+      "variable": "VariableID:143:2278",
       "name": "Background/Background-Disabled"
     }
   },
@@ -385,6 +409,7 @@ export const tokens = {
     "parts": null,
     "description": "Nav Button background on hover.",
     "figma": {
+      "variable": "VariableID:142:2088",
       "name": "Background/NavButton-BG-Hover"
     }
   },
@@ -397,6 +422,7 @@ export const tokens = {
     "parts": null,
     "description": "Nav Button background when it links to the current page.",
     "figma": {
+      "variable": "VariableID:142:2089",
       "name": "Background/NavButton-BG-Active"
     }
   },
@@ -429,6 +455,7 @@ export const tokens = {
     "parts": null,
     "description": "Default text and icon color on dark surfaces.",
     "figma": {
+      "variable": "VariableID:142:1984",
       "name": "Content/Content"
     }
   },
@@ -441,6 +468,7 @@ export const tokens = {
     "parts": null,
     "description": "Text and icons of disabled controls.",
     "figma": {
+      "variable": "VariableID:142:2007",
       "name": "Content/Content-Disabled"
     }
   },
@@ -483,6 +511,7 @@ export const tokens = {
     "parts": null,
     "description": "Dividers between list rows (1px).",
     "figma": {
+      "variable": "VariableID:143:2272",
       "name": "Border/Border"
     }
   },
@@ -495,6 +524,7 @@ export const tokens = {
     "parts": null,
     "description": "Border of disabled controls.",
     "figma": {
+      "variable": "VariableID:143:2273",
       "name": "Border/Border-Disabled"
     }
   },
@@ -507,6 +537,7 @@ export const tokens = {
     "parts": null,
     "description": "Stroke of text inputs, text areas and checkboxes.",
     "figma": {
+      "variable": "VariableID:142:1990",
       "name": "Colors/Brand-Blue-Primary"
     }
   },
@@ -539,6 +570,7 @@ export const tokens = {
     "parts": null,
     "description": "Blue brand color, resting state.",
     "figma": {
+      "variable": "VariableID:142:1990",
       "name": "Colors/Brand-Blue-Primary"
     }
   },
@@ -551,6 +583,7 @@ export const tokens = {
     "parts": null,
     "description": "Blue brand color, hover state.",
     "figma": {
+      "variable": "VariableID:143:2275",
       "name": "Colors/Brand-Blue-Secondary"
     }
   },
@@ -563,6 +596,7 @@ export const tokens = {
     "parts": null,
     "description": "Green brand color, resting state.",
     "figma": {
+      "variable": "VariableID:142:1991",
       "name": "Colors/Brand-Green-Primary"
     }
   },
@@ -575,6 +609,7 @@ export const tokens = {
     "parts": null,
     "description": "Green brand color, hover state.",
     "figma": {
+      "variable": "VariableID:143:2276",
       "name": "Colors/Brand-Green-Secondary"
     }
   },
@@ -587,6 +622,7 @@ export const tokens = {
     "parts": null,
     "description": "Yellow brand color, resting state.",
     "figma": {
+      "variable": "VariableID:142:1992",
       "name": "Colors/Brand-Yellow-Primary"
     }
   },
@@ -599,6 +635,7 @@ export const tokens = {
     "parts": null,
     "description": "Yellow brand color, hover state.",
     "figma": {
+      "variable": "VariableID:143:2277",
       "name": "Colors/Brand-Yellow-Secondary"
     }
   },
@@ -611,6 +648,7 @@ export const tokens = {
     "parts": null,
     "description": "Red brand color, resting state.",
     "figma": {
+      "variable": "VariableID:142:1993",
       "name": "Colors/Brand-Red-Primary"
     }
   },
@@ -623,6 +661,7 @@ export const tokens = {
     "parts": null,
     "description": "Red brand color, hover state.",
     "figma": {
+      "variable": "VariableID:143:2274",
       "name": "Colors/Brand-Red-Secondary"
     }
   },
@@ -635,7 +674,9 @@ export const tokens = {
     "parts": null,
     "description": "Horizontal page padding.",
     "figma": {
-      "name": "Page Padding/padding-global"
+      "variable": "VariableID:278281784a8a7d28c4318564ccc5aac2f146452a/6745:390",
+      "name": "Page Padding/padding-global",
+      "library": true
     }
   },
   "layout.padding-section-large": {
@@ -647,7 +688,9 @@ export const tokens = {
     "parts": null,
     "description": "Vertical padding of a large page section.",
     "figma": {
-      "name": "Section Padding/padding-section-large"
+      "variable": "VariableID:75c3f9d1ae4d8b6757462f6f55d543e59e1b0dc0/6745:388",
+      "name": "Section Padding/padding-section-large",
+      "library": true
     }
   },
   "layout.padding-section-medium": {
@@ -659,7 +702,9 @@ export const tokens = {
     "parts": null,
     "description": "Vertical padding of a medium page section, e.g. the Footer (ADR-0020).",
     "figma": {
-      "name": "Section Padding/padding-section-medium"
+      "variable": "VariableID:e1a4a6e149d3713a5d269b54937e4688508cd1de/6745:387",
+      "name": "Section Padding/padding-section-medium",
+      "library": true
     }
   },
   "layout.container-large": {
@@ -671,7 +716,9 @@ export const tokens = {
     "parts": null,
     "description": "Maximum width of a section container.",
     "figma": {
-      "name": "Container/container-large"
+      "variable": "VariableID:a274deeffdb8f0b5f9632b68cbf6879f871d9c6a/6745:344",
+      "name": "Container/container-large",
+      "library": true
     }
   },
   "layout.max-width-xlarge": {
@@ -693,7 +740,9 @@ export const tokens = {
     "parts": null,
     "description": "Maximum width of a section title block.",
     "figma": {
-      "name": "Max Width/max-width-large"
+      "variable": "VariableID:c22b49c39cbdfbb1a23c6458675b9abf391a77d4/6745:363",
+      "name": "Max Width/max-width-large",
+      "library": true
     }
   },
   "layout.max-width-medium": {
@@ -705,7 +754,35 @@ export const tokens = {
     "parts": null,
     "description": "Maximum width of a form.",
     "figma": {
-      "name": "Max Width/max-width-medium"
+      "variable": "VariableID:abe0a0edfbd3a9e8ae3f80ed935a2c10b752b18e/6745:365",
+      "name": "Max Width/max-width-medium",
+      "library": true
+    }
+  },
+  "radius.4": {
+    "id": "radius.4",
+    "cssVariable": "--gdg-radius-4",
+    "type": "dimension",
+    "value": "0.25rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "variable": "VariableID:180:2266",
+      "name": "radius-4"
+    }
+  },
+  "radius.6": {
+    "id": "radius.6",
+    "cssVariable": "--gdg-radius-6",
+    "type": "dimension",
+    "value": "0.375rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "variable": "VariableID:180:2267",
+      "name": "radius-6"
     }
   },
   "radius.8": {
@@ -717,6 +794,7 @@ export const tokens = {
     "parts": null,
     "description": "Partner logo tiles (ADR-0019).",
     "figma": {
+      "variable": "VariableID:180:2265",
       "name": "radius-8"
     }
   },
@@ -729,6 +807,7 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
+      "variable": "VariableID:180:2268",
       "name": "radius-12"
     }
   },
@@ -741,7 +820,47 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
+      "variable": "VariableID:180:2270",
       "name": "radius-16"
+    }
+  },
+  "radius.20": {
+    "id": "radius.20",
+    "cssVariable": "--gdg-radius-20",
+    "type": "dimension",
+    "value": "1.25rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "variable": "VariableID:180:2263",
+      "name": "radius-20"
+    }
+  },
+  "radius.24": {
+    "id": "radius.24",
+    "cssVariable": "--gdg-radius-24",
+    "type": "dimension",
+    "value": "1.5rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "variable": "VariableID:180:2261",
+      "name": "radius-24"
+    }
+  },
+  "radius.32": {
+    "id": "radius.32",
+    "cssVariable": "--gdg-radius-32",
+    "type": "dimension",
+    "value": "2rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "variable": "VariableID:180:2262",
+      "name": "radius-32"
     }
   },
   "radius.40": {
@@ -753,7 +872,34 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
+      "variable": "VariableID:180:2260",
       "name": "radius-40"
+    }
+  },
+  "radius.48": {
+    "id": "radius.48",
+    "cssVariable": "--gdg-radius-48",
+    "type": "dimension",
+    "value": "3rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "variable": "VariableID:180:2271",
+      "name": "radius-48"
+    }
+  },
+  "radius.none": {
+    "id": "radius.none",
+    "cssVariable": "--gdg-radius-none",
+    "type": "dimension",
+    "value": "0rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "variable": "VariableID:180:2264",
+      "name": "radius-none"
     }
   },
   "radius.full": {
@@ -765,6 +911,7 @@ export const tokens = {
     "parts": null,
     "description": "Fully rounded: pills and circles.",
     "figma": {
+      "variable": "VariableID:180:2269",
       "name": "radius-full"
     }
   },
@@ -777,7 +924,34 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
+      "variable": "VariableID:180:2329",
       "name": "spacing-0"
+    }
+  },
+  "spacing.2": {
+    "id": "spacing.2",
+    "cssVariable": "--gdg-spacing-2",
+    "type": "dimension",
+    "value": "0.125rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "variable": "VariableID:180:2327",
+      "name": "spacing-2"
+    }
+  },
+  "spacing.3": {
+    "id": "spacing.3",
+    "cssVariable": "--gdg-spacing-3",
+    "type": "dimension",
+    "value": "0.1875rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "variable": "VariableID:180:2319",
+      "name": "spacing-3"
     }
   },
   "spacing.4": {
@@ -789,7 +963,21 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
+      "variable": "VariableID:180:2328",
       "name": "spacing-4"
+    }
+  },
+  "spacing.6": {
+    "id": "spacing.6",
+    "cssVariable": "--gdg-spacing-6",
+    "type": "dimension",
+    "value": "0.375rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "variable": "VariableID:180:2324",
+      "name": "spacing-6"
     }
   },
   "spacing.8": {
@@ -801,7 +989,21 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
+      "variable": "VariableID:180:2318",
       "name": "spacing-8"
+    }
+  },
+  "spacing.10": {
+    "id": "spacing.10",
+    "cssVariable": "--gdg-spacing-10",
+    "type": "dimension",
+    "value": "0.625rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "variable": "VariableID:180:2317",
+      "name": "spacing-10"
     }
   },
   "spacing.12": {
@@ -813,6 +1015,7 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
+      "variable": "VariableID:180:2316",
       "name": "spacing-12"
     }
   },
@@ -825,6 +1028,7 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
+      "variable": "VariableID:180:2315",
       "name": "spacing-16"
     }
   },
@@ -837,6 +1041,7 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
+      "variable": "VariableID:180:2314",
       "name": "spacing-20"
     }
   },
@@ -849,6 +1054,7 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
+      "variable": "VariableID:180:2320",
       "name": "spacing-24"
     }
   },
@@ -859,8 +1065,24 @@ export const tokens = {
     "value": "2rem",
     "aliasOf": null,
     "parts": null,
-    "description": "Gap between a section title block and its call to action (Figma FAQ / 11 /). Not yet a Figma variable.",
-    "figma": null
+    "description": "Gap between a section title block and its call to action (Figma FAQ / 11 /).",
+    "figma": {
+      "variable": "VariableID:180:2326",
+      "name": "spacing-32"
+    }
+  },
+  "spacing.36": {
+    "id": "spacing.36",
+    "cssVariable": "--gdg-spacing-36",
+    "type": "dimension",
+    "value": "2.25rem",
+    "aliasOf": null,
+    "parts": null,
+    "description": null,
+    "figma": {
+      "variable": "VariableID:180:2325",
+      "name": "spacing-36"
+    }
   },
   "spacing.40": {
     "id": "spacing.40",
@@ -871,6 +1093,7 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
+      "variable": "VariableID:180:2323",
       "name": "spacing-40"
     }
   },
@@ -881,8 +1104,11 @@ export const tokens = {
     "value": "3rem",
     "aliasOf": null,
     "parts": null,
-    "description": "Gap between a section title and its content (Figma Contact / 3 / container). Not yet a Figma variable.",
-    "figma": null
+    "description": "Gap between a section title and its content (Figma Contact / 3 / container).",
+    "figma": {
+      "variable": "VariableID:180:2322",
+      "name": "spacing-48"
+    }
   },
   "spacing.64": {
     "id": "spacing.64",
@@ -893,6 +1119,7 @@ export const tokens = {
     "parts": null,
     "description": null,
     "figma": {
+      "variable": "VariableID:180:2321",
       "name": "spacing-64"
     }
   },
@@ -1055,7 +1282,9 @@ export const tokens = {
     "parts": null,
     "description": "Display size for page and section titles (Figma Text Sizes/Heading 2).",
     "figma": {
-      "name": "Text Sizes/Heading 2"
+      "variable": "VariableID:9b1d0df11d8ab8a69404d7229f0c7bdcc97f6458/6745:292",
+      "name": "Text Sizes/Heading 2",
+      "library": true
     }
   },
   "font.display-1": {
@@ -1071,9 +1300,7 @@ export const tokens = {
       "lineHeight": "3.6rem"
     },
     "description": "Page and section titles: Workshop topic, Contact us (ADR-0016).",
-    "figma": {
-      "name": "Text Sizes/Heading 2"
-    }
+    "figma": null
   },
   "font.heading-1": {
     "id": "font.heading-1",
@@ -1089,8 +1316,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Heading 1",
-      "group": "Heading Styles - Bold"
+      "style": "S:4c3c80403baf4aa5a5f2adb5f6e4eca1a37c3fa6,",
+      "name": "Headings Bold/H1"
     }
   },
   "font.heading-2": {
@@ -1107,8 +1334,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Heading 2",
-      "group": "Heading Styles - Bold"
+      "style": "S:9f2a8ecd334c2017efcea4e99ad0d691227cdd70,",
+      "name": "Headings Bold/H2"
     }
   },
   "font.heading-3": {
@@ -1125,8 +1352,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Heading 3",
-      "group": "Heading Styles - Bold"
+      "style": "S:0725d5723ac4f85fbb71ea9e3a3a206567a9794f,",
+      "name": "Headings Bold/H3"
     }
   },
   "font.heading-4": {
@@ -1143,8 +1370,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Heading 4",
-      "group": "Heading Styles - Bold"
+      "style": "S:179644bcea864dfa4c22a6a5503f44b1757c6910,",
+      "name": "Headings Bold/H4"
     }
   },
   "font.heading-5": {
@@ -1161,8 +1388,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Heading 5",
-      "group": "Heading Styles - Bold"
+      "style": "S:3cc7915d4e95b48207de362bbee21eca5c7d60d8,",
+      "name": "Headings Bold/H5"
     }
   },
   "font.heading-6": {
@@ -1179,8 +1406,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Heading 6",
-      "group": "Heading Styles - Bold"
+      "style": "S:8961077b893793c4dc773980c8b7933838d24cc6,",
+      "name": "Headings Bold/H6"
     }
   },
   "font.heading-7": {
@@ -1197,8 +1424,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Heading 7",
-      "group": "Heading Styles - Bold"
+      "style": "S:4854a54a250ecd2573d1efb8c38915446205e712,",
+      "name": "Headings Bold/H7"
     }
   },
   "font.heading-8": {
@@ -1215,8 +1442,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Heading 8",
-      "group": "Heading Styles - Bold"
+      "style": "S:c42ce0ba1b0d92dacd6b5ed1d4dc78424b3af008,",
+      "name": "Headings Bold/H8"
     }
   },
   "font.heading-9": {
@@ -1233,8 +1460,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Heading 9",
-      "group": "Heading Styles - Bold"
+      "style": "S:4e5f2f629efd6fc0ee0330a4ab97b3ab165953c1,",
+      "name": "Headings Bold/H9"
     }
   },
   "font.heading-1-regular": {
@@ -1251,8 +1478,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Heading 1",
-      "group": "Heading Styles - Regular"
+      "style": "S:ab388ea760582cdb05361d05dfa95db20f3a847d,",
+      "name": "Headings Regular/H1"
     }
   },
   "font.heading-2-regular": {
@@ -1269,8 +1496,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Heading 2",
-      "group": "Heading Styles - Regular"
+      "style": "S:ada51ea2912dcb42a9820f8cca62c9f05c4b5bf1,",
+      "name": "Headings Regular/H2"
     }
   },
   "font.heading-3-regular": {
@@ -1287,8 +1514,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Heading 3",
-      "group": "Heading Styles - Regular"
+      "style": "S:607eb8de2a1ca24783302f02f458d641f31ac985,",
+      "name": "Headings Regular/H3"
     }
   },
   "font.heading-4-regular": {
@@ -1305,8 +1532,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Heading 4",
-      "group": "Heading Styles - Regular"
+      "style": "S:b4ddef2cadcc6cd884ef104452684ca08a604625,",
+      "name": "Headings Regular/H4"
     }
   },
   "font.heading-5-regular": {
@@ -1323,8 +1550,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Heading 5",
-      "group": "Heading Styles - Regular"
+      "style": "S:c263d744a8d3c381cadbb64a1e2eac103d59b221,",
+      "name": "Headings Regular/H5"
     }
   },
   "font.heading-6-regular": {
@@ -1341,8 +1568,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Heading 6",
-      "group": "Heading Styles - Regular"
+      "style": "S:c5778971eb86a42139670f5f5b53cc24a4f7b6ed,",
+      "name": "Headings Regular/H6"
     }
   },
   "font.heading-7-regular": {
@@ -1359,8 +1586,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Heading 7",
-      "group": "Heading Styles - Regular"
+      "style": "S:63ee02c0bd7e2fccbcb260190365d2843895c8e7,",
+      "name": "Headings Regular/H7"
     }
   },
   "font.heading-8-regular": {
@@ -1377,8 +1604,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Heading 8",
-      "group": "Heading Styles - Regular"
+      "style": "S:890d477303f70062519e3e8bd0d3003c78bec1e8,",
+      "name": "Headings Regular/H8"
     }
   },
   "font.heading-9-regular": {
@@ -1395,8 +1622,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Heading 9",
-      "group": "Heading Styles - Regular"
+      "style": "S:76e2a8a7cd6a0e64fdedee413fb9f1d5fc4efbf3,",
+      "name": "Headings Regular/H9"
     }
   },
   "font.paragraph-1": {
@@ -1413,8 +1640,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Paragraph 1",
-      "group": "Paragraph Styles - Regular"
+      "style": "S:6d8ecc183d067128c965f7b354e01e95101966c9,",
+      "name": "Paragraph/P1"
     }
   },
   "font.paragraph-2": {
@@ -1431,8 +1658,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Paragraph 2",
-      "group": "Paragraph Styles - Regular"
+      "style": "S:72a4515aa84ffaddc89fa4b40c5c3e9f6d990bbf,",
+      "name": "Paragraph/P2"
     }
   },
   "font.paragraph-3": {
@@ -1449,8 +1676,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Paragraph 3",
-      "group": "Paragraph Styles - Regular"
+      "style": "S:d5a04d1001417af20bec1a8451d2cff1a7cd529a,",
+      "name": "Paragraph/P3"
     }
   },
   "font.paragraph-4": {
@@ -1467,8 +1694,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Paragraph 4",
-      "group": "Paragraph Styles - Regular"
+      "style": "S:4a8d4781e12bbc55437fca420bd2da4d4e7e2b4a,",
+      "name": "Paragraph/P4"
     }
   },
   "font.paragraph-5": {
@@ -1485,8 +1712,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Paragraph 5",
-      "group": "Paragraph Styles - Regular"
+      "style": "S:28c6576dcfdc81a948acc34d35558a5fa67cdb26,",
+      "name": "Paragraph/P5"
     }
   },
   "font.paragraph-6": {
@@ -1503,8 +1730,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Paragraph 6",
-      "group": "Paragraph Styles - Regular"
+      "style": "S:38c033e1e45343eaa4e8b7688c41bd4ceba129ea,",
+      "name": "Paragraph/P6"
     }
   },
   "font.paragraph-7": {
@@ -1521,8 +1748,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Paragraph 7",
-      "group": "Paragraph Styles - Regular"
+      "style": "S:b0cce126d2733e1a857a991a53b3cb69374a4134,",
+      "name": "Paragraph/P7"
     }
   },
   "font.paragraph-8": {
@@ -1539,8 +1766,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Paragraph 8",
-      "group": "Paragraph Styles - Regular"
+      "style": "S:fb30872db9239d17132ba4d57e1345a0f7e211c7,",
+      "name": "Paragraph/P8"
     }
   },
   "font.paragraph-9": {
@@ -1557,8 +1784,8 @@ export const tokens = {
     },
     "description": null,
     "figma": {
-      "name": "Paragraph 9",
-      "group": "Paragraph Styles - Regular"
+      "style": "S:70543473e4f4830d905eaf7e9908f8b30a876cd7,",
+      "name": "Paragraph/P9"
     }
   },
   "font.mono-1": {

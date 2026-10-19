@@ -6,7 +6,26 @@
       "$value": "0px",
       "$extensions": {
         "gdg.figma": {
+          "variable": "VariableID:180:2329",
           "name": "spacing-0"
+        }
+      }
+    },
+    "2": {
+      "$value": "2px",
+      "$extensions": {
+        "gdg.figma": {
+          "variable": "VariableID:180:2327",
+          "name": "spacing-2"
+        }
+      }
+    },
+    "3": {
+      "$value": "3px",
+      "$extensions": {
+        "gdg.figma": {
+          "variable": "VariableID:180:2319",
+          "name": "spacing-3"
         }
       }
     },
@@ -14,7 +33,17 @@
       "$value": "4px",
       "$extensions": {
         "gdg.figma": {
+          "variable": "VariableID:180:2328",
           "name": "spacing-4"
+        }
+      }
+    },
+    "6": {
+      "$value": "6px",
+      "$extensions": {
+        "gdg.figma": {
+          "variable": "VariableID:180:2324",
+          "name": "spacing-6"
         }
       }
     },
@@ -22,7 +51,17 @@
       "$value": "8px",
       "$extensions": {
         "gdg.figma": {
+          "variable": "VariableID:180:2318",
           "name": "spacing-8"
+        }
+      }
+    },
+    "10": {
+      "$value": "10px",
+      "$extensions": {
+        "gdg.figma": {
+          "variable": "VariableID:180:2317",
+          "name": "spacing-10"
         }
       }
     },
@@ -30,6 +69,7 @@
       "$value": "12px",
       "$extensions": {
         "gdg.figma": {
+          "variable": "VariableID:180:2316",
           "name": "spacing-12"
         }
       }
@@ -38,6 +78,7 @@
       "$value": "16px",
       "$extensions": {
         "gdg.figma": {
+          "variable": "VariableID:180:2315",
           "name": "spacing-16"
         }
       }
@@ -46,6 +87,7 @@
       "$value": "20px",
       "$extensions": {
         "gdg.figma": {
+          "variable": "VariableID:180:2314",
           "name": "spacing-20"
         }
       }
@@ -54,30 +96,54 @@
       "$value": "24px",
       "$extensions": {
         "gdg.figma": {
+          "variable": "VariableID:180:2320",
           "name": "spacing-24"
         }
       }
     },
     "32": {
       "$value": "32px",
-      "$description": "Gap between a section title block and its call to action (Figma FAQ / 11 /). Not yet a Figma variable."
+      "$description": "Gap between a section title block and its call to action (Figma FAQ / 11 /).",
+      "$extensions": {
+        "gdg.figma": {
+          "variable": "VariableID:180:2326",
+          "name": "spacing-32"
+        }
+      }
+    },
+    "36": {
+      "$value": "36px",
+      "$extensions": {
+        "gdg.figma": {
+          "variable": "VariableID:180:2325",
+          "name": "spacing-36"
+        }
+      }
     },
     "40": {
       "$value": "40px",
       "$extensions": {
         "gdg.figma": {
+          "variable": "VariableID:180:2323",
           "name": "spacing-40"
         }
       }
     },
     "48": {
       "$value": "48px",
-      "$description": "Gap between a section title and its content (Figma Contact / 3 / container). Not yet a Figma variable."
+      "$description": "Gap between a section title and its content (Figma Contact / 3 / container).",
+      "$extensions": {
+        "gdg.figma": {
+          "variable": "VariableID:180:2322",
+          "name": "spacing-48"
+        }
+      }
     },
     "64": {
       "$value": "64px",
       "$extensions": {
         "gdg.figma": {
+          "variable": "VariableID:180:2321",
           "name": "spacing-64"
         }
       }

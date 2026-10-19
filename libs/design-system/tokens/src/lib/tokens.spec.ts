@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -8,7 +9,7 @@ import { cssVar, remToPx } from './css-var.js';
 const generatedDir = join(import.meta.dirname, '../generated');
 
 describe('generated tokens', () => {
-  it.each(['tokens.css', 'tokens.ts'])(
+  it.each(['tokens.css', 'tokens.light.css', 'tokens.ts'])(
     '%s is up to date with tokens/*.tokens.json (run `nx run design-system-tokens:generate-tokens`)',
     async (file) => {
       const outDir = await mkdtemp(join(tmpdir(), 'gdg-tokens-'));
@@ -25,7 +26,10 @@ describe('generated tokens', () => {
 
   it('keeps the Figma palette values', () => {
     expect(tokens['color.blue-500'].value).toBe('#4285f4');
-    expect(tokens['color.blue-500'].figma).toMatchObject({ name: 'Blue 500' });
+    expect(tokens['color.blue-500'].figma).toMatchObject({
+      variable: 'VariableID:1:131',
+      name: 'Core Colors/Blue 500',
+    });
     expect(tokens['color.black-02-alpha-40'].value).toBe('#1e1e1e66');
   });
 
@@ -95,6 +99,40 @@ describe('generated tokens', () => {
         ).toBeGreaterThanOrEqual(4.5);
       },
     );
+
+    describe('light theme (ADR-0027)', () => {
+      const light = JSON.parse(
+        readFileSync(
+          join(import.meta.dirname, '../../themes/light.tokens.json'),
+          'utf8',
+        ),
+      );
+      /** The light value of a token whose light source is a palette alias. */
+      const lightValue = (id: string) => {
+        const { $value } = id
+          .split('.')
+          .reduce((group, key) => group[key], light);
+        return String(tokens[$value.slice(1, -1) as keyof typeof tokens].value);
+      };
+
+      it('takes the default surfaces from the Figma Light mode', () => {
+        expect(lightValue('color.background.default')).toBe(
+          tokens['color.off-white'].value,
+        );
+        expect(lightValue('color.content.default')).toBe(
+          tokens['color.black-02'].value,
+        );
+      });
+
+      it('content.default on background.default', () => {
+        expect(
+          contrast(
+            lightValue('color.content.default'),
+            lightValue('color.background.default'),
+          ),
+        ).toBeGreaterThanOrEqual(4.5);
+      });
+    });
   });
 
   it('defines the form and layout tokens for the Contact form (ADR-0014)', () => {
@@ -118,13 +156,22 @@ describe('generated tokens', () => {
     const display = tokens['font.display-1'].parts;
     expect(remToPx(display.fontSize)).toBe(48);
     expect(remToPx(display.lineHeight)).toBeCloseTo(57.6);
-    expect(tokens['font.display-1'].figma).toMatchObject({
+    expect(tokens['font.size.display-1'].figma).toMatchObject({
       name: 'Text Sizes/Heading 2',
+      library: true,
     });
   });
 
   it('adds the 80px page spacing (ADR-0017)', () => {
     expect(remToPx(tokens['spacing.80'].value)).toBe(80);
+  });
+
+  it('mirrors every Figma spacing and radius step (ADR-0026)', () => {
+    expect(remToPx(tokens['spacing.2'].value)).toBe(2);
+    expect(remToPx(tokens['spacing.36'].value)).toBe(36);
+    expect(remToPx(tokens['radius.none'].value)).toBe(0);
+    expect(remToPx(tokens['radius.48'].value)).toBe(48);
+    expect(tokens['radius.48'].figma).toMatchObject({ name: 'radius-48' });
   });
 
   it('builds var() references', () => {
