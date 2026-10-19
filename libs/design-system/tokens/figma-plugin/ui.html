@@ -1,0 +1,111 @@
+<!doctype html>
+<style>
+  body {
+    margin: 0;
+    padding: 16px;
+    font: 12px/1.5 system-ui, sans-serif;
+    color: var(--figma-color-text, #1e1e1e);
+    background: var(--figma-color-bg, #ffffff);
+  }
+  h1 {
+    margin: 0 0 8px;
+    font-size: 13px;
+  }
+  p {
+    margin: 0 0 12px;
+  }
+  .actions {
+    display: flex;
+    gap: 8px;
+  }
+  button {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--figma-color-border, #e6e6e6);
+    border-radius: 6px;
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    cursor: pointer;
+  }
+  button.primary {
+    border-color: transparent;
+    color: var(--figma-color-text-onbrand, #ffffff);
+    background: var(--figma-color-bg-brand, #0d99ff);
+  }
+  button:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+  code {
+    font-size: 11px;
+  }
+</style>
+<h1>GDG Tokens Export</h1>
+<p id="status">Reading variables and text styles…</p>
+<p>
+  Start the receiver first:
+  <code>npx nx run design-system-tokens:sync-figma --receive</code>
+</p>
+<div class="actions">
+  <button id="send" class="primary" disabled>Send to repo</button>
+  <button id="copy" disabled>Copy JSON</button>
+</div>
+<script>
+  const RECEIVER = 'http://localhost:4747/';
+  let json = '';
+
+  const status = document.getElementById('status');
+  const send = document.getElementById('send');
+  const copy = document.getElementById('copy');
+  const notify = (text) =>
+    parent.postMessage({ pluginMessage: { type: 'notify', text } }, '*');
+
+  onmessage = (event) => {
+    const message = event.data.pluginMessage;
+    if (message.type === 'error') {
+      status.textContent = `Export failed: ${message.message}`;
+      return;
+    }
+    const { snapshot } = message;
+    json = `${JSON.stringify(snapshot, null, 2)}\n`;
+    const count = (record) => Object.keys(record).length;
+    const { usage } = snapshot;
+    status.textContent =
+      `${snapshot.source.fileName}: ${count(snapshot.variables)} variables in ` +
+      `${count(snapshot.variableCollections)} collections, ` +
+      `${count(snapshot.textStyles)} text styles. Bound on layers only: ` +
+      `${count(usage.variables)} variables, ${count(usage.textStyles)} text styles.`;
+    send.disabled = false;
+    copy.disabled = false;
+  };
+
+  send.onclick = async () => {
+    try {
+      // text/plain keeps this a simple request (no CORS preflight).
+      const response = await fetch(RECEIVER, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain' },
+        body: json,
+      });
+      if (!response.ok) {
+        throw new Error(await response.text());
+      }
+      notify('Sent the token snapshot to the repo');
+      parent.postMessage({ pluginMessage: { type: 'close' } }, '*');
+    } catch (error) {
+      status.textContent = `Could not reach ${RECEIVER} (${error.message}). Is the receiver running?`;
+    }
+  };
+
+  copy.onclick = () => {
+    // The plugin iframe has no Clipboard API permission; use a textarea.
+    const area = document.createElement('textarea');
+    area.value = json;
+    document.body.append(area);
+    area.select();
+    document.execCommand('copy');
+    area.remove();
+    notify('Copied the token snapshot to the clipboard');
+  };
+</script>
