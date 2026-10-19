@@ -10,33 +10,35 @@ For more information on ADRs, see [Architecture Decision Records](https://adr.gi
 
 ## Decision Log
 
-| ID                                                                 | Title                                                                     | Status       | Date       |
-| :----------------------------------------------------------------- | :------------------------------------------------------------------------ | :----------- | :--------- |
-| [ADR-0001](0001-use-angular-for-frontend-development.md)           | Use Angular for Frontend Development                                      | **Accepted** | 2026-08-26 |
-| [ADR-0002](0002-organize-workspace-into-apps-and-libs.md)          | Organize the Nx Workspace into `apps/` and `libs/`                        | **Accepted** | 2026-10-07 |
-| [ADR-0003](0003-design-system-color-tokens.md)                     | Build a Design System Starting with Color Tokens from Figma               | **Accepted** | 2026-10-07 |
-| [ADR-0004](0004-storybook-for-design-system.md)                    | Use a Single Vite-based Storybook for the Design System                   | **Accepted** | 2026-10-07 |
-| [ADR-0005](0005-design-system-typography-tokens.md)                | Typography Tokens with Self-hosted Google Sans                            | **Accepted** | 2026-10-07 |
-| [ADR-0006](0006-ci-without-nx-cloud-and-storybook-smoke-tests.md)  | CI without Nx Cloud, and Storybook Smoke Tests                            | **Accepted** | 2026-10-07 |
-| [ADR-0007](0007-gdg-wroclaw-package-scope-and-selector-prefix.md)  | `@gdg-wroclaw` Package Scope and `gdg` Selector Prefix                    | **Accepted** | 2026-10-07 |
-| [ADR-0008](0008-design-tokens-pipeline-dtcg-style-dictionary.md)   | Design Tokens Pipeline (W3C DTCG + Style Dictionary) with Semantic Tokens | **Accepted** | 2026-10-07 |
-| [ADR-0009](0009-nav-button-component.md)                           | Nav Button as an Attribute Component on Native Links and Buttons          | **Accepted** | 2026-10-08 |
-| [ADR-0010](0010-spacing-radius-and-medium-weight-tokens.md)        | Spacing, Radius and Medium Weight Tokens                                  | **Accepted** | 2026-10-08 |
-| [ADR-0011](0011-button-component-and-phosphor-icons.md)            | Button Component and Phosphor Icons                                       | **Accepted** | 2026-10-08 |
-| [ADR-0012](0012-primary-button-text-color-for-wcag-aa.md)          | Black Text on Primary Buttons for WCAG AA (Deviation from Figma)          | **Accepted** | 2026-10-08 |
-| [ADR-0013](0013-design-system-and-ui-library-architecture.md)      | Design System and UI Library Architecture                                 | **Accepted** | 2026-10-08 |
-| [ADR-0014](0014-contact-form-and-form-control-primitives.md)       | Contact Form, Form Control Primitives, and Layout and Form Tokens         | **Accepted** | 2026-10-09 |
-| [ADR-0015](0015-faq-item-variants-and-generated-puzzle-outline.md) | FAQ Item Variants and a Generated Puzzle Outline                          | **Accepted** | 2026-10-09 |
-| [ADR-0016](0016-person-row-role-badge-and-display-type.md)         | Person Row, Role Badge, Social Links and a Display Type Size              | **Accepted** | 2026-10-09 |
-| [ADR-0017](0017-workshop-page-template.md)                         | Workshop Page Template, Event Banner and Workshop Details                 | **Accepted** | 2026-10-09 |
-| [ADR-0018](0018-person-card-and-team-section.md)                   | Person Card with Circle and Puzzle Frames, and the Team Section           | **Accepted** | 2026-10-10 |
-| [ADR-0019](0019-partner-card-and-partners-section.md)              | Partner Card and the Partners Section (Grid and Carousel)                 | **Accepted** | 2026-10-10 |
-| [ADR-0020](0020-navbar-footer-and-gdg-logo.md)                     | Navbar, Footer and the GDG Logo                                           | **Accepted** | 2026-10-10 |
-| [ADR-0021](0021-event-card-and-events-section.md)                  | Event Card and the Events Section with Day Tabs                           | **Accepted** | 2026-10-10 |
-| [ADR-0022](0022-landing-page-template.md)                          | Landing Page Template                                                     | **Accepted** | 2026-10-10 |
-| [ADR-0023](0023-events-app-shell-routes-and-content.md)            | Events App Shell, Routes and Sample Content                               | **Accepted** | 2026-10-10 |
-| [ADR-0024](0024-firebase-hosting-deployment.md)                    | Deploy the Events App to Firebase Hosting                                 | **Accepted** | 2026-10-10 |
-| [ADR-0025](0025-event-page-template.md)                            | Event Page Template, Section Components and Event Surface Tokens          | **Accepted** | 2026-10-10 |
+| ID                                                                 | Title                                                                          | Status       | Date       |
+| :----------------------------------------------------------------- | :----------------------------------------------------------------------------- | :----------- | :--------- |
+| [ADR-0001](0001-use-angular-for-frontend-development.md)           | Use Angular for Frontend Development                                           | **Accepted** | 2026-08-26 |
+| [ADR-0002](0002-organize-workspace-into-apps-and-libs.md)          | Organize the Nx Workspace into `apps/` and `libs/`                             | **Accepted** | 2026-10-07 |
+| [ADR-0003](0003-design-system-color-tokens.md)                     | Build a Design System Starting with Color Tokens from Figma                    | **Accepted** | 2026-10-07 |
+| [ADR-0004](0004-storybook-for-design-system.md)                    | Use a Single Vite-based Storybook for the Design System                        | **Accepted** | 2026-10-07 |
+| [ADR-0005](0005-design-system-typography-tokens.md)                | Typography Tokens with Self-hosted Google Sans                                 | **Accepted** | 2026-10-07 |
+| [ADR-0006](0006-ci-without-nx-cloud-and-storybook-smoke-tests.md)  | CI without Nx Cloud, and Storybook Smoke Tests                                 | **Accepted** | 2026-10-07 |
+| [ADR-0007](0007-gdg-wroclaw-package-scope-and-selector-prefix.md)  | `@gdg-wroclaw` Package Scope and `gdg` Selector Prefix                         | **Accepted** | 2026-10-07 |
+| [ADR-0008](0008-design-tokens-pipeline-dtcg-style-dictionary.md)   | Design Tokens Pipeline (W3C DTCG + Style Dictionary) with Semantic Tokens      | **Accepted** | 2026-10-07 |
+| [ADR-0009](0009-nav-button-component.md)                           | Nav Button as an Attribute Component on Native Links and Buttons               | **Accepted** | 2026-10-08 |
+| [ADR-0010](0010-spacing-radius-and-medium-weight-tokens.md)        | Spacing, Radius and Medium Weight Tokens                                       | **Accepted** | 2026-10-08 |
+| [ADR-0011](0011-button-component-and-phosphor-icons.md)            | Button Component and Phosphor Icons                                            | **Accepted** | 2026-10-08 |
+| [ADR-0012](0012-primary-button-text-color-for-wcag-aa.md)          | Black Text on Primary Buttons for WCAG AA (Deviation from Figma)               | **Accepted** | 2026-10-08 |
+| [ADR-0013](0013-design-system-and-ui-library-architecture.md)      | Design System and UI Library Architecture                                      | **Accepted** | 2026-10-08 |
+| [ADR-0014](0014-contact-form-and-form-control-primitives.md)       | Contact Form, Form Control Primitives, and Layout and Form Tokens              | **Accepted** | 2026-10-09 |
+| [ADR-0015](0015-faq-item-variants-and-generated-puzzle-outline.md) | FAQ Item Variants and a Generated Puzzle Outline                               | **Accepted** | 2026-10-09 |
+| [ADR-0016](0016-person-row-role-badge-and-display-type.md)         | Person Row, Role Badge, Social Links and a Display Type Size                   | **Accepted** | 2026-10-09 |
+| [ADR-0017](0017-workshop-page-template.md)                         | Workshop Page Template, Event Banner and Workshop Details                      | **Accepted** | 2026-10-09 |
+| [ADR-0018](0018-person-card-and-team-section.md)                   | Person Card with Circle and Puzzle Frames, and the Team Section                | **Accepted** | 2026-10-10 |
+| [ADR-0019](0019-partner-card-and-partners-section.md)              | Partner Card and the Partners Section (Grid and Carousel)                      | **Accepted** | 2026-10-10 |
+| [ADR-0020](0020-navbar-footer-and-gdg-logo.md)                     | Navbar, Footer and the GDG Logo                                                | **Accepted** | 2026-10-10 |
+| [ADR-0021](0021-event-card-and-events-section.md)                  | Event Card and the Events Section with Day Tabs                                | **Accepted** | 2026-10-10 |
+| [ADR-0022](0022-landing-page-template.md)                          | Landing Page Template                                                          | **Accepted** | 2026-10-10 |
+| [ADR-0023](0023-events-app-shell-routes-and-content.md)            | Events App Shell, Routes and Sample Content                                    | **Accepted** | 2026-10-10 |
+| [ADR-0024](0024-firebase-hosting-deployment.md)                    | Deploy the Events App to Firebase Hosting                                      | **Accepted** | 2026-10-10 |
+| [ADR-0025](0025-event-page-template.md)                            | Event Page Template, Section Components and Event Surface Tokens               | **Accepted** | 2026-10-10 |
+| [ADR-0026](0026-figma-variables-export-and-token-sync.md)          | Export Figma Variables with a Development Plugin and Sync Them into the Tokens | **Accepted** | 2026-10-20 |
+| [ADR-0027](0027-light-theme-from-figma-light-mode.md)              | An Opt-in Light Theme from the Figma Light Mode                                | **Accepted** | 2026-10-20 |
 
 ---
 

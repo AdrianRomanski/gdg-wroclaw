@@ -109,6 +109,6 @@ Chosen option: **W3C DTCG JSON + Style Dictionary 5, with committed outputs and 
 
 1. Components use **semantic** tokens; palette tokens only when no semantic token fits.
 2. To change tokens, edit `tokens/*.tokens.json`, run `npx nx run shared-ui-tokens:generate-tokens`, and commit both source and output.
-3. Ask designers to turn the Figma swatches into **Figma Variables** that mirror these names. Then automate export (Figma Variables API or Tokens Studio → DTCG) and drift detection.
+3. Ask designers to turn the Figma swatches into **Figma Variables** that mirror these names. Then automate export (Figma Variables API or Tokens Studio → DTCG) and drift detection. Done in [ADR-0026](0026-figma-variables-export-and-token-sync.md): a development plugin exports the variables, and a sync and drift test keep the tokens in line.
 4. Next foundations: spacing, radii (pill buttons), elevation, breakpoints, motion, and a mobile type scale.
-5. A light theme, if wanted, overrides only `color.background.*`, `color.content.*` and `color.border.*` under a theme selector (separate ADR).
+5. A light theme, if wanted, overrides only `color.background.*`, `color.content.*` and `color.border.*` under a theme selector (separate ADR). Done in [ADR-0027](0027-light-theme-from-figma-light-mode.md), from the Figma Light mode.
