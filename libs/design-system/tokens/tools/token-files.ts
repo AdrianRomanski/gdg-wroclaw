@@ -154,6 +154,11 @@ function editText(text: string, edit: TokenEdit): string {
   );
 }
 
+/** Applies `edits`, in order, to the text of one token file. */
+export function editTokenText(text: string, edits: TokenEdit[]): string {
+  return edits.reduce(editText, text);
+}
+
 /**
  * Applies `edits` to the token files, formats them with Prettier and writes
  * the ones that changed. Returns their paths.
@@ -167,7 +172,7 @@ export async function writeTokenEdits(edits: TokenEdit[]): Promise<string[]> {
   for (const [file, fileEdits] of byFile) {
     const { text } = await readTokenFile(file);
     const absolute = join(libRoot, file);
-    const edited = fileEdits.reduce(editText, text);
+    const edited = editTokenText(text, fileEdits);
     const formatted = await prettier.format(edited, {
       ...(await prettier.resolveConfig(absolute)),
       filepath: absolute,

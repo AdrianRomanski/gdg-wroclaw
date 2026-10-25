@@ -1,4 +1,5 @@
 import { join } from 'node:path';
+import { findNodeAtLocation, parseTree } from 'jsonc-parser';
 import { readSnapshot } from '../../tools/figma-snapshot.ts';
 import type {
   FigmaSnapshot,
@@ -6,7 +7,11 @@ import type {
 } from '../../tools/figma-snapshot.ts';
 import { compareWithFigma, readSyncConfig } from '../../tools/figma-sync.ts';
 import type { SyncIssue } from '../../tools/figma-sync.ts';
-import { libRoot } from '../../tools/token-files.ts';
+import {
+  editTokenText,
+  libRoot,
+  readTokenFile,
+} from '../../tools/token-files.ts';
 
 let committed: FigmaSnapshot;
 
@@ -49,6 +54,43 @@ function collectionId(snapshot: FigmaSnapshot, name: string): string {
     ),
     `collection "${name}"`,
   ).id;
+}
+
+/** Adds a variable with one value to the collection of `template`. */
+function addVariable(
+  snapshot: FigmaSnapshot,
+  template: string,
+  id: string,
+  name: string,
+  value: FigmaVariable['valuesByMode'][string],
+): FigmaVariable {
+  const source = variable(snapshot, template);
+  snapshot.variables[id] = {
+    ...source,
+    id,
+    name,
+    valuesByMode: { [Object.keys(source.valuesByMode)[0]]: value },
+  };
+  return snapshot.variables[id];
+}
+
+/** Drops library collections, as when Figma can't resolve them. */
+function dropCollections(snapshot: FigmaSnapshot, names: string[]) {
+  for (const [id, collection] of Object.entries(
+    snapshot.usage.variableCollections,
+  )) {
+    if (names.includes(collection.name)) {
+      delete snapshot.usage.variableCollections[id];
+    }
+  }
+}
+
+/** The property keys of the object at `path`, in the order of the text. */
+function keysAt(text: string, path: string[]): string[] {
+  const node = findNodeAtLocation(required(parseTree(text), 'JSON'), path);
+  return (node?.children ?? []).map((property) =>
+    String(property.children?.[0].value),
+  );
 }
 
 function setValue(
@@ -158,15 +200,9 @@ describe('Figma sync (ADR-0026)', () => {
   });
 
   it('adds a token for a new spacing step', async () => {
-    const snapshot = edit((s) => {
-      const template = variable(s, 'spacing-64');
-      s.variables['VariableID:999:2'] = {
-        ...template,
-        id: 'VariableID:999:2',
-        name: 'spacing-128',
-        valuesByMode: { [Object.keys(template.valuesByMode)[0]]: 128 },
-      };
-    });
+    const snapshot = edit((s) =>
+      addVariable(s, 'spacing-64', 'VariableID:999:2', 'spacing-128', 128),
+    );
     const [issue] = withLevel(await compareWithFigma(snapshot), 'error');
     expect(issue.edits).toEqual([
       expect.objectContaining({
@@ -180,6 +216,95 @@ describe('Figma sync (ADR-0026)', () => {
         },
       }),
     ]);
+  });
+
+  it('links a code-owned token when Figma adds a variable with its value', async () => {
+    const snapshot = edit((s) =>
+      addVariable(s, 'spacing-64', 'VariableID:999:4', 'spacing-80', 80),
+    );
+    const [issue] = withLevel(await compareWithFigma(snapshot), 'error');
+    const link = ['spacing', '80', '$extensions', 'gdg.figma'];
+    expect(issue.edits).toEqual([
+      {
+        file: 'tokens/spacing.tokens.json',
+        path: [...link, 'variable'],
+        value: 'VariableID:999:4',
+      },
+      {
+        file: 'tokens/spacing.tokens.json',
+        path: [...link, 'name'],
+        value: 'spacing-80',
+      },
+    ]);
+  });
+
+  it('leaves a code-owned token to a person when Figma adds another value', async () => {
+    const snapshot = edit((s) =>
+      addVariable(s, 'spacing-64', 'VariableID:999:4', 'spacing-80', 72),
+    );
+    const [issue] = withLevel(await compareWithFigma(snapshot), 'error');
+    expect(issue.message).toContain('spacing.80');
+    expect(issue.message).toContain('72px');
+    expect(issue.edits).toEqual([]);
+  });
+
+  it('reports a new spacing variable it cannot turn into a token', async () => {
+    const snapshot = edit((s) => {
+      addVariable(
+        s,
+        'spacing-64',
+        'VariableID:999:5',
+        'spacing-auto',
+        'auto',
+      ).resolvedType = 'STRING';
+      addVariable(s, 'spacing-64', 'VariableID:999:6', 'spacing-1.5', 1.5);
+    });
+    const issues = withLevel(await compareWithFigma(snapshot), 'error');
+    expect(issues.map((issue) => issue.message)).toEqual([
+      expect.stringContaining(
+        '"spacing/spacing-auto": Figma value "auto" can\'t become a "dimension" token',
+      ),
+      expect.stringContaining(
+        '"spacing/spacing-1.5": "1.5" can\'t be a token name',
+      ),
+    ]);
+    expect(issues.flatMap((issue) => issue.edits)).toEqual([]);
+  });
+
+  it('only warns when a library collection is missing', async () => {
+    const snapshot = edit((s) =>
+      dropCollections(s, ['Spacing & Sizing', 'Typography']),
+    );
+    const issues = await compareWithFigma(snapshot);
+    expect(withLevel(issues, 'error')).toEqual([]);
+    expect(withLevel(issues, 'warning').map((issue) => issue.message)).toEqual(
+      expect.arrayContaining([
+        expect.stringContaining('layout.padding-global'),
+        expect.stringContaining('font.size.display-1'),
+      ]),
+    );
+  });
+
+  it('does not relink by name when the value cannot be read', async () => {
+    const snapshot = edit((s) => {
+      const copies = Object.values(s.usage.variables).filter(
+        (candidate) => candidate.name === 'Page Padding/padding-global',
+      );
+      copies.forEach((copy) => delete s.usage.variables[copy.id]);
+      s.usage.variables['VariableID:999:7'] = {
+        ...copies[0],
+        id: 'VariableID:999:7',
+      };
+      dropCollections(s, ['Spacing & Sizing']);
+    });
+    const [issue] = withLevel(
+      await compareWithFigma(snapshot),
+      'warning',
+    ).filter((candidate) =>
+      candidate.message.startsWith('layout.padding-global:'),
+    );
+    expect(issue.message).toContain("can't be read");
+    expect(issue.edits).toEqual([]);
   });
 
   it('writes Light mode differences to the light theme', async () => {
@@ -244,5 +369,57 @@ describe('Figma sync (ADR-0026)', () => {
     });
     const [issue] = withLevel(await compareWithFigma(snapshot), 'error');
     expect(issue.message).toContain('another-file');
+  });
+});
+
+describe('Token edits (ADR-0026)', () => {
+  it('inserts new steps in order of value', async () => {
+    const snapshot = edit((s) => {
+      addVariable(s, 'spacing-64', 'VariableID:999:8', 'spacing-5', 5);
+      addVariable(s, 'spacing-64', 'VariableID:999:9', 'spacing-128', 128);
+    });
+    const edits = (await compareWithFigma(snapshot)).flatMap(
+      (issue) => issue.edits,
+    );
+    const { text } = await readTokenFile('tokens/spacing.tokens.json');
+    const keys = keysAt(editTokenText(text, edits), ['spacing']);
+    expect(keys.slice(keys.indexOf('4'), keys.indexOf('4') + 3)).toEqual([
+      '4',
+      '5',
+      '6',
+    ]);
+    expect(keys[keys.length - 1]).toBe('128');
+  });
+
+  it('changes nothing when the same edits are applied again', async () => {
+    const snapshot = edit((s) =>
+      setValue(variable(s, 'Core Colors/Blue 500'), { r: 1, g: 0, b: 0, a: 1 }),
+    );
+    const edits = (await compareWithFigma(snapshot)).flatMap(
+      (issue) => issue.edits,
+    );
+    const { text } = await readTokenFile('tokens/color/primitive.tokens.json');
+    const once = editTokenText(text, edits);
+    expect(once).toContain('"$value": "#ff0000"');
+    expect(editTokenText(once, edits)).toBe(once);
+  });
+
+  it('removes the groups a removal leaves empty', () => {
+    const text = JSON.stringify({
+      color: {
+        content: { default: { $value: '{color.black-02}' } },
+        border: { default: { $value: '{color.black-02}' } },
+      },
+    });
+    const edited = editTokenText(text, [
+      {
+        file: 'themes/light.tokens.json',
+        path: ['color', 'content', 'default'],
+        value: undefined,
+      },
+    ]);
+    expect(JSON.parse(edited)).toEqual({
+      color: { border: { default: { $value: '{color.black-02}' } } },
+    });
   });
 });
