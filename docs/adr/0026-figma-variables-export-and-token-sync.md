@@ -58,7 +58,7 @@ Chosen: **our own development plugin**, a **committed snapshot** with an offline
 - It reads the local collections, variables and text styles through the Plugin API, follows aliases into linked libraries, and walks every layer to collect the library variables and text styles bound there.
 - It writes a **snapshot**: the shape of the REST API response (`variableCollections`, `variables`) plus `textStyles`, a `usage` section for values that are only bound on layers, `missingVariableIds` and a `source` block with the file key, file name and export time.
 - **Send to repo** posts the snapshot to a receiver on `localhost:4747` (`sync-figma --receive`); **Copy JSON** is the fallback (`sync-figma --from=<file>`). Network access is limited to that address in development.
-- The receiver listens on the loopback addresses only. It refuses requests from web pages (any `Origin` other than the plugin's sandboxed `null` or `https://www.figma.com`) and snapshots of another Figma file, and keeps waiting. A snapshot of another file is never saved, and `--check` saves nothing.
+- The receiver listens on the loopback addresses only. It refuses requests that carry a web page's origin (anything but the plugin's sandboxed `null` or `https://www.figma.com`) and snapshots of another Figma file, and keeps waiting. That is not authentication: a sandboxed iframe on any page also sends `null`, so run the receiver only while exporting. A snapshot of another file is never saved, and `--check` saves nothing.
 - The snapshot is committed as `figma/gdg-ds.figma.json`, sorted by name for stable diffs and excluded from Prettier. The file key is in `figma/sync.config.json`; the repository is public, and so is the key.
 
 ### Links

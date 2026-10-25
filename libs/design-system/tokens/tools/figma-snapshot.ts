@@ -194,7 +194,8 @@ export async function writeSnapshot(
  * Origins the plugin can post from: Figma runs its UI in a sandboxed iframe,
  * which sends `Origin: null` (`https://www.figma.com` covers a UI that Figma
  * serves itself). Requests without an `Origin` come from local tools such as
- * curl. Every other web page open in a browser is refused.
+ * curl. This refuses ordinary web pages, but it is not authentication: a
+ * sandboxed iframe on any page also sends `null`.
  */
 function isPluginOrigin(origin: string | undefined): boolean {
   return (
@@ -219,14 +220,15 @@ export function receiveSnapshot(
       response.writeHead(status, { 'Content-Type': 'text/plain' }).end(why);
     };
     const handle = (request: IncomingMessage, response: ServerResponse) => {
+      // Before the origin check, so the plugin can read why it was refused.
+      response.setHeader('Access-Control-Allow-Origin', '*');
+      response.setHeader('Access-Control-Allow-Private-Network', 'true');
+      response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
       const { origin } = request.headers;
       if (!isPluginOrigin(origin)) {
         refuse(response, 403, `requests from ${origin} are not accepted.`);
         return;
       }
-      response.setHeader('Access-Control-Allow-Origin', '*');
-      response.setHeader('Access-Control-Allow-Private-Network', 'true');
-      response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
       if (request.method !== 'POST') {
         response.writeHead(204).end();
         return;
