@@ -14,10 +14,12 @@ import { parseArgs } from 'node:util';
 import { buildTokens } from './build-tokens.ts';
 import {
   SNAPSHOT_PORT,
+  otherFileError,
   readSnapshot,
   receiveSnapshot,
   writeSnapshot,
 } from './figma-snapshot.ts';
+import type { FigmaSnapshot } from './figma-snapshot.ts';
 import {
   compareWithFigma,
   formatIssues,
@@ -37,20 +39,28 @@ const { values } = parseArgs({
 });
 
 const config = await readSyncConfig();
-const snapshotPath = join(libRoot, config.snapshot);
+let snapshot: FigmaSnapshot | undefined;
 if (values.receive) {
   console.log(
     `Waiting for the GDG Tokens Export plugin on http://localhost:${SNAPSHOT_PORT} …`,
   );
-  await writeSnapshot(snapshotPath, await receiveSnapshot());
-  console.log(`Saved ${config.snapshot}.`);
+  snapshot = await receiveSnapshot(config.fileKey);
 } else if (values.from) {
-  await writeSnapshot(snapshotPath, await readSnapshot(resolve(values.from)));
-  console.log(`Saved ${config.snapshot} from ${values.from}.`);
+  snapshot = await readSnapshot(resolve(values.from));
 }
 
-let issues = await compareWithFigma();
-if (!values.check) {
+// --check writes nothing, and a snapshot of another file is never saved.
+const rejected = snapshot && otherFileError(snapshot, config.fileKey);
+const write = !values.check && !rejected;
+if (snapshot && write) {
+  await writeSnapshot(join(libRoot, config.snapshot), snapshot);
+  console.log(
+    `Saved ${config.snapshot}${values.from ? ` from ${values.from}` : ''}.`,
+  );
+}
+
+let issues = await compareWithFigma(snapshot);
+if (write) {
   for (
     let pass = 0;
     pass < MAX_PASSES && issues.some((issue) => issue.edits.length > 0);

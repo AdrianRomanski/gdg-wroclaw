@@ -1,7 +1,8 @@
 /**
  * Compares the DTCG token sources with the committed Figma snapshot and
  * proposes the edits that bring them in line (ADR-0026). `sync-figma.ts`
- * writes the edits; the drift test in `tokens.spec.ts` fails on errors.
+ * writes the edits; the drift test in `src/lib/figma-sync.spec.ts` fails on
+ * errors.
  *
  * A token is linked to Figma when `$extensions["gdg.figma"]` holds a
  * `variable` or `style` id. Linked tokens follow Figma; every other token is
@@ -9,7 +10,7 @@
  */
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { isAlias, readSnapshot } from './figma-snapshot.ts';
+import { isAlias, otherFileError, readSnapshot } from './figma-snapshot.ts';
 import type {
   FigmaCollection,
   FigmaColor,
@@ -305,6 +306,18 @@ class Comparison {
     this.issues.push({ level, message, edits });
   }
 
+  /** Runs `check`, and reports a `SyncError` it throws as an issue. */
+  private attempt(level: IssueLevel, subject: string, check: () => void): void {
+    try {
+      check();
+    } catch (error) {
+      if (!(error instanceof SyncError)) {
+        throw error;
+      }
+      this.report(level, `${subject}: ${error.message}`);
+    }
+  }
+
   /** Resolves code references (also inside composite values). */
   private resolveCode(value: unknown, seen = new Set<string>()): unknown {
     const reference = referenceOf(value);
@@ -373,7 +386,9 @@ class Comparison {
           : JSON.stringify([record.fontName, record.fontSize]),
       ),
     );
-    if (candidates.length > 0 && values.size === 1) {
+    // Without a value to compare, the name alone is no evidence.
+    const unreadable = values.has('null');
+    if (candidates.length > 0 && values.size === 1 && !unreadable) {
       const [target] = candidates;
       this.report(
         level,
@@ -388,14 +403,13 @@ class Comparison {
       );
       return target;
     }
-    this.report(
-      level,
-      candidates.length > 0
-        ? `${entry.id}: "${link.name}" is gone; ${candidates.length} Figma ${key}s ` +
-            `have that name with different values. Link one by id.`
-        : `${entry.id}: its Figma ${key} "${link.name}" is gone. ` +
-            `Remove the link (the token becomes code-owned) or link another ${key}.`,
-    );
+    let message = `${entry.id}: its Figma ${key} "${link.name}" is gone. Remove the link (the token becomes code-owned) or link another ${key}.`;
+    if (unreadable) {
+      message = `${entry.id}: "${link.name}" is gone, and the value of a Figma ${key} with that name can't be read. Link one by id.`;
+    } else if (candidates.length > 0) {
+      message = `${entry.id}: "${link.name}" is gone; ${candidates.length} Figma ${key}s have that name with different values. Link one by id.`;
+    }
+    this.report(level, message);
     return undefined;
   }
 
@@ -464,18 +478,13 @@ class Comparison {
       }
     }
     for (const [entry, link, targetId] of linkedEntries) {
-      try {
+      this.attempt(link.library ? 'warning' : 'error', entry.id, () => {
         if (link.variable) {
           this.compareVariable(entry, link, this.figma.variables[targetId]);
         } else {
           this.compareTextStyle(entry, this.figma.textStyles[targetId]);
         }
-      } catch (error) {
-        if (!(error instanceof SyncError)) {
-          throw error;
-        }
-        this.report('error', `${entry.id}: ${error.message}`);
-      }
+      });
     }
     this.reportUnlinked();
     this.reportCodeOnly();
@@ -625,7 +634,9 @@ class Comparison {
           new RegExp(candidate.name).test(variable.name),
       );
       if (rule) {
-        this.importVariable(variable, rule);
+        this.attempt('error', `Figma "${collection}/${variable.name}"`, () =>
+          this.importVariable(variable, rule),
+        );
       } else {
         this.report(
           'error',
@@ -652,14 +663,38 @@ class Comparison {
     }
   }
 
-  /** Adds a token for a new variable of an import collection. */
+  /**
+   * Adds a token for a new variable of an import collection, or links the
+   * code-owned token of that name when its value already matches.
+   */
   private importVariable(variable: FigmaVariable, rule: ImportRule): void {
-    const key = new RegExp(rule.name).exec(variable.name)?.[1] as string;
+    const key = new RegExp(rule.name).exec(variable.name)?.[1] ?? '';
+    if (!key || /[.{}]/.test(key) || key.startsWith('$')) {
+      throw new SyncError(
+        `"${key}" can't be a token name (it is empty, starts with "$" or has ".", "{" or "}"). ` +
+          `Rename the variable, or add it to "ignore" in ${CONFIG_FILE}.`,
+      );
+    }
     const path = [...rule.group, key];
     const id = path.join('.');
     const existing = this.tokens.get(id);
     const link: FigmaLink = { variable: variable.id, name: variable.name };
+    const type =
+      existing?.type ??
+      [...this.tokens.values()].find(
+        (entry) => entry.path.slice(0, -1).join('.') === rule.group.join('.'),
+      )?.type;
+    const value = literalFor(this.figma.resolve(variable), type);
     if (existing) {
+      const current = this.resolveCode(existing.token.$value);
+      if (!sameValue(current, value, type)) {
+        this.report(
+          'error',
+          `${id}: the new Figma variable "${variable.name}" is ${show(value)}, but the ` +
+            `code-owned token is ${show(current)}. Change one of them, or link the token by hand.`,
+        );
+        return;
+      }
       this.report(
         'error',
         `${id}: links to the new Figma variable "${variable.name}".`,
@@ -678,10 +713,6 @@ class Comparison {
       );
       return;
     }
-    const groupType = [...this.tokens.values()].find(
-      (entry) => entry.path.slice(0, -1).join('.') === rule.group.join('.'),
-    )?.type;
-    const value = literalFor(this.figma.resolve(variable), groupType);
     const size = parsePx(value) ?? 0;
     this.report(
       'error',
@@ -782,11 +813,12 @@ export async function compareWithFigma(
   const config = await readSyncConfig();
   const figmaSnapshot =
     snapshot ?? (await readSnapshot(join(libRoot, config.snapshot)));
-  if (figmaSnapshot.source.fileKey !== config.fileKey) {
+  const otherFile = otherFileError(figmaSnapshot, config.fileKey);
+  if (otherFile) {
     return [
       {
         level: 'error',
-        message: `The snapshot is from Figma file ${figmaSnapshot.source.fileKey}, not ${config.fileKey} (${CONFIG_FILE}).`,
+        message: `${otherFile} The file key is set in ${CONFIG_FILE}.`,
         edits: [],
       },
     ];

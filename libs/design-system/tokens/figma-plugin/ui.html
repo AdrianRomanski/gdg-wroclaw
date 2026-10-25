@@ -64,9 +64,11 @@
     parent.postMessage({ pluginMessage: { type: 'notify', text } }, '*');
 
   onmessage = (event) => {
-    const message = event.data.pluginMessage;
-    if (message.type === 'error') {
+    const message = event.data?.pluginMessage;
+    if (message?.type === 'error') {
       status.textContent = `Export failed: ${message.message}`;
+    }
+    if (message?.type !== 'snapshot') {
       return;
     }
     const { snapshot } = message;
@@ -83,21 +85,24 @@
   };
 
   send.onclick = async () => {
+    let response;
     try {
       // text/plain keeps this a simple request (no CORS preflight).
-      const response = await fetch(RECEIVER, {
+      response = await fetch(RECEIVER, {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain' },
         body: json,
       });
-      if (!response.ok) {
-        throw new Error(await response.text());
-      }
-      notify('Sent the token snapshot to the repo');
-      parent.postMessage({ pluginMessage: { type: 'close' } }, '*');
     } catch (error) {
       status.textContent = `Could not reach ${RECEIVER} (${error.message}). Is the receiver running?`;
+      return;
     }
+    if (!response.ok) {
+      status.textContent = `The receiver refused the snapshot: ${await response.text()}`;
+      return;
+    }
+    notify('Sent the token snapshot to the repo');
+    parent.postMessage({ pluginMessage: { type: 'close' } }, '*');
   };
 
   copy.onclick = () => {

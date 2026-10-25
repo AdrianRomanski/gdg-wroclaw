@@ -97,19 +97,24 @@ export function isAlias(value: FigmaValue): value is FigmaAlias {
   );
 }
 
+function isObject(value: unknown): value is object {
+  return typeof value === 'object' && value !== null && !Array.isArray(value);
+}
+
 function isRecords(value: unknown): boolean {
   const records = value as Partial<FigmaRecords> | null;
   return (
-    typeof records?.variables === 'object' &&
-    typeof records.variableCollections === 'object' &&
-    typeof records.textStyles === 'object'
+    isObject(records) &&
+    isObject(records.variables) &&
+    isObject(records.variableCollections) &&
+    isObject(records.textStyles)
   );
 }
 
 function assertSnapshot(value: unknown): asserts value is FigmaSnapshot {
   const snapshot = value as Partial<FigmaSnapshot> | null;
   if (
-    !snapshot?.source ||
+    !isObject(snapshot?.source) ||
     !isRecords(snapshot) ||
     !isRecords(snapshot.usage) ||
     !Array.isArray(snapshot.missingVariableIds)
@@ -159,6 +164,16 @@ export function normalizeSnapshot(snapshot: FigmaSnapshot): FigmaSnapshot {
   };
 }
 
+/** Why the snapshot can't be used for the Figma file `fileKey`, if it can't. */
+export function otherFileError(
+  snapshot: FigmaSnapshot,
+  fileKey: string,
+): string | undefined {
+  return snapshot.source.fileKey === fileKey
+    ? undefined
+    : `The snapshot is from Figma file ${snapshot.source.fileKey}, not ${fileKey}.`;
+}
+
 export async function readSnapshot(path: string): Promise<FigmaSnapshot> {
   const snapshot: unknown = JSON.parse(await readFile(path, 'utf8'));
   assertSnapshot(snapshot);
@@ -176,12 +191,39 @@ export async function writeSnapshot(
 }
 
 /**
- * Waits for the plugin to post a snapshot to `http://localhost:<port>/`.
- * Listens on the IPv4 and IPv6 loopback addresses only.
+ * Origins the plugin can post from: Figma runs its UI in a sandboxed iframe,
+ * which sends `Origin: null` (`https://www.figma.com` covers a UI that Figma
+ * serves itself). Requests without an `Origin` come from local tools such as
+ * curl. Every other web page open in a browser is refused.
  */
-export function receiveSnapshot(port = SNAPSHOT_PORT): Promise<FigmaSnapshot> {
+function isPluginOrigin(origin: string | undefined): boolean {
+  return (
+    origin === undefined ||
+    origin === 'null' ||
+    origin === 'https://www.figma.com'
+  );
+}
+
+/**
+ * Waits for the plugin to post a snapshot of the Figma file `fileKey` to
+ * `http://localhost:<port>/`. Listens on the IPv4 and IPv6 loopback addresses
+ * only, and keeps waiting after a request it refuses.
+ */
+export function receiveSnapshot(
+  fileKey: string,
+  port = SNAPSHOT_PORT,
+): Promise<FigmaSnapshot> {
   return new Promise((resolve, reject) => {
+    const refuse = (response: ServerResponse, status: number, why: string) => {
+      console.error(`Refused a request: ${why}`);
+      response.writeHead(status, { 'Content-Type': 'text/plain' }).end(why);
+    };
     const handle = (request: IncomingMessage, response: ServerResponse) => {
+      const { origin } = request.headers;
+      if (!isPluginOrigin(origin)) {
+        refuse(response, 403, `requests from ${origin} are not accepted.`);
+        return;
+      }
       response.setHeader('Access-Control-Allow-Origin', '*');
       response.setHeader('Access-Control-Allow-Private-Network', 'true');
       response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -196,19 +238,34 @@ export function receiveSnapshot(port = SNAPSHOT_PORT): Promise<FigmaSnapshot> {
         try {
           const snapshot: unknown = JSON.parse(body);
           assertSnapshot(snapshot);
+          const error = otherFileError(snapshot, fileKey);
+          if (error) {
+            throw new Error(error);
+          }
           response.writeHead(200, { 'Content-Type': 'text/plain' }).end('ok');
           servers.forEach((server) => server.close());
           resolve(snapshot);
         } catch (error) {
-          response.writeHead(400, { 'Content-Type': 'text/plain' });
-          response.end(String(error));
+          refuse(
+            response,
+            400,
+            error instanceof Error ? error.message : String(error),
+          );
         }
       });
     };
     const servers = ['127.0.0.1', '::1'].map((host) =>
       createServer(handle).listen(port, host),
     );
-    servers[0].on('error', reject);
+    servers[0].on('error', (error: NodeJS.ErrnoException) =>
+      reject(
+        error.code === 'EADDRINUSE'
+          ? new Error(
+              `Port ${port} is in use. Is another \`sync-figma --receive\` running?`,
+            )
+          : error,
+      ),
+    );
     // The IPv6 loopback is optional (it may be disabled).
     servers[1].on('error', () => undefined);
   });

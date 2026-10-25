@@ -49,7 +49,7 @@ The sync saves the snapshot, updates the linked tokens (and the light theme), re
 - **! warning** – drift in a value from a linked library; it doesn't fail CI.
 - **· info** – code-owned tokens, roles without a light value, library values without a token.
 
-Without the receiver, use **Copy JSON** in the plugin, save the clipboard to a file and run `sync-figma --from=<file>` (path relative to the repository root). `sync-figma --check` only reports. New `spacing-*` and `radius-*` variables become tokens automatically; for any other new variable, add a token with the `gdg.figma` link the report prints, or add the variable to `ignore` in `figma/sync.config.json`.
+Without the receiver, use **Copy JSON** in the plugin, save the clipboard to a file and run `sync-figma --from=<file>` (path relative to the repository root). `sync-figma --check` only reports and saves nothing, also with `--from` or `--receive`. A snapshot of another Figma file is never saved, and the receiver refuses requests from web pages. New `spacing-*` and `radius-*` variables become tokens automatically (an existing code-owned token with that name is linked only if its value matches); for any other new variable, add a token with the `gdg.figma` link the report prints, or add the variable to `ignore` in `figma/sync.config.json`.
 
 CI runs the drift test in `src/lib/figma-sync.spec.ts`: it fails when the tokens don't match the committed snapshot.
 
@@ -87,12 +87,12 @@ cssVar('color.content.default'); // 'var(--gdg-color-content-default)'
 
 ## Tokens
 
-| Group                | CSS custom properties                                                                                                                             |
-| :------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Palette              | `--gdg-color-{blue-500,green-500,yellow-600,red-500}`, `halftone-*`, `pastel-*`, `off-white`, `black-02`, `*-alpha-{40,20,10}`                    |
-| Semantic (dark)      | `--gdg-color-background-{default,disabled}`, `content-{default,disabled}`, `border-disabled`, `brand-{blue,green,yellow,red}-{primary,secondary}` |
-| Font primitives      | `--gdg-font-family-{sans,mono}`, `--gdg-font-weight-{regular,bold}`, `--gdg-font-size-1…9`, `--gdg-line-height-1…9`                               |
-| Text styles (`font`) | `--gdg-font-heading-{1…9}`, `heading-{1…9}-regular`, `paragraph-{1…9}`, `mono-{1…9}`, `mono-{1…9}-bold`                                           |
+| Group                | CSS custom properties                                                                                                                                                                                                                                      |
+| :------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Palette              | `--gdg-color-{blue-500,green-500,yellow-600,red-500}`, `halftone-*`, `pastel-*`, `off-white`, `black-02`, `*-alpha-{40,20,10}`                                                                                                                             |
+| Semantic (dark)      | `--gdg-color-background-{default,disabled,nav-button-hover,nav-button-active,raised,brand-subtle}`, `content-{default,disabled,on-brand,error,muted}`, `border-{default,disabled,error,subtle,input}`, `brand-{blue,green,yellow,red}-{primary,secondary}` |
+| Font primitives      | `--gdg-font-family-{sans,mono}`, `--gdg-font-weight-{regular,bold}`, `--gdg-font-size-1…9`, `--gdg-line-height-1…9`                                                                                                                                        |
+| Text styles (`font`) | `--gdg-font-heading-{1…9}`, `heading-{1…9}-regular`, `paragraph-{1…9}`, `mono-{1…9}`, `mono-{1…9}-bold`                                                                                                                                                    |
 
 Type scale (px, size / line height): 1 = 36/46, 2 = 32/42, 3 = 28/38, 4 = 24/34, 5 = 20/30, 6 = 18/28, 7 = 16/26, 8 = 14/24, 9 = 12/16.
 
