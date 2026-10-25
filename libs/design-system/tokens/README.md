@@ -49,7 +49,7 @@ The sync saves the snapshot, updates the linked tokens (and the light theme), re
 - **! warning** – drift in a value from a linked library; it doesn't fail CI.
 - **· info** – code-owned tokens, roles without a light value, library values without a token.
 
-Without the receiver, use **Copy JSON** in the plugin, save the clipboard to a file and run `sync-figma --from=<file>` (path relative to the repository root). `sync-figma --check` only reports and saves nothing, also with `--from` or `--receive`. A snapshot of another Figma file is never saved, and the receiver refuses requests from web pages. New `spacing-*` and `radius-*` variables become tokens automatically (an existing code-owned token with that name is linked only if its value matches); for any other new variable, add a token with the `gdg.figma` link the report prints, or add the variable to `ignore` in `figma/sync.config.json`.
+Without the receiver, use **Copy JSON** in the plugin, save the clipboard to a file and run `sync-figma --from=<file>` (path relative to the repository root). `sync-figma --check` only reports and saves nothing, also with `--from` or `--receive`. A snapshot of another Figma file is never saved, and the receiver refuses requests that carry a web page's origin. A sandboxed iframe on any page can still reach it, so run the receiver only while exporting. New `spacing-*` and `radius-*` variables become tokens automatically (an existing code-owned token with that name is linked only if its value matches); for any other new variable, add a token with the `gdg.figma` link the report prints, or add the variable to `ignore` in `figma/sync.config.json`.
 
 CI runs the drift test in `src/lib/figma-sync.spec.ts`: it fails when the tokens don't match the committed snapshot.
 
