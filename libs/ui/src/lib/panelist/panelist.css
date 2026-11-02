@@ -1,0 +1,20 @@
+/*
+ * Figma: Panelist (9041:272). The avatar and the name (Heading 8) 12px apart: stacked
+ * (start-aligned column) or inline (centered row).
+ */
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gdg-spacing-12);
+  color: var(--gdg-color-content-default);
+}
+
+:host([data-layout='inline']) {
+  flex-direction: row;
+  align-items: center;
+}
+
+.name {
+  font: var(--gdg-font-heading-8);
+}

@@ -1,0 +1,69 @@
+/*
+ * Figma: Schedule event (9027:147). Desktop: a row 24px apart with 24px padding and a 12px
+ * radius; the marker (22px icon, time in Heading 7, 10px apart), the title in Heading 4 taking
+ * the rest, the rooms in Paragraph 9. Shared: brand blue fill, on-brand content. Break: subtle
+ * yellow fill, 1px brand yellow border, yellow marker. Mobile (narrower than 40rem): stacked 8px
+ * apart, 20px padding, the title in Heading 5. Phosphor icons stand in for Figma's (ADR-0028).
+ */
+:host {
+  --_fill: var(--gdg-color-brand-blue-primary);
+  --_border: transparent;
+  --_content: var(--gdg-color-content-on-brand);
+  --_marker: var(--gdg-color-content-on-brand);
+
+  display: block;
+  container-type: inline-size;
+}
+
+:host([data-type='break']) {
+  --_fill: var(--gdg-color-brand-yellow-secondary-subtle);
+  --_border: var(--gdg-color-brand-yellow-primary);
+  --_content: var(--gdg-color-content-default);
+  --_marker: var(--gdg-color-brand-yellow-primary);
+}
+
+.event {
+  display: flex;
+  align-items: center;
+  gap: var(--gdg-spacing-24);
+  padding: calc(var(--gdg-spacing-24) - 1px);
+  border: 1px solid var(--_border);
+  border-radius: var(--gdg-radius-12);
+  background: var(--_fill);
+  color: var(--_content);
+}
+
+.marker {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--gdg-spacing-10);
+  margin: 0;
+  color: var(--_marker);
+  font: var(--gdg-font-heading-7);
+}
+
+.title {
+  flex: 1;
+  min-inline-size: 0;
+  margin: 0;
+  font: var(--gdg-font-heading-4);
+}
+
+.rooms {
+  margin: 0;
+  font: var(--gdg-font-paragraph-9);
+}
+
+@container (width < 40rem) {
+  .event {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gdg-spacing-8);
+    padding: calc(var(--gdg-spacing-20) - 1px);
+  }
+
+  .title {
+    font: var(--gdg-font-heading-5);
+  }
+}

@@ -1,0 +1,11 @@
+@let e = item();
+<div class="event">
+  <p class="marker">
+    <gdg-icon [name]="e.type === 'break' ? 'fork-knife' : 'flag'" [size]="22" />
+    <time [attr.datetime]="e.dateTime ?? null">{{ e.time }}</time>
+  </p>
+  <h3 class="title">{{ e.title }}</h3>
+  @if (e.rooms) {
+  <p class="rooms">{{ e.rooms }}</p>
+  }
+</div>

@@ -1,0 +1,53 @@
+@let t = talk(); @if (label() || t.time || t.room) {
+<div class="meta">
+  @if (label()) {
+  <gdg-tag [accent]="accent()">{{ label() }}</gdg-tag>
+  } @if (t.time || t.room) {
+  <p class="when">
+    @if (t.time) {
+    <time [attr.datetime]="t.dateTime ?? null">{{ t.time }}</time>
+    } @if (t.time && t.room) {
+    <span aria-hidden="true">•</span>
+    } @if (t.room) {
+    <span>{{ t.room }}</span>
+    }
+  </p>
+  }
+</div>
+}
+
+<h3 class="title" [id]="titleId">{{ t.title }}</h3>
+
+@if (t.description) {
+<p class="description">{{ t.description }}</p>
+} @if (t.speakers?.length) {
+<ul class="speakers">
+  @for (speaker of t.speakers; track speaker.name) {
+  <li class="speaker">
+    <gdg-avatar [initials]="initials(speaker)" [accent]="accent()" />
+    <span class="name">{{ speaker.name }}</span>
+  </li>
+  }
+</ul>
+} @if (t.abstract) {
+<div class="abstract" [id]="abstractId" [hidden]="!expanded()">
+  <p class="abstract-label">{{ abstractLabel() }}</p>
+  <p class="abstract-text">{{ t.abstract }}</p>
+</div>
+<button
+  gdg-button
+  type="button"
+  variant="secondary"
+  size="m"
+  [color]="buttonColor()"
+  [attr.aria-expanded]="expanded()"
+  [attr.aria-controls]="abstractId"
+  [attr.aria-describedby]="titleId"
+  (click)="toggle()"
+>
+  <span
+    >{{ expanded() ? collapseLabel() : expandLabel() }}
+    <span aria-hidden="true">{{ expanded() ? '↑' : '↓' }}</span></span
+  >
+</button>
+}

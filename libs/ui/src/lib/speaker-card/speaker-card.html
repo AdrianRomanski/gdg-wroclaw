@@ -1,0 +1,13 @@
+@let s = speaker();
+<div class="top">
+  <gdg-avatar size="m" [initials]="initials()" [accent]="accent()" />
+  @if (label()) {
+  <gdg-tag [accent]="accent()">{{ label() }}</gdg-tag>
+  }
+</div>
+<h3 class="name">{{ s.name }}</h3>
+@if (s.role) {
+<p class="role">{{ s.role }}</p>
+} @if (s.talk) {
+<p class="talk">{{ s.talk }}</p>
+}

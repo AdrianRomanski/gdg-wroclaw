@@ -87,12 +87,12 @@ cssVar('color.content.default'); // 'var(--gdg-color-content-default)'
 
 ## Tokens
 
-| Group                | CSS custom properties                                                                                                                                                                                                                                      |
-| :------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Palette              | `--gdg-color-{blue-500,green-500,yellow-600,red-500}`, `halftone-*`, `pastel-*`, `off-white`, `black-02`, `*-alpha-{40,20,10}`                                                                                                                             |
-| Semantic (dark)      | `--gdg-color-background-{default,disabled,nav-button-hover,nav-button-active,raised,brand-subtle}`, `content-{default,disabled,on-brand,error,muted}`, `border-{default,disabled,error,subtle,input}`, `brand-{blue,green,yellow,red}-{primary,secondary}` |
-| Font primitives      | `--gdg-font-family-{sans,mono}`, `--gdg-font-weight-{regular,bold}`, `--gdg-font-size-1…9`, `--gdg-line-height-1…9`                                                                                                                                        |
-| Text styles (`font`) | `--gdg-font-heading-{1…9}`, `heading-{1…9}-regular`, `paragraph-{1…9}`, `mono-{1…9}`, `mono-{1…9}-bold`                                                                                                                                                    |
+| Group                | CSS custom properties                                                                                                                                                                                                                                                                            |
+| :------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Palette              | `--gdg-color-{blue-500,green-500,yellow-600,red-500}`, `halftone-*`, `pastel-*`, `off-white`, `black-02`, `*-alpha-{40,20,10}`                                                                                                                                                                   |
+| Semantic (dark)      | `--gdg-color-background-{default,disabled,nav-button-hover,nav-button-active,raised,brand-subtle,card}`, `content-{default,disabled,on-brand,error,muted}`, `border-{default,disabled,error,subtle,input}`, `brand-{blue,green,yellow,red}-{primary,secondary}`, `brand-yellow-secondary-subtle` |
+| Font primitives      | `--gdg-font-family-{sans,mono}`, `--gdg-font-weight-{regular,bold}`, `--gdg-font-size-1…9`, `--gdg-line-height-1…9`                                                                                                                                                                              |
+| Text styles (`font`) | `--gdg-font-heading-{1…9}`, `heading-{1…9}-regular`, `paragraph-{1…9}`, `mono-{1…9}`, `mono-{1…9}-bold`                                                                                                                                                                                          |
 
 Type scale (px, size / line height): 1 = 36/46, 2 = 32/42, 3 = 28/38, 4 = 24/34, 5 = 20/30, 6 = 18/28, 7 = 16/26, 8 = 14/24, 9 = 12/16.
 
@@ -100,6 +100,6 @@ Spacing (`--gdg-spacing-N`, px): 0, 2, 3, 4, 6, 8, 10, 12, 16, 20, 24, 32, 36, 4
 
 ## Light theme
 
-`tokens.css` includes an opt-in light theme from the Figma Light mode ([ADR-0027](../../../docs/adr/0027-light-theme-from-figma-light-mode.md)): set `data-theme="light"` on `<html>` (or any element). It is **partial**: the code-only roles (`content.error`, `content.muted`, `content.on-brand`, `background.raised`, `background.brand-subtle`, `border.error`, `border.subtle`) keep their dark values until Figma defines them. Preview it with the **Theme** toolbar in Storybook.
+`tokens.css` includes an opt-in light theme from the Figma Light mode ([ADR-0027](../../../docs/adr/0027-light-theme-from-figma-light-mode.md)): set `data-theme="light"` on `<html>` (or any element). It is **partial**: the code-only roles (`content.error`, `content.muted`, `content.on-brand`, `background.raised`, `background.brand-subtle`, `background.card`, `brand.yellow.secondary-subtle`, `border.error`, `border.subtle`) keep their dark values until Figma defines them. Preview it with the **Theme** toolbar in Storybook.
 
 Fonts (Google Sans, Google Sans Code) are self-hosted via Fontsource and loaded by `tokens.css`.

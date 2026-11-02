@@ -1,0 +1,89 @@
+/*
+ * Figma: Presentation card (9025:192). Card surface, 1px border in the track color, 24px padding,
+ * 12px radius, 16px between rows. Meta: the track tag and the time and room (Paragraph 8) 12px
+ * apart. Title Heading 5, description Paragraph 8 muted, speaker name Heading 8. Expanded: a 1px
+ * track divider, "ABSTRAKT" Heading 9 muted and the text Paragraph 8, 8px apart. The time and
+ * room use brand blue secondary: primary is 3.7:1 on the card (ADR-0028).
+ */
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gdg-spacing-16);
+  padding: calc(var(--gdg-spacing-24) - 1px);
+  border: 1px solid var(--_track);
+  border-radius: var(--gdg-radius-12);
+  background: var(--gdg-color-background-card);
+  color: var(--gdg-color-content-default);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--gdg-spacing-12);
+}
+
+.when {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gdg-spacing-8);
+  margin: 0;
+  color: var(--gdg-color-brand-blue-secondary);
+  font: var(--gdg-font-paragraph-8);
+}
+
+.title {
+  margin: 0;
+  font: var(--gdg-font-heading-5);
+}
+
+.description {
+  margin: 0;
+  color: var(--gdg-color-content-muted);
+  font: var(--gdg-font-paragraph-8);
+}
+
+.speakers {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-12);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.speaker {
+  display: flex;
+  align-items: center;
+  gap: var(--gdg-spacing-12);
+}
+
+.name {
+  font: var(--gdg-font-heading-8);
+}
+
+.abstract {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-8);
+  align-self: stretch;
+  padding-block-start: var(--gdg-spacing-8);
+  border-block-start: 1px solid var(--_track);
+}
+
+.abstract[hidden] {
+  display: none;
+}
+
+.abstract-label {
+  margin: 0;
+  color: var(--gdg-color-content-muted);
+  font: var(--gdg-font-heading-9);
+  text-transform: uppercase;
+}
+
+.abstract-text {
+  margin: 0;
+  font: var(--gdg-font-paragraph-8);
+}

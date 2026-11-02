@@ -1,0 +1,58 @@
+/*
+ * Figma: Keynote card (9040:511). Brand blue, 32px padding, 16px radius, 20px between rows,
+ * on-brand content. Tags 8px apart, title Heading 1, abstract Paragraph 7, the M avatar 16px
+ * before the speaker name (Heading 7). Not in Figma: narrower than 40rem, 20px padding and a
+ * Heading 3 title (ADR-0028).
+ */
+:host {
+  display: block;
+  container-type: inline-size;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gdg-spacing-20);
+  padding: var(--gdg-spacing-32);
+  border-radius: var(--gdg-radius-16);
+  background: var(--gdg-color-brand-blue-primary);
+  color: var(--gdg-color-content-on-brand);
+}
+
+.labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gdg-spacing-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.title {
+  margin: 0;
+  font: var(--gdg-font-heading-1);
+}
+
+.abstract {
+  margin: 0;
+  font: var(--gdg-font-paragraph-7);
+}
+
+.speaker {
+  display: flex;
+  align-items: center;
+  gap: var(--gdg-spacing-16);
+  margin: 0;
+  font: var(--gdg-font-heading-7);
+}
+
+@container (width < 40rem) {
+  .card {
+    padding: var(--gdg-spacing-20);
+  }
+
+  .title {
+    font: var(--gdg-font-heading-3);
+  }
+}

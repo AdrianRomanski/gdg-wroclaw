@@ -1,0 +1,63 @@
+/*
+ * Figma: Toggle (9037:1840) and Segment (9040:251). A 1px subtle border, 4px padding and gap,
+ * 16px radius. Options: 8px × 16px padding, 12px radius, Paragraph 7; the selected one is brand
+ * blue with on-brand text. Segment sits on a raised surface; Toggle on the page background.
+ */
+:host {
+  display: inline-flex;
+  gap: var(--gdg-spacing-4);
+  padding: calc(var(--gdg-spacing-4) - 1px);
+  border: 1px solid var(--gdg-color-border-subtle);
+  border-radius: var(--gdg-radius-16);
+  background: var(--gdg-color-background-raised);
+}
+
+:host(.gdg-segmented-control--full-width) {
+  display: flex;
+  background: var(--gdg-color-background-default);
+}
+
+.option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: var(--gdg-spacing-8) var(--gdg-spacing-16);
+  border: 0;
+  border-radius: var(--gdg-radius-12);
+  background: transparent;
+  color: var(--gdg-color-content-default);
+  font: var(--gdg-font-paragraph-7);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 150ms ease-out;
+}
+
+:host(.gdg-segmented-control--full-width) .option {
+  flex: 1 1 0;
+  min-inline-size: 0;
+}
+
+.option:hover {
+  background: var(--gdg-color-background-nav-button-hover);
+}
+
+.option[aria-checked='true'] {
+  background: var(--gdg-color-brand-blue-primary);
+  color: var(--gdg-color-content-on-brand);
+}
+
+.option[aria-checked='true']:hover {
+  background: var(--gdg-color-brand-blue-secondary);
+}
+
+.option:focus-visible {
+  outline: 2px solid var(--gdg-color-brand-blue-secondary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .option {
+    transition: none;
+  }
+}

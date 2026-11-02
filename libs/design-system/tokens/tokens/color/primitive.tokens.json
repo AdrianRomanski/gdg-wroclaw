@@ -283,6 +283,28 @@
         }
       },
       "$description": "Blue-tinted surfaces (labels, registration band) on the Figma Event detail page; not in the Colors page palette (ADR-0025)."
+    },
+    "gray-800": {
+      "$value": "#303030",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "(variable on DevFest components)",
+          "group": "DevFest components",
+          "node": "9024:2"
+        }
+      },
+      "$description": "Card surfaces (Figma color/background/card) on the DevFest components page; not in the Colors page palette (ADR-0028)."
+    },
+    "halftone-yellow-alpha-15": {
+      "$value": "#ffd42726",
+      "$extensions": {
+        "gdg.figma": {
+          "name": "(variable on DevFest components)",
+          "group": "DevFest components",
+          "node": "9024:2"
+        }
+      },
+      "$description": "Halftone yellow at 15% (Figma color/brand/yellow/secondary-subtle) on the DevFest components page (ADR-0028)."
     }
   }
 }

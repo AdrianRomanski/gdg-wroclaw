@@ -374,6 +374,34 @@ export const tokens = {
       "node": "8927:6018"
     }
   },
+  "color.gray-800": {
+    "id": "color.gray-800",
+    "cssVariable": "--gdg-color-gray-800",
+    "type": "color",
+    "value": "#303030",
+    "aliasOf": null,
+    "parts": null,
+    "description": "Card surfaces (Figma color/background/card) on the DevFest components page; not in the Colors page palette (ADR-0028).",
+    "figma": {
+      "name": "(variable on DevFest components)",
+      "group": "DevFest components",
+      "node": "9024:2"
+    }
+  },
+  "color.halftone-yellow-alpha-15": {
+    "id": "color.halftone-yellow-alpha-15",
+    "cssVariable": "--gdg-color-halftone-yellow-alpha-15",
+    "type": "color",
+    "value": "#ffd42726",
+    "aliasOf": null,
+    "parts": null,
+    "description": "Halftone yellow at 15% (Figma color/brand/yellow/secondary-subtle) on the DevFest components page (ADR-0028).",
+    "figma": {
+      "name": "(variable on DevFest components)",
+      "group": "DevFest components",
+      "node": "9024:2"
+    }
+  },
   "color.background.default": {
     "id": "color.background.default",
     "cssVariable": "--gdg-color-background-default",
@@ -444,6 +472,16 @@ export const tokens = {
     "aliasOf": "color.navy-800",
     "parts": null,
     "description": "Blue-tinted labels and callouts (Event detail page). Default content: 10.7:1; brand blue secondary: 6.5:1; muted content: 6.4:1.",
+    "figma": null
+  },
+  "color.background.card": {
+    "id": "color.background.card",
+    "cssVariable": "--gdg-color-background-card",
+    "type": "color",
+    "value": "#303030",
+    "aliasOf": "color.gray-800",
+    "parts": null,
+    "description": "Session, speaker and panel cards (DevFest components, Figma color/background/card). Default content: 11.6:1; muted content: 6.9:1; brand blue secondary: 7.1:1 (brand blue primary only 3.7:1).",
     "figma": null
   },
   "color.content.default": {
@@ -638,6 +676,16 @@ export const tokens = {
       "variable": "VariableID:143:2277",
       "name": "Colors/Brand-Yellow-Secondary"
     }
+  },
+  "color.brand.yellow.secondary-subtle": {
+    "id": "color.brand.yellow.secondary-subtle",
+    "cssVariable": "--gdg-color-brand-yellow-secondary-subtle",
+    "type": "color",
+    "value": "#ffd42726",
+    "aliasOf": "color.halftone-yellow-alpha-15",
+    "parts": null,
+    "description": "Subtle yellow fill for breaks in the agenda (DevFest Schedule event). Brand yellow primary on it over the default background: 5.9:1; default content: 10.1:1.",
+    "figma": null
   },
   "color.brand.red.primary": {
     "id": "color.brand.red.primary",
