@@ -8,7 +8,8 @@
  *
  * Design review (ADR-0032): the host has an M avatar, and panelists an L avatar centered over
  * their name, so faces read at a glance; on mobile the panelists form a two-column grid instead
- * of the Figma inline list of S avatars.
+ * of the Figma inline list of S avatars. ADR-0033 doubles both: an L host and XL panelists,
+ * which shrink to their column on narrow panels.
  */
 :host {
   display: block;
@@ -125,6 +126,6 @@ ul {
   .panelists > li:last-child:nth-child(odd) {
     grid-column: 1 / -1;
     justify-self: center;
-    inline-size: 50%;
+    inline-size: calc((100% - var(--gdg-spacing-12)) / 2);
   }
 }

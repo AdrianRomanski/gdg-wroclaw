@@ -1,6 +1,8 @@
 /*
  * Figma: Avatar (9024:27). Raised circle, 1px subtle border; initials Heading 8 / 5 / 2 for
  * S 40px / M 64px / L 112px. Accent rings are 1.5px (Presentation and Speaker cards).
+ * XL (ADR-0033) is 224px with Heading 1 initials, and shrinks with a narrower container, staying
+ * round; its ring is 2px so it keeps its weight next to the larger photo.
  */
 :host {
   --_size: 40px;
@@ -41,6 +43,16 @@ img {
   --_size: 112px;
 
   font: var(--gdg-font-heading-2);
+}
+
+:host([data-size='xl']) {
+  --_size: 224px;
+
+  inline-size: min(var(--_size), 100%);
+  block-size: auto;
+  aspect-ratio: 1;
+  border-width: 2px;
+  font: var(--gdg-font-heading-1);
 }
 
 :host([data-accent='red']) {

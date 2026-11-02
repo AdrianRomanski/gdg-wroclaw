@@ -41,7 +41,7 @@ export class Panelist {
 
   readonly layout = input<PanelistLayout>('stacked');
 
-  /** Avatar size; the discussion panel uses L so faces read at a glance (ADR-0032). */
+  /** Avatar size; the discussion panel uses XL so faces read at a glance (ADR-0033). */
   readonly size = input<AvatarSize>('s');
 
   /** Avatar ring, e.g. the panel's track. */
