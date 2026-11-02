@@ -105,18 +105,15 @@ describe('DevfestAgendaPage', () => {
     );
   });
 
-  it('shows the workshop agenda with its own rooms and the track filter', async () => {
+  it('shows the workshop agenda in its own room, with the track filter', async () => {
     const { element, click, titles } = await setup(
       SAMPLE_AGENDA_PAGE_WITH_WORKSHOPS,
     );
     await click('Dzień 2: Warsztaty & Prezentacje');
     await click('Warsztaty (Hands-on Labs)');
     expect(element.querySelector('gdg-devfest-note')).toBeNull();
-    expect(
-      Array.from(element.querySelectorAll('.room')).map((r) =>
-        r.textContent?.trim(),
-      ),
-    ).toEqual(['Warsztaty']);
+    // One room: the format chip names it, so there is no room header row.
+    expect(element.querySelectorAll('.room')).toHaveLength(0);
     expect(titles('gdg-presentation-card')).toEqual([
       'Zero Infrastructure, Zero Phishing',
       'The Agents Optimization Lab',

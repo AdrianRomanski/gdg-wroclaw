@@ -25,6 +25,7 @@
   <div class="moderator">
     <p class="host">
       <gdg-avatar
+        size="m"
         [initials]="hostInitials()"
         [accent]="accent()"
         [src]="p.host.photo"
@@ -38,7 +39,7 @@
   <ul class="panelists" [attr.aria-labelledby]="listLabelId">
     @for (person of p.panelists; track $index) {
     <li>
-      <gdg-panelist [person]="person" [accent]="accent()" />
+      <gdg-panelist size="l" [person]="person" [accent]="accent()" />
     </li>
     }
   </ul>
