@@ -24,7 +24,11 @@
   @if (p.host) {
   <div class="moderator">
     <p class="host">
-      <gdg-avatar [initials]="hostInitials()" [accent]="accent()" />
+      <gdg-avatar
+        [initials]="hostInitials()"
+        [accent]="accent()"
+        [src]="p.host.photo"
+      />
       <span>{{ p.host.name }}</span>
     </p>
     <gdg-tag>{{ hostLabel() }}</gdg-tag>

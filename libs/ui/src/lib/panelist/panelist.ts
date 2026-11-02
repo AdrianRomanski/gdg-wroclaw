@@ -19,10 +19,11 @@ export type PanelistLayout = 'stacked' | 'inline';
 @Component({
   selector: 'gdg-panelist',
   imports: [Avatar],
-  template: `<gdg-avatar [initials]="initials()" [accent]="accent()" /><span
-      class="name"
-      >{{ person().name }}</span
-    >`,
+  template: `<gdg-avatar
+      [initials]="initials()"
+      [accent]="accent()"
+      [src]="person().photo"
+    /><span class="name">{{ person().name }}</span>`,
   styleUrl: './panelist.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {

@@ -34,6 +34,22 @@ const WORKSHOPS_ROOM = 'Warsztaty';
 
 const TBA: SessionPerson = { name: 'TBA', initials: 'TBA' };
 
+/** "Jarosław Żołnowski" → "/speakers/jaroslaw-zolnowski.jpg" (`public/speakers`, ADR-0031). */
+export function photoOf(name: string): string {
+  const slug = name
+    .replace(/[łŁ]/g, 'l')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-');
+  return `/speakers/${slug}.jpg`;
+}
+
+/** A person on the programme, with their photo. */
+function who(name: string): SessionPerson {
+  return { name, photo: photoOf(name) };
+}
+
 const HERO: DevfestHeroContent = {
   image: {
     src: '/banners/devfest-2026.jpg',
@@ -62,7 +78,7 @@ function keynote(
       dateTime: at(DAY_1, time),
       room: STAGE,
       abstract: DEVFEST_ABSTRACTS[title],
-      speaker: typeof speaker === 'string' ? { name: speaker } : speaker,
+      speaker: typeof speaker === 'string' ? who(speaker) : speaker,
     },
   };
 }
@@ -80,8 +96,8 @@ function panel(
       time,
       dateTime: at(DAY_1, time),
       room: STAGE,
-      host: { name: host },
-      panelists: panelists.map((name) => ({ name })),
+      host: who(host),
+      panelists: panelists.map(who),
     },
   };
 }
@@ -108,7 +124,7 @@ function session(
         track,
         time,
         dateTime,
-        speakers: [{ name: speaker }],
+        speakers: [who(speaker)],
         ...(title
           ? { abstract: DEVFEST_ABSTRACTS[title] }
           : { description: 'Temat zostanie ogłoszony wkrótce' }),
@@ -375,7 +391,7 @@ function people(
   entries: readonly [string, DevfestSpeaker['role'], string?][],
 ): DevfestSpeaker[] {
   return entries.map(([name, role, talk]) => ({
-    name,
+    ...who(name),
     track,
     role,
     talk,

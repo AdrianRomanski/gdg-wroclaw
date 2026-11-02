@@ -18,7 +18,11 @@
   <p class="abstract">{{ k.abstract }}</p>
   } @if (k.speaker) {
   <p class="speaker">
-    <gdg-avatar size="m" [initials]="speakerInitials()" />
+    <gdg-avatar
+      size="m"
+      [initials]="speakerInitials()"
+      [src]="k.speaker.photo"
+    />
     <span>{{ k.speaker.name }}</span>
   </p>
   }

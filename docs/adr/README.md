@@ -42,6 +42,7 @@ For more information on ADRs, see [Architecture Decision Records](https://adr.gi
 | [ADR-0028](0028-devfest-components.md)                             | DevFest Components: Tag, Avatar, Segmented Control and the Session Cards       | **Accepted** | 2026-11-02 |
 | [ADR-0029](0029-devfest-agenda-and-speaker-pages.md)               | DevFest Agenda and Speaker Pages                                               | **Accepted** | 2026-11-02 |
 | [ADR-0030](0030-devfest-real-content-and-workshop-agenda.md)       | DevFest Real Content and the Workshop Agenda                                   | **Accepted** | 2026-11-02 |
+| [ADR-0031](0031-avatar-photos-and-speaker-pictures.md)             | Avatar Photos and DevFest Speaker Pictures                                     | **Accepted** | 2026-11-02 |
 
 ---
 

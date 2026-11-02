@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { DevfestAgendaRoute } from './devfest-agenda-route';
 import { DevfestSpeakersRoute } from './devfest-speakers-route';
 import { DEVFEST_ABSTRACTS } from '../content/devfest-abstracts';
-import { DEVFEST_AGENDA, DEVFEST_SPEAKERS } from '../content/devfest';
+import { DEVFEST_AGENDA, DEVFEST_SPEAKERS, photoOf } from '../content/devfest';
 import { DEVFEST_BIOS } from '../content/devfest-bios';
 
 describe('DevFest routes', () => {
@@ -80,5 +80,23 @@ describe('DevFest routes', () => {
     expect(
       Object.keys(DEVFEST_BIOS).filter((name) => !names.has(name)),
     ).toEqual([]);
+  });
+
+  it('gives everyone on the programme a photo', () => {
+    const people = DEVFEST_SPEAKERS.speakers.groups.flatMap((g) => [
+      ...(g.speakers ?? []),
+      ...(g.keynote?.speaker ? [g.keynote.speaker] : []),
+    ]);
+    expect(people).toHaveLength(34);
+    const missing = people.filter((p) => p.photo !== photoOf(p.name));
+    expect(missing.map((p) => p.name)).toEqual([]);
+  });
+
+  it('turns names into photo paths', () => {
+    expect(photoOf('Jarosław Żołnowski')).toBe(
+      '/speakers/jaroslaw-zolnowski.jpg',
+    );
+    expect(photoOf('Çalgan Aygün')).toBe('/speakers/calgan-aygun.jpg');
+    expect(photoOf('Łukasz Jaźwa')).toBe('/speakers/lukasz-jazwa.jpg');
   });
 });

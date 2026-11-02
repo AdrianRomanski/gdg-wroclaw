@@ -24,7 +24,11 @@
 <ul class="speakers">
   @for (speaker of t.speakers; track speaker.name) {
   <li class="speaker">
-    <gdg-avatar [initials]="initials(speaker)" [accent]="accent()" />
+    <gdg-avatar
+      [initials]="initials(speaker)"
+      [accent]="accent()"
+      [src]="speaker.photo"
+    />
     <span class="name">{{ speaker.name }}</span>
   </li>
   }

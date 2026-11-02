@@ -19,7 +19,7 @@ const meta: Meta<Avatar> = {
     docs: {
       description: {
         component:
-          "Avatar from the Figma **DevFest components** page (`Avatar`, 9024:27): a person's initials in a circle, S 40px, M 64px or L 112px, with an optional accent ring in the session track color (ADR-0028). Decorative unless given a `label`.",
+          "Avatar from the Figma **DevFest components** page (`Avatar`, 9024:27): a person's initials in a circle, S 40px, M 64px or L 112px, with an optional accent ring in the session track color (ADR-0028). With a `src`, the photo fills the circle and the initials are the fallback (ADR-0031). Decorative unless given a `label`.",
       },
     },
   },
@@ -58,6 +58,22 @@ export const Accents: Story = {
       <gdg-avatar initials="OT" size="m" accent="green" />
       <gdg-avatar initials="OT" size="m" accent="blue" />
       <gdg-avatar initials="OT" size="m" accent="contrast" />
+    `,
+  }),
+};
+
+// A stand-in photo: Storybook has no app assets.
+const PHOTO =
+  'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E%3Crect width="64" height="64" fill="%23a8c7fa"/%3E%3Ccircle cx="32" cy="26" r="12" fill="%23446eb3"/%3E%3Cellipse cx="32" cy="60" rx="22" ry="16" fill="%23446eb3"/%3E%3C/svg%3E';
+
+/** With a photo in each size and a track ring (ADR-0031). */
+export const Photo: Story = {
+  render: () => ({
+    props: { photo: PHOTO },
+    template: `
+      <gdg-avatar initials="OT" size="s" [src]="photo" />
+      <gdg-avatar initials="OT" size="m" accent="blue" [src]="photo" />
+      <gdg-avatar initials="OT" size="l" accent="red" [src]="photo" />
     `,
   }),
 };
