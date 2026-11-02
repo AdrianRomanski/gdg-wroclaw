@@ -5,9 +5,32 @@
   <gdg-tag [accent]="accent()">{{ label() }}</gdg-tag>
   }
 </div>
-<h3 class="name">{{ s.name }}</h3>
+<h3 class="name" [id]="nameId">{{ s.name }}</h3>
 @for (role of roles(); track $index) {
 <p class="role">{{ role }}</p>
 } @if (s.talk) {
 <p class="talk">{{ s.talk }}</p>
+} @if (s.bio?.length) {
+<div class="bio" [id]="bioId" [hidden]="!expanded()">
+  @for (paragraph of s.bio; track $index) {
+  <p>{{ paragraph }}</p>
+  }
+</div>
+<button
+  gdg-button
+  class="toggle"
+  type="button"
+  variant="secondary"
+  size="m"
+  [color]="buttonColor()"
+  [attr.aria-expanded]="expanded()"
+  [attr.aria-controls]="bioId"
+  [attr.aria-describedby]="nameId"
+  (click)="toggle()"
+>
+  <span
+    >{{ expanded() ? collapseLabel() : expandLabel() }}
+    <span aria-hidden="true">{{ expanded() ? '↑' : '↓' }}</span></span
+  >
+</button>
 }

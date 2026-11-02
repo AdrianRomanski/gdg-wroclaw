@@ -3,7 +3,7 @@ import {
   type Meta,
   type StoryObj,
 } from '@analogjs/storybook-angular';
-import { expect, within } from 'storybook/test';
+import { expect, userEvent, within } from 'storybook/test';
 import {
   SAMPLE_SPEAKER,
   TRACKS,
@@ -65,4 +65,31 @@ export const AllTracks: Story = {
       <gdg-speaker-card [speaker]="speaker" />
     }`,
   }),
+};
+
+/** With a bio behind the disclosure button (ADR-0030). */
+export const WithBio: Story = {
+  args: {
+    speaker: {
+      ...SAMPLE_SPEAKER,
+      bio: [
+        'Pierwszy akapit bio: doświadczenie i obecna rola.',
+        'Drugi akapit: społeczność, wystąpienia i projekty open source.',
+      ],
+    },
+  },
+  decorators: [
+    componentWrapperDecorator(
+      (story) => `<div style="max-inline-size: 19.25rem">${story}</div>`,
+    ),
+  ],
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByRole('button', { name: /Pokaż bio/ }));
+    await expect(
+      canvas.getByText(
+        'Drugi akapit: społeczność, wystąpienia i projekty open source.',
+      ),
+    ).toBeVisible();
+  },
 };

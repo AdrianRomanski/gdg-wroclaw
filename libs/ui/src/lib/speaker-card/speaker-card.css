@@ -39,3 +39,26 @@
 .talk {
   color: var(--gdg-color-brand-blue-secondary);
 }
+
+/* The bio (ADR-0030): as the Presentation card abstract, under a subtle rule. */
+.bio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-8);
+  padding-block-start: var(--gdg-spacing-8);
+  border-block-start: 1px solid var(--gdg-color-border-subtle);
+  font: var(--gdg-font-paragraph-8);
+}
+
+.bio[hidden] {
+  display: none;
+}
+
+.bio p {
+  margin: 0;
+}
+
+.toggle {
+  align-self: flex-start;
+  margin-block-start: auto;
+}

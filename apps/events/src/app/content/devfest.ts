@@ -14,6 +14,7 @@ import type {
 } from '@gdg-wroclaw/ui';
 import { TRACK_LABELS } from '@gdg-wroclaw/ui';
 import { DEVFEST_ABSTRACTS } from './devfest-abstracts';
+import { DEVFEST_BIOS } from './devfest-bios';
 
 /*
  * DevFest Wrocław 2026 (13–14 November, Uniwersytet Ekonomiczny we Wrocławiu): the agenda and
@@ -378,7 +379,13 @@ function people(
   track: Track,
   entries: readonly [string, DevfestSpeaker['role'], string?][],
 ): DevfestSpeaker[] {
-  return entries.map(([name, role, talk]) => ({ name, track, role, talk }));
+  return entries.map(([name, role, talk]) => ({
+    name,
+    track,
+    role,
+    talk,
+    bio: DEVFEST_BIOS[name],
+  }));
 }
 
 export const DEVFEST_SPEAKERS: DevfestSpeakersPageContent = {

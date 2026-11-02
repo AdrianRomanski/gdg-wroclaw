@@ -2,7 +2,8 @@ import { TestBed } from '@angular/core/testing';
 import { DevfestAgendaRoute } from './devfest-agenda-route';
 import { DevfestSpeakersRoute } from './devfest-speakers-route';
 import { DEVFEST_ABSTRACTS } from '../content/devfest-abstracts';
-import { DEVFEST_AGENDA } from '../content/devfest';
+import { DEVFEST_AGENDA, DEVFEST_SPEAKERS } from '../content/devfest';
+import { DEVFEST_BIOS } from '../content/devfest-bios';
 
 describe('DevFest routes', () => {
   const text = (element: Element | null) =>
@@ -68,5 +69,16 @@ describe('DevFest routes', () => {
     expect(text(element.querySelector('[role=radio][aria-checked=true]'))).toBe(
       'Wszyscy (35)',
     );
+  });
+
+  it('shows every bio on a speaker card', () => {
+    const names = new Set(
+      DEVFEST_SPEAKERS.speakers.groups.flatMap((g) =>
+        (g.speakers ?? []).filter((s) => s.bio).map((s) => s.name),
+      ),
+    );
+    expect(
+      Object.keys(DEVFEST_BIOS).filter((name) => !names.has(name)),
+    ).toEqual([]);
   });
 });
