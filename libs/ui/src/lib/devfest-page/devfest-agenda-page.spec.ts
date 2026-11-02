@@ -1,11 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 import { DevfestAgendaPage } from './devfest-agenda-page';
-import { SAMPLE_AGENDA_PAGE } from './devfest-page.stories-data';
+import {
+  SAMPLE_AGENDA_PAGE,
+  SAMPLE_AGENDA_PAGE_WITH_WORKSHOPS,
+} from './devfest-page.stories-data';
 
 describe('DevfestAgendaPage', () => {
-  async function setup() {
+  async function setup(content = SAMPLE_AGENDA_PAGE) {
     const fixture = TestBed.createComponent(DevfestAgendaPage);
-    fixture.componentRef.setInput('content', SAMPLE_AGENDA_PAGE);
+    fixture.componentRef.setInput('content', content);
     await fixture.whenStable();
     const element = fixture.nativeElement as HTMLElement;
     const button = (name: string) =>
@@ -100,5 +103,27 @@ describe('DevfestAgendaPage', () => {
     expect(element.querySelector('gdg-devfest-note')?.textContent).toContain(
       'Harmonogram warsztatów pojawi się tutaj.',
     );
+  });
+
+  it('shows the workshop agenda with its own rooms and the track filter', async () => {
+    const { element, click, titles } = await setup(
+      SAMPLE_AGENDA_PAGE_WITH_WORKSHOPS,
+    );
+    await click('Dzień 2: Warsztaty & Prezentacje');
+    await click('Warsztaty (Hands-on Labs)');
+    expect(element.querySelector('gdg-devfest-note')).toBeNull();
+    expect(
+      Array.from(element.querySelectorAll('.room')).map((r) =>
+        r.textContent?.trim(),
+      ),
+    ).toEqual(['Warsztaty']);
+    expect(titles('gdg-presentation-card')).toEqual([
+      'Zero Infrastructure, Zero Phishing',
+      'The Agents Optimization Lab',
+    ]);
+    await click('AI');
+    expect(titles('gdg-presentation-card')).toEqual([
+      'The Agents Optimization Lab',
+    ]);
   });
 });
