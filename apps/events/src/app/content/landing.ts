@@ -1,7 +1,7 @@
 import type { EventDay, LandingPageContent, Partner } from '@gdg-wroclaw/ui';
 import { ORGANIZERS } from './organizers';
 
-/** Upcoming events; "Read more" opens the event page (`/events/:slug`). */
+/** Upcoming events; "Read more" opens the event page (`/events/:slug`) or the DevFest agenda. */
 const EVENTS: readonly EventDay[] = [
   {
     label: '29.10',
@@ -15,6 +15,36 @@ const EVENTS: readonly EventDay[] = [
         description:
           'An evening of AI and cloud talks: building, deploying and evaluating agents on Google Cloud, and a personal mind trainer that pairs a local Gemma model with Gemini. Pizza and networking included.',
         href: '/events/ai-cloud-stream-meetup',
+      },
+    ],
+  },
+  {
+    label: '13.11',
+    ariaLabel: '13 November 2026',
+    events: [
+      {
+        title: 'DevFest Wrocław 2026 · Day 1',
+        time: '16:00–20:00',
+        dateTime: '2026-11-13T16:00+01:00',
+        location: 'Uniwersytet Ekonomiczny, Komandorska 118/120, Wrocław',
+        description:
+          'Four discussion panels (Web, Cloud, Mobile and AI), each with a 10-minute keynote, on the main stage.',
+        href: '/devfest',
+      },
+    ],
+  },
+  {
+    label: '14.11',
+    ariaLabel: '14 November 2026',
+    events: [
+      {
+        title: 'DevFest Wrocław 2026 · Day 2',
+        time: '07:30–20:15',
+        dateTime: '2026-11-14T07:30+01:00',
+        location: 'Uniwersytet Ekonomiczny, Komandorska 118/120, Wrocław',
+        description:
+          'A full day of 18 talks and 10 hands-on workshops in parallel, across AI, Web, Mobile, Cloud and Robotics.',
+        href: '/devfest?day=2',
       },
     ],
   },
