@@ -1,0 +1,52 @@
+@let a = agenda();
+<section class="agenda" [attr.aria-labelledby]="headingId">
+  <gdg-section-heading
+    [overline]="a.overline ?? ''"
+    [heading]="a.heading"
+    [description]="description() ?? ''"
+    [headingId]="headingId"
+  />
+
+  <div class="filters">
+    <gdg-segmented-control
+      class="days"
+      fullWidth
+      [label]="dayGroupLabel()"
+      [options]="dayOptions()"
+      [value]="day()"
+      (valueChange)="selectDay($event)"
+    />
+    @if (day() === 'parallel' && formatChips().length) {
+    <gdg-filter-chips
+      class="chips"
+      [label]="formatGroupLabel()"
+      [chips]="formatChips()"
+      [value]="format()"
+      (valueChange)="selectFormat($event)"
+    />
+    } @if (day() === 'main-stage' || format() === 'talks') {
+    <gdg-filter-chips
+      class="chips"
+      [label]="trackGroupLabel()"
+      [chips]="trackChips()"
+      [value]="trackValue()"
+      (valueChange)="selectTrack($event)"
+    />
+    }
+  </div>
+
+  @if (day() === 'main-stage') {
+  <gdg-main-stage-timeline
+    [sessions]="a.mainStage.sessions"
+    [track]="track()"
+  />
+  } @else if (format() === 'talks') {
+  <gdg-parallel-schedule
+    [rooms]="a.parallel.rooms"
+    [entries]="a.parallel.entries"
+    [track]="track()"
+  />
+  } @else if (a.parallel.workshopsNote) {
+  <gdg-devfest-note [text]="a.parallel.workshopsNote" />
+  }
+</section>

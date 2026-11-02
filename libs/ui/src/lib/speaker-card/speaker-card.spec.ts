@@ -41,4 +41,21 @@ describe('SpeakerCard', () => {
       'Tytuł prezentacji',
     );
   });
+
+  it('shows one line per role for someone with several roles', async () => {
+    @Component({
+      imports: [SpeakerCard],
+      template: `<gdg-speaker-card [speaker]="speaker" />`,
+    })
+    class MultiRoleHost {
+      readonly speaker: DevfestSpeaker = {
+        ...SAMPLE_SPEAKER,
+        role: ['Panelista · AI panel', 'Prelegent · AI prezentacja'],
+      };
+    }
+    const { element } = await render(MultiRoleHost);
+    expect(
+      Array.from(element.querySelectorAll('.role')).map((p) => p.textContent),
+    ).toEqual(['Panelista · AI panel', 'Prelegent · AI prezentacja']);
+  });
 });

@@ -1,0 +1,85 @@
+/*
+ * Figma: Category filters (9028:1261). Chips 8px apart, wrapping and centered. `pill` is the Nav
+ * Button (8px × 16px, Paragraph 7, 24px radius); `tag` is the Tag (6px × 12px, 1px subtle border,
+ * raised, Heading 9, 8px dot). The selected chip has the Nav Button active background.
+ */
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gdg-spacing-8);
+}
+
+.chip {
+  --_dot: var(--gdg-color-content-default);
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gdg-spacing-6);
+  margin: 0;
+  padding: var(--gdg-spacing-8) var(--gdg-spacing-16);
+  border: 1px solid transparent;
+  border-radius: var(--gdg-radius-24);
+  background: transparent;
+  color: var(--gdg-color-content-default);
+  font: var(--gdg-font-paragraph-7);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 150ms ease-out;
+}
+
+.chip[data-appearance='tag'] {
+  padding: calc(var(--gdg-spacing-6) - 1px) calc(var(--gdg-spacing-12) - 1px);
+  border-color: var(--gdg-color-border-subtle);
+  border-radius: var(--gdg-radius-full);
+  background: var(--gdg-color-background-raised);
+  font: var(--gdg-font-heading-9);
+}
+
+.chip:hover {
+  background: var(--gdg-color-background-nav-button-hover);
+}
+
+.chip[aria-pressed='true'] {
+  background: var(--gdg-color-background-nav-button-active);
+}
+
+.chip[data-appearance='tag'][aria-pressed='true'] {
+  border-color: var(--gdg-color-content-default);
+}
+
+.chip:focus-visible {
+  outline: 2px solid var(--gdg-color-content-default);
+  outline-offset: 2px;
+}
+
+.chip[data-accent='red'] {
+  --_dot: var(--gdg-color-brand-red-primary);
+}
+
+.chip[data-accent='yellow'] {
+  --_dot: var(--gdg-color-brand-yellow-primary);
+}
+
+.chip[data-accent='green'] {
+  --_dot: var(--gdg-color-brand-green-primary);
+}
+
+.chip[data-accent='blue'] {
+  --_dot: var(--gdg-color-brand-blue-primary);
+}
+
+.dot {
+  flex: none;
+  inline-size: 8px;
+  block-size: 8px;
+  border-radius: 50%;
+  background: var(--_dot);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chip {
+    transition: none;
+  }
+}

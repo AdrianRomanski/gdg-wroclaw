@@ -1,0 +1,38 @@
+/*
+ * Figma: Trainer list note (9044:3152). Card surface, 1px subtle border, 16px radius, 32px padding
+ * (20px on phones), 20px gap. A 48px raised circle with a 24px icon; the text Paragraph 7 muted.
+ */
+:host {
+  display: flex;
+  align-items: center;
+  gap: var(--gdg-spacing-20);
+  padding: calc(var(--gdg-spacing-32) - 1px);
+  border: 1px solid var(--gdg-color-border-subtle);
+  border-radius: var(--gdg-radius-16);
+  background: var(--gdg-color-background-card);
+}
+
+.symbol {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  inline-size: 3rem;
+  block-size: 3rem;
+  border-radius: var(--gdg-radius-full);
+  background: var(--gdg-color-background-raised);
+  color: var(--gdg-color-content-default);
+}
+
+.text {
+  flex: 1;
+  margin: 0;
+  color: var(--gdg-color-content-muted);
+  font: var(--gdg-font-paragraph-7);
+}
+
+@media (width < 48rem) {
+  :host {
+    padding: calc(var(--gdg-spacing-20) - 1px);
+  }
+}

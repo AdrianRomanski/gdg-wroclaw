@@ -1,0 +1,55 @@
+@let c = content();
+<section class="intro" [attr.aria-labelledby]="idPrefix">
+  <gdg-section-heading
+    [overline]="c.heading.overline ?? ''"
+    [heading]="c.heading.heading"
+    [description]="c.heading.description ?? ''"
+    [headingId]="idPrefix"
+  />
+  <gdg-segmented-control
+    class="roles"
+    fullWidth
+    [label]="roleGroupLabel()"
+    [options]="roleOptions()"
+    [value]="role()"
+    (valueChange)="selectRole($event)"
+  />
+  @if (trackChips().length) {
+  <div class="tracks">
+    <span class="tracks-label" aria-hidden="true">{{ tracksLabel() }}</span>
+    <gdg-filter-chips
+      class="chips"
+      allowEmpty
+      [label]="tracksLabel()"
+      [chips]="trackChips()"
+      [value]="track()"
+      (valueChange)="selectTrack($event)"
+    />
+  </div>
+  }
+</section>
+
+@for (entry of visibleGroups(); track entry.group.id) { @let g = entry.group;
+@if (g.heading) {
+<section class="group" [attr.aria-labelledby]="idPrefix + '-' + g.id">
+  <gdg-section-heading
+    [overline]="g.heading.overline ?? ''"
+    [heading]="g.heading.heading"
+    [description]="g.heading.description ?? ''"
+    [headingId]="idPrefix + '-' + g.id"
+  />
+  @if (g.keynote) {
+  <gdg-keynote-card [keynote]="g.keynote" />
+  } @if (entry.speakers.length) {
+  <ul class="grid">
+    @for (speaker of entry.speakers; track speaker.name) {
+    <li><gdg-speaker-card class="card" [speaker]="speaker" /></li>
+    }
+  </ul>
+  } @else if (g.emptyNote) {
+  <gdg-devfest-note [text]="g.emptyNote" />
+  }
+</section>
+} @else if (g.keynote) {
+<gdg-keynote-card [keynote]="g.keynote" />
+} }

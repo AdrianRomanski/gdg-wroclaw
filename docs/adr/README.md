@@ -40,6 +40,7 @@ For more information on ADRs, see [Architecture Decision Records](https://adr.gi
 | [ADR-0026](0026-figma-variables-export-and-token-sync.md)          | Export Figma Variables with a Development Plugin and Sync Them into the Tokens | **Accepted** | 2026-10-20 |
 | [ADR-0027](0027-light-theme-from-figma-light-mode.md)              | An Opt-in Light Theme from the Figma Light Mode                                | **Accepted** | 2026-10-20 |
 | [ADR-0028](0028-devfest-components.md)                             | DevFest Components: Tag, Avatar, Segmented Control and the Session Cards       | **Accepted** | 2026-11-02 |
+| [ADR-0029](0029-devfest-agenda-and-speaker-pages.md)               | DevFest Agenda and Speaker Pages                                               | **Accepted** | 2026-11-02 |
 
 ---
 
