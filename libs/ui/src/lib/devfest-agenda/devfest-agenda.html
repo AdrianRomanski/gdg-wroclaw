@@ -24,7 +24,8 @@
       [value]="format()"
       (valueChange)="selectFormat($event)"
     />
-    } @if (day() === 'main-stage' || format() === 'talks') {
+    } @if (day() === 'main-stage' || format() === 'talks' ||
+    a.parallel.workshops?.length) {
     <gdg-filter-chips
       class="chips"
       [label]="trackGroupLabel()"
@@ -44,6 +45,12 @@
   <gdg-parallel-schedule
     [rooms]="a.parallel.rooms"
     [entries]="a.parallel.entries"
+    [track]="track()"
+  />
+  } @else if (a.parallel.workshops?.length) {
+  <gdg-parallel-schedule
+    [rooms]="a.parallel.workshopRooms ?? a.parallel.rooms"
+    [entries]="a.parallel.workshops"
     [track]="track()"
   />
   } @else if (a.parallel.workshopsNote) {

@@ -133,6 +133,49 @@ export const SAMPLE_AGENDA_PAGE: DevfestAgendaPageContent = {
   },
 };
 
+/** Day 2 with a published workshop agenda in its own room. */
+export const SAMPLE_AGENDA_PAGE_WITH_WORKSHOPS: DevfestAgendaPageContent = {
+  ...SAMPLE_AGENDA_PAGE,
+  agenda: {
+    ...SAMPLE_AGENDA_PAGE.agenda,
+    parallel: {
+      ...SAMPLE_AGENDA_PAGE.agenda.parallel,
+      workshopsNote: undefined,
+      workshopRooms: ['Warsztaty'],
+      workshops: [
+        {
+          type: 'shared',
+          title: 'Welcome',
+          time: '07:30',
+          rooms: 'Warsztaty',
+        },
+        {
+          type: 'slot',
+          time: '08:00 - 08:45',
+          talks: [
+            talk('cloud', 'Warsztaty', 'Goran Minov', {
+              title: 'Zero Infrastructure, Zero Phishing',
+              time: '08:00 - 08:45',
+              description: undefined,
+            }),
+          ],
+        },
+        {
+          type: 'slot',
+          time: '14:30 - 15:15',
+          talks: [
+            talk('ai', 'Warsztaty', 'Michał Jabłoński', {
+              title: 'The Agents Optimization Lab',
+              time: '14:30 - 15:15',
+              description: undefined,
+            }),
+          ],
+        },
+      ],
+    },
+  },
+};
+
 export const SAMPLE_SPEAKERS_PAGE: DevfestSpeakersPageContent = {
   title: 'DevFest Wrocław 2026 — Prelegenci & Prowadzący',
   hero: { image: SAMPLE_AGENDA_PAGE.hero.image },

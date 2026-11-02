@@ -44,6 +44,10 @@ export interface DevfestParallelDay {
   talksLabel: string;
   /** E.g. "Warsztaty (Hands-on Labs)"; without it the format navigation is left out. */
   workshopsLabel?: string;
+  /** Column headers of the workshop agenda; defaults to `rooms`. */
+  workshopRooms?: readonly string[];
+  /** The workshop agenda, shown under `workshopsLabel`. */
+  workshops?: readonly DevfestParallelEntry[];
   /** Shown instead of the workshop agenda until it is published. */
   workshopsNote?: string;
 }

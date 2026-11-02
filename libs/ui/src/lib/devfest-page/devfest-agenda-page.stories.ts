@@ -12,7 +12,10 @@ import {
   SAMPLE_NAV_ACTIONS,
 } from '../navbar/site.stories-data';
 import { DevfestAgendaPage } from './devfest-agenda-page';
-import { SAMPLE_AGENDA_PAGE } from './devfest-page.stories-data';
+import {
+  SAMPLE_AGENDA_PAGE,
+  SAMPLE_AGENDA_PAGE_WITH_WORKSHOPS,
+} from './devfest-page.stories-data';
 
 const links = [
   { label: 'Agenda', href: '#agenda', current: true },
@@ -83,6 +86,20 @@ export const ParallelRooms: Story = {
     );
     await expect(
       canvas.getByText('Harmonogram warsztatów pojawi się tutaj.'),
+    ).toBeVisible();
+  },
+};
+
+/** Day 2 with the workshop agenda published: one workshop room, filtered by track. */
+export const Workshops: Story = {
+  args: { content: SAMPLE_AGENDA_PAGE_WITH_WORKSHOPS, day: 'parallel' },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(
+      canvas.getByRole('button', { name: 'Warsztaty (Hands-on Labs)' }),
+    );
+    await expect(
+      canvas.getByRole('heading', { name: 'The Agents Optimization Lab' }),
     ).toBeVisible();
   },
 };
