@@ -7,12 +7,13 @@
   [value]="'' + room()"
   (valueChange)="selectRoom($event)"
 />
-}
+} @if (rooms().length > 1) {
 <div class="rooms" aria-hidden="true">
   @for (name of rooms(); track $index) {
   <p class="room">{{ name }}</p>
   }
 </div>
+}
 
 <ol class="schedule">
   @for (row of visible(); track row.entry) { @if (row.event; as event) {

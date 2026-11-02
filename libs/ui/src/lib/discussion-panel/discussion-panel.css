@@ -4,7 +4,11 @@
  * the host box: 1px track border, 16px padding, 12px radius, avatar and name (Heading 7) then
  * the host tag; the list label Heading 7 muted, upper case; panelists stacked in equal columns
  * 24px apart. Mobile (narrower than 48rem): 20px padding, wrapping tags, Heading 4 title, the
- * host box stacked, label Heading 9, inline panelists 12px apart.
+ * host box stacked, label Heading 9.
+ *
+ * Design review (ADR-0032): the host has an M avatar, and panelists an L avatar centered over
+ * their name, so faces read at a glance; on mobile the panelists form a two-column grid instead
+ * of the Figma inline list of S avatars.
  */
 :host {
   display: block;
@@ -88,6 +92,11 @@ ul {
   min-inline-size: 0;
 }
 
+.panelists gdg-panelist {
+  align-items: center;
+  text-align: center;
+}
+
 @container (width < 48rem) {
   .panel {
     padding: calc(var(--gdg-spacing-20) - 1px);
@@ -107,13 +116,15 @@ ul {
   }
 
   .panelists {
-    flex-direction: column;
-    gap: var(--gdg-spacing-12);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gdg-spacing-20) var(--gdg-spacing-12);
   }
 
-  /* Figma Panelist Layout=Inline; overrides the host styles of the stacked default. */
-  .panelists gdg-panelist {
-    flex-direction: row;
-    align-items: center;
+  /* An odd one out sits centered under the pairs. */
+  .panelists > li:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    inline-size: 50%;
   }
 }

@@ -104,7 +104,7 @@ function panel(
 
 /**
  * A day 2 session alone in its room: a talk or a workshop. Without a title the topic is still
- * to be announced.
+ * to be announced. The time is shown once, beside the card (ADR-0032).
  */
 function session(
   time: string,
@@ -122,8 +122,6 @@ function session(
       {
         title: title ?? 'Temat: TBA',
         track,
-        time,
-        dateTime,
         speakers: [who(speaker)],
         ...(title
           ? { abstract: DEVFEST_ABSTRACTS[title] }

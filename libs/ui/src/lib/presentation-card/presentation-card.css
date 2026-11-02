@@ -3,7 +3,8 @@
  * 12px radius, 16px between rows. Meta: the track tag and the time and room (Paragraph 8) 12px
  * apart. Title Heading 5, description Paragraph 8 muted, speaker name Heading 8. Expanded: a 1px
  * track divider, "ABSTRAKT" Heading 9 muted and the text Paragraph 8, 8px apart. The time and
- * room use brand blue secondary: primary is 3.7:1 on the card (ADR-0028).
+ * room use brand blue secondary: primary is 3.7:1 on the card (ADR-0028). Design review
+ * (ADR-0032): M speaker avatars, 16px before the name.
  */
 :host {
   display: flex;
@@ -56,7 +57,7 @@
 .speaker {
   display: flex;
   align-items: center;
-  gap: var(--gdg-spacing-12);
+  gap: var(--gdg-spacing-16);
 }
 
 .name {

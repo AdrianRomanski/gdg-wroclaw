@@ -2,7 +2,8 @@
  * Figma: Schedule (9029:1260). A 132px time column and one column per room, 16px apart. Room
  * headers Heading 1 over a 1px rule, 12px apart; rows 24px apart. Below 48rem (9042:1715): a Room
  * toggle shows one room, the time Heading 7 brand blue above the talks, and a grouped block as a
- * raised box with a yellow border (time Heading 7 yellow, note Paragraph 8 muted).
+ * raised box with a yellow border (time Heading 7 yellow, note Paragraph 8 muted). A single room
+ * has no header row: the format navigation already names it (ADR-0032).
  */
 :host {
   display: flex;

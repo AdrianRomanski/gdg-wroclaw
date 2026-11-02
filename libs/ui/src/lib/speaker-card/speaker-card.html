@@ -1,7 +1,7 @@
 @let s = speaker();
 <div class="top">
   <gdg-avatar
-    size="m"
+    size="l"
     [initials]="initials()"
     [accent]="accent()"
     [src]="s.photo"
@@ -11,10 +11,14 @@
   }
 </div>
 <h3 class="name" [id]="nameId">{{ s.name }}</h3>
-@for (role of roles(); track $index) {
-<p class="role">{{ role }}</p>
-} @if (s.talk) {
-<p class="talk">{{ s.talk }}</p>
+@if (roles().length || s.talk) {
+<div class="about">
+  @for (role of roles(); track $index) {
+  <p class="role">{{ role }}</p>
+  } @if (s.talk) {
+  <p class="talk">{{ s.talk }}</p>
+  }
+</div>
 } @if (s.bio?.length) {
 <div class="bio" [id]="bioId" [hidden]="!expanded()">
   @for (paragraph of s.bio; track $index) {

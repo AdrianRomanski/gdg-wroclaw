@@ -2,7 +2,8 @@
  * Figma: Keynote card (9040:511). Brand blue, 32px padding, 16px radius, 20px between rows,
  * on-brand content. Tags 8px apart, title Heading 1, abstract Paragraph 7, the M avatar 16px
  * before the speaker name (Heading 7). Not in Figma: narrower than 40rem, 20px padding and a
- * Heading 3 title (ADR-0028).
+ * Heading 3 title (ADR-0028). Design review (ADR-0032): an L avatar, so the speaker's face reads
+ * on the brand blue.
  */
 :host {
   display: block;

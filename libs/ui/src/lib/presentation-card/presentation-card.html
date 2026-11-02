@@ -25,6 +25,7 @@
   @for (speaker of t.speakers; track speaker.name) {
   <li class="speaker">
     <gdg-avatar
+      size="m"
       [initials]="initials(speaker)"
       [accent]="accent()"
       [src]="speaker.photo"

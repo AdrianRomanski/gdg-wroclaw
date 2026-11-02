@@ -46,6 +46,17 @@ describe('DiscussionPanel', () => {
       `#${list.getAttribute('aria-labelledby')}`,
     );
     expect(label?.textContent).toBe('Paneliści / 2 osoby');
+    // Faces read at a glance: an M host and L panelists (ADR-0032).
+    expect(
+      (element.querySelector('.moderator gdg-avatar') as HTMLElement).dataset[
+        'size'
+      ],
+    ).toBe('m');
+    expect(
+      Array.from(list.querySelectorAll('gdg-avatar')).map(
+        (a) => (a as HTMLElement).dataset['size'],
+      ),
+    ).toEqual(['l', 'l']);
     expect(
       Array.from(list.querySelectorAll('.name')).map((n) => n.textContent),
     ).toEqual(['Grace Hopper', 'Alan Turing']);
