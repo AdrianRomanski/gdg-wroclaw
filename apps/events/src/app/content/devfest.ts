@@ -146,7 +146,7 @@ function event(
 const GENERIC = { trackLabel: 'Generic' } as const;
 
 const TALKS: readonly DevfestParallelEntry[] = [
-  event('shared', '07:30', 'Powitanie', TALKS_ROOM),
+  event('shared', '07:30', 'Otwarcie eventu', TALKS_ROOM),
   session(
     '08:00 - 08:30',
     'mobile',
@@ -248,7 +248,7 @@ const TALKS: readonly DevfestParallelEntry[] = [
 ];
 
 const WORKSHOPS: readonly DevfestParallelEntry[] = [
-  event('shared', '07:30', 'Powitanie', WORKSHOPS_ROOM),
+  event('shared', '07:30', 'Otwarcie eventu', WORKSHOPS_ROOM),
   session(
     '08:00 - 08:45',
     'cloud',
@@ -267,7 +267,7 @@ const WORKSHOPS: readonly DevfestParallelEntry[] = [
     'Muhammad Ahsan Ayaz',
     'Build a Travel agent using Google Gemini, MCP Servers, and Google Agent Development Kit (ADK)',
   ),
-  event('break', '11:45 - 12:30', 'PRZERWA', WORKSHOPS_ROOM),
+  event('break', '11:45 - 12:30', 'PRZERWA JEDZENIOWA', WORKSHOPS_ROOM),
   session(
     '12:30 - 13:15',
     'ai',
@@ -298,7 +298,7 @@ const WORKSHOPS: readonly DevfestParallelEntry[] = [
     'Renata Wietrzyńska',
     'Mobile A11y First Aid: A Practical Accessibility Workshop for Flutter Developers',
   ),
-  event('break', '17:15 - 18:00', 'PRZERWA', WORKSHOPS_ROOM),
+  event('break', '17:15 - 18:00', 'PRZERWA JEDZENIOWA', WORKSHOPS_ROOM),
   session(
     '18:00 - 18:45',
     'ai',
