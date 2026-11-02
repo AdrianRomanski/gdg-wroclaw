@@ -61,6 +61,16 @@ describe('Avatar', () => {
     expect(avatar.textContent?.trim()).toBe('');
   });
 
+  it('has an XL size of 224px that fits its container', async () => {
+    const { fixture, host, avatar } = await setup();
+    host.size.set('xl');
+    host.src.set('/speakers/ola-tester.jpg');
+    await fixture.whenStable();
+
+    expect(avatar.dataset['size']).toBe('xl');
+    expect(avatar.querySelector('img')?.getAttribute('width')).toBe('224');
+  });
+
   it('falls back to the initials when the photo cannot load', async () => {
     const { fixture, host, avatar } = await setup();
     host.src.set('/missing.jpg');

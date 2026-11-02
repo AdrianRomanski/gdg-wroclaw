@@ -19,13 +19,13 @@ const meta: Meta<Avatar> = {
     docs: {
       description: {
         component:
-          "Avatar from the Figma **DevFest components** page (`Avatar`, 9024:27): a person's initials in a circle, S 40px, M 64px or L 112px, with an optional accent ring in the session track color (ADR-0028). With a `src`, the photo fills the circle and the initials are the fallback (ADR-0031). Decorative unless given a `label`.",
+          "Avatar from the Figma **DevFest components** page (`Avatar`, 9024:27): a person's initials in a circle, S 40px, M 64px or L 112px, or XL 224px (ADR-0033), which shrinks to fit its container, with an optional accent ring in the session track color (ADR-0028). With a `src`, the photo fills the circle and the initials are the fallback (ADR-0031). Decorative unless given a `label`.",
       },
     },
   },
   args: { initials: 'OT', size: 's' },
   argTypes: {
-    size: { control: 'inline-radio', options: ['s', 'm', 'l'] },
+    size: { control: 'inline-radio', options: ['s', 'm', 'l', 'xl'] },
     accent: {
       control: 'select',
       options: [undefined, 'red', 'yellow', 'green', 'blue', 'contrast'],
@@ -38,13 +38,14 @@ type Story = StoryObj<Avatar>;
 
 export const Default: Story = {};
 
-/** Figma 9024:27: S, M and L. */
+/** Figma 9024:27: S, M and L, and XL (ADR-0033). */
 export const Sizes: Story = {
   render: () => ({
     template: `
       <gdg-avatar initials="OT" size="s" />
       <gdg-avatar initials="OT" size="m" />
       <gdg-avatar initials="OT" size="l" />
+      <gdg-avatar initials="OT" size="xl" />
     `,
   }),
 };
@@ -74,6 +75,7 @@ export const Photo: Story = {
       <gdg-avatar initials="OT" size="s" [src]="photo" />
       <gdg-avatar initials="OT" size="m" accent="blue" [src]="photo" />
       <gdg-avatar initials="OT" size="l" accent="red" [src]="photo" />
+      <gdg-avatar initials="OT" size="xl" accent="green" [src]="photo" />
     `,
   }),
 };

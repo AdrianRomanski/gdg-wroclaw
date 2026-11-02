@@ -8,11 +8,12 @@ import {
 } from '@angular/core';
 import type { Accent } from '../accent/accent';
 
-export type AvatarSize = 's' | 'm' | 'l';
+export type AvatarSize = 's' | 'm' | 'l' | 'xl';
 
 /**
  * Avatar from the Figma **DevFest components** page (`Avatar`, 9024:27), see ADR-0028: a
- * person's initials in a raised circle, 40px (`s`), 64px (`m`) or 112px (`l`). An `accent`
+ * person's initials in a raised circle, 40px (`s`), 64px (`m`) or 112px (`l`), and 224px (`xl`,
+ * ADR-0033), which shrinks to fit a narrower container. An `accent`
  * draws a 1.5px colored ring instead of the 1px subtle border. A `src` shows the person's photo
  * in the circle instead (ADR-0031); the initials come back if the photo cannot load.
  *
@@ -64,7 +65,7 @@ export class Avatar {
   );
 
   protected readonly pixels = computed(
-    () => ({ s: 40, m: 64, l: 112 })[this.size()],
+    () => ({ s: 40, m: 64, l: 112, xl: 224 })[this.size()],
   );
 
   constructor() {
