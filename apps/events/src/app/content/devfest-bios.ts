@@ -1,9 +1,9 @@
 /*
  * Speaker bios of DevFest Wrocław 2026, one string per paragraph, keyed by the name used in the
- * agenda (ADR-0030). From the speakers' submissions to the organizers (2026-11-02), and for Goran
- * Minov, Muhammad Ahsan Ayaz, Piotr Prus and Tarun Jain from the GDG community
- * event page (https://gdg.community.dev/e/m8h9cm/). Pawel Ostromecki's bio is shortened to the
- * professional parts of his submission.
+ * agenda (ADR-0030). From the speakers' submissions to the organizers (2026-11-02), and for
+ * Muhammad Ahsan Ayaz, Piotr Prus and Tarun Jain from the GDG community event page
+ * (https://gdg.community.dev/e/m8h9cm/). Pawel Ostromecki's and Greg Radzio's bios are shortened
+ * to the professional parts of their submissions.
  */
 export const DEVFEST_BIOS: Readonly<Record<string, readonly string[]>> = {
   'Oleksandr Tilnyi': [
@@ -59,10 +59,14 @@ export const DEVFEST_BIOS: Readonly<Record<string, readonly string[]>> = {
     'With a background as a software developer at My Security Analytics, his experience extends to analytics software for business, fraud, and government security.',
   ],
   'Goran Minov': [
-    'Goran is a Google Developer Expert (GDE) in Google Cloud (Cloud AI), Cloud AI and Cyber Security Architect.',
-    'Currently, he serves as a Senior Technical Account Manager at Okta, helping enterprises automate and secure their identity infrastructure. His passion lies in architecting secure machine learning workflows, deploying autonomous applications via the Gemini Enterprise Agent Platform, and ensuring that multi-agent systems are governed by strict Secure-by-Design and Zero Trust principles.',
+    'Goran Minov is a Cloud AI & Cyber Security Architect and Google Cloud Certified Professional, holding key Google Cloud credentials, including Professional Cloud Architect, DevOps, and Database Engineer. Specialising in the intersection of applied machine learning and Identity & Access Management (IAM), he currently serves as a Senior Technical Account Manager at Okta, where he helps customers automate and secure their identity infrastructure for modern, intelligent workloads.',
     'A passionate community leader, Goran has been an Organiser for GDG London since 2019, helping grow one of the largest developer communities in the UK. He is also the Founder of The Cloud Circuit, an independent event series connecting London’s practitioners with advanced cloud and AI deployment strategies, and a Co-founder of The Android Circuit.',
     'As a prominent speaker and technical mentor, Goran regularly shares his expertise in securing Agentic AI and implementing Zero Trust Architecture. He has delivered workshops and talks at major venues including Droidcon London and DevFest.',
+  ],
+  'Greg Radzio': [
+    'After 20 years in engineering — including CTO roles where I scaled teams, rescued legacy codebases, and watched good developers drown in process — I stopped asking “how do we ship faster” and started asking “what if the system shipped for us.”',
+    'At Lowgular I design agentic engineering systems — not AI tools bolted onto existing workflows, but end-to-end pipelines where agents prototype, implement, test, and validate features while developers govern the system that does it: knowledge bases that give agents context, agent workflows from prototype to PR, deterministic governance layers that catch drift before production, and feedback loops that make the system smarter over time.',
+    'This is the shift I’ve seen coming since Cobiro — where I took a codebase from maintainability rank D to A in 6 months while scaling the team from 3 to 30. Back then the governance layer was a human bottleneck. Now it’s the thing that makes autonomous delivery safe.',
   ],
   'Muhammad Ahsan Ayaz': [
     'Muhammad Ahsan Ayaz is a Google Developer Expert (GDE) in Angular and a seasoned Software Architect. He is a passionate open-source contributor, best known as the creator of the popular ngx-device-detector library and author of the "Angular Cookbook." Through his "Code with Ahsan" community, he shares his expertise in modern web development, AI, and productivity with thousands of developers worldwide.',
