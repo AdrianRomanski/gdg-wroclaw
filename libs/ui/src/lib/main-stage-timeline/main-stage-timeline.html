@@ -1,0 +1,20 @@
+<ol class="timeline">
+  @for (entry of visible(); track entry.session) {
+  <li class="event">
+    @if (entry.at.time; as time) {
+    <gdg-time-marker
+      class="marker"
+      [time]="time"
+      [dateTime]="entry.at.dateTime"
+    />
+    <time class="time" [attr.datetime]="entry.at.dateTime ?? null"
+      >{{ time }}</time
+    >
+    } @if (entry.keynote; as keynote) {
+    <gdg-keynote-card class="card" [keynote]="keynote" />
+    } @else if (entry.panel; as panel) {
+    <gdg-discussion-panel class="card" [panel]="panel" />
+    }
+  </li>
+  }
+</ol>

@@ -4,8 +4,10 @@ import { LANDING_SECTION_IDS } from '@gdg-wroclaw/ui';
 /** The GDG Wrocław chapter page on the official community platform. */
 export const COMMUNITY_URL = 'https://gdg.community.dev/gdg-wroclaw/';
 
-/** In-page links to the Landing page sections; they work from every route. */
+/** The DevFest agenda and speakers (ADR-0029), then in-page links to the Landing page sections, which work from every route. */
 export const NAV_LINKS: NavLink[] = [
+  { label: 'DevFest', href: '/devfest' },
+  { label: 'Speakers', href: '/devfest/speakers' },
   { label: 'Events', href: `/#${LANDING_SECTION_IDS.events}` },
   { label: 'Team', href: `/#${LANDING_SECTION_IDS.team}` },
   { label: 'Partners', href: `/#${LANDING_SECTION_IDS.partners}` },

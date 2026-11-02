@@ -1,0 +1,14 @@
+@for (chip of chips(); track chip.value) {
+<button
+  type="button"
+  class="chip"
+  [attr.data-appearance]="chip.appearance ?? 'pill'"
+  [attr.data-accent]="chip.accent ?? null"
+  [attr.aria-pressed]="chip.value === value()"
+  (click)="toggle(chip)"
+>
+  @if (chip.accent) {
+  <span class="dot" aria-hidden="true"></span>
+  } {{ chip.label }}
+</button>
+}

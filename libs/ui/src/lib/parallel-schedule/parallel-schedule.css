@@ -1,0 +1,100 @@
+/*
+ * Figma: Schedule (9029:1260). A 132px time column and one column per room, 16px apart. Room
+ * headers Heading 1 over a 1px rule, 12px apart; rows 24px apart. Below 48rem (9042:1715): a Room
+ * toggle shows one room, the time Heading 7 brand blue above the talks, and a grouped block as a
+ * raised box with a yellow border (time Heading 7 yellow, note Paragraph 8 muted).
+ */
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-24);
+  container: schedule / inline-size;
+}
+
+.rooms,
+.slot {
+  display: grid;
+  grid-template-columns: 8.25rem repeat(var(--_rooms, 2), minmax(0, 1fr));
+  gap: var(--gdg-spacing-16);
+}
+
+.room {
+  grid-column: span 1;
+  margin: 0;
+  padding-block-end: var(--gdg-spacing-12);
+  border-block-end: 1px solid var(--gdg-color-border-default);
+  font: var(--gdg-font-heading-1);
+}
+
+.room:first-child {
+  grid-column-start: 2;
+}
+
+.schedule {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-24);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.marker {
+  block-size: auto;
+}
+
+.cell {
+  display: grid;
+}
+
+.room-toggle,
+.time,
+.grouped {
+  display: none;
+}
+
+@container schedule (width < 48rem) {
+  .rooms,
+  .marker,
+  .cell--other-room,
+  .slot--other-room {
+    display: none;
+  }
+
+  .room-toggle {
+    display: flex;
+  }
+
+  .slot {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gdg-spacing-12);
+  }
+
+  .time {
+    display: block;
+    color: var(--gdg-color-brand-blue-primary);
+    font: var(--gdg-font-heading-7);
+  }
+
+  .grouped {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gdg-spacing-4);
+    margin: 0;
+    padding: calc(var(--gdg-spacing-16) - 1px);
+    border: 1px solid var(--gdg-color-brand-yellow-primary);
+    border-radius: var(--gdg-radius-8);
+    background: var(--gdg-color-background-raised);
+  }
+
+  .grouped-time {
+    color: var(--gdg-color-brand-yellow-primary);
+    font: var(--gdg-font-heading-7);
+  }
+
+  .grouped-note {
+    color: var(--gdg-color-content-muted);
+    font: var(--gdg-font-paragraph-8);
+  }
+}

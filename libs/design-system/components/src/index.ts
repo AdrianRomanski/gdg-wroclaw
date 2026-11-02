@@ -16,3 +16,5 @@ export * from './lib/tag/tag';
 export * from './lib/avatar/avatar';
 
 export * from './lib/segmented-control/segmented-control';
+
+export * from './lib/filter-chips/filter-chips';

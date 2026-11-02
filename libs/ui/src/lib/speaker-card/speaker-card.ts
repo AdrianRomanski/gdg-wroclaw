@@ -34,4 +34,9 @@ export class SpeakerCard {
   );
 
   protected readonly initials = computed(() => personInitials(this.speaker()));
+
+  protected readonly roles = computed(() => {
+    const role = this.speaker().role;
+    return typeof role === 'string' ? [role] : (role ?? []);
+  });
 }

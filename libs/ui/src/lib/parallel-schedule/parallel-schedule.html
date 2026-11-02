@@ -1,0 +1,49 @@
+@if (rooms().length > 1) {
+<gdg-segmented-control
+  class="room-toggle"
+  fullWidth
+  [label]="roomLabel()"
+  [options]="roomOptions()"
+  [value]="'' + room()"
+  (valueChange)="selectRoom($event)"
+/>
+}
+<div class="rooms" aria-hidden="true">
+  @for (name of rooms(); track $index) {
+  <p class="room">{{ name }}</p>
+  }
+</div>
+
+<ol class="schedule">
+  @for (row of visible(); track row.entry) { @if (row.event; as event) {
+  <li class="row">
+    <gdg-schedule-event [item]="event" />
+  </li>
+  } @else if (row.slot; as slot) {
+  <li class="row slot" [class.slot--other-room]="!row.cells[room()]">
+    <gdg-time-marker
+      class="marker"
+      [time]="slot.time"
+      [dateTime]="slot.dateTime"
+    />
+    @if (slot.groupedTime) {
+    <p class="grouped">
+      <span class="grouped-time">{{ slot.groupedTime }}</span>
+      @if (slot.groupedNote) {
+      <span class="grouped-note">{{ slot.groupedNote }}</span>
+      }
+    </p>
+    } @else {
+    <time class="time" [attr.datetime]="slot.dateTime ?? null"
+      >{{ slot.time }}</time
+    >
+    } @for (talk of row.cells; track $index; let i = $index) {
+    <div class="cell" [class.cell--other-room]="i !== room()">
+      @if (talk) {
+      <gdg-presentation-card [talk]="talk" />
+      }
+    </div>
+    }
+  </li>
+  } }
+</ol>

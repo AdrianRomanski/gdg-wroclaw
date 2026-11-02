@@ -6,8 +6,8 @@
   }
 </div>
 <h3 class="name">{{ s.name }}</h3>
-@if (s.role) {
-<p class="role">{{ s.role }}</p>
+@for (role of roles(); track $index) {
+<p class="role">{{ role }}</p>
 } @if (s.talk) {
 <p class="talk">{{ s.talk }}</p>
 }

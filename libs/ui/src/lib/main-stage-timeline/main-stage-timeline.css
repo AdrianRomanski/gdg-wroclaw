@@ -1,0 +1,56 @@
+/*
+ * Figma: Main stage timeline (9043:2083). Events 24px apart; an 88px time marker 24px before the
+ * card. Below 48rem (Day 1 mobile, 9043:2498): the time in Heading 7 brand blue 12px above the
+ * card, and no connector.
+ */
+:host {
+  display: block;
+  container: main-stage / inline-size;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-24);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.event {
+  display: flex;
+  align-items: stretch;
+  gap: var(--gdg-spacing-24);
+}
+
+.marker {
+  flex: none;
+  inline-size: 5.5rem;
+  block-size: auto;
+}
+
+.card {
+  flex: 1;
+  min-inline-size: 0;
+}
+
+.time {
+  display: none;
+  color: var(--gdg-color-brand-blue-primary);
+  font: var(--gdg-font-heading-7);
+}
+
+@container main-stage (width < 48rem) {
+  .event {
+    flex-direction: column;
+    gap: var(--gdg-spacing-12);
+  }
+
+  .marker {
+    display: none;
+  }
+
+  .time {
+    display: block;
+  }
+}

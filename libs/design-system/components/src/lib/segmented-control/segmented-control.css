@@ -5,6 +5,8 @@
  */
 :host {
   display: inline-flex;
+  /* Options wrap to more rows once their labels no longer fit (the Figma mobile frames). */
+  flex-wrap: wrap;
   gap: var(--gdg-spacing-4);
   padding: calc(var(--gdg-spacing-4) - 1px);
   border: 1px solid var(--gdg-color-border-subtle);
@@ -35,7 +37,8 @@
 
 :host(.gdg-segmented-control--full-width) .option {
   flex: 1 1 0;
-  min-inline-size: 0;
+  min-inline-size: fit-content;
+  white-space: normal;
 }
 
 .option:hover {

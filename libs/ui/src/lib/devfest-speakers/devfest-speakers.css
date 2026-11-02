@@ -1,0 +1,69 @@
+/*
+ * Figma: Speaker directory (9044:2755). Intro and groups 80px apart; inside the intro 32px
+ * between the heading, the Role navigation (full width) and the track chips after a "Ścieżki"
+ * label (Paragraph 8 muted). Groups: heading 40px above a grid of 308px cards, 16px apart.
+ * Below 48rem (9044:3192): 48px between groups, 24px inside, one card per row.
+ */
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-80);
+  color: var(--gdg-color-content-default);
+}
+
+.intro,
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-32);
+}
+
+.group {
+  gap: var(--gdg-spacing-40);
+}
+
+.tracks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gdg-spacing-8);
+}
+
+.tracks-label {
+  color: var(--gdg-color-content-muted);
+  font: var(--gdg-font-paragraph-8);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(17rem, 100%), 1fr));
+  gap: var(--gdg-spacing-16);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.grid > li,
+.card {
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+  box-sizing: border-box;
+}
+
+@media (width < 48rem) {
+  :host {
+    gap: var(--gdg-spacing-48);
+  }
+
+  .intro,
+  .group {
+    gap: var(--gdg-spacing-24);
+  }
+
+  .tracks,
+  .chips {
+    justify-content: flex-start;
+  }
+}

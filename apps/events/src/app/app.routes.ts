@@ -7,6 +7,20 @@ export const appRoutes: Route[] = [
     loadComponent: () => import('./pages/home-page').then((m) => m.HomePage),
   },
   {
+    path: 'devfest',
+    title: 'DevFest 2026 · GDG Wrocław',
+    loadComponent: () =>
+      import('./pages/devfest-agenda-route').then((m) => m.DevfestAgendaRoute),
+  },
+  {
+    path: 'devfest/speakers',
+    title: 'Speakers · DevFest 2026 · GDG Wrocław',
+    loadComponent: () =>
+      import('./pages/devfest-speakers-route').then(
+        (m) => m.DevfestSpeakersRoute,
+      ),
+  },
+  {
     path: 'events/:slug',
     title: 'Event · GDG Wrocław',
     loadComponent: () =>

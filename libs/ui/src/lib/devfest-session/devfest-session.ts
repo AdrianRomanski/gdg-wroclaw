@@ -58,8 +58,8 @@ export interface DevfestPanel extends Scheduled, OnTrack {
 
 /** A speaker in the speaker directory (Figma `Speaker card`). */
 export interface DevfestSpeaker extends SessionPerson, OnTrack {
-  /** E.g. "CTO, Acme · panel". */
-  role?: string;
+  /** E.g. "Panelista · AI panel"; one line per role when someone has several. */
+  role?: string | readonly string[];
   /** Title of their talk. */
   talk?: string;
 }
@@ -73,6 +73,39 @@ export interface DevfestScheduleItem {
   /** E.g. "Sala A + Sala B". */
   rooms?: string;
 }
+
+/** A row of parallel talks in the agenda (Figma `Session slot`), one cell per room. */
+export interface DevfestSessionSlot {
+  type: 'slot';
+  /** As shown in the time column, e.g. "08:00 - 08:30" or "09:10 / 09:45". */
+  time: string;
+  dateTime?: string;
+  /**
+   * Two time ranges sharing one block (Figma `Grouped session block`), shown above the talks on
+   * narrow screens, e.g. "09:10 - 09:40 / 09:45 - 10:15".
+   */
+  groupedTime?: string;
+  /** Line under `groupedTime`, e.g. "Wspólny blok harmonogramu · dwa zakresy godzin". */
+  groupedNote?: string;
+  /** One talk per room, in the order of the rooms; `null` leaves the room empty. */
+  talks: readonly (DevfestTalk | null)[];
+}
+
+/** An entry of the parallel-rooms agenda: a row of talks, or an opening or break for all. */
+export type DevfestParallelEntry = DevfestSessionSlot | DevfestScheduleItem;
+
+/** A session on the main stage: a keynote or a discussion panel. */
+export type DevfestStageSession =
+  { keynote: DevfestKeynote } | { panel: DevfestPanel };
+
+/** Tracks offered by the agenda and speaker filters, in the Figma order. */
+export const FILTER_TRACKS: readonly Track[] = [
+  'ai',
+  'web',
+  'mobile',
+  'cloud',
+  'robotics',
+];
 
 export const TRACK_LABELS: Record<Track, string> = {
   ai: 'AI',

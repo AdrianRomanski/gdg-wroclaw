@@ -1,0 +1,51 @@
+/*
+ * Figma: Hero (9043:2046). The artwork fills the width at 1280 : 719.75 with a 24px radius; 16px
+ * below, the caption (overline Heading 9 muted, title Heading 7 medium) and the button at opposite
+ * ends. On phones they stack.
+ */
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-16);
+}
+
+.image {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 1280 / 719.75;
+  border-radius: var(--gdg-radius-24);
+  object-fit: contain;
+}
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gdg-spacing-16);
+}
+
+.caption {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-4);
+  margin: 0;
+}
+
+.overline {
+  color: var(--gdg-color-content-muted);
+  font: var(--gdg-font-heading-9);
+}
+
+.title {
+  color: var(--gdg-color-content-default);
+  font: var(--gdg-font-weight-medium) var(--gdg-font-size-7) /
+    var(--gdg-line-height-7) var(--gdg-font-family-sans);
+}
+
+@media (width < 48rem) {
+  .image {
+    border-radius: var(--gdg-radius-16);
+  }
+}
