@@ -169,12 +169,7 @@ const TALKS: readonly DevfestParallelEntry[] = [
     'Beyond Chatbots: Streaming Structured JSON from Gemini to Angular Forms',
   ),
   event('break', '12:00 - 12:45', 'PRZERWA JEDZENIOWA', TALKS_ROOM),
-  session(
-    '12:45 - 13:15',
-    'web',
-    'Sam Vloeberghs',
-    'Angular × AI - the framework goes AI-native',
-  ),
+  session('12:45 - 13:15', 'web', 'Dominika Zajac'),
   session(
     '13:20 - 13:50',
     'generic',
@@ -396,7 +391,7 @@ export const DEVFEST_SPEAKERS: DevfestSpeakersPageContent = {
       overline: 'LUDZIE / DEVFEST 2026',
       heading: 'Prelegenci & Prowadzący',
       description:
-        'Poznaj osoby, które tworzą program DevFest Wrocław 2026 — 35 osób w programie.',
+        'Poznaj osoby, które tworzą program DevFest Wrocław 2026 — 34 osoby w programie.',
     },
     allLabel: 'Wszyscy',
     groups: [
@@ -457,7 +452,7 @@ export const DEVFEST_SPEAKERS: DevfestSpeakersPageContent = {
         },
         speakers: [
           ...people('web', [
-            ['Dominika Zajac', PANELIST_F('Web')],
+            ['Dominika Zajac', [PANELIST_F('Web'), PRESENTER_F('Web')]],
             [
               'Muhammad Ahsan Ayaz',
               [PANELIST('Web'), TRAINER('Web')],
@@ -554,7 +549,7 @@ export const DEVFEST_SPEAKERS: DevfestSpeakersPageContent = {
         id: 'presenters',
         label: 'Prezentacje',
         heading: {
-          overline: '5 OSÓB',
+          overline: '4 OSOBY',
           heading: 'Prelegenci prezentacji',
           description:
             'Pozostali prelegenci drugiego dnia — prezentacje na ścieżkach tematycznych.',
@@ -572,11 +567,6 @@ export const DEVFEST_SPEAKERS: DevfestSpeakersPageContent = {
               'Tomasz Flis',
               PRESENTER('Web'),
               'Beyond Chatbots: Streaming Structured JSON from Gemini to Angular Forms',
-            ],
-            [
-              'Sam Vloeberghs',
-              PRESENTER('Web'),
-              'Angular × AI - the framework goes AI-native',
             ],
           ]),
           ...people('generic', [
