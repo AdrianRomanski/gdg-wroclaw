@@ -1,0 +1,119 @@
+/*
+ * Figma: Discussion panel (9041:602). Card surface, 1px track border, 24px padding, 16px radius,
+ * 20px between rows. Tags 8px apart; a 4 × 28px track rule 12px before the title (Heading 3);
+ * the host box: 1px track border, 16px padding, 12px radius, avatar and name (Heading 7) then
+ * the host tag; the list label Heading 7 muted, upper case; panelists stacked in equal columns
+ * 24px apart. Mobile (narrower than 48rem): 20px padding, wrapping tags, Heading 4 title, the
+ * host box stacked, label Heading 9, inline panelists 12px apart.
+ */
+:host {
+  display: block;
+  container-type: inline-size;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-20);
+  padding: calc(var(--gdg-spacing-24) - 1px);
+  border: 1px solid var(--_track);
+  border-radius: var(--gdg-radius-16);
+  background: var(--gdg-color-background-card);
+  color: var(--gdg-color-content-default);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gdg-spacing-8);
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--gdg-spacing-12);
+}
+
+.rule {
+  flex: none;
+  inline-size: 4px;
+  block-size: 28px;
+  border-radius: var(--gdg-radius-4);
+  background: var(--_track);
+}
+
+.title {
+  margin: 0;
+  font: var(--gdg-font-heading-3);
+}
+
+.moderator {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--gdg-spacing-12);
+  padding: calc(var(--gdg-spacing-16) - 1px);
+  border: 1px solid var(--_track);
+  border-radius: var(--gdg-radius-12);
+}
+
+.host {
+  display: flex;
+  align-items: center;
+  gap: var(--gdg-spacing-12);
+  margin: 0;
+  font: var(--gdg-font-heading-7);
+}
+
+.list-label {
+  margin: 0;
+  color: var(--gdg-color-content-muted);
+  font: var(--gdg-font-heading-7);
+  text-transform: uppercase;
+}
+
+.panelists {
+  display: flex;
+  gap: var(--gdg-spacing-24);
+}
+
+.panelists > li {
+  flex: 1 1 0;
+  min-inline-size: 0;
+}
+
+@container (width < 48rem) {
+  .panel {
+    padding: calc(var(--gdg-spacing-20) - 1px);
+  }
+
+  .title {
+    font: var(--gdg-font-heading-4);
+  }
+
+  .moderator {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .list-label {
+    font: var(--gdg-font-heading-9);
+  }
+
+  .panelists {
+    flex-direction: column;
+    gap: var(--gdg-spacing-12);
+  }
+
+  /* Figma Panelist Layout=Inline; overrides the host styles of the stacked default. */
+  .panelists gdg-panelist {
+    flex-direction: row;
+    align-items: center;
+  }
+}

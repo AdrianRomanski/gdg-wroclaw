@@ -29,6 +29,8 @@
   --gdg-color-gray-600: #56585c; /** Subtle dividers on the Figma Event detail page; not in the Colors page palette (ADR-0025). */
   --gdg-color-gray-850: #25272a; /** Raised surfaces (cards, pills, venue band) on the Figma Event detail page; not in the Colors page palette (ADR-0025). */
   --gdg-color-navy-800: #243653; /** Blue-tinted surfaces (labels, registration band) on the Figma Event detail page; not in the Colors page palette (ADR-0025). */
+  --gdg-color-gray-800: #303030; /** Card surfaces (Figma color/background/card) on the DevFest components page; not in the Colors page palette (ADR-0028). */
+  --gdg-color-halftone-yellow-alpha-15: #ffd42726; /** Halftone yellow at 15% (Figma color/brand/yellow/secondary-subtle) on the DevFest components page (ADR-0028). */
   --gdg-layout-padding-global: 4rem; /** Horizontal page padding. */
   --gdg-layout-padding-section-large: 7rem; /** Vertical padding of a large page section. */
   --gdg-layout-padding-section-medium: 5rem; /** Vertical padding of a medium page section, e.g. the Footer (ADR-0020). */
@@ -96,6 +98,7 @@
   --gdg-color-background-nav-button-active: var(--gdg-color-off-white-alpha-20); /** Nav Button background when it links to the current page. */
   --gdg-color-background-raised: var(--gdg-color-gray-850); /** Cards, pills and bands that sit on the default background (Event detail page). Default content: 13.1:1; muted content: 7.8:1. */
   --gdg-color-background-brand-subtle: var(--gdg-color-navy-800); /** Blue-tinted labels and callouts (Event detail page). Default content: 10.7:1; brand blue secondary: 6.5:1; muted content: 6.4:1. */
+  --gdg-color-background-card: var(--gdg-color-gray-800); /** Session, speaker and panel cards (DevFest components, Figma color/background/card). Default content: 11.6:1; muted content: 6.9:1; brand blue secondary: 7.1:1 (brand blue primary only 3.7:1). */
   --gdg-color-content-default: var(--gdg-color-off-white); /** Default text and icon color on dark surfaces. */
   --gdg-color-content-disabled: var(--gdg-color-off-white-alpha-40); /** Text and icons of disabled controls. */
   --gdg-color-content-on-brand: var(--gdg-color-neutral-darkest); /** Text and icons on brand fills (Primary buttons): at least 4.5:1 (WCAG AA) on every brand primary and secondary fill. Deviates from Figma's Content/Content (ADR-0012). */
@@ -112,6 +115,7 @@
   --gdg-color-brand-green-secondary: var(--gdg-color-halftone-green); /** Green brand color, hover state. */
   --gdg-color-brand-yellow-primary: var(--gdg-color-yellow-600); /** Yellow brand color, resting state. */
   --gdg-color-brand-yellow-secondary: var(--gdg-color-halftone-yellow); /** Yellow brand color, hover state. */
+  --gdg-color-brand-yellow-secondary-subtle: var(--gdg-color-halftone-yellow-alpha-15); /** Subtle yellow fill for breaks in the agenda (DevFest Schedule event). Brand yellow primary on it over the default background: 5.9:1; default content: 10.1:1. */
   --gdg-color-brand-red-primary: var(--gdg-color-red-500); /** Red brand color, resting state. */
   --gdg-color-brand-red-secondary: var(--gdg-color-halftone-red); /** Red brand color, hover state. */
   --gdg-font-display-1: 700 3rem/3.6rem 'Google Sans Variable', 'Google Sans', system-ui, sans-serif; /** Page and section titles: Workshop topic, Contact us (ADR-0016). */

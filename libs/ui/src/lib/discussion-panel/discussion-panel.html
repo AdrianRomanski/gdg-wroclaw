@@ -1,0 +1,42 @@
+@let p = panel();
+<div class="panel">
+  <ul class="labels">
+    @if (p.time) {
+    <li>
+      <gdg-tag
+        ><time [attr.datetime]="p.dateTime ?? null">{{ p.time }}</time></gdg-tag
+      >
+    </li>
+    } @if (label()) {
+    <li>
+      <gdg-tag [accent]="accent()">{{ label() }}</gdg-tag>
+    </li>
+    } @if (p.room) {
+    <li><gdg-tag>{{ p.room }}</gdg-tag></li>
+    }
+  </ul>
+
+  <div class="title-row">
+    <span class="rule" aria-hidden="true"></span>
+    <h3 class="title">{{ p.title }}</h3>
+  </div>
+
+  @if (p.host) {
+  <div class="moderator">
+    <p class="host">
+      <gdg-avatar [initials]="hostInitials()" [accent]="accent()" />
+      <span>{{ p.host.name }}</span>
+    </p>
+    <gdg-tag>{{ hostLabel() }}</gdg-tag>
+  </div>
+  } @if (p.panelists.length) {
+  <p class="list-label" [id]="listLabelId">{{ listLabel() }}</p>
+  <ul class="panelists" [attr.aria-labelledby]="listLabelId">
+    @for (person of p.panelists; track $index) {
+    <li>
+      <gdg-panelist [person]="person" [accent]="accent()" />
+    </li>
+    }
+  </ul>
+  }
+</div>

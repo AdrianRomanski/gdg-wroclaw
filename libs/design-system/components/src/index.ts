@@ -8,3 +8,11 @@ export * from './lib/button/button';
 export * from './lib/text-input/text-input';
 
 export * from './lib/checkbox/checkbox';
+
+export * from './lib/accent/accent';
+
+export * from './lib/tag/tag';
+
+export * from './lib/avatar/avatar';
+
+export * from './lib/segmented-control/segmented-control';

@@ -1,0 +1,24 @@
+/*
+ * Figma: Time marker (9024:28). 16px top padding, the time in Heading 7 brand blue, 12px above
+ * a 1px subtle connector that fills the rest of the height.
+ */
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-12);
+  box-sizing: border-box;
+  block-size: 100%;
+  padding-block-start: var(--gdg-spacing-16);
+}
+
+.time {
+  color: var(--gdg-color-brand-blue-primary);
+  font: var(--gdg-font-heading-7);
+}
+
+.connector {
+  flex: 1;
+  inline-size: 1px;
+  min-block-size: var(--gdg-spacing-16);
+  background: var(--gdg-color-border-subtle);
+}

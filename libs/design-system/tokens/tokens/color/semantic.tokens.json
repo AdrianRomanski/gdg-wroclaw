@@ -50,6 +50,10 @@
       "brand-subtle": {
         "$value": "{color.navy-800}",
         "$description": "Blue-tinted labels and callouts (Event detail page). Default content: 10.7:1; brand blue secondary: 6.5:1; muted content: 6.4:1."
+      },
+      "card": {
+        "$value": "{color.gray-800}",
+        "$description": "Session, speaker and panel cards (DevFest components, Figma color/background/card). Default content: 11.6:1; muted content: 6.9:1; brand blue secondary: 7.1:1 (brand blue primary only 3.7:1)."
       }
     },
     "content": {
@@ -194,6 +198,10 @@
               "name": "Colors/Brand-Yellow-Secondary"
             }
           }
+        },
+        "secondary-subtle": {
+          "$value": "{color.halftone-yellow-alpha-15}",
+          "$description": "Subtle yellow fill for breaks in the agenda (DevFest Schedule event). Brand yellow primary on it over the default background: 5.9:1; default content: 10.1:1."
         }
       },
       "red": {

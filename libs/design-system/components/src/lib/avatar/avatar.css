@@ -1,0 +1,54 @@
+/*
+ * Figma: Avatar (9024:27). Raised circle, 1px subtle border; initials Heading 8 / 5 / 2 for
+ * S 40px / M 64px / L 112px. Accent rings are 1.5px (Presentation and Speaker cards).
+ */
+:host {
+  --_size: 40px;
+  --_ring: 1px solid var(--gdg-color-border-subtle);
+
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--_size);
+  block-size: var(--_size);
+  border: var(--_ring);
+  border-radius: var(--gdg-radius-full);
+  background: var(--gdg-color-background-raised);
+  color: var(--gdg-color-content-default);
+  font: var(--gdg-font-heading-8);
+  white-space: nowrap;
+}
+
+:host([data-size='m']) {
+  --_size: 64px;
+
+  font: var(--gdg-font-heading-5);
+}
+
+:host([data-size='l']) {
+  --_size: 112px;
+
+  font: var(--gdg-font-heading-2);
+}
+
+:host([data-accent='red']) {
+  --_ring: 1.5px solid var(--gdg-color-brand-red-primary);
+}
+
+:host([data-accent='yellow']) {
+  --_ring: 1.5px solid var(--gdg-color-brand-yellow-primary);
+}
+
+:host([data-accent='green']) {
+  --_ring: 1.5px solid var(--gdg-color-brand-green-primary);
+}
+
+:host([data-accent='blue']) {
+  --_ring: 1.5px solid var(--gdg-color-brand-blue-primary);
+}
+
+:host([data-accent='contrast']) {
+  --_ring: 1.5px solid var(--gdg-color-content-default);
+}

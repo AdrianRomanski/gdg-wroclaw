@@ -1,0 +1,42 @@
+/*
+ * Figma: Tag (9024:20). Raised pill with a 1px subtle border, 6px × 12px padding, an 8px dot
+ * 6px before the label, label Heading 9 (12px bold).
+ */
+:host {
+  --_dot: var(--gdg-color-content-default);
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gdg-spacing-6);
+  padding: calc(var(--gdg-spacing-6) - 1px) calc(var(--gdg-spacing-12) - 1px);
+  border: 1px solid var(--gdg-color-border-subtle);
+  border-radius: var(--gdg-radius-full);
+  background: var(--gdg-color-background-raised);
+  color: var(--gdg-color-content-default);
+  font: var(--gdg-font-heading-9);
+  white-space: nowrap;
+}
+
+:host([data-accent='red']) {
+  --_dot: var(--gdg-color-brand-red-primary);
+}
+
+:host([data-accent='yellow']) {
+  --_dot: var(--gdg-color-brand-yellow-primary);
+}
+
+:host([data-accent='green']) {
+  --_dot: var(--gdg-color-brand-green-primary);
+}
+
+:host([data-accent='blue']) {
+  --_dot: var(--gdg-color-brand-blue-primary);
+}
+
+.dot {
+  flex: none;
+  inline-size: 8px;
+  block-size: 8px;
+  border-radius: 50%;
+  background: var(--_dot);
+}

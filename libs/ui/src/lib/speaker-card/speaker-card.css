@@ -1,0 +1,41 @@
+/*
+ * Figma: Speaker card (9040:373). Card surface, 1px subtle border, 20px padding, 16px radius,
+ * 16px between rows. The avatar and the tag at opposite ends; name Heading 6, role Paragraph 8
+ * muted, talk Paragraph 8 in brand blue secondary.
+ */
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-16);
+  padding: calc(var(--gdg-spacing-20) - 1px);
+  border: 1px solid var(--gdg-color-border-subtle);
+  border-radius: var(--gdg-radius-16);
+  background: var(--gdg-color-background-card);
+  color: var(--gdg-color-content-default);
+}
+
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--gdg-spacing-12);
+}
+
+.name {
+  margin: 0;
+  font: var(--gdg-font-heading-6);
+}
+
+.role,
+.talk {
+  margin: 0;
+  font: var(--gdg-font-paragraph-8);
+}
+
+.role {
+  color: var(--gdg-color-content-muted);
+}
+
+.talk {
+  color: var(--gdg-color-brand-blue-secondary);
+}
