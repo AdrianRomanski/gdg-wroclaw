@@ -15,6 +15,8 @@ export interface SessionPerson {
   name: string;
   /** Overrides the initials taken from `name`. */
   initials?: string;
+  /** Photo URL for the avatar, ideally square; the initials are the fallback. */
+  photo?: string;
 }
 
 interface Scheduled {

@@ -19,6 +19,16 @@
   color: var(--gdg-color-content-default);
   font: var(--gdg-font-heading-8);
   white-space: nowrap;
+  overflow: hidden;
+}
+
+/* A photo (ADR-0031) fills the circle inside the ring. */
+img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  border-radius: inherit;
 }
 
 :host([data-size='m']) {

@@ -1,6 +1,11 @@
 @let s = speaker();
 <div class="top">
-  <gdg-avatar size="m" [initials]="initials()" [accent]="accent()" />
+  <gdg-avatar
+    size="m"
+    [initials]="initials()"
+    [accent]="accent()"
+    [src]="s.photo"
+  />
   @if (label()) {
   <gdg-tag [accent]="accent()">{{ label() }}</gdg-tag>
   }
