@@ -1,7 +1,7 @@
 /*
  * Speaker bios of DevFest Wrocław 2026, one string per paragraph, keyed by the name used in the
  * agenda (ADR-0030). From the speakers' submissions to the organizers (2026-11-02), and for Goran
- * Minov, Muhammad Ahsan Ayaz, Piotr Prus, Sam Vloeberghs and Tarun Jain from the GDG community
+ * Minov, Muhammad Ahsan Ayaz, Piotr Prus and Tarun Jain from the GDG community
  * event page (https://gdg.community.dev/e/m8h9cm/). Pawel Ostromecki's bio is shortened to the
  * professional parts of his submission.
  */
@@ -31,9 +31,6 @@ export const DEVFEST_BIOS: Readonly<Record<string, readonly string[]>> = {
     'I have proven experience leading frontend teams, collaborating closely with UX/UI designers, and implementing best practices that elevate both code quality and delivery speed.',
     'Core technologies I work with daily: Angular, React, TypeScript, RxJS, Tailwind CSS, Nx.',
     'I believe that great frontend development isn’t just about how a product looks, but how it makes people feel when they interact with it.',
-  ],
-  'Sam Vloeberghs': [
-    'Sam is a freelance software engineer and Internet entrepreneur, currently focusing on frontend technologies. Co-organiser of NG-BE and Angular Belgium meetup.',
   ],
   'Artur Wojnar': [
     'I’m a Solutions Architect and consultant with 15 years of experience helping development teams deliver better products. I focus on collaboratively designing solutions with clients—evaluating ideas, assessing risks, and translating them into technical requirements aligned with business goals.',

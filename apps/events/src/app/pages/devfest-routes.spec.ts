@@ -57,17 +57,17 @@ describe('DevFest routes', () => {
     }
   });
 
-  it('/devfest/speakers lists the 35 people', async () => {
+  it('/devfest/speakers lists the 34 people', async () => {
     await TestBed.configureTestingModule({
       imports: [DevfestSpeakersRoute],
     }).compileComponents();
     const fixture = TestBed.createComponent(DevfestSpeakersRoute);
     await fixture.whenStable();
     const element = fixture.nativeElement as HTMLElement;
-    expect(element.querySelectorAll('gdg-speaker-card')).toHaveLength(34);
+    expect(element.querySelectorAll('gdg-speaker-card')).toHaveLength(33);
     expect(element.querySelectorAll('gdg-keynote-card')).toHaveLength(1);
     expect(text(element.querySelector('[role=radio][aria-checked=true]'))).toBe(
-      'Wszyscy (35)',
+      'Wszyscy (34)',
     );
   });
 
