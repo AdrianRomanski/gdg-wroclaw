@@ -31,6 +31,7 @@ Chosen option: "a separate workshop schedule under the Format navigation", becau
 - **UI**: `DevfestParallelDay` gains `workshops` (entries in the same shape as the talks) and `workshopRooms`. With workshops, the Workshops format renders a `ParallelSchedule` of them, and the track chips stay available; `workshopsNote` remains the fallback before an agenda is published. A single room hides the Room toggle, as before.
 - **Content** (`apps/events/src/app/content/devfest.ts`): the real panel order (Web, Cloud, Mobile, AI) and times, the four keynotes, both day 2 schedules with full `<time datetime>` values, the RSVP link to the event page, and a speaker directory of 35 people. People keep one card with every role (panelist, presenter, trainer, keynote). Topics not yet announced stay "TBA". Names follow the event page.
 - **Abstracts** live in `devfest-abstracts.ts`, keyed by session title, copied from the event page; a test checks that every abstract is used by a session, so a renamed title fails the build instead of silently losing its abstract.
+- **Bios**: `DevfestSpeaker` gains `bio` (one string per paragraph). The Speaker card shows it behind a "Pokaż bio" disclosure button, styled like the Presentation card abstract, so the directory grid stays compact. Bios live in `devfest-bios.ts`, keyed by name, from the speakers' submissions and the event page. A test checks that every bio is on a card. Submissions are edited down to their professional content before publishing.
 - **Static content, not the API**: the community platform API is undocumented and outside our control; the programme changes rarely, and a copy in the repo is reviewed in pull requests.
 
 ### Positive Consequences
@@ -41,7 +42,8 @@ Chosen option: "a separate workshop schedule under the Format navigation", becau
 ### Negative Consequences
 
 - The content must be updated by hand when the event page changes (remaining TBA topics, the Synergy Codes keynote speaker).
-- Speaker photos, companies and bios from the event page are not shown yet; the Avatar has no image support.
+- Speaker photos and companies from the event page are not shown yet; the Avatar has no image support.
+- An expanded bio makes its card taller than the others in the row.
 
 ## Implementation Guidelines / Next Steps
 

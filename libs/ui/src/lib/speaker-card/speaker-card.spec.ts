@@ -58,4 +58,38 @@ describe('SpeakerCard', () => {
       Array.from(element.querySelectorAll('.role')).map((p) => p.textContent),
     ).toEqual(['Panelista · AI panel', 'Prelegent · AI prezentacja']);
   });
+
+  it('shows the bio behind a disclosure button', async () => {
+    @Component({
+      imports: [SpeakerCard],
+      template: `<gdg-speaker-card [speaker]="speaker" />`,
+    })
+    class BioHost {
+      readonly speaker: DevfestSpeaker = {
+        ...SAMPLE_SPEAKER,
+        bio: ['Pierwszy akapit.', 'Drugi akapit.'],
+      };
+    }
+    const { fixture, element } = await render(BioHost);
+    const button = element.querySelector('button') as HTMLButtonElement;
+    const bio = element.querySelector('.bio') as HTMLElement;
+    expect(bio.hidden).toBe(true);
+    expect(button.getAttribute('aria-expanded')).toBe('false');
+    expect(button.getAttribute('aria-controls')).toBe(bio.id);
+    expect(button.textContent).toContain('Pokaż bio');
+
+    button.click();
+    await fixture.whenStable();
+    expect(bio.hidden).toBe(false);
+    expect(button.getAttribute('aria-expanded')).toBe('true');
+    expect(button.textContent).toContain('Ukryj bio');
+    expect(
+      Array.from(bio.querySelectorAll('p')).map((p) => p.textContent),
+    ).toEqual(['Pierwszy akapit.', 'Drugi akapit.']);
+  });
+
+  it('has no bio button without a bio', async () => {
+    const { element } = await render(Host);
+    expect(element.querySelector('button')).toBeNull();
+  });
 });
