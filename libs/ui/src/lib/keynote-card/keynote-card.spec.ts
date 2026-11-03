@@ -50,4 +50,32 @@ describe('KeynoteCard', () => {
       element.querySelector('.speaker button')?.getAttribute('aria-label'),
     ).toBe('Show bio: First Last');
   });
+
+  @Component({
+    imports: [KeynoteCard],
+    template: `<gdg-keynote-card [keynote]="keynote" />`,
+  })
+  class RoboticsHost {
+    readonly keynote: DevfestKeynote = { ...SAMPLE_KEYNOTE, track: 'robotics' };
+  }
+
+  it('takes the track color and adds the track tag (ADR-0035)', async () => {
+    const { element } = await render(RoboticsHost);
+    const card = element.querySelector('gdg-keynote-card') as HTMLElement;
+    expect(card.dataset['track']).toBe('robotics');
+    expect(
+      Array.from(element.querySelectorAll('.labels gdg-tag')).map((t) =>
+        t.textContent?.trim(),
+      ),
+    ).toEqual(['15:50', 'Keynote', 'Robotics', 'Main Stage']);
+  });
+
+  it('stays brand blue without a track', async () => {
+    const { element } = await render(Host);
+    expect(
+      (element.querySelector('gdg-keynote-card') as HTMLElement).hasAttribute(
+        'data-track',
+      ),
+    ).toBe(false);
+  });
 });
