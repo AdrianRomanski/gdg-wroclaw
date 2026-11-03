@@ -15,17 +15,9 @@ import { Panelist } from '../panelist/panelist';
 
 let nextId = 0;
 
-/** "Paneliści / 5 osób", with the Polish plural of "osoba". */
+/** "Panelists / 5 people", or "1 person". */
 export function defaultPanelistsLabel(count: number): string {
-  const lastTwo = count % 100;
-  const last = count % 10;
-  const noun =
-    count === 1
-      ? 'osoba'
-      : last >= 2 && last <= 4 && (lastTwo < 12 || lastTwo > 14)
-        ? 'osoby'
-        : 'osób';
-  return `Paneliści / ${count} ${noun}`;
+  return `Panelists / ${count} ${count === 1 ? 'person' : 'people'}`;
 }
 
 /**
@@ -50,12 +42,12 @@ export class DiscussionPanel {
   readonly panel = input.required<DevfestPanel>();
 
   /** Tag next to the host. */
-  readonly hostLabel = input('Prowadzący / Host');
+  readonly hostLabel = input('Host');
 
   /** Heading of the topic list beside the host. */
-  readonly topicsLabel = input('O czym porozmawiamy');
+  readonly topicsLabel = input('What we will talk about');
 
-  /** Heading of the panelist list; defaults to "Paneliści / N osób". */
+  /** Heading of the panelist list; defaults to "Panelists / N people". */
   readonly panelistsLabel = input<string>();
 
   protected readonly label = computed(() => trackLabel(this.panel()));

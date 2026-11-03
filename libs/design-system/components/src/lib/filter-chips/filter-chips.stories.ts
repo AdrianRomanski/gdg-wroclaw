@@ -29,20 +29,20 @@ export default meta;
 
 type Story = StoryObj<FilterChips>;
 
-/** Figma Category filters (9028:1261): "Wszystkie" and the tracks. */
+/** Figma Category filters (9028:1261): "All" and the tracks. */
 export const Categories: Story = {
   args: {
-    label: 'Ścieżka',
+    label: 'Track',
     value: 'all',
     chips: [
-      { value: 'all', label: 'Wszystkie' },
+      { value: 'all', label: 'All' },
       { value: 'ai', label: 'AI', appearance: 'tag', accent: 'red' },
       { value: 'web', label: 'Web', appearance: 'tag', accent: 'yellow' },
       { value: 'mobile', label: 'Mobile', appearance: 'tag', accent: 'green' },
       { value: 'cloud', label: 'Cloud', appearance: 'tag', accent: 'blue' },
       {
         value: 'robotics',
-        label: 'Robotyka',
+        label: 'Robotics',
         appearance: 'tag',
         accent: 'contrast',
       },
@@ -53,9 +53,10 @@ export const Categories: Story = {
     const ai = canvas.getByRole('button', { name: 'AI' });
     await userEvent.click(ai);
     await expect(ai).toHaveAttribute('aria-pressed', 'true');
-    await expect(
-      canvas.getByRole('button', { name: 'Wszystkie' }),
-    ).toHaveAttribute('aria-pressed', 'false');
+    await expect(canvas.getByRole('button', { name: 'All' })).toHaveAttribute(
+      'aria-pressed',
+      'false',
+    );
   },
 };
 
@@ -65,8 +66,8 @@ export const Formats: Story = {
     label: 'Format',
     value: 'talks',
     chips: [
-      { value: 'talks', label: 'Prezentacje (2 Sale Równolegle)' },
-      { value: 'workshops', label: 'Warsztaty (Hands-on Labs)' },
+      { value: 'talks', label: 'Talks (2 Rooms in Parallel)' },
+      { value: 'workshops', label: 'Workshops (Hands-on Labs)' },
     ],
   },
 };
@@ -74,7 +75,7 @@ export const Formats: Story = {
 /** Figma Track browsing (9044:2800): tags that can be cleared again. */
 export const ClearableTags: Story = {
   args: {
-    label: 'Ścieżki',
+    label: 'Tracks',
     allowEmpty: true,
     chips: [
       { value: 'ai', label: 'AI', appearance: 'tag', accent: 'red' },

@@ -38,7 +38,7 @@ type Story = StoryObj<ScheduleEvent>;
 export const Shared: Story = {
   play: async ({ canvasElement }) => {
     await expect(
-      within(canvasElement).getByRole('heading', { name: 'Otwarcie eventu' }),
+      within(canvasElement).getByRole('heading', { name: 'Opening' }),
     ).toBeVisible();
   },
 };

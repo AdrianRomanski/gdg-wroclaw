@@ -29,9 +29,9 @@ export const DEVFEST_EVENT_URL = 'https://gdg.community.dev/e/m8h9cm/';
 
 const DAY_1 = '2026-11-13';
 const DAY_2 = '2026-11-14';
-const STAGE = 'Scena Główna';
-const TALKS_ROOM = 'Prezentacje';
-const WORKSHOPS_ROOM = 'Warsztaty';
+const STAGE = 'Main Stage';
+const TALKS_ROOM = 'Talks';
+const WORKSHOPS_ROOM = 'Workshops';
 
 const TBA: SessionPerson = { name: 'TBA', initials: 'TBA' };
 
@@ -56,10 +56,10 @@ const HERO: DevfestHeroContent = {
     src: '/banners/devfest-2026.jpg',
     alt: 'DevFest 2026 — Join us! Google Developer Groups',
   },
-  overline: 'WROCŁAW · 13–14 LISTOPADA 2026',
+  overline: 'WROCŁAW · 13–14 NOVEMBER 2026',
   caption:
-    'Google Developer Groups — DevFest 2026 · Uniwersytet Ekonomiczny we Wrocławiu',
-  action: { label: 'Zarejestruj się', href: DEVFEST_EVENT_URL },
+    'Google Developer Groups — DevFest 2026 · Wrocław University of Economics and Business',
+  action: { label: 'Register', href: DEVFEST_EVENT_URL },
 };
 
 /** "16:00" or "08:00 - 08:30" on `day` → "2026-11-13T16:00" for `<time datetime>`. */
@@ -122,12 +122,12 @@ function session(
     dateTime,
     talks: [
       {
-        title: title ?? 'Temat: TBA',
+        title: title ?? 'Topic: TBA',
         track,
         speakers: [who(speaker)],
         ...(title
           ? { abstract: DEVFEST_ABSTRACTS[title] }
-          : { description: 'Temat zostanie ogłoszony wkrótce' }),
+          : { description: 'Topic to be announced soon' }),
         ...extra,
       },
     ],
@@ -146,7 +146,7 @@ function event(
 const GENERIC = { trackLabel: 'Generic' } as const;
 
 const TALKS: readonly DevfestParallelEntry[] = [
-  event('shared', '07:30', 'Otwarcie eventu', TALKS_ROOM),
+  event('shared', '07:30', 'Opening', TALKS_ROOM),
   session(
     '08:00 - 08:30',
     'mobile',
@@ -184,7 +184,7 @@ const TALKS: readonly DevfestParallelEntry[] = [
     'Tomasz Flis',
     'Beyond Chatbots: Streaming Structured JSON from Gemini to Angular Forms',
   ),
-  event('break', '12:00 - 12:45', 'PRZERWA JEDZENIOWA', TALKS_ROOM),
+  event('break', '12:00 - 12:45', 'MEAL BREAK', TALKS_ROOM),
   session('12:45 - 13:15', 'web', 'Dominika Zajac'),
   session(
     '13:20 - 13:50',
@@ -226,7 +226,7 @@ const TALKS: readonly DevfestParallelEntry[] = [
     "Field Notes of a Technology Scout: What 200+ Tech Events Reveal About Europe's Tech Scene",
     GENERIC,
   ),
-  event('break', '17:45 - 18:30', 'PRZERWA JEDZENIOWA', TALKS_ROOM),
+  event('break', '17:45 - 18:30', 'MEAL BREAK', TALKS_ROOM),
   session(
     '18:30 - 19:00',
     'mobile',
@@ -239,16 +239,11 @@ const TALKS: readonly DevfestParallelEntry[] = [
     'Çalgan Aygün',
     'Event-Driven AI Pipelines on GCP: From Eventarc to LLMs',
   ),
-  event(
-    'shared',
-    '19:50 - 20:15',
-    'Oficjalne Zakończenie Wydarzenia',
-    TALKS_ROOM,
-  ),
+  event('shared', '19:50 - 20:15', 'Official Closing', TALKS_ROOM),
 ];
 
 const WORKSHOPS: readonly DevfestParallelEntry[] = [
-  event('shared', '07:30', 'Otwarcie eventu', WORKSHOPS_ROOM),
+  event('shared', '07:30', 'Opening', WORKSHOPS_ROOM),
   session(
     '08:00 - 08:45',
     'cloud',
@@ -267,7 +262,7 @@ const WORKSHOPS: readonly DevfestParallelEntry[] = [
     'Muhammad Ahsan Ayaz',
     'Build a Travel agent using Google Gemini, MCP Servers, and Google Agent Development Kit (ADK)',
   ),
-  event('break', '11:45 - 12:30', 'PRZERWA JEDZENIOWA', WORKSHOPS_ROOM),
+  event('break', '11:45 - 12:30', 'MEAL BREAK', WORKSHOPS_ROOM),
   session(
     '12:30 - 13:15',
     'ai',
@@ -298,7 +293,7 @@ const WORKSHOPS: readonly DevfestParallelEntry[] = [
     'Renata Wietrzyńska',
     'Mobile A11y First Aid: A Practical Accessibility Workshop for Flutter Developers',
   ),
-  event('break', '17:15 - 18:00', 'PRZERWA JEDZENIOWA', WORKSHOPS_ROOM),
+  event('break', '17:15 - 18:00', 'MEAL BREAK', WORKSHOPS_ROOM),
   session(
     '18:00 - 18:45',
     'ai',
@@ -311,7 +306,7 @@ const WORKSHOPS: readonly DevfestParallelEntry[] = [
     'Piotr Biniecki',
     'Google Agent Platform in Action: Capabilities, Patterns, and Production Architecture',
   ),
-  event('shared', '20:00', 'Oficjalne Zakończenie Wydarzenia', WORKSHOPS_ROOM),
+  event('shared', '20:00', 'Official Closing', WORKSHOPS_ROOM),
 ];
 
 const ROBOTICS_KEYNOTE = keynote(
@@ -321,15 +316,15 @@ const ROBOTICS_KEYNOTE = keynote(
 ).keynote;
 
 export const DEVFEST_AGENDA: DevfestAgendaPageContent = {
-  title: 'DevFest Wrocław 2026 — Harmonogram',
+  title: 'DevFest Wrocław 2026 — Agenda',
   hero: HERO,
   agenda: {
     overline: 'AGENDA / DEVFEST 2026',
-    heading: 'Harmonogram & Sceny',
+    heading: 'Agenda & Stages',
     mainStage: {
-      label: 'Dzień 1: Panele Dyskusyjne & Keynotes',
+      label: 'Day 1: Discussion Panels & Keynotes',
       description:
-        'Piątek, 13 listopada · Panele Dyskusyjne & Keynotes · Scena Główna',
+        'Friday, 13 November · Discussion Panels & Keynotes · Main Stage',
       sessions: [
         panel('web', '16:00', 'Adrian Romański', [
           'Dominika Zajac',
@@ -366,25 +361,22 @@ export const DEVFEST_AGENDA: DevfestAgendaPageContent = {
       ],
     },
     parallel: {
-      label: 'Dzień 2: Warsztaty & Prezentacje',
+      label: 'Day 2: Workshops & Talks',
       description:
-        'Sobota, 14 listopada · Prezentacje (20–30 min) i warsztaty (45 min) równolegle',
+        'Saturday, 14 November · Talks (20–30 min) and workshops (45 min) in parallel',
       rooms: [TALKS_ROOM],
       entries: TALKS,
-      talksLabel: 'Prezentacje',
-      workshopsLabel: 'Warsztaty (Hands-on Labs)',
+      talksLabel: 'Talks',
+      workshopsLabel: 'Workshops (Hands-on Labs)',
       workshopRooms: [WORKSHOPS_ROOM],
       workshops: WORKSHOPS,
     },
   },
 };
 
-const PANELIST = (track: string) => `Panelista · ${track} panel`;
-const PANELIST_F = (track: string) => `Panelistka · ${track} panel`;
-const PRESENTER = (track: string) => `Prelegent · ${track} prezentacja`;
-const PRESENTER_F = (track: string) => `Prelegentka · ${track} prezentacja`;
-const TRAINER = (track: string) => `Trener · ${track} warsztat`;
-const TRAINER_F = (track: string) => `Trenerka · ${track} warsztat`;
+const PANELIST = (track: string) => `Panelist · ${track} panel`;
+const PRESENTER = (track: string) => `Speaker · ${track} talk`;
+const TRAINER = (track: string) => `Trainer · ${track} workshop`;
 
 function people(
   track: Track,
@@ -399,30 +391,30 @@ function people(
 }
 
 export const DEVFEST_SPEAKERS: DevfestSpeakersPageContent = {
-  title: 'DevFest Wrocław 2026 — Prelegenci & Prowadzący',
+  title: 'DevFest Wrocław 2026 — Speakers & Hosts',
   hero: { image: HERO.image },
   speakers: {
     heading: {
-      overline: 'LUDZIE / DEVFEST 2026',
-      heading: 'Prelegenci & Prowadzący',
+      overline: 'PEOPLE / DEVFEST 2026',
+      heading: 'Speakers & Hosts',
       description:
-        'Poznaj osoby, które tworzą program DevFest Wrocław 2026 — 34 osoby w programie.',
+        'Meet the people behind the DevFest Wrocław 2026 programme: 34 people in the lineup.',
     },
-    allLabel: 'Wszyscy',
+    allLabel: 'All',
     groups: [
       {
         id: 'keynote',
         label: 'Keynote',
         heading: {
-          overline: 'DZIEŃ 1',
+          overline: 'DAY 1',
           heading: 'Keynotes',
           description:
-            'Dziesięciominutowe wystąpienia przed każdym panelem. Keynote Synergy Codes zostanie ogłoszony wkrótce.',
+            'Ten-minute talks before each panel. The Synergy Codes keynote will be announced soon.',
         },
         keynote: {
           ...ROBOTICS_KEYNOTE,
-          time: 'Dzień 1 · 16:50',
-          room: 'Robotyka / AI',
+          time: 'Day 1 · 16:50',
+          room: 'Robotics / AI',
         },
         speakers: [
           ...people('ai', [
@@ -435,39 +427,38 @@ export const DEVFEST_SPEAKERS: DevfestSpeakersPageContent = {
       },
       {
         id: 'hosts',
-        label: 'Prowadzący',
+        label: 'Hosts',
         heading: {
-          overline: '4 OSOBY',
-          heading: 'Prowadzący paneli',
-          description: 'Osoby prowadzące rozmowy na czterech ścieżkach.',
+          overline: '4 PEOPLE',
+          heading: 'Panel hosts',
+          description:
+            'The people moderating the conversations on the four tracks.',
         },
         speakers: [
-          ...people('web', [['Adrian Romański', 'Prowadzący Web panel']]),
+          ...people('web', [['Adrian Romański', 'Host · Web panel']]),
           ...people('cloud', [
             [
               'Michał Jabłoński',
-              ['Prowadzący Cloud panel', TRAINER('AI')],
+              ['Host · Cloud panel', TRAINER('AI')],
               'The Agents Optimization Lab',
             ],
           ]),
-          ...people('mobile', [
-            ['Artur Skrzypczyk', 'Prowadzący Mobile panel'],
-          ]),
-          ...people('ai', [['Dawid Perdek', 'Prowadzący AI panel']]),
+          ...people('mobile', [['Artur Skrzypczyk', 'Host · Mobile panel']]),
+          ...people('ai', [['Dawid Perdek', 'Host · AI panel']]),
         ],
       },
       {
         id: 'panelists',
-        label: 'Paneliści',
+        label: 'Panelists',
         heading: {
-          overline: '20 OSÓB',
-          heading: 'Paneliści & prelegenci',
+          overline: '20 PEOPLE',
+          heading: 'Panelists & speakers',
           description:
-            'Uczestnicy paneli. Osoby występujące także z prezentacją lub warsztatem mają wszystkie role na jednej karcie.',
+            'The panel participants. People who also give a talk or a workshop have all their roles on one card.',
         },
         speakers: [
           ...people('web', [
-            ['Dominika Zajac', [PANELIST_F('Web'), PRESENTER_F('Web')]],
+            ['Dominika Zajac', [PANELIST('Web'), PRESENTER('Web')]],
             [
               'Muhammad Ahsan Ayaz',
               [PANELIST('Web'), TRAINER('Web')],
@@ -478,7 +469,7 @@ export const DEVFEST_SPEAKERS: DevfestSpeakersPageContent = {
               [PANELIST('Web'), PRESENTER('Web')],
               'Earn Your Complexity: Designing Angular Systems That Grow With the Product',
             ],
-            ['Julia Rapczyńska', [PANELIST_F('Web'), PRESENTER_F('AI')]],
+            ['Julia Rapczyńska', [PANELIST('Web'), PRESENTER('AI')]],
             [
               'Jakub Andrzejewski',
               [PANELIST('Web'), PRESENTER('Web')],
@@ -520,7 +511,7 @@ export const DEVFEST_SPEAKERS: DevfestSpeakersPageContent = {
             ],
             [
               'Elaine Dias Batista',
-              [PANELIST_F('Mobile'), PRESENTER_F('Mobile')],
+              [PANELIST('Mobile'), PRESENTER('Mobile')],
               'The State of Voice Interactions on Android',
             ],
             [
@@ -535,7 +526,7 @@ export const DEVFEST_SPEAKERS: DevfestSpeakersPageContent = {
             ],
             [
               'Renata Wietrzyńska',
-              [PANELIST_F('Mobile'), TRAINER_F('Mobile')],
+              [PANELIST('Mobile'), TRAINER('Mobile')],
               'Mobile A11y First Aid: A Practical Accessibility Workshop for Flutter Developers',
             ],
           ]),
@@ -562,18 +553,17 @@ export const DEVFEST_SPEAKERS: DevfestSpeakersPageContent = {
       },
       {
         id: 'presenters',
-        label: 'Prezentacje',
+        label: 'Talks',
         heading: {
-          overline: '4 OSOBY',
-          heading: 'Prelegenci prezentacji',
-          description:
-            'Pozostali prelegenci drugiego dnia — prezentacje na ścieżkach tematycznych.',
+          overline: '4 PEOPLE',
+          heading: 'Talk speakers',
+          description: 'The other day 2 speakers, with talks on the tracks.',
         },
         speakers: [
           ...people('robotics', [
             [
               'Marcin Wysocki',
-              PRESENTER('Robotyka'),
+              PRESENTER('Robotics'),
               'Three AIs walk into a bar',
             ],
           ]),
@@ -600,18 +590,18 @@ export const DEVFEST_SPEAKERS: DevfestSpeakersPageContent = {
       },
       {
         id: 'trainers',
-        label: 'Trenerzy',
+        label: 'Trainers',
         heading: {
-          overline: 'DZIEŃ 2 · 3 OSOBY',
-          heading: 'Trenerzy warsztatów',
+          overline: 'DAY 2 · 3 PEOPLE',
+          heading: 'Workshop trainers',
           description:
-            'Pozostałe osoby prowadzące warsztaty. Trenerzy, którzy są też w panelach, mają tę rolę na swojej karcie.',
+            'The other workshop trainers. Trainers who are also on a panel have this role on their card.',
         },
         speakers: [
           ...people('robotics', [
             [
               'Łukasz Janiec',
-              TRAINER('Robotyka'),
+              TRAINER('Robotics'),
               'From Hallucination to Proof: Trustworthy AI Agents with Lean 4',
             ],
           ]),
@@ -623,7 +613,7 @@ export const DEVFEST_SPEAKERS: DevfestSpeakersPageContent = {
             ],
             [
               'Bianca Ximenes',
-              TRAINER_F('AI'),
+              TRAINER('AI'),
               'Scaling AI systems and teams around the world: what actually breaks and why',
             ],
           ]),

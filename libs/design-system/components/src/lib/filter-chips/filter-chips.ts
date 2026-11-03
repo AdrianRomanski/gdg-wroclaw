@@ -12,7 +12,7 @@ export interface FilterChip {
   value: string;
   label: string;
   /**
-   * `pill` (default) is the Nav Button look, e.g. "Wszystkie" or a format; `tag` is the Tag
+   * `pill` (default) is the Nav Button look, e.g. "All" or a format; `tag` is the Tag
    * look, e.g. a track.
    */
   appearance?: 'pill' | 'tag';
@@ -42,7 +42,7 @@ export class FilterChips {
   /** The selected chip's `value`; two-way bindable. */
   readonly value = model<string>();
 
-  /** Accessible name of the group, e.g. "Ścieżki". */
+  /** Accessible name of the group, e.g. "Tracks". */
   readonly label = input.required<string>();
 
   /** Pressing the selected chip again clears the selection. */

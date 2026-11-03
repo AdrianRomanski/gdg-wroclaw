@@ -26,7 +26,7 @@ interface Scheduled {
   time?: string;
   /** For `<time datetime>`, e.g. "2026-11-21T08:00". */
   dateTime?: string;
-  /** Room or stage, e.g. "Sala A". */
+  /** Room or stage, e.g. "Room A". */
   room?: string;
 }
 
@@ -66,7 +66,7 @@ export interface DevfestPanel extends Scheduled, OnTrack {
 
 /** A speaker in the speaker directory (Figma `Speaker card`). */
 export interface DevfestSpeaker extends SessionPerson, OnTrack {
-  /** E.g. "Panelista · AI panel"; one line per role when someone has several. */
+  /** E.g. "Panelist · AI panel"; one line per role when someone has several. */
   role?: string | readonly string[];
   /** Title of their talk. */
   talk?: string;
@@ -78,7 +78,7 @@ export interface DevfestScheduleItem {
   title: string;
   time: string;
   dateTime?: string;
-  /** E.g. "Sala A + Sala B". */
+  /** E.g. "Room A + Room B". */
   rooms?: string;
 }
 
@@ -93,7 +93,7 @@ export interface DevfestSessionSlot {
    * narrow screens, e.g. "09:10 - 09:40 / 09:45 - 10:15".
    */
   groupedTime?: string;
-  /** Line under `groupedTime`, e.g. "Wspólny blok harmonogramu · dwa zakresy godzin". */
+  /** Line under `groupedTime`, e.g. "Shared schedule block · two time ranges". */
   groupedNote?: string;
   /** One talk per room, in the order of the rooms; `null` leaves the room empty. */
   talks: readonly (DevfestTalk | null)[];
@@ -120,7 +120,7 @@ export const TRACK_LABELS: Record<Track, string> = {
   web: 'Web',
   mobile: 'Mobile',
   cloud: 'Cloud',
-  robotics: 'Robotyka',
+  robotics: 'Robotics',
   generic: '',
 };
 

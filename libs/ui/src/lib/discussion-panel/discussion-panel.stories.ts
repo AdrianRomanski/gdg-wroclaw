@@ -27,7 +27,7 @@ const meta: Meta<DiscussionPanel> = {
   },
   args: {
     panel: SAMPLE_PANEL,
-    hostLabel: 'Prowadzący / Host',
+    hostLabel: 'Host',
   },
 };
 export default meta;
@@ -42,7 +42,7 @@ export const Desktop: Story = {
       canvas.getByRole('heading', { name: 'AI Panel' }),
     ).toBeVisible();
     await expect(
-      canvas.getByRole('list', { name: 'Paneliści / 5 osób' }),
+      canvas.getByRole('list', { name: 'Panelists / 5 people' }),
     ).toBeVisible();
   },
 };

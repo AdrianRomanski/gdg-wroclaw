@@ -12,42 +12,42 @@ export const DEVFEST_PANELS: Readonly<
 > = {
   web: {
     description:
-      'Frameworki dogadały się co do sygnałów, przeglądarki uczą się rozmawiać z agentami AI, a coraz więcej kodu frontendu piszą asystenci. Rozmawiamy o tym, jak w 2026 roku budować szybki i dostępny web, który dobrze obsłuży zarówno ludzi, jak i agentów.',
+      'Frameworks have converged on signals, browsers are learning to talk to AI agents, and more and more frontend code is written by assistants. We talk about how to build a fast, accessible web in 2026 that works well for people and agents alike.',
     topics: [
-      'Sygnały wszędzie: Angular 22 ze stabilnymi Signal Forms, Vue i Nuxt — co to zmienia w architekturze aplikacji?',
-      'Agent-ready web: WebMCP w Chrome i strony, które udostępniają agentom swoje akcje.',
-      'Wydajność w praktyce: Core Web Vitals, Baseline i realne budżety na urządzeniach użytkowników.',
-      'Asystenci kodu we frontendzie: gdzie przyspieszają, a gdzie psują dostępność i jakość?',
+      'Signals everywhere: Angular 22 with stable Signal Forms, Vue and Nuxt — what does it change in how we architect apps?',
+      'The agent-ready web: WebMCP in Chrome and sites that expose their actions to agents.',
+      'Performance in practice: Core Web Vitals, Baseline and real budgets on real users’ devices.',
+      'Coding assistants on the frontend: where they speed us up, and where they hurt accessibility and quality.',
     ],
   },
   cloud: {
     description:
-      'Agenci AI przestali być demem i trafiają na produkcję, a chmura dostosowuje się do nich: izolowane środowiska wykonawcze, nowe modele uprawnień i rachunki liczone w tokenach. Rozmawiamy o tym, jak bezpiecznie i rozsądnym kosztem uruchamiać agentów i serwery MCP w Google Cloud.',
+      'AI agents have moved from demos to production, and the cloud is adapting to them: isolated runtimes, new permission models and bills counted in tokens. We talk about running agents and MCP servers on Google Cloud safely and at a sensible cost.',
     topics: [
-      'Gdzie uruchomić agenta: Cloud Run, GKE Agent Sandbox czy nowy Agent Compute Engine z microVM dla każdego agenta?',
-      'Tożsamość i uprawnienia agentów: IAM, najmniejsze uprawnienia i audyt tego, co agent zrobił.',
-      'Serwery MCP w firmie: jak udostępnić agentom dane i narzędzia bez otwierania wszystkiego.',
-      'FinOps dla AI: koszty GPU, tokenów i skalowania do zera — oraz lokalizacja danych w UE.',
+      'Where to run an agent: Cloud Run, GKE Agent Sandbox or the new Agent Compute Engine with a microVM per agent?',
+      'Agent identity and permissions: IAM, least privilege and auditing what an agent actually did.',
+      'MCP servers in the company: giving agents data and tools without opening everything up.',
+      'FinOps for AI: the cost of GPUs, tokens and scaling to zero — and keeping data in the EU.',
     ],
   },
   mobile: {
     description:
-      'Telefon staje się miejscem, w którym działa model, a aplikacja — narzędziem dla asystenta. Rozmawiamy o AI na urządzeniu, o tym, jak aplikacje udostępniają swoje funkcje agentom, i o tym, który stos wieloplatformowy wybrać w 2026 roku.',
+      'The phone is becoming a place where models run, and the app is becoming a tool for the assistant. We talk about on-device AI, how apps expose their features to agents, and which cross-platform stack to choose in 2026.',
     topics: [
-      'AI na urządzeniu: Gemini Nano 4 w AICore, prywatność i działanie offline kontra modele w chmurze.',
-      'Aplikacja jako narzędzie agenta: AppFunctions w Androidzie 17 i interfejsy głosowe.',
-      'Flutter czy Kotlin i Compose Multiplatform? Doświadczenia zespołów, które wybrały jedno lub drugie.',
-      'Genkit Dart 1.0 i Firebase: funkcje AI w aplikacjach Flutter od prototypu do produkcji.',
+      'On-device AI: Gemini Nano 4 in AICore, privacy and working offline versus models in the cloud.',
+      'The app as an agent’s tool: AppFunctions in Android 17 and voice interfaces.',
+      'Flutter or Kotlin and Compose Multiplatform? Stories from teams that picked one or the other.',
+      'Genkit Dart 1.0 and Firebase: AI features in Flutter apps from prototype to production.',
     ],
   },
   ai: {
     description:
-      'Zbudowanie agenta zajmuje dziś popołudnie; sprawienie, by działał niezawodnie, zajmuje miesiące. Rozmawiamy o tym, jak agenci zmieniają pracę zespołów programistycznych, jak mierzyć ich jakość i jak łączyć ich ze światem przez otwarte protokoły.',
+      'Building an agent takes an afternoon today; making it reliable takes months. We talk about how agents are changing the way engineering teams work, how to measure their quality, and how to connect them to the world through open protocols.',
     topics: [
-      'Agentic engineering: zespoły, w których agenci prototypują, testują i otwierają pull requesty — co zostaje dla ludzi?',
-      'Ewaluacje i obserwowalność: skąd wiadomo, że kolejna zmiana promptu lub modelu naprawdę pomogła?',
-      'MCP, A2A i WebMCP: otwarte protokoły łączące agentów z narzędziami, innymi agentami i stronami WWW.',
-      'Wybór modelu i koszty, a także co AI Act oznacza dla zespołów budujących AI w Europie.',
+      'Agentic engineering: teams where agents prototype, test and open pull requests — what is left for people?',
+      'Evaluations and observability: how do you know the next prompt or model change actually helped?',
+      'MCP, A2A and WebMCP: open protocols connecting agents to tools, to other agents and to websites.',
+      'Choosing models and managing cost, and what the AI Act means for teams building AI in Europe.',
     ],
   },
 };

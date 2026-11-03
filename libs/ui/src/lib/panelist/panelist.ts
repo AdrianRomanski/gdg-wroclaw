@@ -23,7 +23,7 @@ export type PanelistLayout = 'stacked' | 'inline';
 /**
  * Panelist from the Figma **DevFest components** page (`Panelist`, 9041:272), see ADR-0028: an
  * avatar (S in Figma; any Avatar size, see ADR-0032) and the name, `stacked` (desktop panel) or
- * `inline` (mobile panel). With `showBio`, a "Pokaż bio" button under the name opens the bio
+ * `inline` (mobile panel). With `showBio`, a "Show bio" button under the name opens the bio
  * (ADR-0034).
  */
 @Component({

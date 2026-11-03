@@ -1,6 +1,6 @@
 /*
  * Track color (`--_track`) for components with `data-track` on the host, see ADR-0028.
- * Robotyka uses the default content color, Generic the subtle border.
+ * Robotics uses the default content color, Generic the subtle border.
  */
 :host {
   --_track: var(--gdg-color-border-subtle);

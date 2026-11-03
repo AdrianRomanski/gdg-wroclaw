@@ -38,11 +38,11 @@ export class PresentationCard {
   /** Whether the abstract is shown; two-way bindable. */
   readonly expanded = model(false);
 
-  readonly expandLabel = input('Rozwiń abstrakt');
+  readonly expandLabel = input('Show abstract');
 
-  readonly collapseLabel = input('Zwiń abstrakt');
+  readonly collapseLabel = input('Hide abstract');
 
-  readonly abstractLabel = input('Abstrakt');
+  readonly abstractLabel = input('Abstract');
 
   protected readonly label = computed(() => trackLabel(this.talk()));
 

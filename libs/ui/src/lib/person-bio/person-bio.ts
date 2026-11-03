@@ -20,7 +20,7 @@ import {
 let nextId = 0;
 
 /**
- * A "Pokaż bio" button for a person on a DevFest session (ADR-0034) that opens their bio in a
+ * A "Show bio" button for a person on a DevFest session (ADR-0034) that opens their bio in a
  * modal dialog: the whole photo, the name (`<h2>`) and the bio paragraphs. Without a bio the
  * dialog says it is coming soon, so every person gets the same button. Escape, the close button
  * or a click on the backdrop closes it, and focus returns to the button.
@@ -41,12 +41,12 @@ export class PersonBio {
   /** A white outline button, for brand-colored surfaces such as the Keynote card. */
   readonly onBrand = input(false, { transform: booleanAttribute });
 
-  readonly openLabel = input('Pokaż bio');
+  readonly openLabel = input('Show bio');
 
-  readonly closeLabel = input('Zamknij');
+  readonly closeLabel = input('Close');
 
   /** Shown in the dialog when the person has no bio yet. */
-  readonly emptyLabel = input('Bio pojawi się wkrótce.');
+  readonly emptyLabel = input('Bio coming soon.');
 
   protected readonly initials = computed(() => personInitials(this.person()));
 

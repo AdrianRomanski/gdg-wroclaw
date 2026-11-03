@@ -57,14 +57,14 @@ export class DevfestAgenda {
   /** The day shown; two-way bindable. */
   readonly day = model<DevfestDay>('main-stage');
 
-  /** "Wszystkie" chip of the track filter. */
-  readonly allLabel = input('Wszystkie');
+  /** "All" chip of the track filter. */
+  readonly allLabel = input('All');
 
-  readonly dayGroupLabel = input('Dzień');
+  readonly dayGroupLabel = input('Day');
 
   readonly formatGroupLabel = input('Format');
 
-  readonly trackGroupLabel = input('Ścieżka');
+  readonly trackGroupLabel = input('Track');
 
   protected readonly format = signal<'talks' | 'workshops'>('talks');
 

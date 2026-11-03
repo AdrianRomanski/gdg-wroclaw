@@ -17,7 +17,7 @@ describe('SectionHeading', () => {
     imports: [SectionHeading],
     template: `<gdg-section-heading
       [overline]="overline()"
-      heading="Harmonogram & Sceny"
+      heading="Agenda & Stages"
       description="Opis sekcji"
       headingId="agenda"
     />`,
@@ -32,7 +32,7 @@ describe('SectionHeading', () => {
       'AGENDA / DEVFEST 2026',
     );
     const heading = element.querySelector('h2') as HTMLElement;
-    expect(heading.textContent).toBe('Harmonogram & Sceny');
+    expect(heading.textContent).toBe('Agenda & Stages');
     expect(heading.id).toBe('agenda');
     expect(element.querySelector('.description')?.textContent).toBe(
       'Opis sekcji',

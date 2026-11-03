@@ -26,14 +26,14 @@ export const Directory: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await expect(
-      canvas.getByRole('heading', { level: 2, name: 'Prowadzący paneli' }),
+      canvas.getByRole('heading', { level: 2, name: 'Panel hosts' }),
     ).toBeVisible();
-    await userEvent.click(canvas.getByRole('radio', { name: 'Trenerzy' }));
+    await userEvent.click(canvas.getByRole('radio', { name: 'Trainers' }));
     await expect(
-      canvas.getByText('Lista trenerów warsztatów pojawi się tutaj.'),
+      canvas.getByText('The list of workshop trainers will appear here.'),
     ).toBeVisible();
     await expect(
-      canvas.queryByRole('heading', { name: 'Prowadzący paneli' }),
+      canvas.queryByRole('heading', { name: 'Panel hosts' }),
     ).not.toBeInTheDocument();
   },
 };

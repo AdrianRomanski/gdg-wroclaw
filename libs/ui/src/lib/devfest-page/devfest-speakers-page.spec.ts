@@ -31,10 +31,10 @@ describe('DevfestSpeakersPage', () => {
   it('lists every group with the keynote first and counts everyone', async () => {
     const { element, names, headings } = await setup();
     expect(headings()).toEqual([
-      'Prelegenci & Prowadzący',
-      'Prowadzący paneli',
-      'Paneliści & prelegenci',
-      'Trenerzy warsztatów',
+      'Speakers & Hosts',
+      'Panel hosts',
+      'Panelists & speakers',
+      'Workshop trainers',
     ]);
     expect(element.querySelector('gdg-keynote-card h3')?.textContent).toBe(
       'Who Let the Dogs Out? The State of AI Robotics',
@@ -47,9 +47,9 @@ describe('DevfestSpeakersPage', () => {
     ]);
     expect(
       element.querySelector('[role=radio][aria-checked=true]')?.textContent,
-    ).toContain('Wszyscy (5)');
+    ).toContain('All (5)');
     expect(element.querySelector('gdg-devfest-note')?.textContent).toContain(
-      'Lista trenerów warsztatów pojawi się tutaj.',
+      'The list of workshop trainers will appear here.',
     );
   });
 
@@ -64,11 +64,8 @@ describe('DevfestSpeakersPage', () => {
 
   it('shows one role group', async () => {
     const { click, names, headings } = await setup();
-    await click('Paneliści');
-    expect(headings()).toEqual([
-      'Prelegenci & Prowadzący',
-      'Paneliści & prelegenci',
-    ]);
+    await click('Panelists');
+    expect(headings()).toEqual(['Speakers & Hosts', 'Panelists & speakers']);
     expect(names()).toEqual(['Paweł Kubiak', 'Mathias Weber']);
   });
 
@@ -78,7 +75,7 @@ describe('DevfestSpeakersPage', () => {
     expect(names()).toEqual(['Dawid Perdek', 'Paweł Kubiak']);
     await click('Cloud');
     expect(names()).toEqual(['Michał Jabłoński']);
-    expect(headings()).not.toContain('Paneliści & prelegenci');
+    expect(headings()).not.toContain('Panelists & speakers');
     await click('Cloud');
     expect(names()).toHaveLength(4);
   });

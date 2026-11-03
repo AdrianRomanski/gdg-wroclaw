@@ -23,7 +23,7 @@ const meta: Meta<Panelist> = {
       },
     },
   },
-  args: { person: { name: 'Imię Nazwisko', initials: 'OT' } },
+  args: { person: { name: 'First Last', initials: 'OT' } },
   argTypes: {
     layout: { control: 'inline-radio', options: ['stacked', 'inline'] },
     accent: {

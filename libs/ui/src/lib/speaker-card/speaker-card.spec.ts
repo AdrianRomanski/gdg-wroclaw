@@ -4,10 +4,10 @@ import type { DevfestSpeaker } from '../devfest-session/devfest-session';
 import { SpeakerCard } from './speaker-card';
 
 const SAMPLE_SPEAKER: DevfestSpeaker = {
-  name: 'Imię Nazwisko',
+  name: 'First Last',
   track: 'ai',
   role: 'Rola · panel',
-  talk: 'Tytuł prezentacji',
+  talk: 'Talk title',
 };
 
 async function render<T>(type: new () => T) {
@@ -35,11 +35,9 @@ describe('SpeakerCard', () => {
     expect(avatar.dataset['size']).toBe('l');
     expect(avatar.dataset['accent']).toBe('yellow');
     expect(element.querySelector('gdg-tag')?.textContent?.trim()).toBe('Web');
-    expect(element.querySelector('h3')?.textContent).toBe('Imię Nazwisko');
+    expect(element.querySelector('h3')?.textContent).toBe('First Last');
     expect(element.querySelector('.role')?.textContent).toBe('Rola · panel');
-    expect(element.querySelector('.talk')?.textContent).toBe(
-      'Tytuł prezentacji',
-    );
+    expect(element.querySelector('.talk')?.textContent).toBe('Talk title');
   });
 
   it('shows one line per role for someone with several roles', async () => {
@@ -50,13 +48,13 @@ describe('SpeakerCard', () => {
     class MultiRoleHost {
       readonly speaker: DevfestSpeaker = {
         ...SAMPLE_SPEAKER,
-        role: ['Panelista · AI panel', 'Prelegent · AI prezentacja'],
+        role: ['Panelist · AI panel', 'Speaker · AI talk'],
       };
     }
     const { element } = await render(MultiRoleHost);
     expect(
       Array.from(element.querySelectorAll('.role')).map((p) => p.textContent),
-    ).toEqual(['Panelista · AI panel', 'Prelegent · AI prezentacja']);
+    ).toEqual(['Panelist · AI panel', 'Speaker · AI talk']);
   });
 
   it('shows the bio behind a disclosure button', async () => {
@@ -67,7 +65,7 @@ describe('SpeakerCard', () => {
     class BioHost {
       readonly speaker: DevfestSpeaker = {
         ...SAMPLE_SPEAKER,
-        bio: ['Pierwszy akapit.', 'Drugi akapit.'],
+        bio: ['First paragraph.', 'Second paragraph.'],
       };
     }
     const { fixture, element } = await render(BioHost);
@@ -76,16 +74,16 @@ describe('SpeakerCard', () => {
     expect(bio.hidden).toBe(true);
     expect(button.getAttribute('aria-expanded')).toBe('false');
     expect(button.getAttribute('aria-controls')).toBe(bio.id);
-    expect(button.textContent).toContain('Pokaż bio');
+    expect(button.textContent).toContain('Show bio');
 
     button.click();
     await fixture.whenStable();
     expect(bio.hidden).toBe(false);
     expect(button.getAttribute('aria-expanded')).toBe('true');
-    expect(button.textContent).toContain('Ukryj bio');
+    expect(button.textContent).toContain('Hide bio');
     expect(
       Array.from(bio.querySelectorAll('p')).map((p) => p.textContent),
-    ).toEqual(['Pierwszy akapit.', 'Drugi akapit.']);
+    ).toEqual(['First paragraph.', 'Second paragraph.']);
   });
 
   it('has no bio button without a bio', async () => {
