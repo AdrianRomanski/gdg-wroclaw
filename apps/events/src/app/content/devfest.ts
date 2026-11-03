@@ -15,6 +15,7 @@ import type {
 import { TRACK_LABELS } from '@gdg-wroclaw/ui';
 import { DEVFEST_ABSTRACTS } from './devfest-abstracts';
 import { DEVFEST_BIOS } from './devfest-bios';
+import { DEVFEST_PANELS } from './devfest-panels';
 
 /*
  * DevFest Wrocław 2026 (13–14 November, Uniwersytet Ekonomiczny we Wrocławiu): the agenda and
@@ -96,6 +97,7 @@ function panel(
       time,
       dateTime: at(DAY_1, time),
       room: STAGE,
+      ...DEVFEST_PANELS[track],
       host: who(host),
       panelists: panelists.map(who),
     },

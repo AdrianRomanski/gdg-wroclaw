@@ -34,7 +34,7 @@ export function defaultPanelistsLabel(count: number): string {
  * after a track rule, the host in a bordered box and the panelists. Narrower than 48rem it
  * switches to the Figma mobile layout: wrapping tags, the host stacked, inline panelists.
  * ADR-0034: the host is as large as a panelist, every photo is shown whole (square), and each
- * person has a bio button.
+ * person has a bio button. Beside the host: the host tag, the panel description and its topics.
  */
 @Component({
   selector: 'gdg-discussion-panel',
@@ -51,6 +51,9 @@ export class DiscussionPanel {
 
   /** Tag next to the host. */
   readonly hostLabel = input('Prowadzący / Host');
+
+  /** Heading of the topic list beside the host. */
+  readonly topicsLabel = input('O czym porozmawiamy');
 
   /** Heading of the panelist list; defaults to "Paneliści / N osób". */
   readonly panelistsLabel = input<string>();
@@ -74,5 +77,7 @@ export class DiscussionPanel {
     Math.max(1, this.panel().panelists.length),
   );
 
-  protected readonly listLabelId = `gdg-discussion-panel-list-${nextId++}`;
+  protected readonly listLabelId = `gdg-discussion-panel-list-${nextId}`;
+
+  protected readonly topicsLabelId = `gdg-discussion-panel-topics-${nextId++}`;
 }

@@ -10,7 +10,8 @@
  * their name, so faces read at a glance; on mobile the panelists form a two-column grid instead
  * of the Figma inline list of S avatars. ADR-0033 doubles both: an L host and XL panelists,
  * which shrink to their column on narrow panels. ADR-0034: the host takes the width of one
- * panelist column so both faces are the same size, and the photos are whole squares.
+ * panelist column so both faces are the same size, and the photos are whole squares. Beside the
+ * host: the host tag, the panel description and a list of topics marked with track dashes.
  */
 :host {
   display: block;
@@ -71,8 +72,8 @@ ul {
 .moderator {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: var(--gdg-spacing-12);
+  align-items: flex-start;
+  gap: var(--gdg-spacing-12) var(--gdg-spacing-24);
   padding: calc(var(--gdg-spacing-16) - 1px);
   border: 1px solid var(--_track);
   border-radius: var(--gdg-radius-12);
@@ -84,6 +85,52 @@ ul {
   inline-size: min(var(--_column), 224px, 100%);
   align-items: center;
   text-align: center;
+}
+
+/* Beside the host (ADR-0034): the host tag, the description (Paragraph 7) and the topics. */
+.about {
+  display: flex;
+  flex: 1 1 20rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gdg-spacing-12);
+  min-inline-size: 0;
+}
+
+.description {
+  margin: 0;
+  font: var(--gdg-font-paragraph-7);
+}
+
+.topics-label {
+  margin: var(--gdg-spacing-4) 0 0;
+  color: var(--gdg-color-content-muted);
+  font: var(--gdg-font-heading-9);
+  text-transform: uppercase;
+}
+
+.topics {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-8);
+  font: var(--gdg-font-paragraph-8);
+}
+
+.topics > li {
+  position: relative;
+  padding-inline-start: var(--gdg-spacing-16);
+}
+
+/* A short track-colored dash marks each topic. */
+.topics > li::before {
+  content: '';
+  position: absolute;
+  inset-block-start: 0.7em;
+  inset-inline-start: 0;
+  inline-size: 8px;
+  block-size: 2px;
+  border-radius: var(--gdg-radius-4);
+  background: var(--_track);
 }
 
 .list-label {

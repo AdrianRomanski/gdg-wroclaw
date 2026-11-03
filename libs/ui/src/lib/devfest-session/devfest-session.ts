@@ -56,6 +56,10 @@ export interface DevfestKeynote extends Scheduled {
 /** A discussion panel (Figma `Discussion panel`). */
 export interface DevfestPanel extends Scheduled, OnTrack {
   title: string;
+  /** What the panel is about, shown beside the host (ADR-0034). */
+  description?: string;
+  /** The questions or themes the panel will discuss, shown as a list under the description. */
+  topics?: readonly string[];
   host?: SessionPerson;
   panelists: readonly SessionPerson[];
 }

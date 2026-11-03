@@ -32,7 +32,19 @@
       [accent]="accent()"
       [bioColor]="buttonColor()"
     />
-    <gdg-tag>{{ hostLabel() }}</gdg-tag>
+    <div class="about">
+      <gdg-tag>{{ hostLabel() }}</gdg-tag>
+      @if (p.description) {
+      <p class="description">{{ p.description }}</p>
+      } @if (p.topics?.length) {
+      <p class="topics-label" [id]="topicsLabelId">{{ topicsLabel() }}</p>
+      <ul class="topics" [attr.aria-labelledby]="topicsLabelId">
+        @for (topic of p.topics; track $index) {
+        <li>{{ topic }}</li>
+        }
+      </ul>
+      }
+    </div>
   </div>
   } @if (p.panelists.length) {
   <p class="list-label" [id]="listLabelId">{{ listLabel() }}</p>
