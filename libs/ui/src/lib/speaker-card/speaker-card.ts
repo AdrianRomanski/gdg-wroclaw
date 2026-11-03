@@ -18,7 +18,8 @@ let nextId = 0;
 
 /**
  * Speaker card from the Figma **DevFest components** page (`Speaker card`, 9040:373), see
- * ADR-0028: an M avatar ringed in the track color with the track tag beside it, then the name
+ * ADR-0028: an M avatar ringed in the track color with the track tag beside it (ADR-0036: the whole
+ * photo in an XL square, with the tag under it), then the name
  * (`<h3>`), the role and the talk title. A bio, when given, sits behind a disclosure button in the
  * style of the Presentation card abstract (ADR-0030).
  */

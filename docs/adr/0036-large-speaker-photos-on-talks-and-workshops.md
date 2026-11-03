@@ -8,7 +8,7 @@
 
 ## Context and Problem Statement
 
-After ADR-0034 the panels and keynotes show each person's whole photo at XL size, but the day 2 talks and workshops (Presentation card) still show M (64px) round avatars, and several talk, workshop and keynote speakers' photos were tight crops or small exports. The core team asked for bigger, high-quality photos on the talks and workshops, with the whole picture, not cropped. We have no designer available, so we decide this ourselves within the design system.
+After ADR-0034 the panels and keynotes show each person's whole photo at XL size, but the day 2 talks and workshops (Presentation card) still show M (64px) round avatars and the speaker directory (Speaker card) L (112px) ones, and several talk, workshop and keynote speakers' photos were tight crops or small exports. The core team asked for bigger, high-quality photos on the talks and workshops, with the whole picture, not cropped. We have no designer available, so we decide this ourselves within the design system.
 
 ## Decision Drivers
 
@@ -26,6 +26,7 @@ After ADR-0034 the panels and keynotes show each person's whole photo at XL size
 Chosen option: "reuse the Panelist", because it is already the stacked XL square with the name that the panels use, so talks, workshops and panels look alike.
 
 - **Presentation card**: each speaker is a `Panelist` with an XL square avatar in the track color (up to 224px), in a grid of columns at least 9rem and at most 14rem wide, so two speakers sit side by side and shrink on narrow cards.
+- **Speaker card** (speaker directory): the whole photo in an XL square (up to 224px) in the track color, with the track tag under it instead of beside it.
 - **Photos**: the talk, workshop and keynote speakers who are not on a panel are re-exported from the marketing team's originals (Speakers, Workshops and Keynotes folders, 2026-11-03), the largest one per person, uncropped, as in ADR-0034: square originals at their own size up to 800px, non-square ones contained whole on a blurred fill. The panel photos stay as exported in ADR-0034.
 
 ### Positive Consequences
@@ -42,4 +43,3 @@ Chosen option: "reuse the Panelist", because it is already the stacked XL square
 ## Implementation Guidelines / Next Steps
 
 - Ask Przemysław Nowak and Tomasz Flis for larger photos.
-- Decide whether the Speaker cards of the speaker directory move to square photos too.

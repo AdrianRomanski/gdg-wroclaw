@@ -4,7 +4,8 @@
  * muted, talk Paragraph 8 in brand blue secondary.
  *
  * Design review (ADR-0032): an L avatar so the photo carries the card, and the roles and talk
- * grouped 4px apart under the name instead of 16px rows.
+ * grouped 4px apart under the name instead of 16px rows. ADR-0036: the whole photo in an XL
+ * square (up to 224px), as on the sessions, with the track tag under it.
  */
 :host {
   display: flex;
@@ -19,8 +20,8 @@
 
 .top {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
   gap: var(--gdg-spacing-12);
 }
 

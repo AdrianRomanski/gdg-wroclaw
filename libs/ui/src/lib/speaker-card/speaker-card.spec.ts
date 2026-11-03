@@ -32,7 +32,8 @@ describe('SpeakerCard', () => {
   it('shows the avatar ringed in the track color, the tag, name, role and talk', async () => {
     const { element } = await render(Host);
     const avatar = element.querySelector('gdg-avatar') as HTMLElement;
-    expect(avatar.dataset['size']).toBe('l');
+    expect(avatar.dataset['size']).toBe('xl');
+    expect(avatar.dataset['shape']).toBe('square');
     expect(avatar.dataset['accent']).toBe('yellow');
     expect(element.querySelector('gdg-tag')?.textContent?.trim()).toBe('Web');
     expect(element.querySelector('h3')?.textContent).toBe('First Last');
