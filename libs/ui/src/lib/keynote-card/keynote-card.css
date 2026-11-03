@@ -4,7 +4,10 @@
  * before the speaker name (Heading 7). Not in Figma: narrower than 40rem, 20px padding and a
  * Heading 3 title (ADR-0028). Design review (ADR-0032): an L avatar, so the speaker's face reads
  * on the brand blue. ADR-0034: an XL square photo, as large as the panelists', with the name and
- * a white bio button beside it.
+ * a bio button beside it, outlined in the card's text color.
+ * ADR-0035: the card takes the keynote's track color where the track has a fill that reads with
+ * on-brand text: AI red, Robotics off-white (its track color, the default content color, on the
+ * dark site). Other tracks and keynotes without one stay brand blue.
  */
 :host {
   display: block;
@@ -18,8 +21,16 @@
   gap: var(--gdg-spacing-20);
   padding: var(--gdg-spacing-32);
   border-radius: var(--gdg-radius-16);
-  background: var(--gdg-color-brand-blue-primary);
+  background: var(--_fill, var(--gdg-color-brand-blue-primary));
   color: var(--gdg-color-content-on-brand);
+}
+
+:host([data-track='ai']) {
+  --_fill: var(--gdg-color-brand-red-primary);
+}
+
+:host([data-track='robotics']) {
+  --_fill: var(--gdg-color-off-white);
 }
 
 .labels {

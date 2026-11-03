@@ -50,3 +50,13 @@ export const Narrow: Story = {
     ),
   ],
 };
+
+/** Not in Figma: a Robotics keynote takes the track color, off-white (ADR-0035). */
+export const Robotics: Story = {
+  args: { keynote: { ...SAMPLE_KEYNOTE, track: 'robotics' } },
+};
+
+/** Not in Figma: an AI keynote takes the track color, red (ADR-0035). */
+export const Ai: Story = {
+  args: { keynote: { ...SAMPLE_KEYNOTE, track: 'ai' } },
+};
