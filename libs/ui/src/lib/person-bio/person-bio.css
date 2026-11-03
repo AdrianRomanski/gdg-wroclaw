@@ -7,9 +7,10 @@
   display: contents;
 }
 
+/* On a colored card the button takes the card's text color. */
 .open.on-brand {
-  border-color: var(--gdg-color-content-on-brand);
-  color: var(--gdg-color-content-on-brand);
+  border-color: currentcolor;
+  color: inherit;
 }
 
 dialog {

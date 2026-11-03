@@ -33,8 +33,6 @@ const STAGE = 'Main Stage';
 const TALKS_ROOM = 'Talks';
 const WORKSHOPS_ROOM = 'Workshops';
 
-const TBA: SessionPerson = { name: 'TBA', initials: 'TBA' };
-
 /** "Jarosław Żołnowski" → "/speakers/jaroslaw-zolnowski.jpg" (`public/speakers`, ADR-0031). */
 export function photoOf(name: string): string {
   const slug = name
@@ -71,10 +69,12 @@ function keynote(
   time: string,
   title: string,
   speaker: SessionPerson | string,
+  track?: Track,
 ): { keynote: DevfestKeynote } {
   return {
     keynote: {
       title,
+      ...(track ? { track } : {}),
       time,
       dateTime: at(DAY_1, time),
       room: STAGE,
@@ -313,6 +313,7 @@ const ROBOTICS_KEYNOTE = keynote(
   '16:50',
   'Who Let the Dogs Out? The State of AI Robotics',
   'Grzegorz Piotrowski',
+  'robotics',
 ).keynote;
 
 export const DEVFEST_AGENDA: DevfestAgendaPageContent = {
@@ -341,7 +342,7 @@ export const DEVFEST_AGENDA: DevfestAgendaPageContent = {
           'Piotr Biniecki',
           'Ankur Roy',
         ]),
-        keynote('17:50', 'RoboPies', 'Przemysław Nowak'),
+        keynote('17:50', 'RoboPies', 'Przemysław Nowak', 'robotics'),
         panel('mobile', '18:00', 'Artur Skrzypczyk', [
           'Piotr Prus',
           'Elaine Dias Batista',
@@ -349,7 +350,12 @@ export const DEVFEST_AGENDA: DevfestAgendaPageContent = {
           'Oleksandr Tilnyi',
           'Renata Wietrzyńska',
         ]),
-        keynote('18:50', 'Synergy Codes', TBA),
+        keynote(
+          '18:50',
+          'The World Is Your Next Runtime',
+          'Michal Pogoda Rosikon',
+          'robotics',
+        ),
         panel('ai', '19:00', 'Dawid Perdek', [
           'Greg Radzio',
           'Łukasz Jaźwa',
@@ -357,7 +363,12 @@ export const DEVFEST_AGENDA: DevfestAgendaPageContent = {
           'Marcin Czarkowski',
           'Tarun Jain',
         ]),
-        keynote('19:50', 'Humanoid', 'Michal Pogoda Rosikon'),
+        keynote(
+          '19:50',
+          'The Road to Optimizing the AI Bill',
+          'Łukasz Jaźwa',
+          'ai',
+        ),
       ],
     },
     parallel: {
@@ -409,7 +420,7 @@ export const DEVFEST_SPEAKERS: DevfestSpeakersPageContent = {
           overline: 'DAY 1',
           heading: 'Keynotes',
           description:
-            'Ten-minute talks before each panel. The Synergy Codes keynote will be announced soon.',
+            'Ten-minute talks between the panels, on robotics and AI.',
         },
         keynote: {
           ...ROBOTICS_KEYNOTE,
@@ -421,7 +432,11 @@ export const DEVFEST_SPEAKERS: DevfestSpeakersPageContent = {
             ['Przemysław Nowak', ['Keynote · RoboPies', PRESENTER('AI')]],
           ]),
           ...people('robotics', [
-            ['Michal Pogoda Rosikon', 'Keynote · Humanoid'],
+            [
+              'Michal Pogoda Rosikon',
+              'Keynote · Robotics',
+              'The World Is Your Next Runtime',
+            ],
           ]),
         ],
       },
@@ -536,7 +551,11 @@ export const DEVFEST_SPEAKERS: DevfestSpeakersPageContent = {
               [PANELIST('AI'), TRAINER('AI')],
               'Building the Agent Was the Easy Part',
             ],
-            ['Łukasz Jaźwa', PANELIST('AI')],
+            [
+              'Łukasz Jaźwa',
+              [PANELIST('AI'), 'Keynote · AI'],
+              'The Road to Optimizing the AI Bill',
+            ],
             [
               'Paweł Kubiak',
               [PANELIST('AI'), PRESENTER('AI')],

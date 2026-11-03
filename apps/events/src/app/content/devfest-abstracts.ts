@@ -1,8 +1,13 @@
 /*
  * Session abstracts of DevFest Wrocław 2026, as published on the GDG community event page
- * (https://gdg.community.dev/e/m8h9cm/, agenda of 2026-11-02), keyed by session title.
+ * (https://gdg.community.dev/e/m8h9cm/, agenda of 2026-11-02), keyed by session title. The
+ * keynotes of Michal Pogoda Rosikon and Łukasz Jaźwa come from the speakers (2026-11-03).
  */
 export const DEVFEST_ABSTRACTS: Readonly<Record<string, string>> = {
+  'The World Is Your Next Runtime':
+    'AI agents are learning to act across our apps, but what happens when we give them access to the physical world? Suddenly, the environment has no API documentation, actions can’t always be undone, and a small error can send your 80kg+ superhuman robot through the wall. In this keynote, we’ll explore Physical AI through a software developer’s lens: how robots learn in simulation, how vision-language-action models connect instructions to movement, and what it takes to make those capabilities work on real hardware.',
+  'The Road to Optimizing the AI Bill':
+    'Many teams choose an AI model out of habit and use it for everything, without checking what a finished task actually costs. We did the same. This talk is a case study of how we set out to optimise AI costs across our organisation. The first part covers the fundamentals that drive the bill: what you actually pay for in an agent session, why caching and context length matter more than the price per token, and why unclear requirements waste every token spent on them. The second part shows the benchmark we built for our own work. It uses real tickets from our production code, graded by tests and a blind code reviewer. It answers a question that no public leaderboard can: which models and setups work best for us, and at what cost per solved task. Some results surprised us. The cheaper model was not always the cheaper choice.',
   'Who Let the Dogs Out? The State of AI Robotics':
     'The robot dogs are out of the lab — and nobody\'s putting them back. For decades, robotics meant rigidly programmed arms on assembly lines. Now robots finally got the one thing they were always missing: a brain. Vision-Language-Action (VLA) models let a machine hear "clear the table" — and just do it, even on a table it has never seen before. No robotics PhD required — curiosity is enough. Woof.',
   'Zero Infrastructure, Zero Phishing: Building a Serverless Security Framework on GCP':

@@ -46,8 +46,11 @@ export interface DevfestTalk extends Scheduled, OnTrack {
   speakers?: readonly SessionPerson[];
 }
 
-/** A keynote (Figma `Keynote card`). */
-export interface DevfestKeynote extends Scheduled {
+/**
+ * A keynote (Figma `Keynote card`). A `track` colors the card and adds its tag (ADR-0035);
+ * without one the card is brand blue, as in Figma.
+ */
+export interface DevfestKeynote extends Scheduled, Partial<OnTrack> {
   title: string;
   abstract?: string;
   speaker?: SessionPerson;

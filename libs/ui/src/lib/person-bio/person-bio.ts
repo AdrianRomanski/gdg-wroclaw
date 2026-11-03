@@ -38,7 +38,7 @@ export class PersonBio {
   /** Button color, e.g. the session track's. */
   readonly color = input<ButtonColor>('blue');
 
-  /** A white outline button, for brand-colored surfaces such as the Keynote card. */
+  /** An outline in the surrounding text color, for colored surfaces such as the Keynote card. */
   readonly onBrand = input(false, { transform: booleanAttribute });
 
   readonly openLabel = input('Show bio');

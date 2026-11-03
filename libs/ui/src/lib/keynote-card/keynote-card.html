@@ -9,6 +9,8 @@
     </li>
     } @if (typeLabel()) {
     <li><gdg-tag>{{ typeLabel() }}</gdg-tag></li>
+    } @if (label()) {
+    <li><gdg-tag [accent]="accent()">{{ label() }}</gdg-tag></li>
     } @if (k.room) {
     <li><gdg-tag>{{ k.room }}</gdg-tag></li>
     }
