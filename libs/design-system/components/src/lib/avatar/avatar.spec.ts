@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { Avatar, type AvatarSize } from './avatar';
+import { Avatar, type AvatarShape, type AvatarSize } from './avatar';
 
 @Component({
   imports: [Avatar],
@@ -10,12 +10,14 @@ import { Avatar, type AvatarSize } from './avatar';
     accent="green"
     [label]="label()"
     [src]="src()"
+    [shape]="shape()"
   />`,
 })
 class Host {
   readonly size = signal<AvatarSize>('m');
   readonly label = signal<string | undefined>(undefined);
   readonly src = signal<string | undefined>(undefined);
+  readonly shape = signal<AvatarShape>('circle');
 }
 
 describe('Avatar', () => {
@@ -69,6 +71,15 @@ describe('Avatar', () => {
 
     expect(avatar.dataset['size']).toBe('xl');
     expect(avatar.querySelector('img')?.getAttribute('width')).toBe('224');
+  });
+
+  it('is a circle by default, or a square showing the whole photo', async () => {
+    const { fixture, host, avatar } = await setup();
+    expect(avatar.dataset['shape']).toBe('circle');
+
+    host.shape.set('square');
+    await fixture.whenStable();
+    expect(avatar.dataset['shape']).toBe('square');
   });
 
   it('falls back to the initials when the photo cannot load', async () => {

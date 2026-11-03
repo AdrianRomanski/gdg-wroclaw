@@ -79,3 +79,16 @@ export const Photo: Story = {
     `,
   }),
 };
+
+/** The square shape keeps the whole photo, not cropped round (ADR-0034). */
+export const Square: Story = {
+  render: () => ({
+    props: { photo: PHOTO },
+    template: `
+      <gdg-avatar initials="OT" size="s" shape="square" [src]="photo" />
+      <gdg-avatar initials="OT" size="m" shape="square" accent="blue" [src]="photo" />
+      <gdg-avatar initials="OT" size="l" shape="square" accent="red" [src]="photo" />
+      <gdg-avatar initials="OT" size="xl" shape="square" accent="green" [src]="photo" />
+    `,
+  }),
+};

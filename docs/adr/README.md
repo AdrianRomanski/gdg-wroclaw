@@ -45,6 +45,7 @@ For more information on ADRs, see [Architecture Decision Records](https://adr.gi
 | [ADR-0031](0031-avatar-photos-and-speaker-pictures.md)             | Avatar Photos and DevFest Speaker Pictures                                     | **Accepted** | 2026-11-02 |
 | [ADR-0032](0032-devfest-design-review-faces-first.md)              | DevFest Design Review — Faces First                                            | **Accepted** | 2026-11-02 |
 | [ADR-0033](0033-xl-avatar-for-panelists.md)                        | XL Avatar for Panelists                                                        | **Accepted** | 2026-11-02 |
+| [ADR-0034](0034-whole-photos-and-session-bios.md)                  | Whole Photos and Bios on DevFest Sessions                                      | **Accepted** | 2026-11-03 |
 
 ---
 

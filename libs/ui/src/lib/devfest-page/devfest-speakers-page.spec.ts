@@ -20,8 +20,11 @@ describe('DevfestSpeakersPage', () => {
       Array.from(element.querySelectorAll('gdg-speaker-card h3')).map(
         (h) => h.textContent,
       );
+    // Section headings, not the names in the closed bio dialogs (ADR-0034).
     const headings = () =>
-      Array.from(element.querySelectorAll('h2')).map((h) => h.textContent);
+      Array.from(element.querySelectorAll('h2:not(dialog h2)')).map(
+        (h) => h.textContent,
+      );
     return { element, click, names, headings };
   }
 

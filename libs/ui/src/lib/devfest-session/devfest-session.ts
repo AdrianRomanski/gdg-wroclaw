@@ -17,6 +17,8 @@ export interface SessionPerson {
   initials?: string;
   /** Photo URL for the avatar, ideally square; the initials are the fallback. */
   photo?: string;
+  /** About the person, one string per paragraph; shown behind a disclosure or bio button. */
+  bio?: readonly string[];
 }
 
 interface Scheduled {
@@ -64,8 +66,6 @@ export interface DevfestSpeaker extends SessionPerson, OnTrack {
   role?: string | readonly string[];
   /** Title of their talk. */
   talk?: string;
-  /** About the person, one string per paragraph; shown behind a disclosure button. */
-  bio?: readonly string[];
 }
 
 /** An agenda entry for the whole venue (Figma `Schedule event`): an opening or a break. */
