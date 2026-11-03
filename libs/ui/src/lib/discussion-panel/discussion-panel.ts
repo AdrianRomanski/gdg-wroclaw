@@ -4,11 +4,11 @@ import {
   computed,
   input,
 } from '@angular/core';
-import { Avatar, Tag } from '@gdg-wroclaw/design-system-components';
+import { Tag } from '@gdg-wroclaw/design-system-components';
 import {
   type DevfestPanel,
-  personInitials,
   TRACK_ACCENTS,
+  TRACK_BUTTON_COLORS,
   trackLabel,
 } from '../devfest-session/devfest-session';
 import { Panelist } from '../panelist/panelist';
@@ -33,10 +33,12 @@ export function defaultPanelistsLabel(count: number): string {
  * ADR-0028: bordered in the track color, tags for the time, track and room, the title (`<h3>`)
  * after a track rule, the host in a bordered box and the panelists. Narrower than 48rem it
  * switches to the Figma mobile layout: wrapping tags, the host stacked, inline panelists.
+ * ADR-0034: the host is as large as a panelist, every photo is shown whole (square), and each
+ * person has a bio button.
  */
 @Component({
   selector: 'gdg-discussion-panel',
-  imports: [Avatar, Panelist, Tag],
+  imports: [Panelist, Tag],
   templateUrl: './discussion-panel.html',
   styleUrls: ['../devfest-session/track.css', './discussion-panel.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -63,10 +65,14 @@ export class DiscussionPanel {
       defaultPanelistsLabel(this.panel().panelists.length),
   );
 
-  protected readonly hostInitials = computed(() => {
-    const host = this.panel().host;
-    return host ? personInitials(host) : '';
-  });
+  protected readonly buttonColor = computed(
+    () => TRACK_BUTTON_COLORS[this.panel().track],
+  );
+
+  /** Panelist columns on desktop; the host takes the width of one. */
+  protected readonly columns = computed(() =>
+    Math.max(1, this.panel().panelists.length),
+  );
 
   protected readonly listLabelId = `gdg-discussion-panel-list-${nextId++}`;
 }

@@ -1,0 +1,52 @@
+@let p = person();
+<button
+  gdg-button
+  class="open"
+  [class.on-brand]="onBrand()"
+  type="button"
+  variant="secondary"
+  size="m"
+  [color]="color()"
+  aria-haspopup="dialog"
+  [attr.aria-label]="openLabel() + ': ' + p.name"
+  (click)="open()"
+>
+  {{ openLabel() }}
+</button>
+<!-- A backdrop click is a pointer shortcut; Escape and the close button cover the keyboard. -->
+<!-- eslint-disable-next-line @angular-eslint/template/click-events-have-key-events, @angular-eslint/template/interactive-supports-focus -->
+<dialog
+  #dialog
+  [attr.aria-labelledby]="nameId"
+  (click)="closeOnBackdrop($event)"
+>
+  <div class="content">
+    <div class="who">
+      <gdg-avatar
+        size="l"
+        shape="square"
+        [initials]="initials()"
+        [src]="p.photo"
+      />
+      <h2 class="name" [id]="nameId">{{ p.name }}</h2>
+    </div>
+    <div class="bio">
+      @for (paragraph of paragraphs(); track $index) {
+      <p>{{ paragraph }}</p>
+      } @empty {
+      <p class="empty">{{ emptyLabel() }}</p>
+      }
+    </div>
+    <button
+      gdg-button
+      class="close"
+      type="button"
+      variant="secondary"
+      size="m"
+      [color]="color()"
+      (click)="close()"
+    >
+      {{ closeLabel() }}
+    </button>
+  </div>
+</dialog>

@@ -1,6 +1,6 @@
 /*
  * Figma: Panelist (9041:272). The avatar and the name (Heading 8) 12px apart: stacked
- * (start-aligned column) or inline (centered row).
+ * (start-aligned column) or inline (centered row). The bio button (ADR-0034) follows the name.
  */
 :host {
   display: flex;

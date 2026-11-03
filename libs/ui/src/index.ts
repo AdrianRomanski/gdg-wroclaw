@@ -39,6 +39,7 @@ export * from './lib/devfest-session/devfest-session';
 export * from './lib/discussion-panel/discussion-panel';
 export * from './lib/keynote-card/keynote-card';
 export * from './lib/panelist/panelist';
+export * from './lib/person-bio/person-bio';
 export * from './lib/presentation-card/presentation-card';
 export * from './lib/schedule-event/schedule-event';
 export * from './lib/section-heading/section-heading';

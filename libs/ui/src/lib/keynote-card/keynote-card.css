@@ -3,7 +3,8 @@
  * on-brand content. Tags 8px apart, title Heading 1, abstract Paragraph 7, the M avatar 16px
  * before the speaker name (Heading 7). Not in Figma: narrower than 40rem, 20px padding and a
  * Heading 3 title (ADR-0028). Design review (ADR-0032): an L avatar, so the speaker's face reads
- * on the brand blue.
+ * on the brand blue. ADR-0034: an XL square photo, as large as the panelists', with the name and
+ * a white bio button beside it.
  */
 :host {
   display: block;
@@ -43,9 +44,39 @@
 .speaker {
   display: flex;
   align-items: center;
-  gap: var(--gdg-spacing-16);
-  margin: 0;
+  gap: var(--gdg-spacing-20);
+  inline-size: 100%;
+}
+
+/*
+ * As wide as a panelist column in a five-person Discussion panel of the same width (24px padding
+ * and gaps), so the keynote speaker and the panelists are the same size; two columns on mobile.
+ */
+.photo {
+  flex: none;
+  inline-size: calc(
+    (100cqi - 2 * var(--gdg-spacing-24) - 4 * var(--gdg-spacing-24)) / 5
+  );
+  max-inline-size: 224px;
+}
+
+.who {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gdg-spacing-12);
+}
+
+.name {
   font: var(--gdg-font-heading-7);
+}
+
+@container (width < 48rem) {
+  .photo {
+    inline-size: calc(
+      (100cqi - 2 * var(--gdg-spacing-20) - var(--gdg-spacing-12)) / 2
+    );
+  }
 }
 
 @container (width < 40rem) {

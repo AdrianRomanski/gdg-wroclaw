@@ -3,10 +3,12 @@
  * S 40px / M 64px / L 112px. Accent rings are 1.5px (Presentation and Speaker cards).
  * XL (ADR-0033) is 224px with Heading 1 initials, and shrinks with a narrower container, staying
  * round; its ring is 2px so it keeps its weight next to the larger photo.
+ * The square shape (ADR-0034) keeps the photo whole: a rounded square, radius growing with size.
  */
 :host {
   --_size: 40px;
   --_ring: 1px solid var(--gdg-color-border-subtle);
+  --_radius: var(--gdg-radius-full);
 
   box-sizing: border-box;
   display: inline-flex;
@@ -16,7 +18,7 @@
   inline-size: var(--_size);
   block-size: var(--_size);
   border: var(--_ring);
-  border-radius: var(--gdg-radius-full);
+  border-radius: var(--_radius);
   background: var(--gdg-color-background-raised);
   color: var(--gdg-color-content-default);
   font: var(--gdg-font-heading-8);
@@ -53,6 +55,19 @@ img {
   aspect-ratio: 1;
   border-width: 2px;
   font: var(--gdg-font-heading-1);
+}
+
+:host([data-shape='square']) {
+  --_radius: var(--gdg-radius-8);
+}
+
+:host([data-shape='square'][data-size='m']) {
+  --_radius: var(--gdg-radius-12);
+}
+
+:host([data-shape='square'][data-size='l']),
+:host([data-shape='square'][data-size='xl']) {
+  --_radius: var(--gdg-radius-16);
 }
 
 :host([data-accent='red']) {

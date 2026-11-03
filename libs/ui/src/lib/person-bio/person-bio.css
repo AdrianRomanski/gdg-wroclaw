@@ -1,0 +1,70 @@
+/*
+ * Not in Figma (ADR-0034): the bio button is the Speaker card's M secondary button; the dialog is
+ * a card surface (1px subtle border, 16px radius, 24px padding) at most 40rem wide, with the L
+ * square photo and the name (Heading 5), the bio in Paragraph 7 and the close button at the end.
+ */
+:host {
+  display: contents;
+}
+
+.open.on-brand {
+  border-color: var(--gdg-color-content-on-brand);
+  color: var(--gdg-color-content-on-brand);
+}
+
+dialog {
+  box-sizing: border-box;
+  inline-size: min(40rem, 100% - 2 * var(--gdg-spacing-16));
+  max-block-size: calc(100% - 2 * var(--gdg-spacing-16));
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--gdg-color-border-subtle);
+  border-radius: var(--gdg-radius-16);
+  background: var(--gdg-color-background-card);
+  color: var(--gdg-color-content-default);
+  font: var(--gdg-font-paragraph-7);
+  text-align: start;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+dialog::backdrop {
+  background: rgb(0 0 0 / 0.6);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-20);
+  padding: calc(var(--gdg-spacing-24) - 1px);
+}
+
+.who {
+  display: flex;
+  align-items: center;
+  gap: var(--gdg-spacing-16);
+}
+
+.name {
+  margin: 0;
+  font: var(--gdg-font-heading-5);
+}
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-12);
+  font: var(--gdg-font-paragraph-7);
+}
+
+.bio p {
+  margin: 0;
+}
+
+.empty {
+  color: var(--gdg-color-content-muted);
+}
+
+.close {
+  align-self: flex-end;
+}

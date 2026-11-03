@@ -47,7 +47,7 @@ export function photoOf(name: string): string {
 
 /** A person on the programme, with their photo. */
 function who(name: string): SessionPerson {
-  return { name, photo: photoOf(name) };
+  return { name, photo: photoOf(name), bio: DEVFEST_BIOS[name] };
 }
 
 const HERO: DevfestHeroContent = {
@@ -393,7 +393,6 @@ function people(
     track,
     role,
     talk,
-    bio: DEVFEST_BIOS[name],
   }));
 }
 

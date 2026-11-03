@@ -1,5 +1,5 @@
 @let p = panel();
-<div class="panel">
+<div class="panel" [style.--_columns]="columns()">
   <ul class="labels">
     @if (p.time) {
     <li>
@@ -23,15 +23,15 @@
 
   @if (p.host) {
   <div class="moderator">
-    <p class="host">
-      <gdg-avatar
-        size="l"
-        [initials]="hostInitials()"
-        [accent]="accent()"
-        [src]="p.host.photo"
-      />
-      <span>{{ p.host.name }}</span>
-    </p>
+    <gdg-panelist
+      class="host"
+      size="xl"
+      shape="square"
+      showBio
+      [person]="p.host"
+      [accent]="accent()"
+      [bioColor]="buttonColor()"
+    />
     <gdg-tag>{{ hostLabel() }}</gdg-tag>
   </div>
   } @if (p.panelists.length) {
@@ -39,7 +39,14 @@
   <ul class="panelists" [attr.aria-labelledby]="listLabelId">
     @for (person of p.panelists; track $index) {
     <li>
-      <gdg-panelist size="xl" [person]="person" [accent]="accent()" />
+      <gdg-panelist
+        size="xl"
+        shape="square"
+        showBio
+        [person]="person"
+        [accent]="accent()"
+        [bioColor]="buttonColor()"
+      />
     </li>
     }
   </ul>

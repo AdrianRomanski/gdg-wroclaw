@@ -46,20 +46,55 @@ describe('DiscussionPanel', () => {
       `#${list.getAttribute('aria-labelledby')}`,
     );
     expect(label?.textContent).toBe('Paneliści / 2 osoby');
-    // Faces read at a glance: an L host and XL panelists (ADR-0033).
+    // The host is as large as the panelists, all with whole square photos (ADR-0034).
+    const hostAvatar = element.querySelector(
+      '.moderator gdg-avatar',
+    ) as HTMLElement;
+    expect(hostAvatar.dataset['size']).toBe('xl');
+    expect(hostAvatar.dataset['shape']).toBe('square');
     expect(
-      (element.querySelector('.moderator gdg-avatar') as HTMLElement).dataset[
-        'size'
-      ],
-    ).toBe('l');
+      Array.from(element.querySelectorAll('gdg-avatar:not(dialog *)')).map(
+        (a) => (a as HTMLElement).dataset['shape'],
+      ),
+    ).toEqual(['square', 'square', 'square']);
     expect(
-      Array.from(list.querySelectorAll('gdg-avatar')).map(
+      Array.from(list.querySelectorAll('gdg-avatar:not(dialog *)')).map(
         (a) => (a as HTMLElement).dataset['size'],
       ),
     ).toEqual(['xl', 'xl']);
     expect(
-      Array.from(list.querySelectorAll('.name')).map((n) => n.textContent),
+      Array.from(list.querySelectorAll('.name:not(dialog *)')).map(
+        (n) => n.textContent,
+      ),
     ).toEqual(['Grace Hopper', 'Alan Turing']);
+  });
+
+  it('gives everyone a bio button, with a note when the bio is still missing', async () => {
+    const { fixture, host, element } = await setup();
+    host.panel.update((panel) => ({
+      ...panel,
+      panelists: [
+        { name: 'Grace Hopper', bio: ['Rear admiral and compiler pioneer.'] },
+        { name: 'Alan Turing' },
+      ],
+    }));
+    await fixture.whenStable();
+
+    const buttons = Array.from(
+      element.querySelectorAll<HTMLButtonElement>('button.open'),
+    );
+    expect(buttons.map((b) => b.getAttribute('aria-label'))).toEqual([
+      'Pokaż bio: Ada Lovelace',
+      'Pokaż bio: Grace Hopper',
+      'Pokaż bio: Alan Turing',
+    ]);
+    const dialogs = Array.from(element.querySelectorAll('dialog'));
+    expect(dialogs[1].querySelector('.bio')?.textContent).toContain(
+      'Rear admiral and compiler pioneer.',
+    );
+    expect(dialogs[2].querySelector('.empty')?.textContent).toBe(
+      'Bio pojawi się wkrótce.',
+    );
   });
 
   it('leaves out the host and list when missing', async () => {

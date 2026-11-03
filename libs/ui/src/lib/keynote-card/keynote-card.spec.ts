@@ -42,5 +42,12 @@ describe('KeynoteCard', () => {
     expect(element.querySelector('.speaker')?.textContent).toContain(
       'Imię Nazwisko',
     );
+    // As large as a panelist, whole photo, with a bio button (ADR-0034).
+    const avatar = element.querySelector('.speaker gdg-avatar') as HTMLElement;
+    expect(avatar.dataset['size']).toBe('xl');
+    expect(avatar.dataset['shape']).toBe('square');
+    expect(
+      element.querySelector('.speaker button')?.getAttribute('aria-label'),
+    ).toBe('Pokaż bio: Imię Nazwisko');
   });
 });
