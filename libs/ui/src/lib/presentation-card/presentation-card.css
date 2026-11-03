@@ -4,7 +4,9 @@
  * apart. Title Heading 5, description Paragraph 8 muted, speaker name Heading 8. Expanded: a 1px
  * track divider, "ABSTRAKT" Heading 9 muted and the text Paragraph 8, 8px apart. The time and
  * room use brand blue secondary: primary is 3.7:1 on the card (ADR-0028). Design review
- * (ADR-0032): M speaker avatars, 16px before the name.
+ * (ADR-0032): M speaker avatars, 16px before the name. ADR-0036: the speakers' whole photos in
+ * XL squares (up to 224px) with the name under them, side by side in columns at least 9rem wide,
+ * so the faces read as on the panels.
  */
 :host {
   display: flex;
@@ -46,22 +48,17 @@
 }
 
 .speakers {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gdg-spacing-12);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(9rem, 100%), 14rem));
+  gap: var(--gdg-spacing-20) var(--gdg-spacing-24);
+  align-self: stretch;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .speaker {
-  display: flex;
-  align-items: center;
-  gap: var(--gdg-spacing-16);
-}
-
-.name {
-  font: var(--gdg-font-heading-8);
+  min-inline-size: 0;
 }
 
 .abstract {

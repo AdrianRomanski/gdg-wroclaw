@@ -47,6 +47,7 @@ For more information on ADRs, see [Architecture Decision Records](https://adr.gi
 | [ADR-0033](0033-xl-avatar-for-panelists.md)                        | XL Avatar for Panelists                                                        | **Accepted** | 2026-11-02 |
 | [ADR-0034](0034-whole-photos-and-session-bios.md)                  | Whole Photos and Bios on DevFest Sessions                                      | **Accepted** | 2026-11-03 |
 | [ADR-0035](0035-track-colored-keynotes.md)                         | Track-Colored Keynotes                                                         | **Accepted** | 2026-11-03 |
+| [ADR-0036](0036-large-speaker-photos-on-talks-and-workshops.md)    | Large Speaker Photos on Talks and Workshops                                    | **Accepted** | 2026-11-03 |
 
 ---
 

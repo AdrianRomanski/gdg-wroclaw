@@ -5,14 +5,14 @@ import {
   input,
   model,
 } from '@angular/core';
-import { Avatar, Button, Tag } from '@gdg-wroclaw/design-system-components';
+import { Button, Tag } from '@gdg-wroclaw/design-system-components';
 import {
   type DevfestTalk,
-  personInitials,
   TRACK_ACCENTS,
   TRACK_BUTTON_COLORS,
   trackLabel,
 } from '../devfest-session/devfest-session';
+import { Panelist } from '../panelist/panelist';
 
 let nextId = 0;
 
@@ -20,11 +20,12 @@ let nextId = 0;
  * Presentation card from the Figma **DevFest components** page (`Presentation card`, 9025:192),
  * see ADR-0028: a talk in the agenda, bordered in its track color. The track tag, time and room,
  * the title, a short description, the speakers, and the abstract behind a disclosure button
- * (Figma `Abstract=Collapsed/Expanded`).
+ * (Figma `Abstract=Collapsed/Expanded`). ADR-0036: each speaker's whole photo in an XL square
+ * with the name under it, as on the discussion panels.
  */
 @Component({
   selector: 'gdg-presentation-card',
-  imports: [Avatar, Button, Tag],
+  imports: [Button, Panelist, Tag],
   templateUrl: './presentation-card.html',
   styleUrls: ['../devfest-session/track.css', './presentation-card.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -51,8 +52,6 @@ export class PresentationCard {
   protected readonly buttonColor = computed(
     () => TRACK_BUTTON_COLORS[this.talk().track],
   );
-
-  protected readonly initials = personInitials;
 
   protected readonly titleId = `gdg-presentation-card-title-${nextId}`;
 

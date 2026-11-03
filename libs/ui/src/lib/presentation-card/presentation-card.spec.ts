@@ -55,7 +55,11 @@ describe('PresentationCard', () => {
     expect(element.querySelector('.speaker')?.textContent).toContain(
       'Grace Hopper',
     );
-    expect(element.querySelector('gdg-avatar')?.textContent).toBe('GH');
+    const avatar = element.querySelector('gdg-avatar') as HTMLElement;
+    expect(avatar.textContent).toBe('GH');
+    // The whole photo, as large as the panelists' (ADR-0036).
+    expect(avatar.dataset['size']).toBe('xl');
+    expect(avatar.dataset['shape']).toBe('square');
   });
 
   it('expands and collapses the abstract', async () => {
