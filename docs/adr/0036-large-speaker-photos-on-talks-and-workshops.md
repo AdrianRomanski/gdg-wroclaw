@@ -37,9 +37,8 @@ Chosen option: "reuse the Panelist", because it is already the stacked XL square
 ### Negative Consequences
 
 - Talk and workshop cards are taller.
-- Przemysław Nowak's (280px) and Tomasz Flis's (200px) originals are small, so their photos stay soft until we get larger ones.
 - XL square speakers on the Presentation card are not in Figma.
 
 ## Implementation Guidelines / Next Steps
 
-- Ask Przemysław Nowak and Tomasz Flis for larger photos.
+- Add the XL square speakers to the Figma Presentation and Speaker cards when a designer is available.
