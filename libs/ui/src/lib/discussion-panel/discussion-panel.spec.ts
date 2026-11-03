@@ -13,6 +13,8 @@ class Host {
     track: 'cloud',
     time: '16:00',
     room: 'Scena Główna',
+    description: 'What the panel is about.',
+    topics: ['First topic', 'Second topic'],
     host: { name: 'Ada Lovelace' },
     panelists: [{ name: 'Grace Hopper' }, { name: 'Alan Turing' }],
   });
@@ -67,6 +69,22 @@ describe('DiscussionPanel', () => {
         (n) => n.textContent,
       ),
     ).toEqual(['Grace Hopper', 'Alan Turing']);
+  });
+
+  it('describes the panel and lists its topics beside the host', async () => {
+    const { element } = await setup();
+    const about = element.querySelector('.moderator .about') as HTMLElement;
+    expect(about.querySelector('.description')?.textContent).toBe(
+      'What the panel is about.',
+    );
+    const topics = about.querySelector('.topics') as HTMLElement;
+    expect(
+      element.querySelector(`#${topics.getAttribute('aria-labelledby')}`)
+        ?.textContent,
+    ).toBe('O czym porozmawiamy');
+    expect(
+      Array.from(topics.querySelectorAll('li')).map((li) => li.textContent),
+    ).toEqual(['First topic', 'Second topic']);
   });
 
   it('gives everyone a bio button, with a note when the bio is still missing', async () => {

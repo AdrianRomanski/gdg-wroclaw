@@ -54,6 +54,13 @@ export const SAMPLE_PANEL: DevfestPanel = {
   time: '16:00',
   dateTime: '2026-11-21T16:00',
   room: 'Scena Główna',
+  description:
+    'Krótki opis panelu: o czym rozmawiamy i dlaczego właśnie teraz. Dwa, trzy zdania wystarczą.',
+  topics: [
+    'Pierwszy temat rozmowy',
+    'Drugi temat rozmowy, nieco dłuższy, żeby sprawdzić zawijanie tekstu',
+    'Trzeci temat rozmowy',
+  ],
   host: PERSON,
   panelists: [PERSON, PERSON, PERSON, PERSON, PERSON],
 };

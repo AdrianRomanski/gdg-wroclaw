@@ -13,6 +13,7 @@ Reviewing the DevFest agenda after ADR-0033, the core team asked for three thing
 - The panel host should be as large as the panelists (the host was an L avatar, the panelists XL).
 - The circle crops the speakers' photos (faces, hair and shoulders are cut away); show the whole picture for everyone, the keynote speakers included, at the same size.
 - A "see bio" button for the people on the panels and keynotes; when someone has no bio yet, the button stays and says the bio is coming soon.
+- Beside the host, a description of the panel: what it is about and what will be discussed, grounded in what is new in each area.
 
 The bios already exist for the speaker directory (ADR-0030), behind a disclosure in the Speaker card. We have no designer available, so we decide this ourselves within the design system.
 
@@ -36,6 +37,7 @@ Chosen options: a square Avatar shape and a modal bio dialog.
 - **PersonBio** (`libs/ui`, new): a "Pokaż bio" secondary M button (the track color, or white `onBrand` on the Keynote card) that opens a native modal `<dialog>` named by the person (`<h2>`): the L square photo, the bio paragraphs, and "Zamknij". Without a bio it says "Bio pojawi się wkrótce." Escape, the close button or a backdrop click closes it, and the browser returns focus to the button. A modal keeps the five-column panel even, where an inline disclosure would stretch one column.
 - **SessionPerson** gets the optional `bio` (moved up from `DevfestSpeaker`); the events app fills it for every person from `DEVFEST_BIOS`.
 - **Discussion panel**: the host is a `Panelist` like the others, XL and one panelist column wide (at most 224px), so host and panelists are the same size; everyone has a square photo and a bio button.
+- **Panel description**: `DevfestPanel` gets an optional `description` and `topics`; the Discussion panel shows them beside the host, after the host tag, with a "O czym porozmawiamy" list marked by track-colored dashes. The events app keeps the copy in `devfest-panels.ts` (Polish, like the rest of the agenda UI), written around the panelists' work and the 2026 news in each area (as of 2026-11-03): Angular 22 Signal Forms and the WebMCP origin trial in Chrome (Web); Cloud Run, GKE Agent Sandbox and Agent Compute Engine, agent IAM and FinOps (Cloud); Gemini Nano 4 in the AICore preview, AppFunctions, Flutter vs. Compose Multiplatform and Genkit Dart 1.0 (Mobile); agentic engineering, evaluations, MCP / A2A / WebMCP and the AI Act (AI).
 - **Keynote card**: the speaker's XL square photo is as wide as a panelist column of a five-person panel (two columns on mobile), with the name and the bio button beside it.
 
 ### Positive Consequences
@@ -54,3 +56,4 @@ Chosen options: a square Avatar shape and a modal bio dialog.
 
 - Add the square shape and the bio dialog to Figma when a designer is available.
 - Decide whether the Presentation and Speaker cards switch to square photos too.
+- Have each panel's host review the description and topics before the event, and refresh them if news lands before 13 November.
