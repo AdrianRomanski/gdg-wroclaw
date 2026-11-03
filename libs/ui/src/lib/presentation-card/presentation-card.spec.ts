@@ -13,7 +13,7 @@ class Host {
     track: 'mobile',
     time: '08:00 – 08:30',
     dateTime: '2026-11-21T08:00',
-    room: 'Sala A',
+    room: 'Room A',
     description: 'A short teaser.',
     abstract: 'The long abstract.',
     speakers: [{ name: 'Grace Hopper' }],
@@ -45,7 +45,7 @@ describe('PresentationCard', () => {
     expect(element.querySelector('time')?.getAttribute('datetime')).toBe(
       '2026-11-21T08:00',
     );
-    expect(element.querySelector('.when')?.textContent).toContain('Sala A');
+    expect(element.querySelector('.when')?.textContent).toContain('Room A');
     expect(element.querySelector('h3')?.textContent).toBe(
       'Gemini in production',
     );
@@ -63,7 +63,7 @@ describe('PresentationCard', () => {
     expect(abstract().hidden).toBe(true);
     expect(button().getAttribute('aria-expanded')).toBe('false');
     expect(button().getAttribute('aria-controls')).toBe(abstract().id);
-    expect(button().textContent).toContain('Rozwiń abstrakt');
+    expect(button().textContent).toContain('Show abstract');
     expect(button().classList).toContain('gdg-button--green');
 
     button().click();
@@ -73,10 +73,10 @@ describe('PresentationCard', () => {
     expect(abstract().hidden).toBe(false);
     expect(abstract().textContent).toContain('The long abstract.');
     expect(button().getAttribute('aria-expanded')).toBe('true');
-    expect(button().textContent).toContain('Zwiń abstrakt');
+    expect(button().textContent).toContain('Hide abstract');
   });
 
-  it('has no tag for a generic session, no button without an abstract, and a blue button for Robotyka', async () => {
+  it('has no tag for a generic session, no button without an abstract, and a blue button for Robotics', async () => {
     const { fixture, host, element } = await setup();
     host.talk.set({ title: 'Lunch talk', track: 'generic' });
     await fixture.whenStable();

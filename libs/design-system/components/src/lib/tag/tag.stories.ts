@@ -52,9 +52,9 @@ export const Default: Story = {
   },
 };
 
-export const Neutral: Story = { args: { label: 'Sala A', accent: undefined } };
+export const Neutral: Story = { args: { label: 'Room A', accent: undefined } };
 
-/** Figma 9024:20: the tracks AI, Web, Mobile, Cloud, Robotyka and a room. */
+/** Figma 9024:20: the tracks AI, Web, Mobile, Cloud, Robotics and a room. */
 export const AllTracks: Story = {
   render: () => ({
     template: `
@@ -62,8 +62,8 @@ export const AllTracks: Story = {
       <gdg-tag accent="yellow">Web</gdg-tag>
       <gdg-tag accent="green">Mobile</gdg-tag>
       <gdg-tag accent="blue">Cloud</gdg-tag>
-      <gdg-tag accent="contrast">Robotyka</gdg-tag>
-      <gdg-tag>Sala</gdg-tag>
+      <gdg-tag accent="contrast">Robotics</gdg-tag>
+      <gdg-tag>Room</gdg-tag>
     `,
   }),
 };

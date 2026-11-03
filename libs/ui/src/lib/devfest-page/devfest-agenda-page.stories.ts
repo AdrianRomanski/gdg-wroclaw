@@ -61,7 +61,7 @@ export const MainStage: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await expect(
-      canvas.getByRole('heading', { level: 2, name: 'Harmonogram & Sceny' }),
+      canvas.getByRole('heading', { level: 2, name: 'Agenda & Stages' }),
     ).toBeVisible();
     await userEvent.click(canvas.getByRole('button', { name: 'Web' }));
     await expect(
@@ -79,13 +79,13 @@ export const ParallelRooms: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await expect(
-      canvas.getByRole('heading', { name: 'Otwarcie eventu' }),
+      canvas.getByRole('heading', { name: 'Opening' }),
     ).toBeVisible();
     await userEvent.click(
-      canvas.getByRole('button', { name: 'Warsztaty (Hands-on Labs)' }),
+      canvas.getByRole('button', { name: 'Workshops (Hands-on Labs)' }),
     );
     await expect(
-      canvas.getByText('Harmonogram warsztatów pojawi się tutaj.'),
+      canvas.getByText('The workshop schedule will appear here.'),
     ).toBeVisible();
   },
 };
@@ -96,7 +96,7 @@ export const Workshops: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await userEvent.click(
-      canvas.getByRole('button', { name: 'Warsztaty (Hands-on Labs)' }),
+      canvas.getByRole('button', { name: 'Workshops (Hands-on Labs)' }),
     );
     await expect(
       canvas.getByRole('heading', { name: 'The Agents Optimization Lab' }),

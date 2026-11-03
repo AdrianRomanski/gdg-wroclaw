@@ -49,7 +49,7 @@ interface ScheduleRow {
   },
 })
 export class ParallelSchedule {
-  /** Column headers, e.g. ["Sala A", "Sala B"]. */
+  /** Column headers, e.g. ["Room A", "Room B"]. */
   readonly rooms = input.required<readonly string[]>();
 
   readonly entries = input.required<readonly DevfestParallelEntry[]>();
@@ -61,7 +61,7 @@ export class ParallelSchedule {
   readonly room = model(0);
 
   /** Accessible name of the Room toggle. */
-  readonly roomLabel = input('Sala');
+  readonly roomLabel = input('Room');
 
   protected readonly roomOptions = computed<SegmentedOption[]>(() =>
     this.rooms().map((label, i) => ({ value: String(i), label })),

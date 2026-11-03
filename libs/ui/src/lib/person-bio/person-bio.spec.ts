@@ -30,8 +30,8 @@ describe('PersonBio', () => {
 
   it('opens a dialog named after the person with their bio', async () => {
     const { element, button, dialog } = await setup();
-    expect(button.textContent?.trim()).toBe('Pokaż bio');
-    expect(button.getAttribute('aria-label')).toBe('Pokaż bio: Ada Lovelace');
+    expect(button.textContent?.trim()).toBe('Show bio');
+    expect(button.getAttribute('aria-label')).toBe('Show bio: Ada Lovelace');
     expect(button.getAttribute('aria-haspopup')).toBe('dialog');
     expect(dialog.hasAttribute('open')).toBe(false);
 
@@ -58,7 +58,7 @@ describe('PersonBio', () => {
     await fixture.whenStable();
 
     expect(dialog.querySelector('.empty')?.textContent).toBe(
-      'Bio pojawi się wkrótce.',
+      'Bio coming soon.',
     );
   });
 });

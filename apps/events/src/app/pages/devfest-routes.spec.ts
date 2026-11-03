@@ -17,7 +17,7 @@ describe('DevFest routes', () => {
     await fixture.whenStable();
     const element = fixture.nativeElement as HTMLElement;
     expect(text(element.querySelector('h1'))).toBe(
-      'DevFest Wrocław 2026 — Harmonogram',
+      'DevFest Wrocław 2026 — Agenda',
     );
     expect(
       element.querySelectorAll('gdg-main-stage-timeline > ol > li'),
@@ -31,7 +31,7 @@ describe('DevFest routes', () => {
     expect(element.querySelectorAll('gdg-presentation-card')).toHaveLength(18);
 
     Array.from(element.querySelectorAll('button'))
-      .find((b) => b.textContent?.trim() === 'Warsztaty (Hands-on Labs)')
+      .find((b) => b.textContent?.trim() === 'Workshops (Hands-on Labs)')
       ?.click();
     await fixture.whenStable();
     expect(element.querySelectorAll('gdg-schedule-event')).toHaveLength(4);
@@ -67,7 +67,7 @@ describe('DevFest routes', () => {
     expect(element.querySelectorAll('gdg-speaker-card')).toHaveLength(33);
     expect(element.querySelectorAll('gdg-keynote-card')).toHaveLength(1);
     expect(text(element.querySelector('[role=radio][aria-checked=true]'))).toBe(
-      'Wszyscy (34)',
+      'All (34)',
     );
   });
 

@@ -6,7 +6,7 @@ import type { DevfestTalk } from '../devfest-session/devfest-session';
 
 // Story and test fixtures with the Figma DevFest page copy (ADR-0029), shortened.
 
-const TBA = 'Prelegent i temat zostaną ogłoszeni wkrótce';
+const TBA = 'Speaker and topic to be announced soon';
 
 function talk(
   track: DevfestTalk['track'],
@@ -26,7 +26,7 @@ function talk(
 }
 
 export const SAMPLE_AGENDA_PAGE: DevfestAgendaPageContent = {
-  title: 'DevFest Wrocław 2026 — Harmonogram',
+  title: 'DevFest Wrocław 2026 — Agenda',
   hero: {
     // A neutral placeholder: Storybook has no app assets.
     image: {
@@ -35,21 +35,21 @@ export const SAMPLE_AGENDA_PAGE: DevfestAgendaPageContent = {
     },
     overline: 'WROCŁAW · 2026',
     caption: 'Google Developer Groups — DevFest 2026',
-    action: { label: 'Zarejestruj się', href: '#' },
+    action: { label: 'Register', href: '#' },
   },
   agenda: {
     overline: 'AGENDA / DEVFEST 2026',
-    heading: 'Harmonogram & Sceny',
+    heading: 'Agenda & Stages',
     mainStage: {
-      label: 'Dzień 1: Panele Dyskusyjne & Keynotes',
+      label: 'Day 1: Discussion Panels & Keynotes',
       description:
-        'Dzień 1 / Rozmowy, które inspirują · Panele Dyskusyjne & Keynotes · Scena Główna',
+        'Day 1 / Conversations that inspire · Discussion Panels & Keynotes · Main Stage',
       sessions: [
         {
           keynote: {
             title: 'Who Let the Dogs Out? The State of AI Robotics',
             time: '15:50',
-            room: 'Scena Główna',
+            room: 'Main Stage',
             speaker: { name: 'Grzegorz Piotrowski' },
           },
         },
@@ -58,7 +58,7 @@ export const SAMPLE_AGENDA_PAGE: DevfestAgendaPageContent = {
             title: 'AI Panel',
             track: 'ai',
             time: '16:00',
-            room: 'Scena Główna',
+            room: 'Main Stage',
             host: { name: 'Dawid Perdek' },
             panelists: [{ name: 'Greg Radzio' }, { name: 'Łukasz Jaźwa' }],
           },
@@ -68,7 +68,7 @@ export const SAMPLE_AGENDA_PAGE: DevfestAgendaPageContent = {
             title: 'Web Panel',
             track: 'web',
             time: '17:00',
-            room: 'Scena Główna',
+            room: 'Main Stage',
             host: { name: 'Adrian Romański' },
             panelists: [{ name: 'Dominika Zajac' }],
           },
@@ -76,35 +76,35 @@ export const SAMPLE_AGENDA_PAGE: DevfestAgendaPageContent = {
       ],
     },
     parallel: {
-      label: 'Dzień 2: Warsztaty & Prezentacje',
-      description: 'Dzień 2 / Prezentacje · Sala A / Sala B',
-      rooms: ['Sala A', 'Sala B'],
-      talksLabel: 'Prezentacje (2 Sale Równolegle)',
-      workshopsLabel: 'Warsztaty (Hands-on Labs)',
-      workshopsNote: 'Harmonogram warsztatów pojawi się tutaj.',
+      label: 'Day 2: Workshops & Talks',
+      description: 'Day 2 / Talks · Room A / Room B',
+      rooms: ['Room A', 'Room B'],
+      talksLabel: 'Talks (2 Rooms in Parallel)',
+      workshopsLabel: 'Workshops (Hands-on Labs)',
+      workshopsNote: 'The workshop schedule will appear here.',
       entries: [
         {
           type: 'shared',
-          title: 'Otwarcie eventu',
+          title: 'Opening',
           time: '07:30',
-          rooms: 'Sala A + Sala B',
+          rooms: 'Room A + Room B',
         },
         {
           type: 'slot',
           time: '08:00 - 08:30',
           talks: [
-            talk('mobile', 'Sala A', 'Oleksandr Tilnyi'),
-            talk('cloud', 'Sala B', 'Ankur Roy'),
+            talk('mobile', 'Room A', 'Oleksandr Tilnyi'),
+            talk('cloud', 'Room B', 'Ankur Roy'),
           ],
         },
         {
           type: 'slot',
           time: '09:10 / 09:45',
           groupedTime: '09:10 - 09:40 / 09:45 - 10:15',
-          groupedNote: 'Wspólny blok harmonogramu · dwa zakresy godzin',
+          groupedNote: 'Shared schedule block · two time ranges',
           talks: [
-            talk('robotics', 'Sala A', 'Marcin Wysocki'),
-            talk('ai', 'Sala B', 'Paweł Kubiak', {
+            talk('robotics', 'Room A', 'Marcin Wysocki'),
+            talk('ai', 'Room B', 'Paweł Kubiak', {
               title: 'From Human-Friendly to Agent-Friendly: WebMCP in Action',
               description: undefined,
               abstract:
@@ -114,15 +114,15 @@ export const SAMPLE_AGENDA_PAGE: DevfestAgendaPageContent = {
         },
         {
           type: 'break',
-          title: 'PRZERWA JEDZENIOWA',
+          title: 'MEAL BREAK',
           time: '12:00 - 12:45',
-          rooms: 'Sala A + Sala B',
+          rooms: 'Room A + Room B',
         },
         {
           type: 'slot',
           time: '17:25 - 17:45',
           talks: [
-            talk('generic', 'Sala: TBA', 'Mathias Weber', {
+            talk('generic', 'Room: TBA', 'Mathias Weber', {
               trackLabel: 'Generic',
             }),
             null,
@@ -141,19 +141,19 @@ export const SAMPLE_AGENDA_PAGE_WITH_WORKSHOPS: DevfestAgendaPageContent = {
     parallel: {
       ...SAMPLE_AGENDA_PAGE.agenda.parallel,
       workshopsNote: undefined,
-      workshopRooms: ['Warsztaty'],
+      workshopRooms: ['Workshops'],
       workshops: [
         {
           type: 'shared',
           title: 'Welcome',
           time: '07:30',
-          rooms: 'Warsztaty',
+          rooms: 'Workshops',
         },
         {
           type: 'slot',
           time: '08:00 - 08:45',
           talks: [
-            talk('cloud', 'Warsztaty', 'Goran Minov', {
+            talk('cloud', 'Workshops', 'Goran Minov', {
               title: 'Zero Infrastructure, Zero Phishing',
               time: '08:00 - 08:45',
               description: undefined,
@@ -164,7 +164,7 @@ export const SAMPLE_AGENDA_PAGE_WITH_WORKSHOPS: DevfestAgendaPageContent = {
           type: 'slot',
           time: '14:30 - 15:15',
           talks: [
-            talk('ai', 'Warsztaty', 'Michał Jabłoński', {
+            talk('ai', 'Workshops', 'Michał Jabłoński', {
               title: 'The Agents Optimization Lab',
               time: '14:30 - 15:15',
               description: undefined,
@@ -177,64 +177,64 @@ export const SAMPLE_AGENDA_PAGE_WITH_WORKSHOPS: DevfestAgendaPageContent = {
 };
 
 export const SAMPLE_SPEAKERS_PAGE: DevfestSpeakersPageContent = {
-  title: 'DevFest Wrocław 2026 — Prelegenci & Prowadzący',
+  title: 'DevFest Wrocław 2026 — Speakers & Hosts',
   hero: { image: SAMPLE_AGENDA_PAGE.hero.image },
   speakers: {
     heading: {
-      overline: 'LUDZIE / DEVFEST 2026',
-      heading: 'Prelegenci & Prowadzący',
-      description: 'Poznaj osoby, które tworzą program DevFest Wrocław 2026.',
+      overline: 'PEOPLE / DEVFEST 2026',
+      heading: 'Speakers & Hosts',
+      description: 'Meet the people behind the DevFest Wrocław 2026 programme.',
     },
-    allLabel: 'Wszyscy',
+    allLabel: 'All',
     groups: [
       {
         id: 'keynote',
         label: 'Keynote',
         keynote: {
           title: 'Who Let the Dogs Out? The State of AI Robotics',
-          time: 'Dzień 1 · 15:50',
-          room: 'Robotyka / AI',
+          time: 'Day 1 · 15:50',
+          room: 'Robotics / AI',
           speaker: { name: 'Grzegorz Piotrowski' },
         },
       },
       {
         id: 'hosts',
-        label: 'Prowadzący',
-        heading: { overline: '2 OSOBY', heading: 'Prowadzący paneli' },
+        label: 'Hosts',
+        heading: { overline: '2 PEOPLE', heading: 'Panel hosts' },
         speakers: [
-          { name: 'Dawid Perdek', track: 'ai', role: 'Prowadzący AI panel' },
+          { name: 'Dawid Perdek', track: 'ai', role: 'Host · AI panel' },
           {
             name: 'Michał Jabłoński',
             track: 'cloud',
-            role: 'Prowadzący Cloud panel',
+            role: 'Host · Cloud panel',
             talk: 'GDG Warszawa',
           },
         ],
       },
       {
         id: 'panelists',
-        label: 'Paneliści',
-        heading: { overline: '2 OSOBY', heading: 'Paneliści & prelegenci' },
+        label: 'Panelists',
+        heading: { overline: '2 PEOPLE', heading: 'Panelists & speakers' },
         speakers: [
           {
             name: 'Paweł Kubiak',
             track: 'ai',
-            role: ['Panelista · AI panel', 'Prelegent · AI prezentacja'],
+            role: ['Panelist · AI panel', 'Speaker · AI talk'],
             talk: 'From Human-Friendly to Agent-Friendly: WebMCP in Action',
           },
           {
             name: 'Mathias Weber',
             track: 'generic',
             trackLabel: 'Generic',
-            role: 'Prelegent · Generic prezentacja',
+            role: 'Speaker · Generic talk',
           },
         ],
       },
       {
         id: 'trainers',
-        label: 'Trenerzy',
-        heading: { overline: 'DZIEŃ 2', heading: 'Trenerzy warsztatów' },
-        emptyNote: 'Lista trenerów warsztatów pojawi się tutaj.',
+        label: 'Trainers',
+        heading: { overline: 'DAY 2', heading: 'Workshop trainers' },
+        emptyNote: 'The list of workshop trainers will appear here.',
       },
     ],
   },

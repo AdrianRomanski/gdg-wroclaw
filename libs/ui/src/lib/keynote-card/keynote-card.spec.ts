@@ -6,9 +6,9 @@ import { KeynoteCard } from './keynote-card';
 const SAMPLE_KEYNOTE: DevfestKeynote = {
   title: 'Who Let the Dogs Out? The State of AI Robotics',
   time: '15:50',
-  room: 'Scena Główna',
-  abstract: 'Abstrakt',
-  speaker: { name: 'Imię Nazwisko', initials: 'OT' },
+  room: 'Main Stage',
+  abstract: 'Abstract',
+  speaker: { name: 'First Last', initials: 'OT' },
 };
 
 async function render<T>(type: new () => T) {
@@ -36,11 +36,11 @@ describe('KeynoteCard', () => {
       Array.from(element.querySelectorAll('gdg-tag')).map((t) =>
         t.textContent?.trim(),
       ),
-    ).toEqual(['15:50', 'Keynote', 'Scena Główna']);
+    ).toEqual(['15:50', 'Keynote', 'Main Stage']);
     expect(element.querySelector('h3')?.textContent).toBe(SAMPLE_KEYNOTE.title);
-    expect(element.querySelector('.abstract')?.textContent).toBe('Abstrakt');
+    expect(element.querySelector('.abstract')?.textContent).toBe('Abstract');
     expect(element.querySelector('.speaker')?.textContent).toContain(
-      'Imię Nazwisko',
+      'First Last',
     );
     // As large as a panelist, whole photo, with a bio button (ADR-0034).
     const avatar = element.querySelector('.speaker gdg-avatar') as HTMLElement;
@@ -48,6 +48,6 @@ describe('KeynoteCard', () => {
     expect(avatar.dataset['shape']).toBe('square');
     expect(
       element.querySelector('.speaker button')?.getAttribute('aria-label'),
-    ).toBe('Pokaż bio: Imię Nazwisko');
+    ).toBe('Show bio: First Last');
   });
 });

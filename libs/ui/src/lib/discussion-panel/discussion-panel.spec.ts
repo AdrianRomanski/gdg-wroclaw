@@ -12,7 +12,7 @@ class Host {
     title: 'AI Panel',
     track: 'cloud',
     time: '16:00',
-    room: 'Scena Główna',
+    room: 'Main Stage',
     description: 'What the panel is about.',
     topics: ['First topic', 'Second topic'],
     host: { name: 'Ada Lovelace' },
@@ -34,20 +34,18 @@ describe('DiscussionPanel', () => {
     expect(tags.map((t) => t.textContent?.trim())).toEqual([
       '16:00',
       'Cloud',
-      'Scena Główna',
+      'Main Stage',
     ]);
     expect(element.querySelector('h3')?.textContent).toBe('AI Panel');
     expect(element.querySelector('.moderator')?.textContent).toContain(
       'Ada Lovelace',
     );
-    expect(element.querySelector('.moderator')?.textContent).toContain(
-      'Prowadzący / Host',
-    );
+    expect(element.querySelector('.moderator')?.textContent).toContain('Host');
     const list = element.querySelector('.panelists') as HTMLElement;
     const label = element.querySelector(
       `#${list.getAttribute('aria-labelledby')}`,
     );
-    expect(label?.textContent).toBe('Paneliści / 2 osoby');
+    expect(label?.textContent).toBe('Panelists / 2 people');
     // The host is as large as the panelists, all with whole square photos (ADR-0034).
     const hostAvatar = element.querySelector(
       '.moderator gdg-avatar',
@@ -81,7 +79,7 @@ describe('DiscussionPanel', () => {
     expect(
       element.querySelector(`#${topics.getAttribute('aria-labelledby')}`)
         ?.textContent,
-    ).toBe('O czym porozmawiamy');
+    ).toBe('What we will talk about');
     expect(
       Array.from(topics.querySelectorAll('li')).map((li) => li.textContent),
     ).toEqual(['First topic', 'Second topic']);
@@ -102,16 +100,16 @@ describe('DiscussionPanel', () => {
       element.querySelectorAll<HTMLButtonElement>('button.open'),
     );
     expect(buttons.map((b) => b.getAttribute('aria-label'))).toEqual([
-      'Pokaż bio: Ada Lovelace',
-      'Pokaż bio: Grace Hopper',
-      'Pokaż bio: Alan Turing',
+      'Show bio: Ada Lovelace',
+      'Show bio: Grace Hopper',
+      'Show bio: Alan Turing',
     ]);
     const dialogs = Array.from(element.querySelectorAll('dialog'));
     expect(dialogs[1].querySelector('.bio')?.textContent).toContain(
       'Rear admiral and compiler pioneer.',
     );
     expect(dialogs[2].querySelector('.empty')?.textContent).toBe(
-      'Bio pojawi się wkrótce.',
+      'Bio coming soon.',
     );
   });
 
@@ -125,11 +123,9 @@ describe('DiscussionPanel', () => {
     expect(element.querySelectorAll('.labels gdg-tag')).toHaveLength(0);
   });
 
-  it('declines "osoba" in Polish', () => {
-    expect(defaultPanelistsLabel(1)).toBe('Paneliści / 1 osoba');
-    expect(defaultPanelistsLabel(3)).toBe('Paneliści / 3 osoby');
-    expect(defaultPanelistsLabel(5)).toBe('Paneliści / 5 osób');
-    expect(defaultPanelistsLabel(12)).toBe('Paneliści / 12 osób');
-    expect(defaultPanelistsLabel(22)).toBe('Paneliści / 22 osoby');
+  it('counts people, with "person" for one', () => {
+    expect(defaultPanelistsLabel(1)).toBe('Panelists / 1 person');
+    expect(defaultPanelistsLabel(2)).toBe('Panelists / 2 people');
+    expect(defaultPanelistsLabel(5)).toBe('Panelists / 5 people');
   });
 });

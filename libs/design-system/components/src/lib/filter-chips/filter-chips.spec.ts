@@ -5,7 +5,7 @@ import { FilterChips, type FilterChip } from './filter-chips';
 @Component({
   imports: [FilterChips],
   template: `<gdg-filter-chips
-    label="Ścieżki"
+    label="Tracks"
     [chips]="chips"
     [allowEmpty]="allowEmpty()"
     [(value)]="value"
@@ -13,7 +13,7 @@ import { FilterChips, type FilterChip } from './filter-chips';
 })
 class Host {
   readonly chips: FilterChip[] = [
-    { value: 'all', label: 'Wszystkie' },
+    { value: 'all', label: 'All' },
     { value: 'ai', label: 'AI', appearance: 'tag', accent: 'red' },
     { value: 'generic', label: 'Generic', appearance: 'tag' },
   ];
@@ -42,9 +42,9 @@ describe('FilterChips', () => {
     const { element, buttons, pressed } = await setup();
     const group = element.querySelector('gdg-filter-chips');
     expect(group?.getAttribute('role')).toBe('group');
-    expect(group?.getAttribute('aria-label')).toBe('Ścieżki');
+    expect(group?.getAttribute('aria-label')).toBe('Tracks');
     expect(buttons().map((b) => b.textContent?.trim())).toEqual([
-      'Wszystkie',
+      'All',
       'AI',
       'Generic',
     ]);

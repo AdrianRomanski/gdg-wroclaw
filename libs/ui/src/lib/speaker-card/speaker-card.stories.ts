@@ -43,7 +43,7 @@ export const Default: Story = {
   ],
   play: async ({ canvasElement }) => {
     await expect(
-      within(canvasElement).getByRole('heading', { name: 'Imię Nazwisko' }),
+      within(canvasElement).getByRole('heading', { name: 'First Last' }),
     ).toBeVisible();
   },
 };
@@ -73,8 +73,8 @@ export const WithBio: Story = {
     speaker: {
       ...SAMPLE_SPEAKER,
       bio: [
-        'Pierwszy akapit bio: doświadczenie i obecna rola.',
-        'Drugi akapit: społeczność, wystąpienia i projekty open source.',
+        'First bio paragraph: experience and current role.',
+        'Second paragraph: community, talks and open-source projects.',
       ],
     },
   },
@@ -85,10 +85,10 @@ export const WithBio: Story = {
   ],
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    await userEvent.click(canvas.getByRole('button', { name: /Pokaż bio/ }));
+    await userEvent.click(canvas.getByRole('button', { name: /Show bio/ }));
     await expect(
       canvas.getByText(
-        'Drugi akapit: społeczność, wystąpienia i projekty open source.',
+        'Second paragraph: community, talks and open-source projects.',
       ),
     ).toBeVisible();
   },

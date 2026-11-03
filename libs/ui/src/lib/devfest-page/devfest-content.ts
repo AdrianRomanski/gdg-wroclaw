@@ -13,7 +13,7 @@ export interface DevfestHeroContent {
   overline?: string;
   /** E.g. "Google Developer Groups — DevFest 2026". */
   caption?: string;
-  /** E.g. "Zarejestruj się". */
+  /** E.g. "Register". */
   action?: EventLink;
 }
 
@@ -26,7 +26,7 @@ export interface DevfestHeading {
 
 /** Day 1 of the agenda: keynotes and discussion panels on one stage. */
 export interface DevfestMainStageDay {
-  /** Day toggle label, e.g. "Dzień 1: Panele Dyskusyjne & Keynotes". */
+  /** Day toggle label, e.g. "Day 1: Discussion Panels & Keynotes". */
   label: string;
   /** Line under the agenda title for this day. */
   description?: string;
@@ -37,12 +37,12 @@ export interface DevfestMainStageDay {
 export interface DevfestParallelDay {
   label: string;
   description?: string;
-  /** Column headers, e.g. ["Sala A", "Sala B"]. */
+  /** Column headers, e.g. ["Room A", "Room B"]. */
   rooms: readonly string[];
   entries: readonly DevfestParallelEntry[];
-  /** Format navigation, e.g. "Prezentacje (2 Sale Równolegle)". */
+  /** Format navigation, e.g. "Talks (2 Rooms in Parallel)". */
   talksLabel: string;
-  /** E.g. "Warsztaty (Hands-on Labs)"; without it the format navigation is left out. */
+  /** E.g. "Workshops (Hands-on Labs)"; without it the format navigation is left out. */
   workshopsLabel?: string;
   /** Column headers of the workshop agenda; defaults to `rooms`. */
   workshopRooms?: readonly string[];
@@ -60,24 +60,24 @@ export interface DevfestAgendaContent {
   parallel: DevfestParallelDay;
 }
 
-/** A group of the speaker directory, e.g. the panel hosts (Figma `Prowadzący paneli`). */
+/** A group of the speaker directory, e.g. the panel hosts (Figma `Panel hosts`). */
 export interface DevfestSpeakerGroup {
   id: string;
-  /** Role navigation label, e.g. "Prowadzący". */
+  /** Role navigation label, e.g. "Hosts". */
   label: string;
   /** Section heading; a keynote-only group can leave it out. */
   heading?: DevfestHeading;
   speakers?: readonly DevfestSpeaker[];
   /** A keynote, shown as the Keynote card (Figma `Keynote speaker`). */
   keynote?: DevfestKeynote;
-  /** Shown while the group has nobody yet, e.g. "Lista trenerów warsztatów pojawi się tutaj." */
+  /** Shown while the group has nobody yet, e.g. "The list of workshop trainers will appear here." */
   emptyNote?: string;
 }
 
 /** The speaker directory (Figma `Speaker directory`, e.g. 9044:2755). */
 export interface DevfestSpeakersContent {
   heading: DevfestHeading;
-  /** First role navigation option; the number of people is added, e.g. "Wszyscy (29)". */
+  /** First role navigation option; the number of people is added, e.g. "All (29)". */
   allLabel: string;
   groups: readonly DevfestSpeakerGroup[];
 }

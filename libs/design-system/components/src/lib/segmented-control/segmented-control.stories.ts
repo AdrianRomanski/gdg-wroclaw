@@ -32,35 +32,36 @@ type Story = StoryObj<SegmentedControl>;
 /** Figma Toggle (9037:1840): two options sharing the full width. */
 export const Toggle: Story = {
   args: {
-    label: 'Dzień konferencji',
+    label: 'Conference day',
     fullWidth: true,
     value: 'day-1',
     options: [
-      { value: 'day-1', label: 'Dzień 1' },
-      { value: 'day-2', label: 'Dzień 2' },
+      { value: 'day-1', label: 'Day 1' },
+      { value: 'day-2', label: 'Day 2' },
     ],
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const second = canvas.getByRole('radio', { name: 'Dzień 2' });
+    const second = canvas.getByRole('radio', { name: 'Day 2' });
     await userEvent.click(second);
     await expect(second).toHaveAttribute('aria-checked', 'true');
     await userEvent.keyboard('{ArrowLeft}');
-    await expect(
-      canvas.getByRole('radio', { name: 'Dzień 1' }),
-    ).toHaveAttribute('aria-checked', 'true');
+    await expect(canvas.getByRole('radio', { name: 'Day 1' })).toHaveAttribute(
+      'aria-checked',
+      'true',
+    );
   },
 };
 
 /** Figma Segment (9040:251): options that hug their labels. */
 export const Segments: Story = {
   args: {
-    label: 'Pokaż',
+    label: 'Show',
     value: 'all',
     options: [
-      { value: 'all', label: 'Wszyscy' },
+      { value: 'all', label: 'All' },
       { value: 'keynote', label: 'Keynote' },
-      { value: 'hosts', label: 'Prowadzący' },
+      { value: 'hosts', label: 'Hosts' },
     ],
   },
 };

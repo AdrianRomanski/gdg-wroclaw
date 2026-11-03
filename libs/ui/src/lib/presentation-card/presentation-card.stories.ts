@@ -35,12 +35,12 @@ type Story = StoryObj<PresentationCard>;
 export const Collapsed: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const toggle = canvas.getByRole('button', { name: /Rozwiń abstrakt/ });
+    const toggle = canvas.getByRole('button', { name: /Show abstract/ });
     await expect(toggle).toHaveAttribute('aria-expanded', 'false');
     await userEvent.click(toggle);
-    await expect(canvas.getByText('Treść abstraktu')).toBeVisible();
+    await expect(canvas.getByText('Abstract text')).toBeVisible();
     await expect(
-      canvas.getByRole('button', { name: /Zwiń abstrakt/ }),
+      canvas.getByRole('button', { name: /Hide abstract/ }),
     ).toHaveAttribute('aria-expanded', 'true');
   },
 };

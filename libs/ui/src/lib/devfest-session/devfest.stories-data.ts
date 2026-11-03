@@ -23,43 +23,43 @@ export const SAMPLE_TALK: DevfestTalk = {
   track: 'ai',
   time: '08:00 – 08:30',
   dateTime: '2026-11-21T08:00',
-  room: 'Sala A',
-  description: 'Prelegent i temat zostaną ogłoszeni wkrótce',
-  abstract: 'Treść abstraktu',
-  speakers: [{ name: 'Imię Nazwisko', initials: 'OT' }],
+  room: 'Room A',
+  description: 'Speaker and topic to be announced soon',
+  abstract: 'Abstract text',
+  speakers: [{ name: 'First Last', initials: 'OT' }],
 };
 
 export const SAMPLE_SPEAKER: DevfestSpeaker = {
-  name: 'Imię Nazwisko',
+  name: 'First Last',
   initials: 'OT',
   track: 'ai',
   role: 'Rola · panel',
-  talk: 'Tytuł prezentacji',
+  talk: 'Talk title',
 };
 
 export const SAMPLE_KEYNOTE: DevfestKeynote = {
   title: 'Who Let the Dogs Out? The State of AI Robotics',
   time: '15:50',
   dateTime: '2026-11-21T15:50',
-  room: 'Scena Główna',
-  abstract: 'Abstrakt',
-  speaker: { name: 'Imię Nazwisko', initials: 'OT' },
+  room: 'Main Stage',
+  abstract: 'Abstract',
+  speaker: { name: 'First Last', initials: 'OT' },
 };
 
-const PERSON = { name: 'Imię Nazwisko', initials: 'OT' };
+const PERSON = { name: 'First Last', initials: 'OT' };
 
 export const SAMPLE_PANEL: DevfestPanel = {
   title: 'AI Panel',
   track: 'ai',
   time: '16:00',
   dateTime: '2026-11-21T16:00',
-  room: 'Scena Główna',
+  room: 'Main Stage',
   description:
-    'Krótki opis panelu: o czym rozmawiamy i dlaczego właśnie teraz. Dwa, trzy zdania wystarczą.',
+    'A short description of the panel: what we talk about and why now. Two or three sentences are enough.',
   topics: [
-    'Pierwszy temat rozmowy',
-    'Drugi temat rozmowy, nieco dłuższy, żeby sprawdzić zawijanie tekstu',
-    'Trzeci temat rozmowy',
+    'First topic',
+    'Second topic, a bit longer to check how the text wraps',
+    'Third topic',
   ],
   host: PERSON,
   panelists: [PERSON, PERSON, PERSON, PERSON, PERSON],
@@ -67,10 +67,10 @@ export const SAMPLE_PANEL: DevfestPanel = {
 
 export const SAMPLE_OPENING: DevfestScheduleItem = {
   type: 'shared',
-  title: 'Otwarcie eventu',
+  title: 'Opening',
   time: '07:30',
   dateTime: '2026-11-21T07:30',
-  rooms: 'Sala A + Sala B',
+  rooms: 'Room A + Room B',
 };
 
 export const SAMPLE_BREAK: DevfestScheduleItem = {

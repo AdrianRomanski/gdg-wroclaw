@@ -52,10 +52,10 @@ let nextId = 0;
 export class DevfestSpeakers {
   readonly content = input.required<DevfestSpeakersContent>();
 
-  readonly roleGroupLabel = input('Pokaż');
+  readonly roleGroupLabel = input('Show');
 
   /** Label before the track chips. */
-  readonly tracksLabel = input('Ścieżki');
+  readonly tracksLabel = input('Tracks');
 
   protected readonly role = signal(ALL);
 

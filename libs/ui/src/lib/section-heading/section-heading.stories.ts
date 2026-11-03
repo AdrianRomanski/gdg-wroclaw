@@ -26,7 +26,7 @@ const meta: Meta<SectionHeading> = {
   },
   args: {
     overline: 'AGENDA / DEVFEST 2026',
-    heading: 'Harmonogram & Sceny',
+    heading: 'Agenda & Stages',
     description: 'Opis sekcji',
   },
 };
@@ -40,7 +40,7 @@ export const Default: Story = {
     await expect(
       within(canvasElement).getByRole('heading', {
         level: 2,
-        name: 'Harmonogram & Sceny',
+        name: 'Agenda & Stages',
       }),
     ).toBeVisible();
   },

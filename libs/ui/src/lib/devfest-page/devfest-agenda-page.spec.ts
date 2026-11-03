@@ -29,16 +29,16 @@ describe('DevfestAgendaPage', () => {
   it('shows the hero, a hidden h1 and day 1 labelled by its heading', async () => {
     const { element, titles } = await setup();
     expect(element.querySelector('h1')?.textContent).toBe(
-      'DevFest Wrocław 2026 — Harmonogram',
+      'DevFest Wrocław 2026 — Agenda',
     );
     expect(element.querySelector('gdg-devfest-hero img')).not.toBeNull();
     expect(
       element.querySelector('gdg-devfest-hero a')?.textContent?.trim(),
-    ).toBe('Zarejestruj się');
+    ).toBe('Register');
     const section = element.querySelector('section[aria-labelledby]');
     const id = section?.getAttribute('aria-labelledby') ?? '';
     expect(element.querySelector(`#${id}`)?.textContent).toBe(
-      'Harmonogram & Sceny',
+      'Agenda & Stages',
     );
     expect(element.querySelector('gdg-devfest-agenda')?.id).toBe('agenda');
     expect(titles('gdg-main-stage-timeline')).toEqual([
@@ -61,47 +61,47 @@ describe('DevfestAgendaPage', () => {
 
   it('switches to day 2 with rooms, events and talks', async () => {
     const { element, click, titles } = await setup();
-    await click('Dzień 2: Warsztaty & Prezentacje');
+    await click('Day 2: Workshops & Talks');
     expect(element.querySelector('gdg-main-stage-timeline')).toBeNull();
     expect(
       Array.from(element.querySelectorAll('.room')).map((r) => r.textContent),
-    ).toEqual(['Sala A', 'Sala B']);
+    ).toEqual(['Room A', 'Room B']);
     expect(element.querySelectorAll('gdg-schedule-event')).toHaveLength(2);
     expect(element.querySelectorAll('gdg-presentation-card')).toHaveLength(5);
     expect(element.querySelector('.grouped-time')?.textContent).toBe(
       '09:10 - 09:40 / 09:45 - 10:15',
     );
 
-    await click('Robotyka');
+    await click('Robotics');
     expect(titles('gdg-parallel-schedule')).toEqual([
-      'Otwarcie eventu',
+      'Opening',
       'Topic: TBA',
-      'PRZERWA JEDZENIOWA',
+      'MEAL BREAK',
     ]);
   });
 
   it('marks the cells of the other rooms for the narrow Room toggle', async () => {
     const { element, click } = await setup();
-    await click('Dzień 2: Warsztaty & Prezentacje');
+    await click('Day 2: Workshops & Talks');
     const otherRoom = () =>
       Array.from(element.querySelectorAll('.cell')).map((c) =>
         c.classList.contains('cell--other-room'),
       );
     expect(otherRoom().slice(0, 2)).toEqual([false, true]);
-    await click('Sala B');
+    await click('Room B');
     expect(otherRoom().slice(0, 2)).toEqual([true, false]);
-    // The 17:25 slot has nothing in Sala B.
+    // The 17:25 slot has nothing in Room B.
     const slots = element.querySelectorAll('.slot');
     expect(slots[2].classList.contains('slot--other-room')).toBe(true);
   });
 
   it('shows the workshop note in the workshops format', async () => {
     const { element, click } = await setup();
-    await click('Dzień 2: Warsztaty & Prezentacje');
-    await click('Warsztaty (Hands-on Labs)');
+    await click('Day 2: Workshops & Talks');
+    await click('Workshops (Hands-on Labs)');
     expect(element.querySelector('gdg-parallel-schedule')).toBeNull();
     expect(element.querySelector('gdg-devfest-note')?.textContent).toContain(
-      'Harmonogram warsztatów pojawi się tutaj.',
+      'The workshop schedule will appear here.',
     );
   });
 
@@ -109,8 +109,8 @@ describe('DevfestAgendaPage', () => {
     const { element, click, titles } = await setup(
       SAMPLE_AGENDA_PAGE_WITH_WORKSHOPS,
     );
-    await click('Dzień 2: Warsztaty & Prezentacje');
-    await click('Warsztaty (Hands-on Labs)');
+    await click('Day 2: Workshops & Talks');
+    await click('Workshops (Hands-on Labs)');
     expect(element.querySelector('gdg-devfest-note')).toBeNull();
     // One room: the format chip names it, so there is no room header row.
     expect(element.querySelectorAll('.room')).toHaveLength(0);

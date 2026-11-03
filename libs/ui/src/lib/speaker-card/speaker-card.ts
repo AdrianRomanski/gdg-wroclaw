@@ -35,9 +35,9 @@ export class SpeakerCard {
   /** Whether the bio is shown; two-way bindable. */
   readonly expanded = model(false);
 
-  readonly expandLabel = input('Pokaż bio');
+  readonly expandLabel = input('Show bio');
 
-  readonly collapseLabel = input('Ukryj bio');
+  readonly collapseLabel = input('Hide bio');
 
   protected readonly buttonColor = computed(
     () => TRACK_BUTTON_COLORS[this.speaker().track],

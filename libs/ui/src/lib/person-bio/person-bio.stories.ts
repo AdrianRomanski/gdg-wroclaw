@@ -20,17 +20,17 @@ const meta: Meta<PersonBio> = {
     docs: {
       description: {
         component:
-          'A "Pokaż bio" button that opens the person\'s bio in a modal dialog, or says it is coming soon (ADR-0034). Not in Figma.',
+          'A "Show bio" button that opens the person\'s bio in a modal dialog, or says it is coming soon (ADR-0034). Not in Figma.',
       },
     },
   },
   args: {
     person: {
-      name: 'Imię Nazwisko',
+      name: 'First Last',
       initials: 'OT',
       bio: [
-        'Pierwszy akapit bio: doświadczenie i obecna rola.',
-        'Drugi akapit: społeczność i wystąpienia.',
+        'First bio paragraph: experience and current role.',
+        'Second paragraph: community and talks.',
       ],
     },
     color: 'red',
@@ -44,14 +44,14 @@ type Story = StoryObj<PersonBio>;
 export const WithBio: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    await userEvent.click(canvas.getByRole('button', { name: /Pokaż bio/ }));
+    await userEvent.click(canvas.getByRole('button', { name: /Show bio/ }));
     await expect(
-      canvas.getByRole('dialog', { name: 'Imię Nazwisko' }),
+      canvas.getByRole('dialog', { name: 'First Last' }),
     ).toBeVisible();
   },
 };
 
 /** No bio yet: the dialog says it is coming soon. */
 export const ComingSoon: Story = {
-  args: { person: { name: 'Imię Nazwisko', initials: 'OT' } },
+  args: { person: { name: 'First Last', initials: 'OT' } },
 };
