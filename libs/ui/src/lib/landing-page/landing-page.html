@@ -35,6 +35,19 @@
   [ctaLabel]="team.ctaLabel ?? 'Contact us'"
   [ctaColor]="team.ctaColor ?? 'yellow'"
 />
+} @if (c.sponsors; as sponsors) {
+<gdg-sponsors-section
+  class="section"
+  [id]="ids.sponsors"
+  [heading]="sponsors.heading ?? 'Sponsors'"
+  [description]="sponsors.description ?? ''"
+  [sponsors]="sponsors.sponsors"
+  [ctaHeading]="sponsors.ctaHeading ?? ''"
+  [ctaText]="sponsors.ctaText ?? ''"
+  [ctaHref]="sponsors.ctaHref"
+  [ctaLabel]="sponsors.ctaLabel ?? 'Contact'"
+  [ctaColor]="sponsors.ctaColor ?? 'red'"
+/>
 } @if (c.partners; as partners) {
 <gdg-partners-section
   class="section"

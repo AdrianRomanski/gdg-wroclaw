@@ -1,0 +1,139 @@
+/*
+ * No Figma frame (ADR-0037): built from the Partners grid (ADR-0019). Platinum tiles two per row,
+ * Gold three, Silver four, on neutral tiles, under an uppercase tier label with a decorative
+ * pastel red underline; the label text always names the tier.
+ */
+:host {
+  --_columns: 4;
+  --_gap: var(--gdg-spacing-40);
+
+  display: block;
+  padding: var(--gdg-layout-padding-section-large)
+    var(--gdg-layout-padding-global);
+  background: var(--gdg-color-background-default);
+  color: var(--gdg-color-content-default);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gdg-spacing-80);
+  max-inline-size: var(--gdg-layout-container-large);
+  margin-inline: auto;
+}
+
+.title,
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gdg-spacing-24);
+  max-inline-size: var(--gdg-layout-max-width-large);
+  text-align: center;
+}
+
+.heading {
+  margin: 0;
+  font: var(--gdg-font-display-1);
+}
+
+.description,
+.cta-text {
+  margin: 0;
+  font: var(--gdg-font-paragraph-6);
+}
+
+.tier {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gdg-spacing-40);
+  inline-size: 100%;
+}
+
+.tier--platinum {
+  --_columns: 2;
+  --_gap: var(--gdg-spacing-48);
+}
+
+.tier--gold {
+  --_columns: 3;
+}
+
+.tier-heading {
+  margin: 0;
+  font: var(--gdg-font-heading-7);
+}
+
+.badge {
+  display: inline-block;
+  padding-block-end: var(--gdg-spacing-4);
+  border-block-end: 2px solid var(--gdg-color-pastel-red);
+  font: var(--gdg-font-heading-8);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.sponsors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gdg-spacing-48) var(--_gap);
+  inline-size: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sponsor {
+  box-sizing: border-box;
+  flex: 0 0 calc((100% - (var(--_columns) - 1) * var(--_gap)) / var(--_columns));
+  min-inline-size: 0;
+}
+
+.cta-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gdg-spacing-16);
+}
+
+.cta-heading {
+  margin: 0;
+  font: var(--gdg-font-heading-2);
+}
+
+@media (width < 75rem) {
+  :host,
+  .tier--gold {
+    --_columns: 3;
+  }
+}
+
+@media (width < 48rem) {
+  :host {
+    --_columns: 2;
+    --_gap: var(--gdg-spacing-24);
+
+    padding: var(--gdg-spacing-64) var(--gdg-spacing-20);
+  }
+
+  .tier--gold {
+    --_columns: 2;
+    --_gap: var(--gdg-spacing-24);
+  }
+
+  .container {
+    gap: var(--gdg-spacing-64);
+  }
+
+  .heading {
+    font: var(--gdg-font-heading-1);
+  }
+}
+
+@media (width < 40rem) {
+  .tier--platinum {
+    --_columns: 1;
+  }
+}

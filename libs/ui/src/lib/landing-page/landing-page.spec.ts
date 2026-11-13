@@ -12,6 +12,10 @@ const full: LandingPageContent = {
     ctaHeading: 'We’re hiring!',
     ctaHref: '/contact',
   },
+  sponsors: {
+    sponsors: [{ name: 'Initech', tier: 'gold' }],
+    ctaHref: '/contact',
+  },
   partners: { partners: [{ name: 'Acme' }] },
   faq: { entries: [{ question: 'Is it free?', answer: 'Yes.' }] },
 };
@@ -46,22 +50,27 @@ describe('LandingPage', () => {
     expect(sections.map((section) => section.tagName.toLowerCase())).toEqual([
       'gdg-events-section',
       'gdg-team-section',
+      'gdg-sponsors-section',
       'gdg-partners-section',
       'gdg-faq-section',
     ]);
     expect(sections.map((section) => section.id)).toEqual([
       'events',
       'team',
+      'sponsors',
       'partners',
       'faq',
     ]);
     expect(
       Array.from(element.querySelectorAll('h2')).map((h) => h.textContent),
-    ).toEqual(['Events', 'Our team', 'Partners', 'FAQs']);
+    ).toEqual(['Events', 'Our team', 'Sponsors', 'Partners', 'FAQs']);
   });
 
-  it('uses the Landing variants: circle team, yellow team button, carousel, green puzzle FAQ', async () => {
+  it('uses the Landing variants: circle team, yellow team button, red sponsors button, carousel, green puzzle FAQ', async () => {
     const { element } = await setup();
+    expect(
+      element.querySelector('#sponsors a[gdg-button]')?.classList,
+    ).toContain('gdg-button--red');
     expect(element.querySelector('.gdg-person-card--circle')).not.toBeNull();
     expect(element.querySelector('#team a[gdg-button]')?.classList).toContain(
       'gdg-button--yellow',

@@ -1,6 +1,7 @@
 import { SAMPLE_DAYS } from '../events-section/events.stories-data';
 import type { FaqEntry } from '../faq/faq-section';
 import { SAMPLE_PARTNERS } from '../partners-section/partners.stories-data';
+import { SAMPLE_SPONSORS } from '../sponsors-section/sponsors.stories-data';
 import { SAMPLE_TEAM } from '../team-section/team.stories-data';
 import type { LandingPageContent } from './landing-page-content';
 
@@ -28,6 +29,13 @@ export const SAMPLE_LANDING: LandingPageContent = {
     description: lorem,
     members: SAMPLE_TEAM,
     ctaHeading: 'We’re hiring!',
+    ctaText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    ctaHref: '#contact',
+  },
+  sponsors: {
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    sponsors: SAMPLE_SPONSORS,
+    ctaHeading: 'Become a sponsor',
     ctaText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     ctaHref: '#contact',
   },

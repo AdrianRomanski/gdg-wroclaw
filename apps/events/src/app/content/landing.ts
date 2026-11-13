@@ -1,5 +1,7 @@
-import type { EventDay, LandingPageContent, Partner } from '@gdg-wroclaw/ui';
+import type { EventDay, LandingPageContent } from '@gdg-wroclaw/ui';
 import { ORGANIZERS } from './organizers';
+import { PARTNERS } from './partners';
+import { SPONSORS } from './sponsors';
 
 /** Upcoming events; "Read more" opens the event page (`/events/:slug`) or the DevFest agenda. */
 const EVENTS: readonly EventDay[] = [
@@ -50,30 +52,9 @@ const EVENTS: readonly EventDay[] = [
   },
 ];
 
-const partner = (name: string, url: string, logo: string): Partner => ({
-  name,
-  logo: { src: logo },
-  url,
-});
-
-/** Community partners; logos are self-hosted in `apps/events/public/partners`. */
-const PARTNERS: readonly Partner[] = [
-  partner('meet.js', 'https://meetjs.pl/', '/partners/meetjs.svg'),
-  partner('Sekurak', 'https://sekurak.pl/', '/partners/sekurak.jpg'),
-  partner(
-    'Machinekind',
-    'https://machinekind.ai/',
-    '/partners/machinekind.webp',
-  ),
-  partner('AI HUB @UEW', 'https://ai.uew.pl/', '/partners/aihub.webp'),
-  partner('Solvro', 'https://solvro.pwr.edu.pl/pl', '/partners/solvro.webp'),
-  partner('JS Poland', 'https://js-poland.pl/', '/partners/js-poland.webp'),
-  partner('NG Poland', 'https://ng-poland.pl/', '/partners/ng-poland.webp'),
-  partner('inQUBE', 'https://inqube.pl/', '/partners/inqube.webp'),
-];
-
 /**
- * Landing page content (ADR-0023): the hero banner, events, team, partners and FAQ.
+ * Landing page content (ADR-0023): the hero banner, events, team, sponsors (ADR-0037), partners
+ * and FAQ.
  */
 export const LANDING_CONTENT: LandingPageContent = {
   heading: 'Google Developer Groups Wrocław: join our community',
@@ -93,6 +74,14 @@ export const LANDING_CONTENT: LandingPageContent = {
     ctaHeading: 'Want to help organize?',
     ctaText:
       'We’re always looking for volunteers to help run meetups, workshops and DevFest.',
+    ctaHref: '/contact',
+  },
+  sponsors: {
+    description:
+      'Companies and institutions that make GDG Wrocław and DevFest possible.',
+    sponsors: SPONSORS,
+    ctaHeading: 'Become a sponsor',
+    ctaText: 'Want to support DevFest and the community? Get in touch.',
     ctaHref: '/contact',
   },
   partners: {

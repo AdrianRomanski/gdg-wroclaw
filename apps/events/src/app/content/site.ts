@@ -10,6 +10,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: 'Speakers', href: '/devfest/speakers' },
   { label: 'Events', href: `/#${LANDING_SECTION_IDS.events}` },
   { label: 'Team', href: `/#${LANDING_SECTION_IDS.team}` },
+  { label: 'Sponsors', href: `/#${LANDING_SECTION_IDS.sponsors}` },
   { label: 'Partners', href: `/#${LANDING_SECTION_IDS.partners}` },
   { label: 'FAQ', href: `/#${LANDING_SECTION_IDS.faq}` },
 ];
