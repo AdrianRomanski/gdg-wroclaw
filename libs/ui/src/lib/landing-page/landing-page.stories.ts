@@ -33,7 +33,7 @@ const meta: Meta<LandingPage> = {
     docs: {
       description: {
         component:
-          'Landing page template from the Figma **Landing Page** (143:2897): hero, Events, Team, Partners carousel and FAQ. Presentational: the app passes a `LandingPageContent`; the Navbar and Footer belong to the app shell and are added here for the full page (ADR-0013, ADR-0022).',
+          'Landing page template from the Figma **Landing Page** (143:2897): hero, Events, Team, Sponsors (ADR-0037), Partners carousel and FAQ. Presentational: the app passes a `LandingPageContent`; the Navbar and Footer belong to the app shell and are added here for the full page (ADR-0013, ADR-0022).',
       },
     },
   },
@@ -64,7 +64,7 @@ export const Default: Story = {
     await expect(
       canvas.getByRole('heading', { level: 1, name: SAMPLE_LANDING.heading }),
     ).toBeInTheDocument();
-    for (const name of ['Event', 'Our team', 'Partners', 'FAQs']) {
+    for (const name of ['Event', 'Our team', 'Sponsors', 'Partners', 'FAQs']) {
       await expect(
         canvas.getByRole('heading', { level: 2, name }),
       ).toBeVisible();

@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="title">
+    <h2 class="heading">{{ heading() }}</h2>
+    @if (description()) {
+    <p class="description">{{ description() }}</p>
+    }
+  </div>
+
+  @for (group of tiers(); track group.tier) {
+  <section
+    [class]="'tier tier--' + group.tier"
+    [attr.aria-labelledby]="idPrefix + '-' + group.tier"
+  >
+    <h3 class="tier-heading" [id]="idPrefix + '-' + group.tier">
+      <span class="badge">{{ group.label }}</span>
+    </h3>
+    <ul class="sponsors">
+      @for (sponsor of group.sponsors; track $index) {
+      <li class="sponsor">
+        <gdg-partner-card [partner]="sponsor" variant="tile" />
+      </li>
+      }
+    </ul>
+  </section>
+  } @if (ctaHeading() || ctaHref()) {
+  <div class="cta">
+    <div class="cta-content">
+      @if (ctaHeading()) {
+      <h3 class="cta-heading">{{ ctaHeading() }}</h3>
+      } @if (ctaText()) {
+      <p class="cta-text">{{ ctaText() }}</p>
+      }
+    </div>
+    @if (ctaHref(); as href) {
+    <a gdg-button [color]="ctaColor()" [href]="href">{{ ctaLabel() }}</a>
+    }
+  </div>
+  }
+</div>

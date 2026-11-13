@@ -19,6 +19,8 @@ export * from './lib/person-card/person-card';
 export * from './lib/person-row/person-row';
 export * from './lib/role-badge/role-badge';
 export * from './lib/social-links/social-links';
+export * from './lib/sponsors-section/sponsor';
+export * from './lib/sponsors-section/sponsors-section';
 export * from './lib/team-section/team-section';
 export * from './lib/event-banner/event-banner';
 export * from './lib/workshop-details/workshop-details';

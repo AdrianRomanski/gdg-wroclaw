@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { EventsSection } from '../events-section/events-section';
 import { FaqSection } from '../faq/faq-section';
 import { PartnersSection } from '../partners-section/partners-section';
+import { SponsorsSection } from '../sponsors-section/sponsors-section';
 import { TeamSection } from '../team-section/team-section';
 import {
   LANDING_SECTION_IDS,
@@ -10,7 +11,8 @@ import {
 
 /**
  * Landing page template from the Figma **Landing Page** (143:2897), see ADR-0022: the hero image,
- * then the Events, Team, Partners (carousel) and FAQ sections, in Figma order.
+ * then the Events, Team, Partners (carousel) and FAQ sections, in Figma order, with Sponsors
+ * before Partners (ADR-0037).
  *
  * Presentational (ADR-0013): the app routes to it and passes the content. The Navbar and Footer
  * belong to the app shell (ADR-0017, ADR-0020). Sections carry anchor ids
@@ -18,7 +20,13 @@ import {
  */
 @Component({
   selector: 'gdg-landing-page',
-  imports: [EventsSection, FaqSection, PartnersSection, TeamSection],
+  imports: [
+    EventsSection,
+    FaqSection,
+    PartnersSection,
+    SponsorsSection,
+    TeamSection,
+  ],
   templateUrl: './landing-page.html',
   styleUrl: './landing-page.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

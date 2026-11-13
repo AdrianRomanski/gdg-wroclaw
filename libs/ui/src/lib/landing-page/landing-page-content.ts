@@ -3,6 +3,7 @@ import type { EventDay } from '../events-section/events-section';
 import type { FaqEntry } from '../faq/faq-section';
 import type { Partner } from '../partner-card/partner';
 import type { Person } from '../person/person';
+import type { Sponsor } from '../sponsors-section/sponsor';
 
 /** A section title and its optional call to action. */
 interface SectionCopy {
@@ -29,6 +30,7 @@ export interface LandingPageContent {
   hero?: { src: string; alt?: string };
   events?: SectionCopy & { days: readonly EventDay[] };
   team?: SectionCopy & SectionCta & { members: readonly Person[] };
+  sponsors?: SectionCopy & SectionCta & { sponsors: readonly Sponsor[] };
   partners?: SectionCopy & SectionCta & { partners: readonly Partner[] };
   faq?: SectionCopy & {
     entries: readonly FaqEntry[];
@@ -41,6 +43,7 @@ export interface LandingPageContent {
 export const LANDING_SECTION_IDS = {
   events: 'events',
   team: 'team',
+  sponsors: 'sponsors',
   partners: 'partners',
   faq: 'faq',
 } as const;
